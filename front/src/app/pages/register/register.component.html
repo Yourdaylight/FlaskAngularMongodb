@@ -1,0 +1,33 @@
+<div class="login-wrap">
+
+    <div class="login-card">
+        <h3>{{'注册' | translate}}</h3>
+        <form nz-form [formGroup]="regForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_USERNAME')">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="text" formControlName="username" nz-input
+                            placeholder="{{'ACCOUNT' | translate}}" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_PASSWORD')">
+                    <nz-input-group nzPrefixIcon="lock">
+                        <input formControlName="password" [readonly]="readonly" (click)="readonly = false" nz-input
+                            type="password" placeholder="{{'PASSWORD' | translate}}" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                    <nz-form-control>
+                        <button nz-button nzBlock class="theme-bgcolor" [disabled]="!regForm.valid">{{'注册' |
+                            translate}}</button>
+                    </nz-form-control>
+            </nz-form-item>
+            <div class="text-center">
+                <a (click)="toLogin()">{{'登录' |translate}}</a>
+            </div>
+        </form>
+    </div>
+</div>

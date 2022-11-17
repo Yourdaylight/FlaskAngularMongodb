@@ -1,0 +1,73 @@
+<form nz-form [nzLayout]="'inline'" class="margin-bottom">
+    <nz-form-item>
+        <nz-form-label>{{'region' | translate}}</nz-form-label>
+        <nz-form-control>
+            <input name="name" [(ngModel)]="region" nz-input type="text" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>{{'Temperature now' | translate}}</nz-form-label>
+        <nz-form-control>
+            <input name="start_score" [(ngModel)]="temp_now" nz-input type="number" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>{{'Date' | translate}}</nz-form-label>
+        <nz-form-control>
+            <input name="end_score" [(ngModel)]="dayhour" nz-input type="number" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <button debounceClick (debounceClick)="searchUser()" nz-button nzType="primary" class="mr-8">
+                {{'SEARCH' | translate}}
+            </button>
+            <button nz-button nzType="primary" (click)="clearField()">{{'CLEAR' | translate}}</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+<div class="toolbar">
+    <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{'高校列表' | translate}}</div>
+    <div class="toolbar-btns">
+        <button nz-button nzType="default" *ngIf="role == 1" (click)="addUser()"><i nz-icon nzType="plus" nzTheme="outline"></i>{{'ADD' | translate}}</button>
+        <button nz-button nzType="default" *ngIf="role != 1" (click)="toDetail()"><i nz-icon nzType="table" nzTheme="outline"></i>{{'我的意向' | translate}}</button>
+    </div>
+</div>
+<nz-table nzShowSizeChanger nzBordered [nzScroll]="{ x: '100%' }" [nzData]="siteList"
+    [nzFrontPagination]="false" nzPaginationType="small" [nzLoading]="loading" [nzTotal]="total"
+ (nzQueryParams)="onQueryParamsChange($event)">
+    <thead>
+        <tr>
+            <th nzColumnKey="id" nzWidth="60px">{{'ID' | translate}}</th>
+            <th nzColumnKey="username" nzWidth="100px">{{'学校编号' | translate}}</th>
+            <th nzColumnKey="password" nzWidth="140px">{{'名称' |translate}}</th>
+            <th nzColumnKey="intro" nzWidth="180px">{{'描述' | translate}}</th>
+            <th nzColumnKey="name" nzWidth="80px">{{'分数线' | translate}}</th>
+            <th nzColumnkey="role" nzWidth="120px">{{'创建时间' |translate}}</th>
+            <th nzWidth="150px">{{'OPERATE' |translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of siteList">
+            <td class="overflow" [title]="data.id">{{ data.id }}</td>
+            <td class="overflow" [title]="data.number">{{ data.number }}</td>
+            <td>
+                <span>{{data.title}}</span>
+            </td>
+            <td class="overflow">
+                <span [title]="data.desc">{{data.desc}}</span>
+            </td>
+            <td>
+                <span>{{data.score}}</span>
+            </td>
+            <td class="overflow">
+                <span [title]="data.end_time">{{data.end_time}}</span>
+            </td>
+            <td class="">
+                <!-- <a (click)='toDetail(data)'>{{'查看详细' | translate}} </a>&nbsp;&nbsp; -->
+                <a *ngIf="role != 1" (click)='toAdd(data)'>{{'添加意向' | translate}} </a>
+                <a *ngIf="role == 1" (click)='toDelete(data)'>{{'删除' | translate}} </a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

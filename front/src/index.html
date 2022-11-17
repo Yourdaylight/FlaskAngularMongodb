@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>comment-system</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .spin-loading {
+      position: absolute;
+      top: 48%;
+      left: 48%;
+      line-height: 30px;
+      padding-left: 40px;
+      height: 30px;
+      background: 0 no-repeat url('assets/img/loading.gif');
+      background-size: contain;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px !important;
+      height: 8px !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      box-shadow: inset 1px 0 0 hsl(0deg 0% 100% / 70%);
+      box-shadow: 2px 0 0 hsl(0deg 0% 100% / 47%);
+      background: #888;
+      border: 1px solid #c6c4c4;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <app-root>
+    <div id="spin" class="spin-loading">loading...</div>
+  </app-root>
+</body>
+
+</html>

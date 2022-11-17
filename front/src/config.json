@@ -1,0 +1,9 @@
+{
+    "setting": {
+      "version": "1.0",
+      "certVersion":0
+    },
+    "apiServer": {
+      "login": "http://127.0.0.1:5000/"
+    }
+  }

@@ -1,0 +1,51 @@
+<form nz-form [formGroup]="userForm">
+    <div nz-row [nzGutter]="12">
+        <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="8">{{'NAME' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="16" nzErrorTip="请输入学校名称">
+                    <input formControlName="title" nz-input minlength="3" maxlength="20" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="8">{{'编号' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="16" nzErrorTip="请输入分数">
+                    <input formControlName="number" nz-input minlength="6" maxlength="20" type="number"/>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="12">
+        <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="8">{{'描述' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <textarea  formControlName="desc" nz-input type="textarea" placeholder="{{'描述' | translate}}"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+        <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="8">{{'分数线' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input formControlName="score" nz-input maxlength="6" type="number" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+    <div nz-row [nzGutter]="12">
+        <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="8">{{'日期' | translate}}</nz-form-label>
+                <nz-form-control [nzSpan]="16">
+                    <input formControlName="end_time" nz-input maxlength="20" type="date"/>
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+</form>
+<div class="footer">
+    <button nz-button nzType="primary" (click)="submitUser()">{{'提交' | translate}}</button>
+</div>

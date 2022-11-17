@@ -1,0 +1,49 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    nzWidth="200px" [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a>
+        <img src="assets/img/network-icon.png" alt="logo">
+        <h1>高考志愿填报系统</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter>
+        <i nz-icon nzType="mail"></i>
+        <span [routerLink]="['./comments']">{{'高校列表' |translate}}</span>
+      </li>
+      
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" >
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="toggleCollapsed($event)"></i>
+        </span>
+        <a class="lang">
+          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType =='en' " (click)="langChange('zh-cn')"
+            title="Chinese">中</button>
+          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType == 'zh-cn' " (click)="langChange('en')"
+            [title]="'EN' | translate">EN</button>
+        </a>
+        <a class="username">
+          <button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="user" nzTheme="outline"></i></button>
+          {{userName}}
+        </a>
+        <a class="loginout" (click)="logOut()">
+          <button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="logout" nzTheme="outline"></i></button>
+          {{'HOME_EXIT' | translate}}
+        </a>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <!-- 全局自动生成面包屑 nzRouteLabel指定路由data里面的key,translateFn为format函数-->
+        <nz-breadcrumb [nzAutoGenerate]="true" [nzRouteLabel]="'breadcrumbI18nKey'" [nzRouteLabelFn]="translateFn"></nz-breadcrumb>
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>©版本1.0</nz-footer>
+  </nz-layout>
+</nz-layout>

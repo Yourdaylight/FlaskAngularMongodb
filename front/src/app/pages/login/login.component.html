@@ -1,0 +1,36 @@
+<div class="login-wrap">
+  <canvas id="bgLogin"></canvas>
+  <div class="seprate-icon-box">
+    <a class="seprate-icon" (click)="changeLang('en')" [ngClass]="{'active': langFlag}" title="en">En</a>
+    <a class="seprate-icon" (click)="changeLang('zh-cn')" [ngClass]="{'active': !langFlag}" title="zn_ch">Ch</a>
+  </div>
+  <div class="login-card">
+    <h3>{{'高考志愿系统' | translate}}</h3>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_USERNAME')">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" formControlName="username" nz-input placeholder="{{'ACCOUNT' | translate}}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_PASSWORD')">
+          <nz-input-group nzPrefixIcon="lock">
+            <input formControlName="password" [readonly]="readonly" (click)="readonly = false" nz-input type="password"
+              placeholder="{{'PASSWORD' | translate}}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzBlock class="theme-bgcolor" [disabled]="!validateForm.valid">{{'LOGIN' |
+            translate}}</button>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="text-center">
+          <a (click)="toReg()">{{'注册' |translate}}</a>
+      </div>
+    </form>
+  </div>
+</div>

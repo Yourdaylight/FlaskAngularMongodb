@@ -1,0 +1,88 @@
+
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+//自定义组件样式：用官方提供主题来修改
+//@primary-color:#1aab40;
+@link-color: #1890ff;
+@border-radius-base: 4px;
+@table-padding-vertical: 10px;
+@table-padding-horizontal: 10px;
+@tabs-card-active-color:#eb8c00;
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+// @primary-color: #1890ff;
+/* You can add global styles to this file, and also import other style files */
+
+/*自定义全局样式*/
+
+// 表格
+nz-table{
+    .overflow{
+       overflow: hidden;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+    }   
+    .selected{
+      background: #e6f7ff;
+    }
+}
+// 表格工具栏
+.toolbar{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 6px 12px;
+   border-top:2px solid #d2d6de;
+   background: #fff;
+   .title{
+       font-size: 16px;
+       i{
+           margin-right: 6px;
+       }
+   }
+   button{
+       font-size: 12px;
+       margin-left:8px ;
+   }
+}
+// 搜索栏
+.searchbar{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 12px 16px 12px;
+    .title{
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+        i{
+            font-size: 24px;
+            color: #eb8c00;
+            margin-right: 6px;
+        }
+    }
+    nz-select {
+        min-width: 120px;
+    }
+}
+.ant-breadcrumb{
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    nz-breadcrumb-item:first-of-type::before{
+        content: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="64 64 896 896" focusable="false" fill="currentColor" width="14px" height="14px" data-icon="home" aria-hidden="true"><path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 00-44.4 0L77.5 505a63.9 63.9 0 00-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0018.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path></svg>'); 
+        background-size: 100%; 
+        height: 14px; 
+        width: 14px;
+        margin-right: 6px;
+    }  
+}
+.mr-8{
+    margin-right: 8px;
+}
+.min-height200{
+    min-height: 200px;
+}

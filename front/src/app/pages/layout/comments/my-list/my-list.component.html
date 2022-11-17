@@ -1,0 +1,41 @@
+
+<div class="toolbar">
+    <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{'我的意向' | translate}}</div>
+<!--     <div class="toolbar-btns">-->
+<!--        <button nz-button nzType="default" (click)="toDelete(1)"><i nz-icon nzType="plus" nzTheme="outline"></i>{{'我的意向' | translate}}</button>-->
+<!--    </div>-->
+</div>
+<nz-table nzShowSizeChanger nzBordered [nzScroll]="{ x: '100%' }" [nzData]="schoolList"
+    [nzFrontPagination]="false" nzPaginationType="small" [nzLoading]="loading"
+ (nzQueryParams)="onQueryParamsChange($event)">
+    <thead>
+        <tr>
+<!--            <th nzColumnKey="username" nzWidth="100px">{{'学校编号' | translate}}</th>-->
+            <th nzColumnKey="password" nzWidth="140px">{{'名称' |translate}}</th>
+            <th nzColumnKey="name" nzWidth="80px">{{'分数线' | translate}}</th>
+            <th nzColumnkey="role" nzWidth="120px">{{'创建时间' |translate}}</th>
+            <th nzWidth="150px">{{'OPERATE' |translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of schoolList">
+<!--            <td class="overflow" [title]="data.number">{{ data.uid }}</td>-->
+            <td>
+                <span>{{data.school_name}}</span>
+            </td>
+            <td>
+                <span>{{data.score}}</span>
+            </td>
+            <td class="overflow">
+                <span [title]="data.end_time">{{data.create_time}}</span>
+            </td>
+            <td class="">
+                <a (click)='toDelete(data)'>{{'删除意向' | translate}} </a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
+<div style="text-align: right;">
+    <button nz-button class="theme-bgcolor" (click)="backTo()">{{'返回高校列表' |
+        translate}}</button>
+</div>
