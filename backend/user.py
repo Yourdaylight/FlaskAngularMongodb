@@ -1,12 +1,14 @@
 import json
 from flask import Blueprint, request
-from user.utils import get_token
+from utils import get_token
 from config import client
+
 db = client["crawler"]
 collection = db["user"]
 user = Blueprint('user', __name__)
 
-@user.route('/login', methods=['POST'])  # 抖音账号列表
+
+@user.route('/login', methods=['POST'])
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
@@ -33,5 +35,5 @@ def register():
         collection.insert_one(user)
         content = {"code": 0, "msg": "SUCCESS"}
     else:
-        content = {"code": 1, "msg":"The user already exists"}
+        content = {"code": 1, "msg": "The user already exists"}
     return json.dumps(content)

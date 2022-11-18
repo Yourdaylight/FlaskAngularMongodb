@@ -1,9 +1,4 @@
-import random
-import time
-from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
 from flask import Blueprint, request
 import json
 
@@ -62,6 +57,7 @@ def city_weather():
             content = {"code": 0, "msg": "SUCCESS", "data": _weather}
         else:
             weather = get_weather_data(city)
+            print(weather)
             save_weather_data(weather)
             content = {"code": 0, "msg": "SUCCESS", "data": weather}
     except Exception as e:

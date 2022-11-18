@@ -45,6 +45,7 @@ def get_weather_data(cityname):
         day_name = day.findAll("div")[0].attrs['aria-label']
         # get weather status for that day
         weather = day.find("img").attrs["alt"]
+        weather_img = day.find("img").attrs["src"]
         temp = day.findAll("span", {"class": "wob_t"})
         # maximum temparature in Celsius, use temp[1].text if you want fahrenheit
         max_temp = temp[0].text
@@ -60,10 +61,10 @@ def get_weather_data(cityname):
 def save_weather_data(data):
     db = client["crawler"]
     collection = db["weather"]
-    data.pop("_id")
     collection.insert_one(data)
 
 
 if __name__ == "__main__":
-    data = get_weather_data("London")
-    save_weather_data(data)
+    # data = get_weather_data("London")
+    # save_weather_data(data)
+    get_weather_data("Southampton")
