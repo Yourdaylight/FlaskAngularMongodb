@@ -23,6 +23,9 @@ export class CommentsComponent implements OnInit {
   temp_now: number;
   dayhour: string;
   role:number;
+  name: any;
+  start_score: string;
+  end_score: string;
   constructor(
     private nzModalService: NzModalService,
     private apiService: ApiService,
@@ -53,10 +56,12 @@ export class CommentsComponent implements OnInit {
   }
   loadSchool(url?) {
     this.loading = true;
-    url = url ? url : `schoolList`
-    this.apiService.get(url, { headers: new HttpHeaders().set('token', this.storageService.getItem('token')) }).subscribe((res: any) => {
+    url = url ? url : `cityList`
+    let params = {
+      username: this.storageService.getItem('username'),
+    }
+    this.apiService.post(url, params).subscribe((res: any) => {
       this.loading = false;
-      console.log(res);
       const { code, data } = res;
       if (data && Array.isArray(res.data)) {
         this.siteList = res.data;
@@ -67,9 +72,7 @@ export class CommentsComponent implements OnInit {
       }
     }, () => { this.loading = false; });
   }
-  toTeacher(data) {
-    this.navigateService.navigate('layout/teacher', data);
-  }
+
   searchUser() {
     let url = `schoolList?name=${this.name}&start_score=${this.start_score || ''}&end_score=${this.end_score || ''}`
     this.loadSchool(url);
@@ -81,7 +84,7 @@ export class CommentsComponent implements OnInit {
     this.loadSchool();
   }
   addUser() {
-    let title = '添加学校';
+    let title = 'Add a city';
     const modal = this.nzModalService.create({
       nzTitle: this.translateService.instant(title),
       nzContent: AddSchoolComponent,
@@ -95,11 +98,12 @@ export class CommentsComponent implements OnInit {
     })
   }
   toDelete(item) {
-    this.apiService.post('removeSchool', { id: item.id }).subscribe((res: any) => {
+    item["username"] = this.storageService.getItem('username');
+    this.apiService.post('removeCity', item).subscribe((res: any) => {
       console.log(res);
       const { code, msg } = res;
       if (code === 0) {
-        this.$message.success('删除成功！')
+        this.$message.success('Succee delete！')
         this.loadSchool()
       } else {
         this.$message.error(msg)
@@ -107,24 +111,7 @@ export class CommentsComponent implements OnInit {
     });
   }
   toDetail(data?) {
-    // addIntention  post 添加意向学校
-    //{"sid":学校id}
-
-    //intentionList  get 获取意向学校列表
-
-    //delIntention post 删除意向学校
     this.navigateService.navigate('layout/myList',data);
-    return
-    this.apiService.post('removeSchool', { sid: data.id }).subscribe((res: any) => {
-      console.log(res);
-      const { code, msg } = res;
-      if (code === 0) {
-        this.$message.success('删除成功！')
-        this.loadSchool()
-      } else {
-        this.$message.error(msg)
-      }
-    });
   }
   toAdd(data) {
     this.apiService.post('addIntention', { sid: data.id }).subscribe((res: any) => {

@@ -1,13 +1,10 @@
 import json
-import pymongo
 from flask import Blueprint, request
 from user.utils import get_token
-
-client = pymongo.MongoClient("localhost", 27017)
+from config import client
 db = client["crawler"]
 collection = db["user"]
 user = Blueprint('user', __name__)
-
 
 @user.route('/login', methods=['POST'])  # 抖音账号列表
 def login():

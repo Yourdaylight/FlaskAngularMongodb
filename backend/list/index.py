@@ -2,54 +2,68 @@ import random
 import time
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+
 db = SQLAlchemy()
-from flask import Blueprint, request, Response, jsonify, render_template, redirect, url_for
+from flask import Blueprint, request
 import json
 
-from list.model import School
-
+from config import client
+from crawler import get_weather_data, save_weather_data
 list = Blueprint('list', __name__);
+dbUser = client["crawler"]
 
 
-@list.route('/removeSchool', methods=['POST'])
-def remove_school():
-    id = request.json.get('id')
-    school = School.query.filter(
-        School.id == id
-    ).first()
-    db.session.delete(school)
-    db.session.commit()
-    content = {"code": 0, "msg": "SUCCESS"}
+@list.route('/cityList', methods=['POST', 'GET'])
+def city_list():
+    try:
+        username = request.json.get("username")
+        cityList = dbUser["user"].find_one({"username": username})
+        cityList = cityList["city"]
+        content = {"code": 0, "msg": "SUCCESS", "data": [{"name": city, "list": cityList} for city in cityList]}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
     return json.dumps(content)
 
 
-@list.route('/schoolList', methods=['GET'])
-def school_list():
-    schoolList = School.query.filter()
-    name = request.args.get("name", None)
-    if name not in (None, ""):
-        schoolList = schoolList.filter(School.title.contains(name))
-    start_score = request.args.get("start_score", None)
-    if start_score not in (None, ""):
-        schoolList = schoolList.filter(School.score >= float(start_score))
-    end_score = request.args.get("end_score", None)
-    if end_score not in (None, ""):
-        schoolList = schoolList.filter(School.score <= float(end_score))
-    content = {"code": 0, "msg": "SUCCESS", "data": [school.instance_to_json() for school in schoolList.all()]}
+@list.route('/addCity', methods=['POST'])
+def add_city():
+    try:
+        city = request.json.get('city')
+        username = request.json.get('username')
+        dbUser["user"].update_one({"username": username}, {"$push": {"city": city}})
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
     return json.dumps(content)
 
 
-@list.route('/addSchool', methods=['POST'])
-def add_school():
-    title = request.json.get('title')
-    number = request.json.get('number')
-    desc = request.json.get('desc')
-    score = request.json.get('score')
-    end_time = request.json.get('end_time')
-    end_time = datetime.strptime(end_time, '%Y-%m-%d')
-    now = time.strftime('%y-%m-%d %H:%M:%S', time.localtime(time.time()))
-    school = School(None, number, title, desc, score, now, end_time)
-    db.session.add(school)
-    db.session.commit()
-    content = {"code": 0, "msg": "SUCCESS"}
+@list.route('/removeCity', methods=['POST'])
+def remove_city():
+    try:
+        city = request.json.get('name')
+        username = request.json.get('username')
+        city_list = request.json.get('list')
+        print(request.json)
+        city_list.remove(city)
+        rtn = dbUser["user"].update_one({"username": username}, {"$set": {"city": city_list}})
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
+    return json.dumps(content)
+
+
+@list.route('/cityWeather', methods=['POST'])
+def city_weather():
+    try:
+        city = request.json.get('city', 'beijing')
+        _weather = dbUser["weather"].find_one({"city": city})
+        if _weather:
+            _weather.pop("_id")
+            content = {"code": 0, "msg": "SUCCESS", "data": _weather}
+        else:
+            weather = get_weather_data(city)
+            save_weather_data(weather)
+            content = {"code": 0, "msg": "SUCCESS", "data": weather}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
     return json.dumps(content)

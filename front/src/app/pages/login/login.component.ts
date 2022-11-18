@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       password: [null, [Validators.required]]
     });
   }
- 
+
 
   changeLang(langType: string) {
     this.translateService.use(langType);
@@ -60,8 +60,9 @@ export class LoginComponent implements OnInit {
     let loginModel = Object.assign(this.validateForm.value, {})
     this.apiService.post('login', loginModel).subscribe((res: any) => {
       const {code,msg,data} = res;
-      if (code === 0 && data) { 
+      if (code === 0 && data) {
         this.$message.success('登录成功')
+        this.storageService.setItem('username', loginModel.username);
         this.storageService.setItem('token', data?.token);
         this.storageService.setItem('role',data?.role)
         setTimeout(() => {

@@ -5,15 +5,20 @@
 # @Software: PyCharm
 from bs4 import BeautifulSoup as bs
 import requests
+from config import client
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36"
 # US english
 LANGUAGE = "en-US,en;q=0.5"
-def get_weather_data(url):
+
+
+def get_weather_data(cityname):
     session = requests.Session()
     session.headers['User-Agent'] = USER_AGENT
     session.headers['Accept-Language'] = LANGUAGE
     session.headers['Content-Language'] = LANGUAGE
-    html = session.get(url)
+    url = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
+    html = session.get(url+cityname)
     # create a new soup
     soup = bs(html.text, "html.parser")
     # store all results on this dictionary
@@ -48,17 +53,17 @@ def get_weather_data(url):
         next_days.append({"name": day_name, "weather": weather, "max_temp": max_temp, "min_temp": min_temp})
     # append to result
     result['next_days'] = next_days
+    result['city'] = cityname
     return result
+
+
+def save_weather_data(data):
+    db = client["crawler"]
+    collection = db["weather"]
+    data.pop("_id")
+    collection.insert_one(data)
+
+
 if __name__ == "__main__":
-    URL = "https://www.google.com/search?lr=lang_en&ie=UTF-8&q=weather"
-    import argparse
-    parser = argparse.ArgumentParser(description="Quick Script for Extracting Weather data using Google Weather")
-    parser.add_argument("region", nargs="?", help="""Region to get weather for, must be available region.
-                                        Default is your current location determined by your IP Address""", default="")
-    # parse arguments
-    args = parser.parse_args()
-    region = args.region
-    URL += region
-    # get data
-    data = get_weather_data(URL)
-    print(data)
+    data = get_weather_data("London")
+    save_weather_data(data)

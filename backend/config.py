@@ -11,3 +11,7 @@ DATABASE = 'user_q'
 SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8mb4".format(DIALECT,DRIVER,USERNAME,PASSWORD,HOST,PORT,DATABASE)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
+
+import pymongo
+host = "127.0.0.1"
+client = pymongo.MongoClient(host, 27017)

@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { ApiService } from 'src/app/services/api.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 import { StorageService } from 'src/app/services/storage.service';
-
+import {ActivatedRoute} from '@angular/router'
 @Component({
   selector: 'app-my-list',
   templateUrl: './my-list.component.html',
@@ -15,61 +15,45 @@ import { StorageService } from 'src/app/services/storage.service';
 export class MyListComponent implements OnInit {
   _extras: any;
   loading: boolean;
-  schoolList = [];
-
+  weatherList = [];
+  cityName: string;
   constructor(
     private router: Router,
     private apiService: ApiService,
     private storageService: StorageService,
     private $message: NzMessageService,
     private nzModalService:NzModalService,
-    private navigateService: NavigateService
+    private navigateService: NavigateService,
+    private route:ActivatedRoute
   ) {
     const extras = this.router.getCurrentNavigation().extras as any;
     if (extras) {
       this._extras = extras;
     };
     console.log(extras);
-    
+    this.cityName = extras.name;
    }
 
   ngOnInit(): void {
-    
-    
   }
   onQueryParamsChange(params: { pageSize: number; pageIndex: number; }) {
     const { pageSize, pageIndex } = params;
     let start = (pageIndex - 1) * pageSize;
     let count = pageSize;
-    this.loadSchool()
+    this.loadWeather()
   }
-  loadSchool(url?) {
+  loadWeather() {
     this.loading = true;
-    url = url ? url : `/intentionList`
-    this.apiService.get(url, { headers: new HttpHeaders().set('token', this.storageService.getItem('token')) }).subscribe((res: any) => {
+    this.apiService.post("cityWeather", {city:this.cityName ? this.cityName:"beijing"}).subscribe((res: any) => {
       this.loading = false;
       console.log(res);
       const { code, data } = res;
-      if (data && Array.isArray(res.data)) {
-        this.schoolList = res.data;
-       
+      if (code==0) {
+        this.weatherList = res.data.next_days;
       } else {
-        this.schoolList = []
-       
+        this.weatherList = []
       }
     }, () => { this.loading = false; });
-  }
-  toDelete(data){
-    this.apiService.post('delIntention', { id: data.id }).subscribe((res: any) => {
-      console.log(res);
-      const { code, msg } = res;
-      if (code === 0) {
-        this.$message.success('删除成功！')
-        this.loadSchool()
-      } else {
-        this.$message.error(msg)
-      }
-    });
   }
   backTo(){
     this.navigateService.navigate('layout/comments');

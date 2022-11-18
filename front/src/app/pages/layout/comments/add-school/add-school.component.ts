@@ -26,19 +26,15 @@ export class AddSchoolComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
-      title: ['', [Validators.required]],
-      number: ['', [Validators.required]],
-      desc: [''],
-      score: ['', [Validators.required]],
-      end_time: [''],
-      
+      city: ['', [Validators.required]],
     });
   }
   submitUser(){
     this.userForm.markAllAsTouched();
     if (!this.userForm.valid) {return}
     let params = this.userForm.value;
-    this.apiService.post( 'addSchool', params ).subscribe((res: any) => {
+    params['username'] = this.storageService.getItem('username');
+    this.apiService.post( 'addCity', params ).subscribe((res: any) => {
       console.log(res);
       const { code, msg } = res;
       if (code === 0) {
