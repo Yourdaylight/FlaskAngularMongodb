@@ -16,7 +16,6 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { DebounceClickDirective } from './debounce-click.directive';
 
-
 @NgModule({
   declarations: [DebounceClickDirective], //sharedModule里面的declarations，也需要export出去
   imports: [
@@ -41,7 +40,7 @@ import { DebounceClickDirective } from './debounce-click.directive';
     NzSelectModule,
     FormsModule,
     NzFormModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     NzGridModule,
     NzRadioModule,
     NzSpinModule,

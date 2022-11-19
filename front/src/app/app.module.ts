@@ -20,7 +20,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import{NzMessageService}from'ng-zorro-antd/message';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { SharedModule } from './shared/shared.module';
-
+import { NzListModule } from 'ng-zorro-antd/list';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
@@ -38,6 +38,7 @@ registerLocaleData(zh,en);
     BrowserAnimationsModule,
     IconsProviderModule,
     NzLayoutModule,
+    NzListModule,
     NzMenuModule,
     CommonModule,
     NzIconModule,

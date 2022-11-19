@@ -37,13 +37,19 @@
           (nzQueryParams)="onQueryParamsChange($event)">
   <thead>
   <tr>
-    <th>{{'City Name' | translate}}</th>
-    <th>{{'OPERATE' |translate}}</th>
+    <th>City Name</th>
+    <th>Region</th>
+    <th>Weather Now</th>
+    <th>Temperature Now</th>
+    <th>OPERATE</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let data of siteList">
     <td>{{data.name}}</td>
+    <td><i nz-icon nzType="global" nzTheme="outline"></i> {{data.region}}</td>
+    <td><img [src]="data.weather_img" alt="">{{data.weather_now}}</td>
+    <td>{{data.temp_now}}℃</td>
     <td class="">
       <a (click)='toDetail(data)'>
         <i nz-icon nzType="area-chart" nzTheme="outline"></i>

@@ -9,7 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
-
+import { NzListModule } from 'ng-zorro-antd/list';
 import { IconsProviderModule } from 'src/app/icons-provider.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -25,6 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule,
+    NzListModule,
     CommonModule,
     NzBreadCrumbModule,
     SharedModule,

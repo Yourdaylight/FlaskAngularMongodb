@@ -27,6 +27,7 @@ def get_weather_data(cityname):
     result['region'] = soup.find("div", attrs={"id": "wob_loc"}).text
     # extract temperature now
     result['temp_now'] = soup.find("span", attrs={"id": "wob_tm"}).text
+    result['weather_img'] = soup.find("img", attrs={"id": "wob_tci"}).get("src")
     # get the day and hour now
     result['dayhour'] = soup.find("div", attrs={"id": "wob_dts"}).text
     # get the actual weather
@@ -51,7 +52,7 @@ def get_weather_data(cityname):
         max_temp = temp[0].text
         # minimum temparature in Celsius, use temp[3].text if you want fahrenheit
         min_temp = temp[2].text
-        next_days.append({"name": day_name, "weather": weather, "max_temp": max_temp, "min_temp": min_temp})
+        next_days.append({"name": day_name, "weather": weather, "max_temp": max_temp, "min_temp": min_temp, "weather_img": weather_img})
     # append to result
     result['next_days'] = next_days
     result['city'] = cityname
