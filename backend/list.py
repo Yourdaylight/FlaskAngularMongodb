@@ -23,6 +23,7 @@ def music_list():
         _music = dbMusic.find()
         music_list = []
         for i in _music:
+            i.pop('privilege')
             music_list.append(i)
         content = {"code": 0, "msg": "SUCCESS", "data": music_list}
     except Exception as e:
@@ -31,48 +32,55 @@ def music_list():
         content = {"code": 1, "msg": str(e)}
     return JSONEncoder().encode(content)
 
-# @list.route('/addCity', methods=['POST'])
-# def add_city():
-#     try:
-#         city = request.json.get('city')
-#         username = request.json.get('username')
-#         dbUser["user"].update_one({"username": username}, {"$push": {"city": city}})
-#         content = {"code": 0, "msg": "SUCCESS"}
-#     except Exception as e:
-#         content = {"code": 1, "msg": str(e)}
-#     return json.dumps(content)
-#
-#
-# @list.route('/removeCity', methods=['POST'])
-# def remove_city():
-#     try:
-#         city = request.json.get('name')
-#         username = request.json.get('username')
-#         city_list = request.json.get('list')
-#         print(request.json)
-#         city_list.remove(city)
-#         dbUser["weather"].delete_one({"city": city})
-#         rtn = dbUser["user"].update_one({"username": username}, {"$set": {"city": city_list}})
-#         content = {"code": 0, "msg": "SUCCESS"}
-#     except Exception as e:
-#         content = {"code": 1, "msg": str(e)}
-#     return json.dumps(content)
+
+@_list.route('/collect', methods=['POST', 'GET'])
+def collect():
+    try:
+        username = request.json.get("username")
+        music_name = request.json.get("name")
+        dbUser = client["crawler"]["user"]
+        dbUser.update_one({"username": username}, {"$addToSet": {"collect": music_name}})
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        content = {"code": 1, "msg": str(e)}
+    return JSONEncoder().encode(content)
 
 
-# @list.route('/cityWeather', methods=['POST'])
-# def city_weather():
-#     try:
-#         city = request.json.get('city', 'beijing')
-#         _weather = dbUser["weather"].find_one({"city": city})
-#         if _weather:
-#             _weather.pop("_id")
-#             content = {"code": 0, "msg": "SUCCESS", "data": _weather}
-#         else:
-#             weather = get_weather_data(city)
-#             print(weather)
-#             content = {"code": 0, "msg": "SUCCESS", "data": weather}
-#             save_weather_data(weather)
-#             weather.pop("_id", None)
-#     except Exception as e:
-#         content = {"code": 1, "msg": str(e)}
-#     return json.dumps(content)
+@_list.route('/collectList', methods=['POST', 'GET'])
+def collect_list():
+    try:
+        username = request.json.get("username")
+        dbUser = client["crawler"]["user"]
+        _user = dbUser.find_one({"username": username})
+        collect_list = _user["collect"]
+        res = []
+        for music in collect_list:
+            dbMusic = client["crawler"]["music"]
+            _music = dbMusic.find_one({"name": music})
+            if _music:
+                _music.pop('privilege')
+                res.append(_music)
+            res.append(_music)
+        content = {"code": 0, "msg": "SUCCESS", "data": res}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        content = {"code": 1, "msg": str(e)}
+    return JSONEncoder().encode(content)
+
+
+@_list.route('/deleteCollect', methods=['POST', 'GET'])
+def delete_collect():
+    try:
+        username = request.json.get("username")
+        music_name = request.json.get("name")
+        dbUser = client["crawler"]["user"]
+        dbUser.update_one({"username": username}, {"$pull": {"collect": music_name}})
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        content = {"code": 1, "msg": str(e)}
+    return JSONEncoder().encode(content)

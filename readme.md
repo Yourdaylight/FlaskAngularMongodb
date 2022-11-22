@@ -137,66 +137,6 @@ https://music.163.com/#/discover/toplist?id=60198
                 }
             ],
             "alias": [],
-            "privilege": {
-                "flag": 257,
-                "dlLevel": "none",
-                "subp": 0,
-                "fl": 0,
-                "fee": 4,
-                "dl": 0,
-                "plLevel": "none",
-                "paidBigBang": false,
-                "maxBrLevel": "lossless",
-                "maxbr": 999000,
-                "id": 1990192694,
-                "sp": 0,
-                "payed": 0,
-                "rscl": null,
-                "st": 0,
-                "realPayed": 0,
-                "chargeInfoList": [
-                    {
-                        "rate": 128000,
-                        "chargeUrl": null,
-                        "chargeMessage": null,
-                        "chargeType": 3
-                    },
-                    {
-                        "rate": 192000,
-                        "chargeUrl": null,
-                        "chargeMessage": null,
-                        "chargeType": 3
-                    },
-                    {
-                        "rate": 320000,
-                        "chargeUrl": null,
-                        "chargeMessage": null,
-                        "chargeType": 3
-                    },
-                    {
-                        "rate": 999000,
-                        "chargeUrl": null,
-                        "chargeMessage": null,
-                        "chargeType": 3
-                    }
-                ],
-                "freeTrialPrivilege": {
-                    "resConsumable": false,
-                    "userConsumable": false,
-                    "listenType": null
-                },
-                "downloadMaxbr": 0,
-                "downloadMaxBrLevel": "none",
-                "cp": 1,
-                "preSell": false,
-                "playMaxBrLevel": "none",
-                "cs": false,
-                "toast": false,
-                "playMaxbr": 0,
-                "pc": null,
-                "flLevel": "none",
-                "pl": 0
-            },
             "djid": 0,
             "fee": 4,
             "name": "Anti-Hero",
@@ -204,3 +144,44 @@ https://music.163.com/#/discover/toplist?id=60198
             "lastRank": 0
         }
 ```
+
+### 3.2 获取收藏歌单数据
+post /collectList
+#### 参数
+
+| 参数名  | 类型     | 说明                    |
+|:-----|:-------|:----------------------|
+| username | string | 用户名                   |
+
+#### 返回值
+同上
+
+### 3.3 添加收藏歌单数据
+post /collect
+#### 参数
+| 参数名  | 类型     | 说明   |
+|:-----|:-------|:-----|
+| name | string | 歌曲名称 |
+| username | string | 用户名  |
+
+#### 返回值
+| 参数名       | 类型 | 说明          |
+|:----------| :--- |:------------|
+|  code | int | 状态码,0成功1失败. |
+|  msg | string | 提示信息        |
+
+### 3.4 删除收藏歌单数据
+post /deleteCollect
+#### 参数
+| 参数名  | 类型     | 说明   |
+|:-----|:-------|:-----|
+| name | string | 歌曲名称 |
+| username | string | 用户名  |
+
+#### 返回值
+| 参数名       | 类型 | 说明          |
+|:----------| :--- |:------------|
+|  code | int | 状态码,0成功1失败. |
+|  msg | string | 提示信息        |
+
+
