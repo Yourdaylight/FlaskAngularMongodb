@@ -19,7 +19,7 @@ export class MyListComponent implements OnInit {
   _extras: any;
   loading: boolean;
   stockList = [];
-  dataList=[];
+  dataList=new Array(6753);
   cityName: string;
   pageSize = 10;
   pageIndex = 1;
@@ -51,10 +51,10 @@ export class MyListComponent implements OnInit {
     const {pageSize, pageIndex} = params;
     let start = (pageIndex - 1) * pageSize;
     let count = pageSize;
-    this.loadWeather()
+    this.loadStock()
   }
 
-  loadWeather() {
+  loadStock() {
     this.loading = true;
     let params = {
       page: this.pageIndex,
@@ -75,14 +75,29 @@ export class MyListComponent implements OnInit {
       this.loading = false;
     });
   }
+  collectStock(code) {
+    let params = {
+      username: this.storageService.getItem('username'),
+      stock: code,
+    }
+    this.apiService.post("addStock", params).subscribe((res: any) => {
+      if (res.code == 0) {
+        this.$message.success('Success!');
+        this.loadStock()
+      } else {
+        this.$message.error(res.msg);
+      }
+    }, () => {
+    });
+  }
 
 changePageIndex(pageIndex ) {
     this.pageIndex = pageIndex;
-    this.loadWeather()
+    this.loadStock()
   }
    changePageSize(pageSize) {
     this.pageSize = pageSize;
-     this.loadWeather()
+     this.loadStock()
   }
 
   backTo() {

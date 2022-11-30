@@ -46,21 +46,6 @@ def add_city():
     return json.dumps(content)
 
 
-@list.route('/removeCity', methods=['POST'])
-def remove_city():
-    try:
-        city = request.json.get('name')
-        username = request.json.get('username')
-        city_list = request.json.get('list')
-        print(request.json)
-        city_list.remove(city)
-        dbUser["weather"].delete_one({"city": city})
-        rtn = dbUser["user"].update_one({"username": username}, {"$set": {"city": city_list}})
-        content = {"code": 0, "msg": "SUCCESS"}
-    except Exception as e:
-        content = {"code": 1, "msg": str(e)}
-    return json.dumps(content)
-
 
 @list.route('/cityWeather', methods=['POST'])
 def city_weather():
@@ -92,7 +77,8 @@ def stock_list():
             stock_data = dbStock["stock"].find({"code": {"$in": stock_list}})
             for stock in stock_data:
                 stock.pop("_id")
-                res.append(stock)
+                if stock not in res and stock["catagory"] == "上证A股":
+                    res.append(stock)
         content = {"code": 0, "msg": "SUCCESS", "data": res,"total":len(res)}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}
@@ -117,10 +103,10 @@ def add_stock():
 @list.route('/removeStock', methods=['POST'])
 def remove_stock():
     try:
-        stock = request.json.get('stock')
+        stock = request.json.get('code')
         username = request.json.get('username')
-        stock_list = request.json.get('list')
-        print(request.json)
+        stock_list = dbUser["user"].find_one({"username": username})["stock"]
+
         stock_list.remove(stock)
         rtn = dbUser["user"].update_one({"username": username}, {"$set": {"stock": stock_list}})
         content = {"code": 0, "msg": "SUCCESS"}

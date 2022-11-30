@@ -37,20 +37,16 @@
           (nzQueryParams)="onQueryParamsChange($event)">
   <thead>
   <tr>
-    <th>Stock ID</th>
+    <th>Stock Code</th>
     <th>Stock Name</th>
     <th>OPERATE</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let data of siteList">
-    <td>{{data.name}}</td>
-    <td><i nz-icon nzType="global" nzTheme="outline"></i> {{data.region}}</td>
+    <td> <i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}</td>
+    <td><i nz-icon nzType="sliders" nzTheme="outline"></i>{{data.name}}</td>
     <td class="">
-      <a (click)='toDetail(data)'>
-        <i nz-icon nzType="area-chart" nzTheme="outline"></i>
-        {{'prediction' | translate}}
-      </a>
       <a (click)='toDelete(data)' style="margin-left: 15px">
         <i nz-icon nzType="delete" nzTheme="outline"></i>
         {{'delete' | translate}}

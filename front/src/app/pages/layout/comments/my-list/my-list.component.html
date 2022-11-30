@@ -1,11 +1,11 @@
 <div class="toolbar">
-  <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{cityName}} Weather in the next week</div>
+  <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>All the stock we have</div>
 </div>
 <nz-table nzShowSizeChanger
           nzShowPagination
           nzBordered
           [nzScroll]="{ x: '100%' }"
-          [nzData]="stockList"
+          [nzData]="dataList"
           [nzTotal]="total"
           [(nzPageIndex)]="pageIndex"
           [(nzPageSize)]="pageSize"
@@ -23,13 +23,13 @@
   <tbody>
   <tr *ngFor="let data of stockList">
     <td>
-      <i nz-icon nzType="calendar" nzTheme="outline"></i>{{data.code}}
+      <i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}
     </td>
     <td>
-      <span>{{data.name}}</span>
+      <span><i nz-icon nzType="sliders" nzTheme="outline"></i>{{data.name}}</span>
     </td>
     <td>
-      <i nz-icon [nzType]="'heart'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#eba92f'"></i>{{data.min_temp}}
+      <i nz-icon [nzType]="'heart'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#eba92f'" (click)="collectStock(data.code)"></i>
     </td>
   </tr>
   </tbody>

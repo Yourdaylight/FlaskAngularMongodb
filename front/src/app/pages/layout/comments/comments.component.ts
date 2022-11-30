@@ -96,7 +96,7 @@ export class CommentsComponent implements OnInit {
   }
   toDelete(item) {
     item["username"] = this.storageService.getItem('username');
-    this.apiService.post('removeCity', item).subscribe((res: any) => {
+    this.apiService.post('removeStock', item).subscribe((res: any) => {
       console.log(res);
       const { code, msg } = res;
       if (code === 0) {
