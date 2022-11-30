@@ -8,12 +8,12 @@ import requests
 def _get_all_stocks():
     base_url = "http://54.push2.eastmoney.com/api/qt/clist/get?pn={page_num}&pz={page_size}&po=1&np=1&fltt=2&invt=2&fid=f3&fs={time_id}&fields=f12,f14"
     stocks = [
-        {
-            "category": "A股",
-            "tag": "沪深A股",
-            "type": "股票",
-            "time_id": "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
-        },
+        # {
+        #     "category": "A股",
+        #     "tag": "沪深A股",
+        #     "type": "股票",
+        #     "time_id": "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
+        # },
         {
             "category": "A股",
             "tag": "上证A股",
@@ -65,19 +65,22 @@ def _get_stocks(base_url, stock):
 # 保存股票信息至本地
 def save_stocks():
     all_stocks = _get_all_stocks()
-    with open("stock.csv", 'a+') as f:
+    with open("stock.csv", 'w',encoding="utf-8") as f:
         f.write("code,name,market,catagory,type\n")
         for stock in all_stocks:
-            f.write("{stock[id]},{stock[name]},{stock[category]},{stock[tag]},{stock[type]}\n".format(
-                stock=stock
-            ))
+            try:
+                f.write("{stock[id]},{stock[name]},{stock[category]},{stock[tag]},{stock[type]}\n".format(stock=stock))
+            except Exception as e:
+                print("Stock Error:"+str(e))
+                print(stock)
+
 
     print("全部股票信息写入完成！")
 
 def save_db():
     import csv
     from config import client
-    with open("stock.csv", 'r') as f:
+    with open("stock.csv", 'r',encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             client["stock"]["stock"].insert_one(row)
