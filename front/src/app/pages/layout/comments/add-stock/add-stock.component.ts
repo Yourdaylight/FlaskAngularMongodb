@@ -8,11 +8,11 @@ import { NavigateService } from 'src/app/services/navigate.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
-  selector: 'app-add-school',
-  templateUrl: './add-school.component.html',
-  styleUrls: ['./add-school.component.less']
+  selector: 'app-add-stock',
+  templateUrl: './add-stock.component.html',
+  styleUrls: ['./add-stock.component.less']
 })
-export class AddSchoolComponent implements OnInit {
+export class AddStockComponent implements OnInit {
   userForm:FormGroup ;
   constructor(
     private fb: FormBuilder,
@@ -26,7 +26,7 @@ export class AddSchoolComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
-      city: ['', [Validators.required]],
+      stock: ['', [Validators.required]],
     });
   }
   submitUser(){
@@ -34,11 +34,11 @@ export class AddSchoolComponent implements OnInit {
     if (!this.userForm.valid) {return}
     let params = this.userForm.value;
     params['username'] = this.storageService.getItem('username');
-    this.apiService.post( 'addCity', params ).subscribe((res: any) => {
+    this.apiService.post( 'addStock', params ).subscribe((res: any) => {
       console.log(res);
       const { code, msg } = res;
       if (code === 0) {
-        this.$message.success('添加成功！')
+        this.$message.success('Add Succeed！')
         this.modalRef.destroy('success')
       } else {
        this.$message.error(msg)

@@ -18,9 +18,12 @@ import {NzCommentModule} from 'ng-zorro-antd/comment';
 export class MyListComponent implements OnInit {
   _extras: any;
   loading: boolean;
-  weatherList = [];
+  stockList = [];
+  dataList=[];
   cityName: string;
-
+  pageSize = 10;
+  pageIndex = 1;
+  total = 6753;
 
   constructor(
     private router: Router,
@@ -53,22 +56,34 @@ export class MyListComponent implements OnInit {
 
   loadWeather() {
     this.loading = true;
-    this.apiService.post("cityWeather", {city: this.cityName ? this.cityName : "beijing"}).subscribe((res: any) => {
+    let params = {
+      page: this.pageIndex,
+      limit: this.pageSize
+    }
+    this.apiService.post("getAllStock", params).subscribe((res: any) => {
       this.loading = false;
       console.log(res);
       const {code, data} = res;
       if (code == 0) {
-        this.weatherList = res.data.next_days;
+        this.stockList = res.data.data;
+        this.total = res.data.total;
       } else {
-        this.weatherList = []
+        this.stockList = []
+        this.total = 0;
       }
     }, () => {
       this.loading = false;
     });
   }
 
-
-
+changePageIndex(pageIndex ) {
+    this.pageIndex = pageIndex;
+    this.loadWeather()
+  }
+   changePageSize(pageSize) {
+    this.pageSize = pageSize;
+     this.loadWeather()
+  }
 
   backTo() {
     this.navigateService.navigate('layout/comments');

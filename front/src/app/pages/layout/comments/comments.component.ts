@@ -6,7 +6,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { ApiService } from 'src/app/services/api.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 import { StorageService } from 'src/app/services/storage.service';
-import { AddSchoolComponent } from './add-school/add-school.component';
+import { AddStockComponent } from './add-stock/add-stock.component';
 
 @Component({
   selector: 'app-comments',
@@ -17,7 +17,7 @@ export class CommentsComponent implements OnInit {
   siteList = [];
   pageSize = 10;
   pageIndex = 1;
-  total = 1;
+  total = 0;
   loading: boolean;
   region: string = '';
   temp_now: number;
@@ -42,9 +42,6 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // /instructor/list   get   获取辅导员列表。请求头带token
-    // /comment/list  get 获取评论列表。（如果是学生要带上辅导员id。 ?id=   辅导员的话就不用带） 请求头要带token
-
   }
   onQueryParamsChange(params: { pageSize: number; pageIndex: number; }) {
     const { pageSize, pageIndex } = params;
@@ -52,18 +49,18 @@ export class CommentsComponent implements OnInit {
     let count = pageSize;
     this.pageSize = pageSize;
     this.pageIndex = pageIndex;
-    this.loadSchool()
+    this.getUserStockList()
   }
-  loadSchool(url?) {
+  getUserStockList(url?) {
     this.loading = true;
-    url = url ? url : `cityList`
+    url = url ? url : `userStockList`
     let params = {
       username: this.storageService.getItem('username'),
     }
     this.apiService.post(url, params).subscribe((res: any) => {
       this.loading = false;
       const { code, data } = res;
-      if (data && Array.isArray(res.data)) {
+      if (code==0 && data && Array.isArray(res.data)) {
         this.siteList = res.data;
         this.total = res.total;
       } else {
@@ -75,25 +72,25 @@ export class CommentsComponent implements OnInit {
 
   searchUser() {
     let url = `schoolList?name=${this.name}&start_score=${this.start_score || ''}&end_score=${this.end_score || ''}`
-    this.loadSchool(url);
+    this.getUserStockList(url);
   }
   clearField() {
     this.name = '';
     this.start_score = null;
     this.end_score = null;
-    this.loadSchool();
+    this.getUserStockList();
   }
   addUser() {
     let title = 'Add a city';
     const modal = this.nzModalService.create({
       nzTitle: this.translateService.instant(title),
-      nzContent: AddSchoolComponent,
+      nzContent: AddStockComponent,
       nzFooter: null,
       nzWidth: '60%',
     })
     modal.afterClose.subscribe(res => {
       if (res) {
-        this.loadSchool();
+        this.getUserStockList();
       }
     })
   }
@@ -104,7 +101,7 @@ export class CommentsComponent implements OnInit {
       const { code, msg } = res;
       if (code === 0) {
         this.$message.success('Succee delete！')
-        this.loadSchool()
+        this.getUserStockList()
       } else {
         this.$message.error(msg)
       }
@@ -119,7 +116,7 @@ export class CommentsComponent implements OnInit {
       const { code, msg } = res;
       if (code === 0) {
         this.$message.success('添加意向成功！')
-        this.loadSchool()
+        this.getUserStockList()
       } else {
         this.$message.error(msg)
       }

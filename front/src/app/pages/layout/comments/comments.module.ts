@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CommentsComponent } from './comments.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { AddSchoolComponent } from './add-school/add-school.component';
+import { AddStockComponent } from './add-stock/add-stock.component';
 import { NzListModule } from 'ng-zorro-antd/list';
 
 
 @NgModule({
-  declarations: [CommentsComponent, AddSchoolComponent],
+  declarations: [CommentsComponent, AddStockComponent],
   imports: [
     CommonModule,
     SharedModule,

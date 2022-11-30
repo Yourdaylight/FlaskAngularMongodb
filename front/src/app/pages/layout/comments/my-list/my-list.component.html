@@ -1,40 +1,41 @@
 <div class="toolbar">
   <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{cityName}} Weather in the next week</div>
-  <div class="toolbar-btns">
-    <!--        <button nz-button nzType="default" (click)="toDelete(1)"><i nz-icon nzType="plus" nzTheme="outline"></i>{{'我的意向' | translate}}</button>-->
-  </div>
 </div>
-<nz-table nzShowSizeChanger nzBordered [nzScroll]="{ x: '100%' }" [nzData]="weatherList"
-          [nzFrontPagination]="false" nzPaginationType="small" [nzLoading]="loading"
-          (nzQueryParams)="onQueryParamsChange($event)">
+<nz-table nzShowSizeChanger
+          nzShowPagination
+          nzBordered
+          [nzScroll]="{ x: '100%' }"
+          [nzData]="stockList"
+          [nzTotal]="total"
+          [(nzPageIndex)]="pageIndex"
+          [(nzPageSize)]="pageSize"
+          [nzLoading]="loading"
+          (nzQueryParams)="onQueryParamsChange($event)"
+          (nzPageIndexChange)="changePageIndex($event)"
+          (nzPageSizeChange)="changePageSize($event)">
   <thead>
   <tr>
-    <th nzColumnKey="password" nzWidth="140px">{{'WeekDay' |translate}}</th>
-    <th nzColumnKey="name" nzWidth="80px">{{'Weather' | translate}}</th>
-    <th nzColumnkey="role" nzWidth="120px">{{'Max temperature' |translate}}</th>
-    <th nzWidth="150px">{{'Min temperature' |translate}}</th>
+    <th>{{'Stock Code' |translate}}</th>
+    <th>{{'Stock Name' | translate}}</th>
+    <th>{{'Collect Stock' |translate}}</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of weatherList">
-    <!--            <td class="overflow" [title]="data.number">{{ data.uid }}</td>-->
+  <tr *ngFor="let data of stockList">
     <td>
-      <i nz-icon nzType="calendar" nzTheme="outline"></i>{{data.name}}
+      <i nz-icon nzType="calendar" nzTheme="outline"></i>{{data.code}}
     </td>
     <td>
-      <span><img [src]="data.weather_img" alt="">{{data.weather}}</span>
+      <span>{{data.name}}</span>
     </td>
-    <td class="overflow">
-      <i nz-icon nzType="rise" nzTheme="outline"></i>{{data.max_temp}}℃
-    </td>
-    <td class="">
-      <i nz-icon nzType="fall" nzTheme="outline"></i>{{data.min_temp}}℃
+    <td>
+      <i nz-icon [nzType]="'heart'" [nzTheme]="'twotone'" [nzTwotoneColor]="'#eba92f'"></i>{{data.min_temp}}
     </td>
   </tr>
   </tbody>
 </nz-table>
 <div style="text-align: right;">
-  <button nz-button class="theme-bgcolor" (click)="backTo()">{{'Back to city list' |
+  <button nz-button class="theme-bgcolor" (click)="backTo()">{{'Back to my favorite stock' |
     translate}}</button>
 </div>
 

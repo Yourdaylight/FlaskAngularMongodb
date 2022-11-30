@@ -1,7 +1,7 @@
 <div class="login-wrap">
 
     <div class="login-card">
-        <h3>{{'注册' | translate}}</h3>
+        <h3>{{'Register' | translate}}</h3>
         <form nz-form [formGroup]="regForm" (ngSubmit)="submitForm()">
             <nz-form-item>
                 <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_USERNAME')">
@@ -26,7 +26,7 @@
                     </nz-form-control>
             </nz-form-item>
             <div class="text-center">
-                <a (click)="toLogin()">{{'登录' |translate}}</a>
+                <a (click)="toLogin()">{{'Login' |translate}}</a>
             </div>
         </form>
     </div>
