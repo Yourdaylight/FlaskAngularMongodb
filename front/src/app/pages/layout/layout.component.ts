@@ -33,7 +33,7 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userName = '';
+    this.userName = this.storage.getItem('username');
   }
   translateFn = (key: string) => {
     if (key) {

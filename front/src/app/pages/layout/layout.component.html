@@ -24,14 +24,7 @@
         <span class="header-trigger">
           <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="toggleCollapsed($event)"></i>
         </span>
-        <a class="lang">
-          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType =='en' " (click)="langChange('zh-cn')"
-                  title="Chinese">中
-          </button>
-          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType == 'zh-cn' " (click)="langChange('en')"
-                  [title]="'EN' | translate">EN
-          </button>
-        </a>
+
         <a class="username">
           <button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="user" nzTheme="outline"></i></button>
           {{userName}}

@@ -12,21 +12,37 @@ dbUser = client["crawler"]
 def city_list():
     try:
         username = request.json.get("username")
+        region = request.json.get("region")
+        temp_now = request.json.get("temp_now")
+
         cityList = dbUser["user"].find_one({"username": username})
         cityList = cityList["city"]
         res = []
+        params = {}
+
+        if temp_now:
+            params["temp_now"] = str(temp_now)
+        if region:
+            params["region"] = {"$regex": region}
+        if region in cityList:
+            cityList = [region]
+            params.pop("region")
         for city in cityList:
-            detail = dbUser["weather"].find_one({"city": city})
-            if detail is None:
-                detail = get_weather_data(city)
-                save_weather_data(detail)
-            if detail:
-                temp = detail
-                temp.pop("_id")
-                temp.pop("next_days")
-                temp["name"] = city
-                temp["list"] = cityList
-                res.append(temp)
+            try:
+                params["city"] = city
+                detail = dbUser["weather"].find_one(params)
+                if detail is None and temp_now is None and region is None:
+                    detail = get_weather_data(city)
+                    save_weather_data(detail)
+                if detail:
+                    temp = detail
+                    temp.pop("_id")
+                    temp.pop("next_days")
+                    temp["name"] = city
+                    temp["list"] = cityList
+                    res.append(temp)
+            except Exception as e:
+                print(e)
         content = {"code": 0, "msg": "SUCCESS", "data": res}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}

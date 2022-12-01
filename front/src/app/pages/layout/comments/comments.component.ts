@@ -52,13 +52,15 @@ export class CommentsComponent implements OnInit {
     let count = pageSize;
     this.pageSize = pageSize;
     this.pageIndex = pageIndex;
-    this.loadSchool()
+    this.loadWeather()
   }
-  loadSchool(url?) {
+  loadWeather(url?) {
     this.loading = true;
-    url = url ? url : `cityList`
+    url = "cityList"
     let params = {
       username: this.storageService.getItem('username'),
+      region: this.region,
+      temp_now: this.temp_now,
     }
     this.apiService.post(url, params).subscribe((res: any) => {
       this.loading = false;
@@ -73,15 +75,12 @@ export class CommentsComponent implements OnInit {
     }, () => { this.loading = false; });
   }
 
-  searchUser() {
-    let url = `schoolList?name=${this.name}&start_score=${this.start_score || ''}&end_score=${this.end_score || ''}`
-    this.loadSchool(url);
-  }
+
   clearField() {
     this.name = '';
     this.start_score = null;
     this.end_score = null;
-    this.loadSchool();
+    this.loadWeather();
   }
   addUser() {
     let title = 'Add a city';
@@ -93,7 +92,7 @@ export class CommentsComponent implements OnInit {
     })
     modal.afterClose.subscribe(res => {
       if (res) {
-        this.loadSchool();
+        this.loadWeather();
       }
     })
   }
@@ -104,7 +103,7 @@ export class CommentsComponent implements OnInit {
       const { code, msg } = res;
       if (code === 0) {
         this.$message.success('Succee delete！')
-        this.loadSchool()
+        this.loadWeather()
       } else {
         this.$message.error(msg)
       }
@@ -119,7 +118,7 @@ export class CommentsComponent implements OnInit {
       const { code, msg } = res;
       if (code === 0) {
         this.$message.success('添加意向成功！')
-        this.loadSchool()
+        this.loadWeather()
       } else {
         this.$message.error(msg)
       }

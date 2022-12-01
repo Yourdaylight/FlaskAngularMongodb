@@ -2,25 +2,19 @@
   <nz-form-item>
     <nz-form-label>{{'region' | translate}}</nz-form-label>
     <nz-form-control>
-      <input name="name" [(ngModel)]="region" nz-input type="text"/>
+      <input name="region" [(ngModel)]="region" nz-input type="text"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label>{{'Temperature now' | translate}}</nz-form-label>
+    <nz-form-label>Temperature now</nz-form-label>
     <nz-form-control>
-      <input name="start_score" [(ngModel)]="temp_now" nz-input type="number"/>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label>{{'Date' | translate}}</nz-form-label>
-    <nz-form-control>
-      <input name="end_score" [(ngModel)]="dayhour" nz-input type="number"/>
+      <input name="temp_now" [(ngModel)]="temp_now" nz-input type="number"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-control>
-      <button debounceClick (debounceClick)="searchUser()" nz-button nzType="primary" class="mr-8">
-        {{'SEARCH' | translate}}
+      <button debounceClick (debounceClick)="loadWeather()" nz-button nzType="primary" class="mr-8">
+        Search
       </button>
       <button nz-button nzType="primary" (click)="clearField()">{{'CLEAR' | translate}}</button>
     </nz-form-control>
