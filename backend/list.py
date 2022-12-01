@@ -14,10 +14,21 @@ dbStock = client["stock"]
 def stock_list():
     try:
         username = request.json.get("username")
+        search_code = request.json.get("code")
+        search_name = request.json.get("name")
         stock_list = dbUser["user"].find_one({"username": username})
         stock_list = stock_list.get("stock")
         res = []
         stock_ids = []
+        # 拼接查询条件
+        if search_name and search_code:
+            name_code = dbStock["stock"].find_one({"name": search_name}).get("code")
+            stock_list = [name_code, search_code]
+        if search_name and not search_code:
+            name_code = dbStock["stock"].find_one({"name": search_name}).get("code")
+            stock_list = [name_code]
+        if search_code and not search_name:
+            stock_list = [search_code]
         if stock_list:
             # 获取用户收藏的所有股票代码
             stock_codes = dbStock["stock"].find({"code": {"$in": stock_list}})
@@ -52,7 +63,6 @@ def plot_stock():
     try:
         username = request.json.get("username")
         code = request.json.get("code")
-        print(request.json)
         stock_data = dbStock["data"].find({"code": code, "username": username})
         date = []
         close = []

@@ -76,13 +76,15 @@ export class CommentsComponent implements OnInit {
     this.getUserStockList()
   }
 
-  getUserStockList(url?) {
+  getUserStockList(paramDict?) {
     this.loading = true;
-    url = url ? url : `userStockList`
     let params = {
       username: this.storageService.getItem('username'),
     }
-    this.apiService.post(url, params).subscribe((res: any) => {
+    if (paramDict) {
+      params = paramDict;
+    }
+    this.apiService.post('userStockList', params).subscribe((res: any) => {
       this.loading = false;
       const {code, data} = res;
       if (code == 0 && data && Array.isArray(res.data)) {
@@ -124,9 +126,13 @@ export class CommentsComponent implements OnInit {
     });
   }
 
-  searchUser() {
-    let url = `schoolList?name=${this.name}&start_score=${this.start_score || ''}&end_score=${this.end_score || ''}`
-    this.getUserStockList(url);
+  searchStock() {
+    let params = {
+      code: this.code,
+      username: this.storageService.getItem('username'),
+      name: this.name,
+    }
+    this.getUserStockList(params);
   }
 
   clearField() {
