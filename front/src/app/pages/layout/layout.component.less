@@ -4,50 +4,44 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .app-layout {
     height: 100vh;
   }
-  
+
   .menu-sidebar {
     position: relative;
     z-index: 10;
     min-height: 100vh;
-    box-shadow: 2px 0 6px rgba(0,21,41,.35);
+    box-shadow: 2px 0 50px rgba(0, 13, 41, 0.35);
     .router-link{
       display: inline-block;
       min-width: 70%;
     }
   }
-  
+
   .header-trigger {
     font-size: 20px;
     cursor: pointer;
     transition: all .3s,padding 0s;
     color: #fff;
   }
-  
+
   .trigger:hover {
     color: #1890ff;
   }
-  
+
   .sidebar-logo {
     position: relative;
     height: 50px;
     padding-left: 24px;
     overflow: hidden;
     line-height: 50px;
-    background: #012444;
+    background: #440111;
     transition: all .3s;
   }
-  
-  .sidebar-logo img {
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    vertical-align: middle;
-  }
-  
+
+
   .sidebar-logo h1 {
     display: inline-block;
     margin: 0 0 0 20px;
@@ -57,15 +51,11 @@
     font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
     vertical-align: middle;
   }
-  
-  nz-header {
-    padding: 0;
-    width: 100%;
-    z-index: 2;
-  }
-  
+
   .app-header {
+    float: left;
     position: relative;
+    margin-left: 10px;
     height: 50px;
     padding: 0 24px;
     // background: #fff;
@@ -89,14 +79,25 @@
       }
     }
   }
-  
+
+  .logout {
+    margin-left: 50%;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .3s;
+    float: right;
+    &:hover {
+      color: #1890ff;
+    }
+  }
   .inner-content {
     padding:14px 20px;
     background: #fafafa;
     height: 100%;
     overflow: auto;
   }
-  
+
   .ant-layout-header{
     height: 50px;
     line-height: 50px;
@@ -108,5 +109,5 @@
   }
   .inner-content /deep/ .ant-tabs-top > .ant-tabs-nav, .ant-tabs-bottom > .ant-tabs-nav, .ant-tabs-top > div > .ant-tabs-nav, .ant-tabs-bottom > div > .ant-tabs-nav{
     margin:0 ;
- 
+
 }

@@ -19,11 +19,12 @@ export class MyListComponent implements OnInit {
   _extras: any;
   loading: boolean;
   stockList = [];
-  dataList=new Array(6753);
+  dataList = new Array(6753);
   cityName: string;
   pageSize = 10;
   pageIndex = 1;
   total = 6753;
+
 
   constructor(
     private router: Router,
@@ -75,6 +76,7 @@ export class MyListComponent implements OnInit {
       this.loading = false;
     });
   }
+
   collectStock(code) {
     let params = {
       username: this.storageService.getItem('username'),
@@ -91,13 +93,15 @@ export class MyListComponent implements OnInit {
     });
   }
 
-changePageIndex(pageIndex ) {
+
+  changePageIndex(pageIndex) {
     this.pageIndex = pageIndex;
     this.loadStock()
   }
-   changePageSize(pageSize) {
+
+  changePageSize(pageSize) {
     this.pageSize = pageSize;
-     this.loadStock()
+    this.loadStock()
   }
 
   backTo() {

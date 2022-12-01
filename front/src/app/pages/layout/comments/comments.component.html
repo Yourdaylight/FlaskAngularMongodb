@@ -2,19 +2,13 @@
   <nz-form-item>
     <nz-form-label>{{'Stock Code' | translate}}</nz-form-label>
     <nz-form-control>
-      <input name="name" [(ngModel)]="region" nz-input type="text"/>
+      <input name="name" [(ngModel)]="code" nz-input type="text"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label>{{'Stock Name' | translate}}</nz-form-label>
     <nz-form-control>
-      <input name="start_score" [(ngModel)]="temp_now" nz-input type="number"/>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label>{{'Date' | translate}}</nz-form-label>
-    <nz-form-control>
-      <input name="end_score" [(ngModel)]="dayhour" nz-input type="number"/>
+      <input name="start_score" [(ngModel)]="name" nz-input type="number"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -32,6 +26,7 @@
     <button nz-button nzType="default" (click)="addUser()"><i nz-icon nzType="plus" nzTheme="outline"></i>{{'ADD' | translate}}</button>
   </div>
 </div>
+<div echarts [options]="options" *ngIf="graph" class="stock-plot" (chartInit)="onChartInit($event)"></div>
 <nz-table nzShowSizeChanger nzBordered [nzScroll]="{ x: '100%' }" [nzData]="siteList"
           [nzFrontPagination]="false" nzPaginationType="small" [nzLoading]="loading" [nzTotal]="total"
           (nzQueryParams)="onQueryParamsChange($event)">
@@ -50,15 +45,19 @@
   </thead>
   <tbody>
   <tr *ngFor="let data of siteList" [ngClass]="styleMethod(data)">
-    <td style="color: '{{data.recent_data.color}}'"> <i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}</td>
+    <td style="color: '{{data.recent_data.color}}'"><i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}</td>
     <td><i nz-icon nzType="sliders" nzTheme="outline"></i>{{data.name}}</td>
     <td>{{data.recent_data.date}}</td>
     <td>{{data.recent_data.open}}</td>
-        <td>{{data.recent_data.high}}</td>
-        <td>{{data.recent_data.low}}</td>
-        <td>{{data.recent_data.close}}</td>
-        <td>{{data.recent_data.change}}%</td>
+    <td>{{data.recent_data.high}}</td>
+    <td>{{data.recent_data.low}}</td>
+    <td>{{data.recent_data.close}}</td>
+    <td>{{data.recent_data.change}}%</td>
     <td class="">
+      <a (click)='plotStock(data.code)' style="margin-left: 15px">
+        <i nz-icon nzType="line-chart" nzTheme="outline"></i>
+        plot
+      </a>
       <a (click)='toDelete(data)' style="margin-left: 15px">
         <i nz-icon nzType="delete" nzTheme="outline"></i>
         {{'delete' | translate}}

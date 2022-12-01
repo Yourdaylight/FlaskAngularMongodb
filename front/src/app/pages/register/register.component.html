@@ -7,7 +7,7 @@
                 <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_USERNAME')">
                     <nz-input-group nzPrefixIcon="user">
                         <input type="text" formControlName="username" nz-input
-                            placeholder="{{'ACCOUNT' | translate}}" />
+                            placeholder="Username" />
                     </nz-input-group>
                 </nz-form-control>
             </nz-form-item>
@@ -21,8 +21,7 @@
             </nz-form-item>
             <nz-form-item>
                     <nz-form-control>
-                        <button nz-button nzBlock class="theme-bgcolor" [disabled]="!regForm.valid">{{'注册' |
-                            translate}}</button>
+                        <button nz-button nzBlock class="theme-bgcolor" [disabled]="!regForm.valid">Register</button>
                     </nz-form-control>
             </nz-form-item>
             <div class="text-center">

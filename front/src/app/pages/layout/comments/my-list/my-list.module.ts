@@ -6,6 +6,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import {NzDemoCommentListComponent} from './comment.component';
 import {NzListModule} from 'ng-zorro-antd/list';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NgxEchartsModule } from 'ngx-echarts';
+
+
 @NgModule({
   declarations: [MyListComponent, NzDemoCommentListComponent],
   imports: [
@@ -13,6 +16,7 @@ import { NzCommentModule } from 'ng-zorro-antd/comment';
     SharedModule,
     NzListModule,
     NzCommentModule,
+    NgxEchartsModule,
     RouterModule.forChild([{
       path: '',
       component: MyListComponent

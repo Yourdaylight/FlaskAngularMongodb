@@ -29,11 +29,12 @@ export class LayoutComponent implements OnInit {
       if (langObj && typeof langObj === 'object') {
         this.langType = langObj.key
       }
+      this.userName = this.storage.getItem('username');
     } catch { }
   }
 
   ngOnInit(): void {
-    this.userName = '';
+    this.userName = this.storage.getItem('username');
   }
   translateFn = (key: string) => {
     if (key) {

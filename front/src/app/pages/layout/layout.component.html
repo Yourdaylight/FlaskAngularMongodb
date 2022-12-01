@@ -1,44 +1,23 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
-            nzWidth="200px" [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <a>
-        <h1>Stock Search System</h1>
-      </a>
-    </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-menu-item nzMatchRouter>
-        <i nz-icon nzType="mail"></i>
-        <span [routerLink]="['./myList']">{{'Stock List' |translate}}</span>
-      </li>
-      <li nz-menu-item nzMatchRouter>
-        <i nz-icon nzType="mail"></i>
-        <span [routerLink]="['./comments']">{{'My Favorite Stock' |translate}}</span>
-      </li>
-
-    </ul>
-  </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger">
-          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="toggleCollapsed($event)"></i>
-        </span>
-        <a class="lang">
-          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType =='en' " (click)="langChange('zh-cn')"
-                  title="Chinese">中
-          </button>
-          <button nz-button nzType="primary" nzShape="circle" *ngIf="langType == 'zh-cn' " (click)="langChange('en')"
-                  [title]="'EN' | translate">EN
-          </button>
-        </a>
-        <a class="username">
-          <button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="user" nzTheme="outline"></i></button>
-          {{userName}}
-        </a>
-        <a class="loginout" (click)="logOut()">
+        <h1 style="color: #c6c4c4;width: 350px;justify-content: center;margin-top: 5px">
+          <i nz-icon nzType="interaction" nzTheme="outline"></i> Stock Search System
+        </h1>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal" [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item nzMatchRouter>
+            <i nz-icon nzType="laptop" nzTheme="outline"></i>
+            <span [routerLink]="['./myList']">Stock List</span>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <i nz-icon nzType="fund" nzTheme="outline"></i>
+            <span [routerLink]="['./comments']">My Favorite Stock</span>
+          </li>
+        </ul>
+        <a class="logout" (click)="logOut()">
           <button nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="logout" nzTheme="outline"></i></button>
-          {{'HOME_EXIT' | translate}}
+          Logout({{userName}})
         </a>
       </div>
     </nz-header>

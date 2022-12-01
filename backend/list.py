@@ -10,7 +10,6 @@ dbUser = client["crawler"]
 dbStock = client["stock"]
 
 
-
 @list.route('/userStockList', methods=['POST'])
 def stock_list():
     try:
@@ -43,6 +42,24 @@ def stock_list():
                     stock_ids.append(stock_code)
                     res.append(stock)
         content = {"code": 0, "msg": "SUCCESS", "data": res, "total": len(res)}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
+    return json.dumps(content)
+
+
+@list.route('/plotStock', methods=['POST'])
+def plot_stock():
+    try:
+        username = request.json.get("username")
+        code = request.json.get("code")
+        print(request.json)
+        stock_data = dbStock["data"].find({"code": code, "username": username})
+        date = []
+        close = []
+        for data in stock_data:
+            date.append(data["date"])
+            close.append(float(data["close"]))
+        content = {"code": 0, "msg": "SUCCESS", "data": {"date": date, "close": close}}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}
     return json.dumps(content)
@@ -85,8 +102,8 @@ def remove_stock():
         stock = request.json.get('code')
         username = request.json.get('username')
         stock_list = dbUser["user"].find_one({"username": username})["stock"]
-
         stock_list.remove(stock)
+        dbStock["data"].delete_many({"code": stock}, {"username": username})
         rtn = dbUser["user"].update_one({"username": username}, {"$set": {"stock": stock_list}})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:

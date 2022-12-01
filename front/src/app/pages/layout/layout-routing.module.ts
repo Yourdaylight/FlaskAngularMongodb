@@ -11,7 +11,7 @@ const routes: Routes = [
         path: 'comments',
         loadChildren: () => import('./comments/comments.module').then(m => m.CommentsModule),
         data: {
-          breadcrumbI18nKey: 'City List'
+          breadcrumbI18nKey: 'Favorite Stock'
         }
       },
 
@@ -19,7 +19,7 @@ const routes: Routes = [
         path: 'myList',
         loadChildren: () => import('../layout/comments/my-list/my-list.module').then(m => m.MyListModule),
         data: {
-          breadcrumbI18nKey: 'City Weather'
+          breadcrumbI18nKey: 'Stock List'
         }
       },
     ]
