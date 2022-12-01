@@ -69,7 +69,29 @@ export class CommentsComponent implements OnInit {
       }
     }, () => { this.loading = false; });
   }
-
+  styleMethod(data) {
+    if(data.recent_data.color==="green"){
+      return {fall: true}
+    }
+    if(data.recent_data.color==="red"){
+      return {rise: true}
+    }
+  }
+  updateData(){
+    let params = {
+      username: this.storageService.getItem('username'),
+    }
+     this.apiService.post("updateStockData", params).subscribe((res: any) => {
+      this.loading = false;
+      const { code, data } = res;
+      if (code==0 && data && Array.isArray(res.data)) {
+        this.$message.success(res.msg)
+        this.getUserStockList()
+      } else {
+        this.$message.error(res.msg)
+      }
+    }, () => { this.loading = false; });
+  }
   searchUser() {
     let url = `schoolList?name=${this.name}&start_score=${this.start_score || ''}&end_score=${this.end_score || ''}`
     this.getUserStockList(url);

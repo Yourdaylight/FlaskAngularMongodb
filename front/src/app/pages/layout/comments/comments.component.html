@@ -1,12 +1,12 @@
 <form nz-form [nzLayout]="'inline'" class="margin-bottom">
   <nz-form-item>
-    <nz-form-label>{{'region' | translate}}</nz-form-label>
+    <nz-form-label>{{'Stock Code' | translate}}</nz-form-label>
     <nz-form-control>
       <input name="name" [(ngModel)]="region" nz-input type="text"/>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label>{{'Temperature now' | translate}}</nz-form-label>
+    <nz-form-label>{{'Stock Name' | translate}}</nz-form-label>
     <nz-form-control>
       <input name="start_score" [(ngModel)]="temp_now" nz-input type="number"/>
     </nz-form-control>
@@ -22,12 +22,12 @@
       <button debounceClick (debounceClick)="searchUser()" nz-button nzType="primary" class="mr-8">
         {{'SEARCH' | translate}}
       </button>
-      <button nz-button nzType="primary" (click)="clearField()">{{'CLEAR' | translate}}</button>
+      <button nz-button nzType="primary" (click)="updateData()">{{'Update Data' | translate}}</button>
     </nz-form-control>
   </nz-form-item>
 </form>
 <div class="toolbar">
-  <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{'City List' | translate}}</div>
+  <div class="title"><i nz-icon nzType="table" nzTheme="outline"></i>{{'Favorite List' | translate}}</div>
   <div class="toolbar-btns">
     <button nz-button nzType="default" (click)="addUser()"><i nz-icon nzType="plus" nzTheme="outline"></i>{{'ADD' | translate}}</button>
   </div>
@@ -39,13 +39,25 @@
   <tr>
     <th>Stock Code</th>
     <th>Stock Name</th>
+    <th>Date</th>
+    <th>Open</th>
+    <th>High</th>
+    <th>Low</th>
+    <th>Close</th>
+    <th>Change</th>
     <th>OPERATE</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of siteList">
-    <td> <i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}</td>
+  <tr *ngFor="let data of siteList" [ngClass]="styleMethod(data)">
+    <td style="color: '{{data.recent_data.color}}'"> <i nz-icon nzType="stock" nzTheme="outline"></i>{{data.code}}</td>
     <td><i nz-icon nzType="sliders" nzTheme="outline"></i>{{data.name}}</td>
+    <td>{{data.recent_data.date}}</td>
+    <td>{{data.recent_data.open}}</td>
+        <td>{{data.recent_data.high}}</td>
+        <td>{{data.recent_data.low}}</td>
+        <td>{{data.recent_data.close}}</td>
+        <td>{{data.recent_data.change}}%</td>
     <td class="">
       <a (click)='toDelete(data)' style="margin-left: 15px">
         <i nz-icon nzType="delete" nzTheme="outline"></i>

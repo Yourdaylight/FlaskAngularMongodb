@@ -3,17 +3,17 @@
             nzWidth="200px" [nzTrigger]="null">
     <div class="sidebar-logo">
       <a>
-        <h1>Global Weather System</h1>
+        <h1>Stock Search System</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-menu-item nzMatchRouter>
         <i nz-icon nzType="mail"></i>
-        <span [routerLink]="['./comments']">{{'My Favorite Stock' |translate}}</span>
+        <span [routerLink]="['./myList']">{{'Stock List' |translate}}</span>
       </li>
       <li nz-menu-item nzMatchRouter>
         <i nz-icon nzType="mail"></i>
-        <span [routerLink]="['./myList']">{{'Stock List' |translate}}</span>
+        <span [routerLink]="['./comments']">{{'My Favorite Stock' |translate}}</span>
       </li>
 
     </ul>

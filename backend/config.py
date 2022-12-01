@@ -13,5 +13,5 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
 
 import pymongo
-host = "101.35.53.113"
+host = "127.0.0.1"
 client = pymongo.MongoClient(host, 27017)

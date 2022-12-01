@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 import json
-
+from utils import get_date, get_data
+import datetime
 from config import client
 from crawler import get_weather_data, save_weather_data
 
@@ -8,62 +9,6 @@ list = Blueprint('list', __name__);
 dbUser = client["crawler"]
 dbStock = client["stock"]
 
-
-@list.route('/cityList', methods=['POST', 'GET'])
-def city_list():
-    try:
-        username = request.json.get("username")
-        cityList = dbUser["user"].find_one({"username": username})
-        cityList = cityList["city"]
-        res = []
-        for city in cityList:
-            detail = dbUser["weather"].find_one({"city": city})
-            if detail is None:
-                detail = get_weather_data(city)
-                save_weather_data(detail)
-            if detail:
-                temp = detail
-                temp.pop("_id")
-                temp.pop("next_days")
-                temp["name"] = city
-                temp["list"] = cityList
-                res.append(temp)
-        content = {"code": 0, "msg": "SUCCESS", "data": res}
-    except Exception as e:
-        content = {"code": 1, "msg": str(e)}
-    return json.dumps(content)
-
-
-@list.route('/addCity', methods=['POST'])
-def add_city():
-    try:
-        city = request.json.get('city')
-        username = request.json.get('username')
-        dbUser["user"].update_one({"username": username}, {"$push": {"city": city}})
-        content = {"code": 0, "msg": "SUCCESS"}
-    except Exception as e:
-        content = {"code": 1, "msg": str(e)}
-    return json.dumps(content)
-
-
-
-@list.route('/cityWeather', methods=['POST'])
-def city_weather():
-    try:
-        city = request.json.get('city', 'beijing')
-        _weather = dbUser["weather"].find_one({"city": city})
-        if _weather:
-            _weather.pop("_id")
-            content = {"code": 0, "msg": "SUCCESS", "data": _weather}
-        else:
-            weather = get_weather_data(city)
-            print(weather)
-            content = {"code": 0, "msg": "SUCCESS", "data": weather}
-            save_weather_data(weather)
-            weather.pop("_id", None)
-    except Exception as e:
-        content = {"code": 1, "msg": str(e)}
-    return json.dumps(content)
 
 
 @list.route('/userStockList', methods=['POST'])
@@ -73,13 +18,47 @@ def stock_list():
         stock_list = dbUser["user"].find_one({"username": username})
         stock_list = stock_list.get("stock")
         res = []
+        stock_ids = []
         if stock_list:
-            stock_data = dbStock["stock"].find({"code": {"$in": stock_list}})
-            for stock in stock_data:
-                stock.pop("_id")
-                if stock not in res and stock["catagory"] == "上证A股":
+            # 获取用户收藏的所有股票代码
+            stock_codes = dbStock["stock"].find({"code": {"$in": stock_list}})
+            for stock in stock_codes:
+                stock_code = stock.get("code")
+                if stock_code not in stock_ids and stock["catagory"] == "上证A股":
+                    stock.pop("_id")
+                    # 获取股票的最新一个交易日的数据
+                    recent_data = dbStock["data"].find_one({
+                        "code": stock["code"]
+                    })
+                    if recent_data:
+                        recent_data.pop("_id")
+                        # 获取股票涨跌幅判断股票是涨还是跌
+                        if float(recent_data["change"]) > 0:
+                            recent_data["color"] = "red"
+                        else:
+                            recent_data["color"] = "green"
+                        stock["recent_data"] = recent_data
+                    else:
+                        stock["recent_data"] = {}
+                    stock_ids.append(stock_code)
                     res.append(stock)
-        content = {"code": 0, "msg": "SUCCESS", "data": res,"total":len(res)}
+        content = {"code": 0, "msg": "SUCCESS", "data": res, "total": len(res)}
+    except Exception as e:
+        content = {"code": 1, "msg": str(e)}
+    return json.dumps(content)
+
+
+@list.route('/updateStockData', methods=['POST'])
+def update_stock_data():
+    try:
+        username = request.json.get("username")
+        stock_list = dbUser["user"].find_one({"username": username})
+        stock_list = stock_list.get("stock")
+        # 爬取用户收藏的所有股票代码
+        if stock_list:
+            for code in stock_list:
+                get_data(username, code)
+        content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}
     return json.dumps(content)
@@ -122,8 +101,8 @@ def get_all_stock():
         limit = request.json.get("limit", 10)
         stock_list = dbStock["stock"].find({"catagory": "上证A股"}).skip((page - 1) * limit).limit(limit)
         res = {
-            "data":[],
-            "total":dbStock["stock"].count_documents({"catagory": "上证A股"})
+            "data": [],
+            "total": dbStock["stock"].count_documents({"catagory": "上证A股"})
         }
         for stock in stock_list:
             stock.pop("_id")
