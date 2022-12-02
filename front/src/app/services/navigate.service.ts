@@ -1,18 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { EventService } from './event.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavigateService {
-
-  constructor(
-    private router: Router,
-    private location: Location,
-    public eventService: EventService,
-  ) { }
+  constructor(private router: Router, private location: Location) {}
 
   goToLogin() {
     this.navigate('/login');
@@ -27,14 +21,13 @@ export class NavigateService {
 
   back() {
     //history.back();
-  this.location.back();
- 
+    this.location.back();
   }
 
-  backTo(url) {
-    if (url === '/tabs/business') {
-      this.eventService.event.emit('load-business');
-    }
-    this.router.navigateByUrl(url);
-  }
+  // backTo(url) {
+  //   if (url === '/tabs/business') {
+  //     this.eventService.event.emit('load-business');
+  //   }
+  //   this.router.navigateByUrl(url);
+  // }
 }

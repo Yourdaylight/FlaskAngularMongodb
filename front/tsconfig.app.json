@@ -2,11 +2,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./out-tsc/app",
     "types": []
   },
-  "enableIvy":false,
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
@@ -15,12 +13,3 @@
     "src/**/*.d.ts"
   ]
 }
-
-/*
-"sourceMap": true,
-"declaration": false,
-"module": "esnext",
-"moduleResolution": "node",
-"emitDecoratorMetadata": true,
-"experimentalDecorators": true,
-*/

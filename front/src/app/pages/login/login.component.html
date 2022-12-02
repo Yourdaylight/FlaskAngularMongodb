@@ -1,36 +1,102 @@
-<div class="login-wrap">
-  <canvas id="bgLogin"></canvas>
-  <div class="seprate-icon-box">
-    <a class="seprate-icon" (click)="changeLang('en')" [ngClass]="{'active': langFlag}" title="en">En</a>
-    <a class="seprate-icon" (click)="changeLang('zh-cn')" [ngClass]="{'active': !langFlag}" title="zn_ch">Ch</a>
-  </div>
-  <div class="login-card">
-    <h3>{{'高考志愿系统' | translate}}</h3>
-    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-      <nz-form-item>
-        <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_USERNAME')">
-          <nz-input-group nzPrefixIcon="user">
-            <input type="text" formControlName="username" nz-input placeholder="{{'ACCOUNT' | translate}}" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-control [nzErrorTip]="translateService.instant('SYSTEM_VALIDATE_REQUIRE_PASSWORD')">
-          <nz-input-group nzPrefixIcon="lock">
-            <input formControlName="password" [readonly]="readonly" (click)="readonly = false" nz-input type="password"
-              placeholder="{{'PASSWORD' | translate}}" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-control>
-          <button nz-button nzBlock class="theme-bgcolor" [disabled]="!validateForm.valid">{{'LOGIN' |
-            translate}}</button>
-        </nz-form-control>
-      </nz-form-item>
-      <div class="text-center">
-          <a (click)="toReg()">{{'注册' |translate}}</a>
+<div class="login">
+  <div class="login">
+    <div class="header">Music App</div>
+    <div class="login-container">
+      <div class="contenter">
+        <div class="login-title">{{ curStatus }}</div>
+        <form
+          *ngIf="curStatus == 'Login'"
+          nz-form
+          [formGroup]="validateForm"
+          class="login-form"
+          (ngSubmit)="submitForm('login')"
+        >
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your username!">
+              <nz-input-group nzPrefixIcon="user">
+                <input
+                  type="text"
+                  nz-input
+                  formControlName="userName"
+                  placeholder="Username"
+                />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Please input your Password!">
+              <nz-input-group nzPrefixIcon="lock">
+                <input
+                  type="password"
+                  nz-input
+                  formControlName="passWord"
+                  placeholder="Password"
+                />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <button
+            nz-button
+            class="login-form-button login-form-margin"
+            [nzType]="'primary'"
+          >
+            Log in
+          </button>
+          Or
+          <a (click)="changeLogin()">register now!</a>
+        </form>
+        <form
+          *ngIf="curStatus == 'Register'"
+          nz-form
+          nzLayout="vertical"
+          [formGroup]="validateForm"
+          class="login-form"
+          (ngSubmit)="submitForm('register')"
+        >
+          <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="userName" nzRequired>
+              <span>Username</span>
+            </nz-form-label>
+            <nz-form-control
+              [nzSm]="14"
+              [nzXs]="24"
+              nzErrorTip="Please input your username!"
+            >
+              <input
+                nz-input
+                id="username"
+                formControlName="username"
+                placeholder="username"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="passWord" nzRequired
+              >Password</nz-form-label
+            >
+            <nz-form-control
+              [nzSm]="14"
+              [nzXs]="24"
+              nzErrorTip="Please input your password!"
+            >
+              <input
+                nz-input
+                type="password"
+                id="password"
+                formControlName="password"
+                placeholder="password"
+              />
+            </nz-form-control>
+          </nz-form-item>
+          <button
+            nz-button
+            class="login-form-button login-form-margin"
+            [nzType]="'primary'"
+          >
+            Register
+          </button>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </div>

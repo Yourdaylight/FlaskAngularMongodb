@@ -1,33 +1,38 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { MusicDetailsComponent } from './music-details/music-details.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent,
+    path: '',
+    component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'comments' },
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       {
-        path: 'comments',
-        loadChildren: () => import('./comments/comments.module').then(m => m.CommentsModule),
-        data: {
-          breadcrumbI18nKey: 'City List'
-        }
+        path: 'list',
+        loadChildren: () =>
+          import('./list/list.module').then((m) => m.ListModule),
       },
-
       {
-        path: 'myList',
-        loadChildren: () => import('../layout/comments/my-list/my-list.module').then(m => m.MyListModule),
-        data: {
-          breadcrumbI18nKey: 'City Weather'
-        }
+        path: 'music-details',
+        loadChildren: () =>
+          import('./music-details/music-details.module').then(
+            (m) => m.MusicDetailsModule
+          ),
       },
-    ]
-  }
+      {
+        path: 'favorite',
+        loadChildren: () =>
+          import('./favorite/favorite.module').then((m) => m.FavoriteModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LayoutRoutingModule { }
+export class LayoutRoutingModule {}

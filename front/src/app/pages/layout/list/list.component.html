@@ -1,0 +1,60 @@
+<nz-input-group
+  class="music-search"
+  nzSearch
+  nzSize="large"
+  [nzAddOnAfter]="suffixButton"
+>
+  <input
+    type="text"
+    nz-input
+    placeholder="please enter Music Title"
+    [(ngModel)]="searchValue"
+  />
+</nz-input-group>
+<ng-template #suffixButton>
+  <button
+    nz-button
+    nzType="primary"
+    nzSize="large"
+    nzSearch
+    (click)="onSearch()"
+  >
+    <span nz-icon nzType="search"></span>Search
+  </button>
+</ng-template>
+<nz-table #basicTable [nzData]="musicList" [nzLoading]="loading">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Duration</th>
+      <th>Artist</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.idx }}</td>
+      <td>
+        <img
+          style="width: 50px; height: 50px; margin-right: 15px"
+          [src]="data.album.picUrl"
+        />
+        {{ data.name }}
+      </td>
+      <td>{{ data.duration | formatTime }}</td>
+      <td>{{ data.artist }}</td>
+      <td>
+        <a (click)="toDetail(data)">Detail</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <span
+          nz-icon
+          nzType="heart"
+          nzTheme="outline"
+          (click)="onCollect(data)"
+          [style]="{ color: isCollect ? 'red' : '' }"
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

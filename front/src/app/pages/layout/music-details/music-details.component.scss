@@ -1,0 +1,20 @@
+.song-info {
+  display: flex;
+  text-align: left;
+}
+.song-info-basic {
+  margin-left: 20px;
+}
+.song-info-basic > div {
+  line-height: 26px;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 8px 0;
+}
+.song-info-basic > div:nth-child(2),
+.song-info-basic > div:nth-child(3) {
+  font-size: 14px;
+  color: #99a9bf;
+}

@@ -1,0 +1,33 @@
+<nz-table #basicTable [nzData]="favoriteList" [nzLoading]="loading">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Duration</th>
+      <th>Artist</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.idx }}</td>
+      <td>
+        <img style="width: 50px; height: 50px" [src]="data.album.picUrl" />
+        {{ data.name }}
+      </td>
+      <td>{{ data.duration }}</td>
+      <td>{{ data.artist }}</td>
+      <td>
+        <a routerLink="/layout/music-details">Detail</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <span
+          nz-icon
+          nzType="heart"
+          nzTheme="outline"
+          (click)="onCollect(data)"
+          [style]="{ color: isCollect ? 'red' : '' }"
+        ></span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

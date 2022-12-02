@@ -1,0 +1,109 @@
+:host ::ng-deep .login .login-form {
+  max-width: 100%;
+}
+
+.login {
+  width: 100%;
+  height: 100%;
+  background: url("../../../assets/images/music_bg.jpg") no-repeat fixed center;
+  background-size: cover;
+  /* 可以设置不同的进入和离开动画 */
+  /* 设置持续时间和动画函数 */
+  .slide-fade-enter-active {
+    transition: all 0.3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  .login-title {
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  .login-container {
+    padding-top: calc(50% - 200px);
+  }
+  .login-bottom {
+    height: 60px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .header {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 37px;
+    text-align: left;
+    padding-left: 89px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .content {
+    width: 360px;
+    position: relative;
+    left: calc(50% - 180px);
+    z-index: 9;
+    background-color: rgba(251, 252, 241, 0.8);
+    /* opacity: 0.9; */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+  .contenter {
+    width: 400px;
+    height: 340px;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 400px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px 30px 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  .title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 16px；;
+  }
+  .ruleForm {
+    position: absolute;
+    width: calc(100% - 60px);
+    /* padding-top: 20px; */
+  }
+  .con-title {
+    text-align: left;
+  }
+  .img-logo {
+    position: relative;
+    z-index: 9999;
+    /* top: 100px; */
+    left: calc(50% - 90px);
+  }
+  .login-form {
+    // max-width: 300px;
+  }
+
+  .login-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }
+}
