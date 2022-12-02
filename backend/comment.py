@@ -12,18 +12,16 @@ dbComment= client["crawler"]["weather"]
 def add_comment():
     try:
         username = request.json.get('username')
-        city = request.json.get('city')
+        name = request.json.get('name')
         comment = request.json.get('comment')
         timeStamp_checkpoint = 1649755347
         timeArray = time.localtime(timeStamp_checkpoint)
         checkpoint = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-        dbComment.update_one(
-            {"city": city},
-            {"$push": {"comment": {
+        dbComment.update_one({
                 "username": username,
                 "comment": comment,
                 "update_time": checkpoint
-            }}})
+            })
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}
@@ -32,8 +30,8 @@ def add_comment():
 @comment.route('/getComments', methods=['POST'])
 def get_comments():
     try:
-        city = request.json.get('city')
-        _comments = dbComment.find_one({"city": city})
+        name = request.json.get('name')
+        _comments = dbComment.find_one({"name": name,"username": username})
         _comments= _comments["comment"]
         content = {"code": 0, "msg": "SUCCESS", "data": _comments}
     except Exception as e:
