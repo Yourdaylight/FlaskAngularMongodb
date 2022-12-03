@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NavigateService } from 'src/app/services/navigate.service';
-import { ApiService } from 'src/app/services/api.service';
-import { Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd/modal';
+import {Component, OnInit} from '@angular/core';
+import {NzMessageService} from 'ng-zorro-antd/message';
+import {NavigateService} from 'src/app/services/navigate.service';
+import {ApiService} from 'src/app/services/api.service';
+import {Router} from '@angular/router';
+import {NzModalService} from 'ng-zorro-antd/modal';
 import {
   FormBuilder,
   FormControl,
@@ -11,7 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
+import {NzFormTooltipIcon} from 'ng-zorro-antd/form';
 
 @Component({
   selector: 'app-list',
@@ -25,6 +25,7 @@ export class ListComponent implements OnInit {
   isVisible: boolean = false;
   addForm!: FormGroup;
   addMusicList: any = [];
+
   constructor(
     private apiService: ApiService,
     private $message: NzMessageService,
@@ -32,7 +33,8 @@ export class ListComponent implements OnInit {
     public router: Router,
     private modalService: NzModalService,
     private fb: FormBuilder
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.addForm = this.fb.group({
@@ -43,39 +45,39 @@ export class ListComponent implements OnInit {
     });
     this.getMusicList();
   }
+
   submitForm(): void {
     if (this.addForm.valid) {
       console.log('submit', this.addForm.value);
-      this.addMusicList.push({
-        // ...this.addForm.value,
-        name: this.addForm.value.name,
-        picUrl: this.addForm.value.picUrl,
-        duration: this.addForm.value.duration,
-        artist: this.addForm.value.artist,
-        idx: this.musicList.length,
-      });
-      this.$message.success('add success!');
-      this.getMusicList();
-      console.log(this.addMusicList);
-      this.isVisible = false;
+      this.apiService.post('addSong',this.addForm.value).subscribe(
+        (res: any) => {
+          this.isVisible = false;
+          this.getMusicList();
+          this.$message.success('add success!');
+        },
+        () => {
+        }
+      );
     } else {
       Object.values(this.addForm.controls).forEach((control: any) => {
         if (control.invalid) {
           control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
+          control.updateValueAndValidity({onlySelf: true});
         }
       });
     }
   }
+
   onSearch() {
     if (this.searchValue != '') {
       this.musicList = this.musicList.filter(
-        (item: any) => item.name == this.searchValue
+        (item: any) => item.name.includes(this.searchValue) || item.artist.includes(this.searchValue)
       );
     } else {
       this.getMusicList();
     }
   }
+
   onCollect(data: any) {
     let params = {
       username: localStorage.getItem('username'),
@@ -85,7 +87,18 @@ export class ListComponent implements OnInit {
       (res: any) => {
         this.router.navigate(['/layout/favorite'], {});
       },
-      () => {}
+      () => {
+      }
+    );
+  }
+  onDelete(data: any) {
+    this.apiService.post('deleteSong', data).subscribe(
+      (res: any) => {
+          this.getMusicList()
+          this.$message.success(`delete ${data.name} success!`);
+      },
+      () => {
+      }
     );
   }
   toDetail(data: any) {
@@ -99,12 +112,12 @@ export class ListComponent implements OnInit {
       },
     });
   }
+
   getMusicList() {
     this.apiService.post('musicList', {}).subscribe(
       (res: any) => {
         this.loading = false;
-        console.log(res);
-        const { code, data } = res;
+        const {code, data} = res;
         if (code == 0) {
           this.musicList = data;
           this.musicList.forEach((item: any, index: number) => {
@@ -112,7 +125,8 @@ export class ListComponent implements OnInit {
             item.artist = artists.join(', ');
             item.idx = index;
           });
-          this.musicList = [...this.addMusicList, this.musicList];
+          this.musicList = [...this.addMusicList, ...this.musicList];
+          console.log("this.musicList", this.musicList[0]);
         } else {
           this.musicList = [];
         }

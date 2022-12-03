@@ -2,7 +2,7 @@ from flask import Blueprint, request
 import json
 import time
 from config import client
-from crawler import get_weather_data, save_weather_data
+
 
 comment = Blueprint('comment', __name__);
 dbComment = client["crawler"]["comment"]

@@ -3,7 +3,6 @@ import json
 import bson
 from bson import ObjectId
 from config import client
-from crawler import get_weather_data, save_weather_data
 
 _list = Blueprint('_list', __name__);
 dbUser = client["crawler"]
@@ -23,7 +22,7 @@ def music_list():
         _music = dbMusic.find()
         music_list = []
         for i in _music:
-            i.pop('privilege')
+            i.pop('privilege', "")
             music_list.append(i)
         content = {"code": 0, "msg": "SUCCESS", "data": music_list}
     except Exception as e:
@@ -32,6 +31,41 @@ def music_list():
         content = {"code": 1, "msg": str(e)}
     return JSONEncoder().encode(content)
 
+
+@_list.route('/addSong', methods=['POST', 'GET'])
+def add_song():
+    try:
+        name = request.json.get('name')
+        artist = request.json.get('artist')
+        album = request.json.get('album')
+        pic_url = request.json.get('picUrl')
+        duration = request.json.get('duration')
+        dbMusic = client["crawler"]["music"]
+        dbMusic.insert_one({
+            "name": name,
+            "album": {"name": album, "picUrl": pic_url},
+            "artists": [{"name": artist}],
+            "duration": duration
+        })
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        content = {"code": 1, "msg": str(e)}
+    return JSONEncoder().encode(content)
+
+@_list.route('/deleteSong', methods=['POST', 'GET'])
+def delete_song():
+    try:
+        id = request.json.get('_id')
+        dbMusic = client["crawler"]["music"]
+        dbMusic.delete_one({"_id": ObjectId(id)})
+        content = {"code": 0, "msg": "SUCCESS"}
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        content = {"code": 1, "msg": str(e)}
+    return JSONEncoder().encode(content)
 
 @_list.route('/collect', methods=['POST', 'GET'])
 def collect():

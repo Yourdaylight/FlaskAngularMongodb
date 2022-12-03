@@ -4,6 +4,7 @@ import config
 from user import user
 from list import _list
 from comment import comment
+
 app = Flask(__name__)
 
 CORS(app, supports_credentials=True)
@@ -21,5 +22,18 @@ def index():
     return render_template('index.html')
 
 
+def check_intial():
+    """检查数据库是否有数据，没有则初始化"""
+    with open("initial.txt", "r") as f:
+        initial = f.read()
+    if initial.strip() == "0":
+        from downloadMusic import read_json_to_db
+        read_json_to_db()
+        with open("initial.txt", "w") as f:
+            f.write("1")
+
+
 if __name__ == '__main__':
+    print("start")
+    check_intial()
     app.run(host='0.0.0.0', port=5000, debug=True)
