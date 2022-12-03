@@ -1,3 +1,3 @@
 import pymongo
-host = "s2.nsloop.com"
-client = pymongo.MongoClient(host, 27708)
+host = "127.0.0.1"
+client = pymongo.MongoClient(host, 27001)
