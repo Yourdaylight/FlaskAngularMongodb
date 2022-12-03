@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
 import { FavoriteComponent } from './favorite.component';
+import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { FavoriteComponent } from './favorite.component';
       },
     ]),
   ],
-  declarations: [FavoriteComponent],
+  declarations: [FavoriteComponent,FormatTimePipe],
   exports: [FavoriteComponent],
 })
 export class FavoriteModule {}

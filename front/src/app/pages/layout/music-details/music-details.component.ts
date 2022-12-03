@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
-import { addDays, formatDistance } from 'date-fns';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from 'src/app/services/api.service';
+import {addDays, formatDistance} from 'date-fns';
 
 @Component({
   selector: 'app-music-details',
@@ -32,7 +32,8 @@ export class MusicDetailsComponent implements OnInit {
     },
   ];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService) {
+  }
 
   ngOnInit(): void {
     this.musicInfo = this.route.queryParams;
@@ -41,15 +42,20 @@ export class MusicDetailsComponent implements OnInit {
 
   getCommentList(): void {
     this.apiService
-      .post('getComments', { username: localStorage.getItem('username') })
+      .post('getComments', {
+        username: localStorage.getItem('username'),
+        name: this.musicInfo._value.name,
+      })
       .subscribe(
         (res: any) => {
-          const { code, data } = res;
+          const {code, data} = res;
           if (code == 0) {
             this.commentList = data;
+            this.submitting = false;
           }
         },
-        () => {}
+        () => {
+        }
       );
   }
 
@@ -69,7 +75,27 @@ export class MusicDetailsComponent implements OnInit {
         this.commentValue = '';
         this.getCommentList();
       },
-      () => {}
+      () => {
+      }
+    );
+  }
+
+  removeComment(comment: any): void {
+    this.submitting = true;
+    console.log("666")
+    console.log(comment);
+    let params = {
+      username: localStorage.getItem('username'),
+      comment: comment.comment,
+      name: this.musicInfo._value.name,
+    };
+    this.apiService.post('removeComment', params).subscribe(
+      (res: any) => {
+        this.commentValue = '';
+        this.getCommentList();
+      },
+      () => {
+      }
     );
   }
 }

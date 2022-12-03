@@ -62,7 +62,6 @@ def collect_list():
             if _music:
                 _music.pop('privilege')
                 res.append(_music)
-            res.append(_music)
         content = {"code": 0, "msg": "SUCCESS", "data": res}
     except Exception as e:
         import traceback

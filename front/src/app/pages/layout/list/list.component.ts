@@ -49,6 +49,7 @@ export class ListComponent implements OnInit {
         artist: data.artist,
         albumPicUrl: data.album.picUrl,
         albumName: data.album.name,
+        duration: data.duration,
       },
     });
   }

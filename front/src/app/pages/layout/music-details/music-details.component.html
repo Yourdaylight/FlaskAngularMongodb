@@ -5,8 +5,11 @@
   />
   <div class="song-info-basic">
     <div class="title">{{ musicInfo._value.name }}</div>
-    <div>演唱：{{ musicInfo._value.artist }}</div>
-    <div>专辑：{{ musicInfo._value.albumName }}</div>
+    <div>Singer：{{ musicInfo._value.artist }}</div>
+    <div>Album：{{ musicInfo._value.albumName }}
+      <p>Duration：{{musicInfo._value.duration | formatTime}}</p>
+    </div>
+
     <div>
       <!-- <el-tag
         v-for="item in detail.items"
@@ -39,8 +42,11 @@
       ></nz-avatar>
       <nz-comment-content>
         <p>{{ item.comment }}</p>
+        <i nz-icon nzType="delete" nzTheme="outline"
+           (click)="removeComment(item)"
+           style="cursor: pointer"
+        ></i>
       </nz-comment-content>
-      <nz-comment-action>Reply to</nz-comment-action>
     </nz-comment>
   </ng-template>
 </nz-list>
