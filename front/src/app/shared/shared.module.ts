@@ -14,9 +14,11 @@ import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
+import { FormatTimePipe } from '../pipe/formatTime.pipe';
+
 @NgModule({
   imports: [],
-  declarations: [],
+  declarations: [FormatTimePipe],
   exports: [
     ReactiveFormsModule,
     FormsModule,
@@ -31,6 +33,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzCommentModule,
     NzListModule,
     NzAvatarModule,
+    FormatTimePipe,
   ],
   providers: [{ provide: NzMessageService }],
 })

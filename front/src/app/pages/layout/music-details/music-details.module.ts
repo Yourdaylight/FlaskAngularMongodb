@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
 import { MusicDetailsComponent } from './music-details.component';
-import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
+// import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
       },
     ]),
   ],
-  declarations: [MusicDetailsComponent,FormatTimePipe],
+  declarations: [MusicDetailsComponent],
   exports: [MusicDetailsComponent],
 })
 export class MusicDetailsModule {}

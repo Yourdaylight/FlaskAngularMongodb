@@ -11,7 +11,6 @@ import { ApiService } from 'src/app/services/api.service';
 export class FavoriteComponent implements OnInit {
   favoriteList: any = [];
   loading: boolean = true;
-  isCollect: boolean = false;
   constructor(
     private apiService: ApiService,
     private $message: NzMessageService,
@@ -19,21 +18,21 @@ export class FavoriteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getfavoriteList();
+    this.getFavoriteList();
   }
-  onCollect(data: any) {
-    this.isCollect = !this.isCollect;
-    let url = this.isCollect ? 'deleteCollect' : 'collect';
+  deleteCollect(data: any) {
     let params = {
       username: localStorage.getItem('username'),
       name: data.name,
     };
-    this.apiService.post(url, params).subscribe(
-      (res: any) => {},
+    this.apiService.post('deleteCollect', params).subscribe(
+      (res: any) => {
+        this.getFavoriteList();
+      },
       () => {}
     );
   }
-  getfavoriteList() {
+  getFavoriteList() {
     this.apiService
       .post('collectList', { username: localStorage.getItem('username') })
       .subscribe(
@@ -43,6 +42,11 @@ export class FavoriteComponent implements OnInit {
           const { code, data } = res;
           if (code == 0) {
             this.favoriteList = data;
+            this.favoriteList.forEach((item: any, index: number) => {
+              let artists = item.artists.map((art: any) => art.name);
+              item.artist = artists.join(', ');
+              item.idx = index;
+            });
           } else {
             this.favoriteList = [];
           }

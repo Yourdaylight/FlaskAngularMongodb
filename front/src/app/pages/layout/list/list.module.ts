@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
 import { ListComponent } from './list.component';
-import { FormatTimePipe } from '../../../pipe/formatTime.pipe';
+// import { FormatTimePipe } from '../../../pipe/formatTime.pipe';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { FormatTimePipe } from '../../../pipe/formatTime.pipe';
       },
     ]),
   ],
-  declarations: [ListComponent, FormatTimePipe],
+  declarations: [ListComponent],
   exports: [ListComponent],
 })
 export class ListModule {}

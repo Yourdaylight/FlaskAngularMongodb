@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         const { code, msg, data } = res;
         if (code === 0 && data) {
           if (type == 'login') {
-            this.$message.success('登录成功');
+            this.$message.success('登录成功!');
             localStorage.setItem('username', loginModel.userName);
             localStorage.setItem('token', data?.token);
             localStorage.setItem('role', data?.role);

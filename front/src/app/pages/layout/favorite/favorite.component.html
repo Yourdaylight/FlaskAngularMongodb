@@ -18,14 +18,11 @@
       <td>{{ data.duration | formatTime }}</td>
       <td>{{ data.artist }}</td>
       <td>
-        <a routerLink="/layout/music-details">Detail</a>
-        <nz-divider nzType="vertical"></nz-divider>
         <span
           nz-icon
           nzType="heart"
           nzTheme="outline"
-          (click)="onCollect(data)"
-          [style]="{ color: isCollect ? 'red' : '' }"
+          (click)="deleteCollect(data)"
         ></span>
       </td>
     </tr>

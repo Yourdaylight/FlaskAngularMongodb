@@ -21,6 +21,14 @@
   >
     <span nz-icon nzType="search"></span>Search
   </button>
+  <button
+    nz-button
+    nzType="default"
+    (click)="isVisible = true"
+    style="margin-left: 15px"
+  >
+    <i nz-icon nzType="plus" nzTheme="outline"></i>Add Song
+  </button>
 </ng-template>
 <nz-table #basicTable [nzData]="musicList" [nzLoading]="loading">
   <thead>
@@ -38,7 +46,7 @@
       <td>
         <img
           style="width: 50px; height: 50px; margin-right: 15px"
-          [src]="data.album.picUrl"
+          [src]="data.picUrl ? data.picUrl : data.album.picUrl"
         />
         {{ data.name }}
       </td>
@@ -52,9 +60,86 @@
           nzType="heart"
           nzTheme="outline"
           (click)="onCollect(data)"
-          [style]="{ color: isCollect ? 'red' : '' }"
+          [style]="{ color: 'red' }"
         ></span>
       </td>
     </tr>
   </tbody>
 </nz-table>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Add Song"
+  nzOkText="Ok"
+  nzCancelText="Cancel"
+  (nzOnOk)="submitForm()"
+  (nzOnCancel)="isVisible = false"
+>
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="addForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name"
+          >Name</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input name!"
+        >
+          <input nz-input formControlName="name" id="name" placeholder="name" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="picUrl"
+          >Image URL</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input music image url!"
+        >
+          <input
+            nz-input
+            formControlName="picUrl"
+            id="picUrl"
+            placeholder="Image URL"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="duration" nzRequired
+          >Duration</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input duration!"
+        >
+          <input
+            nz-input
+            id="Duration"
+            formControlName="duration"
+            placeholder="duration"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="artist" nzRequired
+          >Artist</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input artist!"
+        >
+          <input
+            nz-input
+            id="Artist"
+            formControlName="artist"
+            placeholder="artist"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>

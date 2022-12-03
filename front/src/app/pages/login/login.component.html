@@ -12,7 +12,7 @@
           (ngSubmit)="submitForm('login')"
         >
           <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your username!">
+            <nz-form-control nzErrorTip="Please input your userName!">
               <nz-input-group nzPrefixIcon="user">
                 <input
                   type="text"
@@ -27,7 +27,7 @@
             <nz-form-control nzErrorTip="Please input your Password!">
               <nz-input-group nzPrefixIcon="lock">
                 <input
-                  type="password"
+                  type="passWord"
                   nz-input
                   formControlName="passWord"
                   placeholder="Password"
@@ -43,12 +43,12 @@
             Log in
           </button>
           Or
-          <a (click)="changeLogin()">register now!</a>
+          <a (click)="changeLogin()" style="color: #036d81">register now!</a>
         </form>
         <form
           *ngIf="curStatus == 'Register'"
           nz-form
-          nzLayout="vertical"
+          nzLayout="horizontal"
           [formGroup]="validateForm"
           class="login-form"
           (ngSubmit)="submitForm('register')"
@@ -60,13 +60,13 @@
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
-              nzErrorTip="Please input your username!"
+              nzErrorTip="Please input your userName!"
             >
               <input
                 nz-input
-                id="username"
-                formControlName="username"
-                placeholder="username"
+                id="userName"
+                formControlName="userName"
+                placeholder="Username"
               />
             </nz-form-control>
           </nz-form-item>
@@ -77,14 +77,14 @@
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
-              nzErrorTip="Please input your password!"
+              nzErrorTip="Please input your passWord!"
             >
               <input
                 nz-input
-                type="password"
-                id="password"
-                formControlName="password"
-                placeholder="password"
+                type="passWord"
+                id="passWord"
+                formControlName="passWord"
+                placeholder="Password"
               />
             </nz-form-control>
           </nz-form-item>
@@ -94,6 +94,14 @@
             [nzType]="'primary'"
           >
             Register
+          </button>
+          <button
+            nz-button
+            [nzType]="'default'"
+            style="color: #036d81; width: 100%"
+            (click)="changeLogin()"
+          >
+            Back to Login
           </button>
         </form>
       </div>
