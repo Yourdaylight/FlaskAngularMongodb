@@ -10,7 +10,14 @@
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/layout/favorite">Favorite</a>
           </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/login" nzShape="circle">
+              <i nz-icon nzType="logout" nzTheme="outline"></i>
+              Logout({{username}})
+            </a>
+          </li>
         </ul>
+
       </nz-header>
       <nz-content>
         <div class="inner-content">

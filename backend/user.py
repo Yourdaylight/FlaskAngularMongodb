@@ -10,8 +10,8 @@ user = Blueprint('user', __name__)
 
 @user.route('/login', methods=['POST'])
 def login():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    username = request.json.get('userName')
+    password = request.json.get('passWord')
     # # 查询数据
     user = collection.find_one({"username": username, "password": password})
     # 封装格式
@@ -20,14 +20,14 @@ def login():
         content = {"code": 0, "msg": "SUCCESS",
                    "data": {"token": token}}
     else:
-        content = {"code": 1, "msg": "用户数据错误"}
+        content = {"code": 1, "msg": "Username or password is wrong"}
     return json.dumps(content)
 
 
 @user.route('/register', methods=['POST'])
 def register():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    username = request.json.get('userName')
+    password = request.json.get('passWord')
     # 查询数据
     user = collection.find_one({"username": username, "password": password})
     if not user:

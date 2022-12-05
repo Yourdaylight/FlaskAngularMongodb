@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
       console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
         const { code, msg, data } = res;
-        if (code === 0 && data) {
+        if (code === 0) {
           if (type == 'login') {
-            this.$message.success('登录成功!');
+            this.$message.success('Login!');
             localStorage.setItem('username', loginModel.userName);
             localStorage.setItem('token', data?.token);
             localStorage.setItem('role', data?.role);
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
               this.navigateService.navigate('layout');
             }, 200);
           } else {
-            this.$message.success('注册成功！');
+            this.$message.success('Regist success！');
             setTimeout(() => {
               this.curStatus = 'Login';
             }, 200);
