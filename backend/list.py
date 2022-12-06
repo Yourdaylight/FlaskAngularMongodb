@@ -1,18 +1,11 @@
 from flask import Blueprint, request, jsonify
-import json
-import bson
+from utils import JSONEncoder
 from bson import ObjectId
-from config import client
+from db import client
 
 _list = Blueprint('_list', __name__);
 dbUser = client["crawler"]
 
-
-class JSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
 
 
 @_list.route('/musicList', methods=['POST', 'GET'])
