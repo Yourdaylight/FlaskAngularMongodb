@@ -42,9 +42,10 @@ post /register
 |  data | object | 返回数据        |
 
 ## 3、其他接口文档
+### (当前仅实现login/register/getMovies三个接口)
 - 全部功能包括   
 1、登陆/注册   
 2、首页展示游戏信息,需分页(可以参考数据来源地址的页面)，首页搜索功能（一个搜索框即可）   
 3、首页列表项的增删改查   
 4、详情信息中评论添加/删除   
-- 完整接口文档见postman导出文件`fullStack.postman_collection.json`   
+- 完整接口文档见postman导出文件`fullStack.postman_collection_v2.json`   
