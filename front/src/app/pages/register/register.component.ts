@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     this.apiService.post('register', regModel).subscribe((res: any) => {
       const { code, msg } = res;
       if (code === 0) {
-        this.$message.success('注册成功！')
+        this.$message.success('Register Success！')
         setTimeout(() => {
           this.navigateService.navigate('login')
         }, 200);

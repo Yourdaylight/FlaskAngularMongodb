@@ -113,10 +113,13 @@ def remove_stock():
         username = request.json.get('username')
         stock_list = dbUser["user"].find_one({"username": username})["stock"]
         stock_list.remove(stock)
-        dbStock["data"].delete_many({"code": stock}, {"username": username})
+        dbStock["data"].delete_many({"code": stock,"username": username})
         rtn = dbUser["user"].update_one({"username": username}, {"$set": {"stock": stock_list}})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(request.json)
         content = {"code": 1, "msg": str(e)}
     return json.dumps(content)
 
