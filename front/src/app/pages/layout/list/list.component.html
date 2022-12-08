@@ -7,8 +7,8 @@
   <input
     type="text"
     nz-input
-    placeholder="please enter Music Title"
-    [(ngModel)]="searchValue"
+    placeholder="please enter Game Name or Frame rate"
+    [(ngModel)]="search"
   />
 </nz-input-group>
 <ng-template #suffixButton>
@@ -27,53 +27,84 @@
     (click)="isVisible = true"
     style="margin-left: 15px"
   >
-    <i nz-icon nzType="plus" nzTheme="outline"></i>Add Song
+    <i nz-icon nzType="plus" nzTheme="outline"></i>Add Game
   </button>
 </ng-template>
-<nz-table #basicTable [nzData]="musicList">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Title</th>
-    <th>Duration</th>
-    <th>Artist</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let data of musicList">
-    <td>{{ data.idx }}</td>
-    <td>
-      <img style="width: 50px; height: 50px" [src]="data.album.picUrl"/>
-      {{ data.name }}
-    </td>
-    <td>{{ data.duration | formatTime }}</td>
-    <td>{{ data.artist }}</td>
-    <td>
-      <a (click)="toDetail(data)">Detail</a>
-      <nz-divider nzType="vertical"></nz-divider>
-      <span
-        nz-icon
-        nzType="heart"
-        nzTheme="outline"
-        (click)="onCollect(data)"
-        [style]="{ color: 'red',cursor: 'pointer' }"
-      ></span>
-      <span
-        nz-icon
-        nzType="delete"
-        nzTheme="outline"
-        (click)="onDelete(data)"
-        [style]="{marginLeft: '10px', cursor: 'pointer'}"
-      ></span>
-    </td>
-  </tr>
-  </tbody>
-</nz-table>
+<div style="padding: 20px 30px">
+  <nz-spin [nzSpinning]="loading">
+    <div nz-row [nzGutter]="8">
+      <div
+        nz-col
+        [nzSpan]="8"
+        *ngFor="let data of musicList"
+        style="margin-bottom: 20px"
+      >
+        <nz-card
+          nzHoverable
+          [nzTitle]="titleTemplate"
+          [nzExtra]="extraTemplate"
+        >
+          <div style="display: flex; justify-content: flex-start; height: 82px">
+            <img
+              style="width: 80px; height: 80px; margin-right: 20px"
+              [src]="data.img_src"
+            />
+            <div>
+              <div *ngFor="let name of data.names">
+                <span>{{ name }}</span>
+              </div>
+              <span *ngFor="let item of data.fps" style="margin-right: 20px">{{
+                item
+              }}</span>
+            </div>
+          </div>
+        </nz-card>
+        <ng-template #titleTemplate>
+          <span [style]="{ marginRight: '10px', cursor: 'pointer' }">{{
+            data.names[0]
+          }}</span>
+          <span
+            nz-icon
+            nzType="heart"
+            nzTheme="outline"
+            (click)="onCollect(data)"
+            style="color: red"
+          ></span>
+        </ng-template>
+        <ng-template #extraTemplate>
+          <span
+            nz-icon
+            nzType="delete"
+            nzTheme="outline"
+            (click)="onDelete(data)"
+            [style]="{ marginRight: '10px', cursor: 'pointer' }"
+          ></span>
+          <span
+            nz-icon
+            nzType="edit"
+            nzTheme="outline"
+            (click)="onEdit(data)"
+            [style]="{ marginRight: '10px', cursor: 'pointer' }"
+          ></span>
+          <a (click)="toDetail(data)">Detail</a>
+        </ng-template>
+      </div>
+    </div>
+  </nz-spin>
+  <nz-pagination
+    [nzPageIndex]="page"
+    [nzTotal]="total"
+    nzShowSizeChanger
+    [nzPageSize]="size"
+    (nzPageIndexChange)="pageChange($event)"
+    (nzPageSizeChange)="pageSizeChange($event)"
+    style="text-align: right"
+  ></nz-pagination>
+</div>
 
 <nz-modal
   [(nzVisible)]="isVisible"
-  nzTitle="Add Song"
+  nzTitle="Add Game"
   nzOkText="Ok"
   nzCancelText="Cancel"
   (nzOnOk)="submitForm()"
@@ -82,23 +113,21 @@
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="addForm">
       <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name"
-        >Name
-        </nz-form-label
-        >
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired nzFor="name"
+          >Name
+        </nz-form-label>
         <nz-form-control
           [nzSm]="14"
           [nzXs]="24"
           nzErrorTip="Please input name!"
         >
-          <input nz-input formControlName="name" id="name" placeholder="name"/>
+          <input nz-input formControlName="name" id="name" placeholder="name" />
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="picUrl"
-        >Image URL
-        </nz-form-label
-        >
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired nzFor="img_src"
+          >Image URL
+        </nz-form-label>
         <nz-form-control
           [nzSm]="14"
           [nzXs]="24"
@@ -106,46 +135,27 @@
         >
           <input
             nz-input
-            formControlName="picUrl"
-            id="picUrl"
+            formControlName="img_src"
+            id="img_src"
             placeholder="Image URL"
           />
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="duration" nzRequired
-        >Duration
-        </nz-form-label
-        >
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="fps" nzRequired
+          >Frame rate/resolution
+        </nz-form-label>
         <nz-form-control
           [nzSm]="14"
           [nzXs]="24"
-          nzErrorTip="Please input duration(unit:s)!"
+          nzErrorTip="Please input Frame rate/resolution!"
         >
           <input
             nz-input
-            id="Duration"
-            formControlName="duration"
-            placeholder="duration"
-            type="number"
-          />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="artist" nzRequired
-        >Artist
-        </nz-form-label
-        >
-        <nz-form-control
-          [nzSm]="14"
-          [nzXs]="24"
-          nzErrorTip="Please input artist!"
-        >
-          <input
-            nz-input
-            id="Artist"
-            formControlName="artist"
-            placeholder="artist"
+            id="fps"
+            formControlName="fps"
+            placeholder="Frame rate/resolution"
+            type="text"
           />
         </nz-form-control>
       </nz-form-item>

@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {ApiService} from 'src/app/services/api.service';
-import {addDays, formatDistance} from 'date-fns';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { addDays, formatDistance } from 'date-fns';
 
 @Component({
   selector: 'app-music-details',
@@ -11,29 +11,8 @@ import {addDays, formatDistance} from 'date-fns';
 export class MusicDetailsComponent implements OnInit {
   musicInfo: any = {};
   commentList: any = [];
-  data = [
-    {
-      author: 'Han Solo',
-      avatar:
-        'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-      datetime: formatDistance(new Date(), addDays(new Date(), 1)),
-    },
-    {
-      author: 'Han Solo',
-      avatar:
-        'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-      content:
-        'We supply a series of design principles, practical patterns and high quality design resources' +
-        '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-      datetime: formatDistance(new Date(), addDays(new Date(), 2)),
-    },
-  ];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {
-  }
+  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.musicInfo = this.route.queryParams;
@@ -44,18 +23,17 @@ export class MusicDetailsComponent implements OnInit {
     this.apiService
       .post('getComments', {
         username: localStorage.getItem('username'),
-        name: this.musicInfo._value.name,
+        game_id: this.musicInfo._value._id,
       })
       .subscribe(
         (res: any) => {
-          const {code, data} = res;
+          const { code, data } = res;
           if (code == 0) {
             this.commentList = data;
             this.submitting = false;
           }
         },
-        () => {
-        }
+        () => {}
       );
   }
 
@@ -69,33 +47,30 @@ export class MusicDetailsComponent implements OnInit {
       username: localStorage.getItem('username'),
       comment: this.commentValue,
       name: this.musicInfo._value.name,
+      _id: this.musicInfo._value._id,
     };
     this.apiService.post('addComment', params).subscribe(
       (res: any) => {
         this.commentValue = '';
         this.getCommentList();
       },
-      () => {
-      }
+      () => {}
     );
   }
 
   removeComment(comment: any): void {
     this.submitting = true;
-    console.log("666")
+    console.log('666');
     console.log(comment);
     let params = {
-      username: localStorage.getItem('username'),
-      comment: comment.comment,
-      name: this.musicInfo._value.name,
+      comment_id: comment.comment_id,
     };
-    this.apiService.post('removeComment', params).subscribe(
+    this.apiService.post('deleteComment', params).subscribe(
       (res: any) => {
         this.commentValue = '';
         this.getCommentList();
       },
-      () => {
-      }
+      () => {}
     );
   }
 }

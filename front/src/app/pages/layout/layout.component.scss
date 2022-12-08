@@ -19,7 +19,7 @@
   height: 100vh;
 }
 .ant-layout-header {
-  height: 80px;
+  // height: 80px;
 }
 
 .menu-sidebar {
@@ -68,16 +68,11 @@
 
 .logo {
   width: 180px;
-  line-height: 80px;
+  // line-height: 80px;
   color: #fff;
   padding: 0 20px;
   float: left;
   font-size: 20px;
-}
-
-[nz-menu] {
-  line-height: 80px;
-  height: 80px;
 }
 
 nz-header {

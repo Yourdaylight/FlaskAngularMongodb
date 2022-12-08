@@ -13,6 +13,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 import { FormatTimePipe } from '../pipe/formatTime.pipe';
 
@@ -33,6 +37,10 @@ import { FormatTimePipe } from '../pipe/formatTime.pipe';
     NzCommentModule,
     NzListModule,
     NzAvatarModule,
+    NzCardModule,
+    NzPaginationModule,
+    NzSpinModule,
+    NzDropDownModule,
     FormatTimePipe,
   ],
   providers: [{ provide: NzMessageService }],
