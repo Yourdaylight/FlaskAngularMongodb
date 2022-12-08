@@ -48,4 +48,4 @@ post /register
 2、首页展示游戏信息,需分页(可以参考数据来源地址的页面)，首页搜索功能（一个搜索框即可）   
 3、首页列表项的增删改查   
 4、详情信息中评论添加/删除   
-- 完整接口文档见postman导出文件`fullStack.postman_collection_v2.json`   
+- 完整接口文档见postman导出文件`./backend/netflixApi.json`   
