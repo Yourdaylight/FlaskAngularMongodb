@@ -4,7 +4,7 @@ import db
 import json
 from user import user
 from movie_view import movie
-from comment import comment
+from comment_view import comment
 from utils import read_dataset
 app = Flask(__name__)
 

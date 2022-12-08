@@ -1,52 +1,13 @@
 import time
+import datetime
 from bson import ObjectId
 from db import client
 from utils import JSONEncoder
 from flask import Blueprint, request, jsonify
 
 movie = Blueprint('movie', __name__);
-dbUser = client["netflix"]["user"]
+user_collection = client["netflix"]["user"]
 movie_collection = client["netflix"]["netflix"]
-
-
-@movie.route('/musicList', methods=['POST', 'GET'])
-def musicgame_route():
-    try:
-        dbMusic = client["crawler"]["music"]
-        _music = dbMusic.find()
-        musicgame_route = []
-        for i in _music:
-            i.pop('privilege', "")
-            musicgame_route.append(i)
-        content = {"code": 0, "msg": "SUCCESS", "data": musicgame_route}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        content = {"code": 1, "msg": str(e)}
-    return JSONEncoder().encode(content)
-
-
-@movie.route('/addSong', methods=['POST', 'GET'])
-def add_song():
-    try:
-        name = request.json.get('name')
-        artist = request.json.get('artist')
-        album = request.json.get('album')
-        pic_url = request.json.get('picUrl')
-        duration = request.json.get('duration')
-        dbMusic = client["crawler"]["music"]
-        dbMusic.insert_one({
-            "name": name,
-            "album": {"name": album, "picUrl": pic_url},
-            "artists": [{"name": artist}],
-            "duration": duration
-        })
-        content = {"code": 0, "msg": "SUCCESS"}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        content = {"code": 1, "msg": str(e)}
-    return JSONEncoder().encode(content)
 
 
 @movie.route('/deleteSong', methods=['POST', 'GET'])
@@ -68,7 +29,6 @@ def collect():
     try:
         username = request.json.get("username")
         music_name = request.json.get("name")
-        dbUser = client["crawler"]["user"]
         dbUser.update_one({"username": username}, {"$addToSet": {"collect": music_name}})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
@@ -146,35 +106,45 @@ def game_list():
     return JSONEncoder().encode(content)
 
 
-@movie.route('/addGame', methods=['POST', 'GET'])
-def add_game():
+@movie.route('/addMovie', methods=['POST', 'GET'])
+def add_movine():
     try:
-        name = request.json.get("name")
-        fps = request.json.get("fps")
-        if isinstance(fps, list):
-            fps = ",".join(fps)
-        img_src = request.json.get("img_src")
-        Game = client["game"]["game"]
-        Game.insert_one({
-            "name": name,
-            "fps": fps,
-            "img_src": img_src,
-            "update_time": int(time.time())
+        _type = request.json.get("type")
+        title = request.json.get("title")
+        director = request.json.get("director")
+        cast = request.json.get("cast")
+        country = request.json.get("country")
+        release_year = request.json.get("release_year"),
+        duration = request.json.get("duration"),
+        listed_in = request.json.get("listed_in"),
+        description = request.json.get("description"),
+        pic_url = request.json.get("pic_url"),
+
+        movie_collection.insert_one({
+            "type": _type,
+            "title": title,
+            "director": director,
+            "cast": cast,
+            "country": country,
+            "date_added": datetime.datetime.now().strftime("%Y-%m-%d"),
+            "release_year": release_year,
+            "duration": duration,
+            "listed_in": listed_in,
+            "description": description,
+            "pic_url": pic_url,
+            "update_time": time.time()
         })
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
-        import traceback
-        traceback.print_exc()
         content = {"code": 1, "msg": str(e)}
     return JSONEncoder().encode(content)
 
 
-@movie.route('/deleteGame', methods=['POST', 'GET'])
-def delete_game():
+@movie.route('/deleteMovie', methods=['POST', 'GET'])
+def delete_movie():
     try:
         id = request.json.get("_id")
-        Game = client["game"]["game"]
-        Game.delete_one({"_id": ObjectId(id)})
+        movie_collection.delete_one({"_id": ObjectId(id)})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         import traceback
@@ -183,22 +153,11 @@ def delete_game():
     return JSONEncoder().encode(content)
 
 
-@movie.route('/updateGame', methods=['POST', 'GET'])
-def update_game():
+@movie.route('/updateMovie', methods=['POST', 'GET'])
+def update_movie():
     try:
-        id = request.json.get("_id")
-        name = request.json.get("name")
-        fps = request.json.get("fps")
-        if isinstance(fps, list):
-            fps = ",".join(fps)
-        img_src = request.json.get("img_src")
-        Game = client["game"]["game"]
-        Game.update_one({"_id": ObjectId(id)}, {"$set": {
-            "name": name,
-            "fps": fps,
-            "img_src": img_src,
-            "update_time": int(time.time())
-        }})
+        id = request.json.pop("_id")
+        movie_collection.update_one({"_id": ObjectId(id)}, {"$set": request.json})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         import traceback
@@ -210,10 +169,11 @@ def update_game():
 @movie.route('/addFavorite', methods=['POST', 'GET'])
 def add_favorite():
     try:
-        username = request.json.get("username")
-        game_id = request.json.get("_id")
-        dbUser = client["game"]["user"]
-        dbUser.update_one({"username": username}, {"$addToSet": {"favorite": game_id}})
+        user_collection.update_one(
+            {"username": request.json.get("username", "")},
+            {"$addToSet":
+                 {"favorite": request.json.get("_id", "")}
+             })
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         import traceback
@@ -225,16 +185,18 @@ def add_favorite():
 @movie.route('/deleteFavorite', methods=['POST', 'GET'])
 def delete_favorite():
     try:
-        username = request.json.get("username")
-        game_id = request.json.get("_id")
-        dbUser = client["game"]["user"]
-        dbUser.update_one({"username": username}, {"$pull": {"favorite": game_id}})
+        user_collection.update_one(
+            {
+                "username": request.json.get("username", "")
+            },
+            {"$pull":
+                 {"favorite": request.json.get("_id", "")}
+             })
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         import traceback
         traceback.print_exc()
         content = {"code": 1, "msg": str(e)}
-
     return JSONEncoder().encode(content)
 
 
@@ -242,15 +204,10 @@ def delete_favorite():
 def favorite_list():
     try:
         username = request.json.get("username")
-        dbUser = client["game"]["user"]
-        user = dbUser.find_one({"username": username})
+        user = user_collection.find_one({"username": username})
         favorite = user.get("favorite", [])
-        Game = client["game"]["game"]
-        data = Game.find({"_id": {"$in": [ObjectId(i) for i in favorite]}})
-        res = []
-        for i in data:
-            i["fps"] = i["fps"].split(",")
-            res.append(i)
+        data = movie_collection.find({"_id": {"$in": [ObjectId(i) for i in favorite]}})
+        res = [i for i in data]
         content = {"code": 0, "data": res, "msg": "SUCCESS"}
     except Exception as e:
         import traceback
