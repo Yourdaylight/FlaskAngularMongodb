@@ -201,7 +201,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"_id\":\"638d1d57b4b122641dbfe182\",\r\n    \"username\":\"lzh\"\r\n}",
+							"raw": "{\r\n    \"_id\":\"638d212142469f476b2be74e\",\r\n    \"username\":\"lzh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -232,7 +232,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"_id\":\"638d1d57b4b122641dbfe182\",\r\n    \"username\":\"lzh\"\r\n}",
+							"raw": "{\r\n    \"_id\":\"638d212142469f476b2be74e\",\r\n    \"username\":\"lzh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,7 +294,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"lzh\"\r\n}",
+							"raw": "{\r\n    \"_id\":\"638d1c91fcce117ac8c3b5e4\",\r\n    \"username\":\"lzh\",\r\n    \"comment\":\"哈哈哈哈\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -302,7 +302,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/favoriteList",
+							"raw": "http://127.0.0.1:5000/addComment",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -312,7 +312,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"favoriteList"
+								"addComment"
 							]
 						}
 					},
@@ -351,12 +351,78 @@
 				},
 				{
 					"name": "deleteComment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Host",
+								"value": " robthebank.soton.ac.uk",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": " zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": " gzip, deflate, br",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": " keep-alive",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": " CAKEPHP=ldvkheit3vfv4kcvr3414vvro8",
+								"type": "text"
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": " 1",
+								"type": "text"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": " document",
+								"type": "text"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": " navigate",
+								"type": "text"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": " none",
+								"type": "text"
+							},
+							{
+								"key": "Sec-Fetch-User",
+								"value": " ?1",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment_id\":\"638d1c91fcce117ac8c3b5e4\"\r\n}",
+							"raw": "{\r\n    \"comment_id\":\"638d27aa38c59c22490b1f25\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
