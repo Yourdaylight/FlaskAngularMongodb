@@ -11,11 +11,13 @@ import { addDays, formatDistance } from 'date-fns';
 export class MusicDetailsComponent implements OnInit {
   musicInfo: any = {};
   commentList: any = [];
+  fps: any = '';
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.musicInfo = this.route.queryParams;
+    this.fps = JSON.parse(this.musicInfo._value.fps).join(' ');
     this.getCommentList();
   }
 

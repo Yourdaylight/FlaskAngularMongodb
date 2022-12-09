@@ -1,10 +1,8 @@
+$baseColor: #49548a;
 ::ng-deep .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
   padding: 0 40px;
   font-size: 20px;
 }
-// ::ng-deep .ant-layout-content {
-//   min-height: calc(100% + 150px);
-// }
 .layout {
   width: 100%;
 }
@@ -18,8 +16,8 @@
 .app-layout {
   height: 100vh;
 }
-.ant-layout-header {
-  // height: 80px;
+.ant-layout-content {
+  min-height: auto;
 }
 
 .menu-sidebar {
@@ -38,7 +36,7 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: $baseColor;
 }
 
 .sidebar-logo h1 {
@@ -73,6 +71,7 @@
   padding: 0 20px;
   float: left;
   font-size: 20px;
+  font-weight: bold;
 }
 
 nz-header {
@@ -93,6 +92,29 @@ nz-header {
 
 nz-footer {
   text-align: center;
+}
+
+.menu-ul {
+  display: flex;
+  justify-content: center;
+}
+
+.right-top-tool {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  line-height: 60px;
+  height: 40px;
+  color: #fff;
+}
+
+.sign {
+  margin-left: 20px;
+  color: $baseColor;
+  cursor: pointer;
+}
+.sign:hover {
+  color: #fff;
 }
 
 .inner-content {

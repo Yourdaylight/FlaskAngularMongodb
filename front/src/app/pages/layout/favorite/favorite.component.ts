@@ -28,6 +28,7 @@ export class FavoriteComponent implements OnInit {
     this.apiService.post('deleteFavorite', params).subscribe(
       (res: any) => {
         this.getFavoriteList();
+        this.$message.success('已取消收藏');
       },
       () => {}
     );
@@ -37,14 +38,12 @@ export class FavoriteComponent implements OnInit {
       .post('favoriteList', { username: localStorage.getItem('username') })
       .subscribe(
         (res: any) => {
-          this.loading = false;
           console.log(res);
           const { code, data } = res;
           if (code == 0) {
+            this.loading = false;
             this.favoriteList = data;
             this.favoriteList.forEach((item: any, index: number) => {
-              // let artists = item.artists.map((art: any) => art.name);
-              // item.artist = artists.join(', ');
               item.idx = index;
             });
           } else {

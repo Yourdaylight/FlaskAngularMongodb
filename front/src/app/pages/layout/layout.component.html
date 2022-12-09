@@ -3,7 +3,7 @@
     <nz-layout>
       <nz-header>
         <div class="logo">Game App</div>
-        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+        <ul nz-menu nzTheme="dark" nzMode="horizontal" class="menu-ul">
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/layout/list">List</a>
           </li>
@@ -11,21 +11,9 @@
             <a routerLink="/layout/favorite">Favorite</a>
           </li>
         </ul>
-        <span
-          style="
-            position: absolute;
-            top: 0;
-            right: 50px;
-            line-height: 60px;
-            height: 40px;
-            color: #fff;
-          "
+        <span class="right-top-tool"
           >{{ username
-          }}<span
-            routerLink="/login"
-            style="margin-left: 20px; color: #1890ff; cursor: pointer"
-            >sign out</span
-          ></span
+          }}<span routerLink="/login" class="sign">sign out</span></span
         >
         <!-- <a
           nz-dropdown

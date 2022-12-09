@@ -88,6 +88,7 @@ export class ListComponent implements OnInit {
     };
     this.apiService.post('addFavorite', params).subscribe(
       (res: any) => {
+        this.$message.success('已收藏');
         this.router.navigate(['/layout/favorite'], {});
       },
       () => {}
@@ -114,8 +115,8 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/layout/music-details'], {
       queryParams: {
         name: data.name,
-        albumPicUrl: data.img_src,
-        albumName: JSON.stringify(data.fps),
+        img_src: data.img_src,
+        fps: JSON.stringify(data.fps),
       },
     });
   }

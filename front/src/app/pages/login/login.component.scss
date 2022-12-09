@@ -1,7 +1,10 @@
+$baseColor: #49548a;
 :host ::ng-deep .login .login-form {
   max-width: 100%;
 }
-
+.base-color {
+  color: $baseColor;
+}
 .login {
   width: 100%;
   height: 100%;
@@ -9,10 +12,12 @@
   background-size: cover;
   /* 可以设置不同的进入和离开动画 */
   /* 设置持续时间和动画函数 */
-  .login-form,.slide-fade-enter-active {
+  .login-form,
+  .slide-fade-enter-active {
     transition: all 0.3s ease;
   }
-  .login-form,.slide-fade-leave-active {
+  .login-form,
+  .slide-fade-leave-active {
     transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
   }
   .slide-fade-enter, .slide-fade-leave-to
@@ -90,13 +95,6 @@
     z-index: 9999;
     /* top: 100px; */
     left: calc(50% - 90px);
-  }
-  .login-form-button {
-    background: #036d81;
-    border-color: #036d81;
-  }
-  .ant-btn:hover{
-    border-color: #036d81;
   }
 
   .login-form-margin {

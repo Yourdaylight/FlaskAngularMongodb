@@ -2,9 +2,8 @@
   <thead>
     <tr>
       <th></th>
-      <th>Title</th>
-      <th>Duration</th>
-      <th>Artist</th>
+      <th>Name</th>
+      <th>fps</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -12,17 +11,20 @@
     <tr *ngFor="let data of basicTable.data">
       <td>{{ data.idx }}</td>
       <td>
-        <img style="width: 50px; height: 50px" [src]="data.img_src" />
+        <img
+          style="width: 50px; height: 50px; margin-right: 20px"
+          [src]="data.img_src"
+        />
         {{ data.name }}
       </td>
-      <td>{{ data.duration | formatTime }}</td>
-      <td>{{ data.artist }}</td>
+      <td>{{ data.fps }}</td>
       <td>
         <span
           nz-icon
           nzType="heart"
           nzTheme="outline"
           (click)="deleteCollect(data)"
+          style="cursor: pointer"
         ></span>
       </td>
     </tr>

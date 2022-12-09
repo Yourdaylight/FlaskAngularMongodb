@@ -1,6 +1,6 @@
 <div class="login">
   <div class="login">
-    <div class="header">Music App</div>
+    <div class="header">Game App</div>
     <div class="login-container">
       <div class="contenter">
         <div class="login-title">{{ curStatus }}</div>
@@ -43,7 +43,7 @@
             Log in
           </button>
           Or
-          <a (click)="changeLogin()" style="color: #036d81">register now!</a>
+          <a (click)="changeLogin()" class="base-color">register now!</a>
         </form>
         <form
           *ngIf="curStatus == 'Register'"
@@ -98,7 +98,8 @@
           <button
             nz-button
             [nzType]="'default'"
-            style="color: #036d81; width: 100%"
+            style="width: 100%"
+            class="base-color"
             (click)="changeLogin()"
           >
             Back to Login
