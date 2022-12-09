@@ -43,8 +43,8 @@ export class FavoriteComponent implements OnInit {
           if (code == 0) {
             this.favoriteList = data;
             this.favoriteList.forEach((item: any, index: number) => {
-              let artists = item.artists.map((art: any) => art.name);
-              item.artist = artists.join(', ');
+              // let artists = item.artists.map((art: any) => art.name);
+              // item.artist = artists.join(', ');
               item.idx = index;
             });
           } else {

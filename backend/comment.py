@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 import json
+import bson
 import time
 from config import client, JSONEncoder
 
@@ -48,7 +49,7 @@ def get_comments():
 def remove_comment():
     try:
         _id = request.json.get('comment_id')
-        dbComment.delete_one({"_id": _id})
+        dbComment.delete_one({"_id": bson.ObjectId(_id)})
         content = {"code": 0, "msg": "SUCCESS"}
     except Exception as e:
         content = {"code": 1, "msg": str(e)}
