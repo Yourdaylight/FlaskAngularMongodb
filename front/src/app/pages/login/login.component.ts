@@ -14,12 +14,12 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  curStatus: string = 'Login';
+  curStatus: string = 'My Game Login';
   validateForm!: UntypedFormGroup;
 
   changeLogin() {
-    if (this.curStatus == 'Login') this.curStatus = 'Register';
-    else this.curStatus = 'Login';
+    if (this.curStatus == 'My Game Login') this.curStatus = 'Register';
+    else this.curStatus = 'My Game Login';
     this.validateForm.reset();
   }
 
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           } else {
             this.$message.success('注册成功！');
             setTimeout(() => {
-              this.curStatus = 'Login';
+              this.curStatus = 'My Game Login';
             }, 200);
           }
         } else {

@@ -1,11 +1,11 @@
 <div class="login">
   <div class="login">
-    <div class="header">Game App</div>
+    <div class="header"></div>
     <div class="login-container">
       <div class="contenter">
         <div class="login-title">{{ curStatus }}</div>
         <form
-          *ngIf="curStatus == 'Login'"
+          *ngIf="curStatus == 'My Game Login'"
           nz-form
           [formGroup]="validateForm"
           class="login-form"
@@ -42,8 +42,8 @@
           >
             Log in
           </button>
-          Or
-          <a (click)="changeLogin()" class="base-color">register now!</a>
+          Don't have an account?
+          <a (click)="changeLogin()" class="base-color">Regist now!</a>
         </form>
         <form
           *ngIf="curStatus == 'Register'"

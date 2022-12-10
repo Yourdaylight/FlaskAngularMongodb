@@ -23,7 +23,6 @@ export class ListComponent implements OnInit {
   loading: boolean = true;
   isVisible: boolean = false;
   addForm!: FormGroup;
-  addMusicList: any = [];
   page: number = 1;
   size: number = 9;
   total: number = 10;
