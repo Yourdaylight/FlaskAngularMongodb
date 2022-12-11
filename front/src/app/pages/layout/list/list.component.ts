@@ -176,7 +176,9 @@ export class ListComponent implements OnInit {
       page: this.page,
       size: this.size,
       search: search ? search : '',
+      type: this.searchForm.value.type ==null ? 'all' : this.searchForm.value.type,
     };
+
     this.apiService.post('getMovies', params).subscribe(
       (res: any) => {
         this.loading = false;
