@@ -47,7 +47,7 @@ def game_list():
                     {"listed_in": {"$regex": search}},
                     {"description": {"$regex": search}}
                 ]}
-        if _type != "all":
+        if _type != "all" and _type != "type":
             params["type"] = _type
         data = movie_collection.find(params).skip((page - 1) * size).limit(size).sort("update_time", -1)
         res = []

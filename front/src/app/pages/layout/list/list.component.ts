@@ -125,10 +125,10 @@ export class ListComponent implements OnInit {
       pic_url: [null],
     });
     this.searchForm = this.fb.group({
-      title: [null, [Validators.required]],
-      director: [null, [Validators.required]],
-      country: [null, [Validators.required]],
-      type: [null, [Validators.required]],
+      title: [null],
+      director: [null],
+      country: [null],
+      type: ["all", [Validators.required]],
     });
     this.getMovieList();
   }
@@ -169,7 +169,8 @@ export class ListComponent implements OnInit {
     console.log(this.searchForm.value);
     if (this.searchForm.value)
       Object.entries(this.searchForm.value).forEach(([key, val]: any) => {
-        if (val) search = search + val;
+
+        if (val && key!="type") search = search + val;
       });
     console.log(search);
     let params = {
