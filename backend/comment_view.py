@@ -6,7 +6,7 @@ import datetime
 from db import client
 from utils import JSONEncoder
 
-comment = Blueprint('comment', __name__);
+comment = Blueprint('comment', __name__)
 comment_collection = client["netflix"]["comment"]
 
 

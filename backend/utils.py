@@ -33,6 +33,7 @@ def verify_token(token):
 
 def read_dataset():
     data = pandas.read_csv("dataset/netflix_titles.csv", encoding="utf-8")
+    data = data.fillna("")
     data = data.to_dict(orient="records")
     netflix_collection = client["netflix"]
     netflix_collection["netflix"].drop()

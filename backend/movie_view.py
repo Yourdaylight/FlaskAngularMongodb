@@ -4,60 +4,11 @@ from bson import ObjectId
 from db import client
 from utils import JSONEncoder
 from flask import Blueprint, request, jsonify
+import numpy as np
 
 movie = Blueprint('movie', __name__);
 user_collection = client["netflix"]["user"]
 movie_collection = client["netflix"]["netflix"]
-
-
-@movie.route('/deleteSong', methods=['POST', 'GET'])
-def delete_song():
-    try:
-        id = request.json.get('_id')
-        dbMusic = client["crawler"]["music"]
-        dbMusic.delete_one({"_id": ObjectId(id)})
-        content = {"code": 0, "msg": "SUCCESS"}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        content = {"code": 1, "msg": str(e)}
-    return JSONEncoder().encode(content)
-
-
-@movie.route('/collect', methods=['POST', 'GET'])
-def collect():
-    try:
-        username = request.json.get("username")
-        music_name = request.json.get("name")
-        dbUser.update_one({"username": username}, {"$addToSet": {"collect": music_name}})
-        content = {"code": 0, "msg": "SUCCESS"}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        content = {"code": 1, "msg": str(e)}
-    return JSONEncoder().encode(content)
-
-
-@movie.route('/collectList', methods=['POST', 'GET'])
-def collectgame_route():
-    try:
-        username = request.json.get("username")
-        dbUser = client["crawler"]["user"]
-        _user = dbUser.find_one({"username": username})
-        collectgame_route = _user["collect"]
-        res = []
-        for music in collectgame_route:
-            dbMusic = client["crawler"]["music"]
-            _music = dbMusic.find_one({"name": music})
-            if _music:
-                _music.pop('privilege')
-                res.append(_music)
-        content = {"code": 0, "msg": "SUCCESS", "data": res}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        content = {"code": 1, "msg": str(e)}
-    return JSONEncoder().encode(content)
 
 
 @movie.route('/deleteCollect', methods=['POST', 'GET'])
@@ -84,6 +35,7 @@ def game_list():
         page = request.json.get("page", 1)
         size = request.json.get("size", 10)
         search = request.json.get("search", "")
+        _type = request.json.get("type", "all")
         params = {}
         if search:
             params = {
@@ -95,8 +47,12 @@ def game_list():
                     {"listed_in": {"$regex": search}},
                     {"description": {"$regex": search}}
                 ]}
+        if _type != "all":
+            params["type"] = _type
         data = movie_collection.find(params).skip((page - 1) * size).limit(size).sort("update_time", -1)
-        res = [i for i in data]
+        res = []
+        for i in data:
+            res.append(i)
         total = movie_collection.count_documents(params)
         content = {"code": 0, "total": total, "data": res, "msg": "SUCCESS"}
     except Exception as e:
