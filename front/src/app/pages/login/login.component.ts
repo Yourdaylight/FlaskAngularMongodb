@@ -14,12 +14,12 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  curStatus: string = 'My Movie Login';
+  curStatus: string = 'Login';
   validateForm!: UntypedFormGroup;
 
   changeLogin() {
-    if (this.curStatus == 'My Movie Login') this.curStatus = 'Register';
-    else this.curStatus = 'My Movie Login';
+    if (this.curStatus == 'Login') this.curStatus = 'Register';
+    else this.curStatus = 'Login';
     this.validateForm.reset();
   }
 

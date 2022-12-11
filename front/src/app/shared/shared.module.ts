@@ -17,6 +17,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 import { FormatTimePipe } from '../pipe/formatTime.pipe';
 
@@ -41,6 +42,7 @@ import { FormatTimePipe } from '../pipe/formatTime.pipe';
     NzPaginationModule,
     NzSpinModule,
     NzDropDownModule,
+    NzSelectModule,
     FormatTimePipe,
   ],
   providers: [{ provide: NzMessageService }],
