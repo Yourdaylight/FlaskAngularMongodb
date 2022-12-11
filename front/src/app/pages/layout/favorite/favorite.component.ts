@@ -23,28 +23,27 @@ export class FavoriteComponent implements OnInit {
   deleteCollect(data: any) {
     let params = {
       username: localStorage.getItem('username'),
-      name: data.name,
+      _id: data._id,
     };
-    this.apiService.post('deleteCollect', params).subscribe(
+    this.apiService.post('deleteFavorite', params).subscribe(
       (res: any) => {
         this.getFavoriteList();
+        this.$message.success('已取消收藏');
       },
       () => {}
     );
   }
   getFavoriteList() {
     this.apiService
-      .post('collectList', { username: localStorage.getItem('username') })
+      .post('favoriteList', { username: localStorage.getItem('username') })
       .subscribe(
         (res: any) => {
-          this.loading = false;
           console.log(res);
           const { code, data } = res;
           if (code == 0) {
+            this.loading = false;
             this.favoriteList = data;
             this.favoriteList.forEach((item: any, index: number) => {
-              let artists = item.artists.map((art: any) => art.name);
-              item.artist = artists.join(', ');
               item.idx = index;
             });
           } else {

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { MusicDetailsComponent } from './music-details/music-details.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
@@ -16,10 +16,10 @@ const routes: Routes = [
           import('./list/list.module').then((m) => m.ListModule),
       },
       {
-        path: 'music-details',
+        path: 'movie-details',
         loadChildren: () =>
-          import('./music-details/music-details.module').then(
-            (m) => m.MusicDetailsModule
+          import('./movie-details/movie-details.module').then(
+            (m) => m.MovieDetailsModule
           ),
       },
       {

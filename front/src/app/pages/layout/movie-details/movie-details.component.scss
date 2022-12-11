@@ -1,8 +1,8 @@
-.song-title{
+.song-title {
   text-align: center;
   font-weight: bolder;
   padding-bottom: 20px;
-  margin-bottom:30px;
+  margin-bottom: 30px;
   border-bottom: 1px solid #eee;
 }
 .song-info {
@@ -20,8 +20,12 @@
   font-size: 24px;
   margin: 8px 0;
 }
-.song-info-basic > div:nth-child(2),
-.song-info-basic > div:nth-child(3) {
+.song-info-basic > div {
+  &:first-child {
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+  }
   font-size: 14px;
   color: #99a9bf;
 }

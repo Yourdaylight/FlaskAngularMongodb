@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
-import { MusicDetailsComponent } from './music-details.component';
+import { MovieDetailsComponent } from './movie-details.component';
 // import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
 
 @NgModule({
@@ -12,11 +12,11 @@ import { MusicDetailsComponent } from './music-details.component';
     RouterModule.forChild([
       {
         path: '',
-        component: MusicDetailsComponent,
+        component: MovieDetailsComponent,
       },
     ]),
   ],
-  declarations: [MusicDetailsComponent],
-  exports: [MusicDetailsComponent],
+  declarations: [MovieDetailsComponent],
+  exports: [MovieDetailsComponent],
 })
-export class MusicDetailsModule {}
+export class MovieDetailsModule {}

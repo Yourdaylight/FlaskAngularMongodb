@@ -1,23 +1,23 @@
 <div class="login">
   <div class="login">
-    <div class="header">Music App</div>
+    <div class="header"></div>
     <div class="login-container">
       <div class="contenter">
         <div class="login-title">{{ curStatus }}</div>
         <form
-          *ngIf="curStatus == 'Login'"
+          *ngIf="curStatus == 'My Movie Login'"
           nz-form
           [formGroup]="validateForm"
           class="login-form"
           (ngSubmit)="submitForm('login')"
         >
           <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your userName!">
+            <nz-form-control nzErrorTip="Please input your username!">
               <nz-input-group nzPrefixIcon="user">
                 <input
                   type="text"
                   nz-input
-                  formControlName="userName"
+                  formControlName="username"
                   placeholder="Username"
                 />
               </nz-input-group>
@@ -27,9 +27,9 @@
             <nz-form-control nzErrorTip="Please input your Password!">
               <nz-input-group nzPrefixIcon="lock">
                 <input
-                  type="passWord"
+                  type="password"
                   nz-input
-                  formControlName="passWord"
+                  formControlName="password"
                   placeholder="Password"
                 />
               </nz-input-group>
@@ -42,8 +42,8 @@
           >
             Log in
           </button>
-          Or
-          <a (click)="changeLogin()" style="color: #036d81">register now!</a>
+          Don't have an account?
+          <a (click)="changeLogin()" class="base-color">Regist now!</a>
         </form>
         <form
           *ngIf="curStatus == 'Register'"
@@ -54,36 +54,36 @@
           (ngSubmit)="submitForm('register')"
         >
           <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="userName" nzRequired>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="username" nzRequired>
               <span>Username</span>
             </nz-form-label>
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
-              nzErrorTip="Please input your userName!"
+              nzErrorTip="Please input your username!"
             >
               <input
                 nz-input
-                id="userName"
-                formControlName="userName"
+                id="username"
+                formControlName="username"
                 placeholder="Username"
               />
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="passWord" nzRequired
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
               >Password</nz-form-label
             >
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
-              nzErrorTip="Please input your passWord!"
+              nzErrorTip="Please input your password!"
             >
               <input
                 nz-input
-                type="passWord"
-                id="passWord"
-                formControlName="passWord"
+                type="password"
+                id="password"
+                formControlName="password"
                 placeholder="Password"
               />
             </nz-form-control>
@@ -98,7 +98,8 @@
           <button
             nz-button
             [nzType]="'default'"
-            style="color: #036d81; width: 100%"
+            style="width: 100%"
+            class="base-color"
             (click)="changeLogin()"
           >
             Back to Login

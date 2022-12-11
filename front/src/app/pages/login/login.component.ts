@@ -14,12 +14,13 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  curStatus: string = 'Login';
+  curStatus: string = 'My Movie Login';
   validateForm!: UntypedFormGroup;
 
   changeLogin() {
-    if (this.curStatus == 'Login') this.curStatus = 'Register';
-    else this.curStatus = 'Login';
+    if (this.curStatus == 'My Movie Login') this.curStatus = 'Register';
+    else this.curStatus = 'My Movie Login';
+    this.validateForm.reset();
   }
 
   submitForm(type: string): void {
@@ -30,10 +31,10 @@ export class LoginComponent implements OnInit {
       console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
         const { code, msg, data } = res;
-        if (code === 0 && data) {
+        if (code === 0) {
           if (type == 'login') {
             this.$message.success('登录成功!');
-            localStorage.setItem('username', loginModel.userName);
+            localStorage.setItem('username', loginModel.username);
             localStorage.setItem('token', data?.token);
             localStorage.setItem('role', data?.role);
             setTimeout(() => {
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
           } else {
             this.$message.success('注册成功！');
             setTimeout(() => {
-              this.curStatus = 'Login';
+              this.curStatus = 'My Movie Login';
             }, 200);
           }
         } else {
@@ -68,8 +69,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
-      passWord: [null, [Validators.required]],
+      username: [null, [Validators.required]],
+      password: [null, [Validators.required]],
     });
   }
 }

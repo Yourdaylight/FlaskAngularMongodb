@@ -1,79 +1,92 @@
-<nz-input-group
-  class="music-search"
-  nzSearch
-  nzSize="large"
-  [nzAddOnAfter]="suffixButton"
+<form
+  nz-form
+  nzLayout="inline"
+  [formGroup]="searchForm"
+  (ngSubmit)="getMovieList()"
 >
-  <input
-    type="text"
-    nz-input
-    placeholder="please enter Music Title"
-    [(ngModel)]="searchValue"
-  />
-</nz-input-group>
-<ng-template #suffixButton>
-  <button
-    nz-button
-    nzType="primary"
-    nzSize="large"
-    nzSearch
-    (click)="onSearch()"
-  >
-    <span nz-icon nzType="search"></span>Search
-  </button>
-  <button
-    nz-button
-    nzType="default"
-    (click)="isVisible = true"
-    style="margin-left: 15px"
-  >
-    <i nz-icon nzType="plus" nzTheme="outline"></i>Add Song
-  </button>
-</ng-template>
-<nz-table #basicTable [nzData]="musicList">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Title</th>
-    <th>Duration</th>
-    <th>Artist</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let data of musicList">
-    <td>{{ data.idx }}</td>
-    <td>
-      <img style="width: 50px; height: 50px" [src]="data.album.picUrl"/>
-      {{ data.name }}
-    </td>
-    <td>{{ data.duration | formatTime }}</td>
-    <td>{{ data.artist }}</td>
-    <td>
-      <a (click)="toDetail(data)">Detail</a>
-      <nz-divider nzType="vertical"></nz-divider>
-      <span
-        nz-icon
-        nzType="heart"
-        nzTheme="outline"
-        (click)="onCollect(data)"
-        [style]="{ color: 'red',cursor: 'pointer' }"
-      ></span>
-      <span
-        nz-icon
-        nzType="delete"
-        nzTheme="outline"
-        (click)="onDelete(data)"
-        [style]="{marginLeft: '10px', cursor: 'pointer'}"
-      ></span>
-    </td>
-  </tr>
-  </tbody>
-</nz-table>
+  <div nz-row [nzGutter]="24">
+    <div nz-col [nzSpan]="8" *ngFor="let field of searchField">
+      <nz-form-item>
+        <nz-form-label>{{ field.label }}</nz-form-label>
+        <nz-form-control [nzErrorTip]="'Please input ' + field.label!">
+          <input
+            nz-input
+            [formControlName]="field.value"
+            [placeholder]="field.label"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <nz-form-item nz-col [nzSpan]="16">
+    <nz-form-control>
+      <button nz-button nzType="primary">Submit</button>
+      <button
+        nz-button
+        nzType="default"
+        (click)="isVisible = true"
+        style="margin-left: 15px"
+      >
+        <i nz-icon nzType="plus" nzTheme="outline"></i>Add Movie
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<div style="padding: 5px 30px">
+  <nz-spin [nzSpinning]="loading">
+    <div nz-row [nzGutter]="30">
+      <div
+        nz-col
+        [nzSpan]="4"
+        *ngFor="let data of movieList"
+        class="card-shadow"
+        style="margin-bottom: 20px; position: relative"
+      >
+        <img
+          style="
+            width: 100%;
+            height: 150px;
+            cursor: pointer;
+            border-radius: 8px;
+          "
+          [src]="data.pic_url"
+          (click)="toDetail(data)"
+        />
+        <span
+          style="position: absolute; right: 24px; top: 120px; color: #eee"
+          >{{ data.duration }}</span
+        >
+        <div style="font-weight: bold; font-size: 16px; margin: 2px 0">
+          {{ data.title }}
+        </div>
+        <div
+          style="
+            overflow: hidden;
+            height: 25px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          "
+        >
+          {{ data.description }}
+        </div>
+      </div>
+    </div>
+  </nz-spin>
+  <nz-pagination
+    [nzPageIndex]="page"
+    [nzTotal]="total"
+    nzShowSizeChanger
+    [nzPageSize]="size"
+    (nzPageIndexChange)="pageChange($event)"
+    (nzPageSizeChange)="pageSizeChange($event)"
+    style="text-align: right"
+  ></nz-pagination>
+</div>
 
 <nz-modal
   [(nzVisible)]="isVisible"
-  nzTitle="Add Song"
+  nzTitle="Add Movie"
   nzOkText="Ok"
   nzCancelText="Cancel"
   (nzOnOk)="submitForm()"
@@ -81,74 +94,27 @@
 >
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="addForm">
-      <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name"
-        >Name
-        </nz-form-label
-        >
-        <nz-form-control
-          [nzSm]="14"
-          [nzXs]="24"
-          nzErrorTip="Please input name!"
-        >
-          <input nz-input formControlName="name" id="name" placeholder="name"/>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="picUrl"
-        >Image URL
-        </nz-form-label
-        >
-        <nz-form-control
-          [nzSm]="14"
-          [nzXs]="24"
-          nzErrorTip="Please input music image url!"
-        >
-          <input
-            nz-input
-            formControlName="picUrl"
-            id="picUrl"
-            placeholder="Image URL"
-          />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="duration" nzRequired
-        >Duration
-        </nz-form-label
-        >
-        <nz-form-control
-          [nzSm]="14"
-          [nzXs]="24"
-          nzErrorTip="Please input duration(unit:s)!"
-        >
-          <input
-            nz-input
-            id="Duration"
-            formControlName="duration"
-            placeholder="duration"
-            type="number"
-          />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="artist" nzRequired
-        >Artist
-        </nz-form-label
-        >
-        <nz-form-control
-          [nzSm]="14"
-          [nzXs]="24"
-          nzErrorTip="Please input artist!"
-        >
-          <input
-            nz-input
-            id="Artist"
-            formControlName="artist"
-            placeholder="artist"
-          />
-        </nz-form-control>
-      </nz-form-item>
+      <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="24" *ngFor="let field of addField">
+          <nz-form-item>
+            <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name"
+              >{{ field.label }}
+            </nz-form-label>
+            <nz-form-control
+              [nzSm]="14"
+              [nzXs]="24"
+              [nzErrorTip]="'Please input ' + field.label!"
+            >
+              <input
+                nz-input
+                [formControlName]="field.value"
+                id="name"
+                [placeholder]="field.label"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
     </form>
   </ng-container>
 </nz-modal>

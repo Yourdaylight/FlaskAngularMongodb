@@ -1,10 +1,13 @@
+$baseColor: rgb(210 11 23);
 ::ng-deep .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
   padding: 0 40px;
   font-size: 20px;
 }
-// ::ng-deep .ant-layout-content {
-//   min-height: calc(100% + 150px);
-// }
+::ng-deep
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
+  .ant-menu-item-selected {
+  background-color: $baseColor;
+}
 .layout {
   width: 100%;
 }
@@ -18,8 +21,8 @@
 .app-layout {
   height: 100vh;
 }
-.ant-layout-header {
-  height: 80px;
+.ant-layout-content {
+  min-height: auto;
 }
 
 .menu-sidebar {
@@ -38,7 +41,7 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: $baseColor;
 }
 
 .sidebar-logo h1 {
@@ -68,16 +71,13 @@
 
 .logo {
   width: 180px;
-  line-height: 80px;
+  height: 64px;
+  line-height: 64px;
   color: #fff;
   padding: 0 20px;
   float: left;
   font-size: 20px;
-}
-
-[nz-menu] {
-  line-height: 80px;
-  height: 80px;
+  font-weight: bold;
 }
 
 nz-header {
@@ -98,6 +98,29 @@ nz-header {
 
 nz-footer {
   text-align: center;
+}
+
+.menu-ul {
+  display: flex;
+  justify-content: center;
+}
+
+.right-top-tool {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  line-height: 60px;
+  height: 40px;
+  color: #fff;
+}
+
+.sign {
+  margin-left: 20px;
+  color: $baseColor;
+  cursor: pointer;
+}
+.sign:hover {
+  color: #fff;
 }
 
 .inner-content {
