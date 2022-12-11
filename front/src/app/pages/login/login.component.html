@@ -1,11 +1,20 @@
 <div class="login">
   <div class="login">
-    <div class="header"></div>
+    <div
+      class="header"
+      style="
+        text-align: right;
+        padding-right: 40px;
+        color: rgba(255, 255, 255, 0.9);
+      "
+    >
+      Netflix Movies and TV Shows
+    </div>
     <div class="login-container">
       <div class="contenter">
         <div class="login-title">{{ curStatus }}</div>
         <form
-          *ngIf="curStatus == 'My Movie Login'"
+          *ngIf="curStatus == 'Login'"
           nz-form
           [formGroup]="validateForm"
           class="login-form"
@@ -43,7 +52,7 @@
             Log in
           </button>
           Don't have an account?
-          <a (click)="changeLogin()" class="base-color">Regist now!</a>
+          <a (click)="changeLogin()" class="base-color">Quick regist!</a>
         </form>
         <form
           *ngIf="curStatus == 'Register'"

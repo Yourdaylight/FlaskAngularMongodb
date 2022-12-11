@@ -4,12 +4,29 @@
   [formGroup]="searchForm"
   (ngSubmit)="getMovieList()"
 >
-  <div nz-row [nzGutter]="24">
-    <div nz-col [nzSpan]="8" *ngFor="let field of searchField">
+  <div nz-row>
+    <div
+      nz-col
+      nzSpan="8"
+      *ngFor="let field of searchField"
+      style="margin-top: 20px"
+    >
       <nz-form-item>
         <nz-form-label>{{ field.label }}</nz-form-label>
         <nz-form-control [nzErrorTip]="'Please input ' + field.label!">
+          <nz-select
+            *ngIf="field.value == 'type'"
+            [ngModel]="field.value"
+            [nzPlaceHolder]="field.label"
+          >
+            <nz-option
+              *ngFor="let item of typeOption"
+              [nzValue]="item.value"
+              [nzLabel]="item.label"
+            ></nz-option>
+          </nz-select>
           <input
+            *ngIf="field.value != 'type'"
             nz-input
             [formControlName]="field.value"
             [placeholder]="field.label"
@@ -17,9 +34,7 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-  </div>
-  <nz-form-item nz-col [nzSpan]="16">
-    <nz-form-control>
+    <div nz-col nzSpan="8" style="margin-top: 20px">
       <button nz-button nzType="primary">Submit</button>
       <button
         nz-button
@@ -29,8 +44,8 @@
       >
         <i nz-icon nzType="plus" nzTheme="outline"></i>Add Movie
       </button>
-    </nz-form-control>
-  </nz-form-item>
+    </div>
+  </div>
 </form>
 
 <div style="padding: 5px 30px">
@@ -57,7 +72,17 @@
           style="position: absolute; right: 24px; top: 120px; color: #eee"
           >{{ data.duration }}</span
         >
-        <div style="font-weight: bold; font-size: 16px; margin: 2px 0">
+        <div
+          style="
+            font-weight: bold;
+            font-size: 16px;
+            margin: 2px 0;
+            overflow: hidden;
+            height: 25px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          "
+        >
           {{ data.title }}
         </div>
         <div

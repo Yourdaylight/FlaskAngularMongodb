@@ -150,7 +150,7 @@ export class MovieDetailsComponent implements OnInit {
     };
     this.apiService.post('addFavorite', params).subscribe(
       (res: any) => {
-        this.$message.success('已收藏');
+        this.$message.success('collected!');
         this.router.navigate(['/layout/favorite'], {});
       },
       () => {}

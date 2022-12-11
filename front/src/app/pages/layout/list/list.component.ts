@@ -82,6 +82,24 @@ export class ListComponent implements OnInit {
       label: 'Country',
       value: 'country',
     },
+    {
+      label: 'Type',
+      value: 'type',
+    },
+  ];
+  typeOption: any = [
+    {
+      label: 'Movie',
+      value: 'Movie',
+    },
+    {
+      label: 'TV Show',
+      value: 'TV Show',
+    },
+    {
+      label: 'all',
+      value: 'all',
+    },
   ];
 
   constructor(
@@ -110,6 +128,7 @@ export class ListComponent implements OnInit {
       title: [null, [Validators.required]],
       director: [null, [Validators.required]],
       country: [null, [Validators.required]],
+      type: [null, [Validators.required]],
     });
     this.getMovieList();
   }
