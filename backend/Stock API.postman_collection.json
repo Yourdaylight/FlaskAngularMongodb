@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "b06ef5f4-d01d-425d-b9be-2f7c481b9c90",
+		"name": "Stock API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userStockList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"code\":\"123456\",\r\n    \"name\":\"\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/userStockList",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"userStockList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addComment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"content\":\"hhhhh\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/addComment",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"addComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getComments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/getComments",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"getComments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeComment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"content\":\"hhhhh\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/removeComment",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"removeComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "plotStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:5000/plotStock",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"plotStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateStockData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:5000/updateStockData",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"updateStockData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"stock\":\"\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/addStock",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"addStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"\",\r\n    \"username\":\"t1\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/removeStock",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"removeStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\":1,\r\n    \"limit\":10\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/getAllStock",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"getAllStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/register",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"t1\",\r\n    \"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
