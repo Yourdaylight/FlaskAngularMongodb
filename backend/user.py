@@ -1,9 +1,9 @@
 import json
 from flask import Blueprint, request
 from utils import get_token
-from db import client,database_name
+from db import client,DATABASE_NAME
 
-db = client[database_name]
+db = client[DATABASE_NAME]
 dbUser = db["user"]
 user = Blueprint('user', __name__)
 

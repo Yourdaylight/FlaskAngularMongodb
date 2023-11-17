@@ -1,18 +1,22 @@
 import pymongo
-
+import traceback
 db_host = "101.35.53.113"
-client = pymongo.MongoClient(f"mongodb://{db_host}:27017/")
-database_name = "netflix"
-collection = "netflix"
+password = "LZHlzh.rootOOT123"
+client = pymongo.MongoClient(db_host, username="admin", password=password)
+DATABASE_NAME = "games"
+COLLECTION = "games"
+DATASET_PATH = "dataset/games.csv"
 
 
 def get_user_collection():
-    return client[database_name]["user"]
+    return client[DATABASE_NAME]["user"]
 
 
 def get_db():
-    _collection = client[database_name]
-    if _collection[collection].count() == 0:
-        return True
-    else:
-        return False
+    try:
+        _collection = client[DATABASE_NAME]
+        is_exist = _collection[COLLECTION].count()
+        print(f"{COLLECTION} is exist: {is_exist}")
+        return is_exist != 0
+    except Exception as e:
+        raise e
