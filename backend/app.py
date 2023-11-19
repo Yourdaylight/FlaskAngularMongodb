@@ -1,14 +1,12 @@
-from flask import Flask, render_template
-from flask_cors import CORS
-import db
-import json
-import traceback
-from user import user
-from movie_view import movie
-from comment_view import comment
-from utils import read_dataset
 import time
-
+import traceback
+from flask import Flask
+from flask_cors import CORS
+import config as db
+from views.user import user
+from views.games import game
+from views.comments import comment
+from utils import read_dataset
 
 
 if __name__ == '__main__':
@@ -22,10 +20,10 @@ if __name__ == '__main__':
         app.config.from_object(db)
         app.config['JSON_AS_ASCII'] = False
         app.register_blueprint(user, url_prefix="/")
-        app.register_blueprint(movie, url_prefix="/")
+        app.register_blueprint(game, url_prefix="/")
         app.register_blueprint(comment, url_prefix="/")
         app.config["SECRET_KEY"] = 'game dataset'
         app.run(debug=True)
         app.run(host='127.0.0.1', port=5000, debug=True)
-    except Exception as e:
+    except Exception:
         traceback.print_exc()

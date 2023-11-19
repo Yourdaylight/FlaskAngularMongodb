@@ -1,10 +1,10 @@
 import pymongo
-import traceback
 db_host = "101.35.53.113"
 password = "LZHlzh.rootOOT123"
 client = pymongo.MongoClient(db_host, username="admin", password=password)
 DATABASE_NAME = "games"
 COLLECTION = "games"
+USER_COLLECTION = "user"
 DATASET_PATH = "dataset/games.csv"
 
 

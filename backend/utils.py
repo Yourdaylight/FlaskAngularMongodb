@@ -5,7 +5,7 @@ import base64
 import random
 import pandas
 import time
-from db import client, DATASET_PATH, DATABASE_NAME, COLLECTION
+from config import client, DATASET_PATH, DATABASE_NAME, COLLECTION
 
 
 class JSONEncoder(json.JSONEncoder):

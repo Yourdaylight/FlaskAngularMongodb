@@ -1,14 +1,14 @@
 import json
 from flask import Blueprint, request
 from utils import get_token
-from db import client,DATABASE_NAME
+from config import client,DATABASE_NAME
 
 db = client[DATABASE_NAME]
 dbUser = db["user"]
 user = Blueprint('user', __name__)
 
 
-@user.route('/login', methods=['POST'])
+@user.route('/api/v1/games/login', methods=['POST'])
 def login():
     username = request.json.get('username')
     password = request.json.get('password')
@@ -28,7 +28,7 @@ def login():
     return json.dumps(content)
 
 
-@user.route('/register', methods=['POST'])
+@user.route('/api/v1/games/register', methods=['POST'])
 def register():
     try:
         username = request.json.get('username')

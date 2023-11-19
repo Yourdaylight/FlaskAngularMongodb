@@ -1,9 +1,9 @@
-from flask import Blueprint, request
 import json
-from bson import ObjectId
 import time
 import datetime
-from db import client
+from bson import ObjectId
+from flask import Blueprint, request
+from config import client
 from utils import JSONEncoder
 
 comment = Blueprint('comment', __name__)
