@@ -55,8 +55,8 @@ def remove_review():
             {"_id": ObjectId(game_id)},
             {"$pull": {"reviews": {"review_id": review_id}}}
         )
-        content = {"code": 0, "msg": "SUCCESS"}
+        content = {"code": 200, "msg": "SUCCESS"}
     except Exception as e:
-        content = {"code": 1, "msg": str(e)}
+        content = {"code": 500, "msg": str(e)}
     return jsonify(content)
 

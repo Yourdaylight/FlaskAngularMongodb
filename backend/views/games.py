@@ -55,11 +55,11 @@ def add_game():
         game_data = request.json
         # Title为必填项
         if not game_data.get("Title"):
-            return jsonify({"code": 1, "msg": "Field: [Title] is required"}), 400
+            return jsonify({"code": 500, "msg": "Field: [Title] is required"}), 400
         existing_game = game_collection.find_one({"Title": game_data.get("Title")})
         if existing_game:
             return jsonify({
-                "code": 1,
+                "code": 500,
                 "msg": f"A game with the same title [{existing_game}] already exists"}
             ), 400
 
@@ -70,13 +70,13 @@ def add_game():
                          "Minimum Requirements"]
         for field in string_fields:
             if not isinstance(game_data.get(field), str):
-                return jsonify({"code": 1, "msg": f"Field:[{field}] should be a string"}), 400
+                return jsonify({"code": 500, "msg": f"Field:[{field}] should be a string"}), 400
 
         # 验证列表类型的字段
         list_fields = ["Popular Tags", "Game Features", "Supported Languages"]
         for field in list_fields:
             if not isinstance(game_data.get(field), list):
-                return jsonify({"code": 1, "msg": f"Field: [{field}] should be a list"}), 400
+                return jsonify({"code": 500, "msg": f"Field: [{field}] should be a list"}), 400
 
         # 添加时间戳
         game_data["date_added"] = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -84,9 +84,9 @@ def add_game():
 
         # 插入数据
         game_collection.insert_one(game_data)
-        return jsonify({"code": 0, "msg": "SUCCESS"})
+        return jsonify({"code": 200, "msg": "SUCCESS"})
     except Exception as e:
-        return jsonify({"code": 1, "msg": str(e)}), 500
+        return jsonify({"code": 500, "msg": str(e)}), 500
 
 
 @game.route('/api/v1/game/deleteGame', methods=['POST', 'GET'])
