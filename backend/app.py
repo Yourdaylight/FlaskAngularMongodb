@@ -1,4 +1,8 @@
 import time
+import json
+import bson
+import base64
+import random
 import traceback
 from flask import Flask
 from flask_cors import CORS
@@ -6,15 +10,28 @@ import config as db
 from views.user import user
 from views.games import game
 from views.reviews import review
-from utils import read_dataset
+
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, bson.ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+
+def get_token(user_id):
+    token = base64.b64encode(
+        (".".join([str(user_id), str(random.random()), str(time.time() + 7200)])).encode()).decode()
+    return token
+
+
+def import_data():
+    pass
 
 
 if __name__ == '__main__':
     # 如果数据库为空，则读取数据集并存入数据库
     try:
-        if not db.get_db():
-            read_dataset()
-        time.sleep(1)
         app = Flask(__name__)
         CORS(app, supports_credentials=True)
         app.config.from_object(db)
