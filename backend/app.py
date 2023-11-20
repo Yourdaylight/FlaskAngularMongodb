@@ -5,7 +5,7 @@ from flask_cors import CORS
 import config as db
 from views.user import user
 from views.games import game
-from views.comments import comment
+from views.reviews import review
 from utils import read_dataset
 
 
@@ -21,7 +21,7 @@ if __name__ == '__main__':
         app.config['JSON_AS_ASCII'] = False
         app.register_blueprint(user, url_prefix="/")
         app.register_blueprint(game, url_prefix="/")
-        app.register_blueprint(comment, url_prefix="/")
+        app.register_blueprint(review, url_prefix="/")
         app.config["SECRET_KEY"] = 'game dataset'
         app.run(debug=True)
         app.run(host='127.0.0.1', port=5000, debug=True)
