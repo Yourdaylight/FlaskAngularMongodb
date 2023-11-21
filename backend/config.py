@@ -3,10 +3,10 @@ db_host = "101.35.53.113"
 db_port = 27017
 password = "LZHlzh.rootOOT123"
 client = pymongo.MongoClient(db_host, db_port, username="admin", password=password)
-DATABASE_NAME = "games"
-COLLECTION = "games"
+DATABASE_NAME = "wegame"
+COLLECTION = "wegame"
 USER_COLLECTION = "user"
-DATASET_PATH = "dataset/games.csv"
+DATASET_PATH = "dataset/games2.csv"
 
 
 def get_user_collection():
