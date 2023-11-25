@@ -1,5 +1,6 @@
 import time
 import datetime
+import traceback
 from bson import ObjectId
 from config import client, DATABASE_NAME, COLLECTION, USER_COLLECTION
 from utils import JSONEncoder
@@ -44,7 +45,7 @@ def game_list():
         content = {"code": 200, "total": total, "data": res, "msg": "SUCCESS"}
         content = JSONEncoder().encode(content)
     except Exception as e:
-        content = {"code":500, "msg": str(e)}
+        content = {"code": 500, "msg": str(e)}
 
     return Response(content, mimetype='application/json')
 
@@ -66,7 +67,7 @@ def add_game():
         # 验证字符串类型的字段
         string_fields = ["Title", "Original Price", "Discounted Price", "Release Date",
                          "Link", "Game Description", "Developer", "Publisher", "Recent Reviews Summary",
-                         "All Reviews Summary","Recent Reviews Number", "All Reviews Number",
+                         "All Reviews Summary", "Recent Reviews Number", "All Reviews Number",
                          "Minimum Requirements"]
         for field in string_fields:
             if not isinstance(game_data.get(field), str):
@@ -109,8 +110,26 @@ def update_game():
         game_collection.update_one({"_id": ObjectId(id)}, {"$set": request.json})
         content = {"code": 200, "msg": "SUCCESS"}
     except Exception as e:
-        import traceback
         traceback.print_exc()
         content = {"code": 500, "msg": str(e)}
     return JSONEncoder().encode(content)
 
+
+# 获取收藏列表
+@game.route('/api/v1/game/getCollectList', methods=['POST', 'GET'])
+def get_collect_list():
+    try:
+        username = request.json.get("username")
+        user_document = user_collection.find_one({"username": username})
+        game_ids = user_document.get("collect", [])
+        collect_list = []
+        # 批量查询game_ids
+        for game_id in game_ids:
+            game_document = game_collection.find_one({"_id": ObjectId(game_id)})
+            collect_list.append(game_document)
+        content = {"code": 200, "msg": "SUCCESS", "total": len(game_ids), "data": collect_list}
+    except Exception as e:
+        traceback.print_exc()
+        content = {"code": 500, "msg": str(e)}
+    content = JSONEncoder().encode(content)
+    return Response(content, mimetype='application/json')

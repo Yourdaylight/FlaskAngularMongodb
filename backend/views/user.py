@@ -1,11 +1,13 @@
 import json
-from flask import Blueprint, request
+import traceback
+from flask import Blueprint, request, jsonify
 from utils import get_token
-from config import client,DATABASE_NAME
+from config import client, DATABASE_NAME, USER_COLLECTION
 
 db = client[DATABASE_NAME]
 dbUser = db["user"]
 user = Blueprint('user', __name__)
+user_collection = client[DATABASE_NAME][USER_COLLECTION]
 
 
 @user.route('/api/v1/games/login', methods=['POST'])
@@ -25,7 +27,7 @@ def login():
         import traceback
         traceback.print_exc()
         content = {"code": 500, "msg": str(e)}
-    return json.dumps(content)
+    return jsonify(content)
 
 
 @user.route('/api/v1/games/register', methods=['POST'])
@@ -42,7 +44,34 @@ def register():
         else:
             content = {"code": 500, "msg": "Register failed! The username already exists!!"}
     except Exception as e:
-        import traceback
         traceback.print_exc()
         content = {"code": 500, "msg": str(e)}
-    return json.dumps(content)
+    return jsonify(content)
+
+
+# 收藏游戏
+@user.route('/api/v1/games/collectGame', methods=['POST', 'GET'])
+def collect_game():
+    try:
+        username = request.json.get("username")
+        game_id = request.json.get("gameId")
+        user_collection.update_one({"username": username}, {"$addToSet": {"collect": game_id}})
+        content = {"code": 200, "msg": "SUCCESS"}
+    except Exception as e:
+        traceback.print_exc()
+        content = {"code": 500, "msg": str(e)}
+    return jsonify(content)
+
+
+# 取消收藏
+@user.route('/api/v1/games/cancelCollectGame', methods=['POST', 'GET'])
+def cancel_collect_game():
+    try:
+        username = request.json.get("username")
+        game_id = request.json.get("gameId")
+        user_collection.update_one({"username": username}, {"$pull": {"collect": game_id}})
+        content = {"code": 200, "msg": "SUCCESS"}
+    except Exception as e:
+        traceback.print_exc()
+        content = {"code": 500, "msg": str(e)}
+    return jsonify(content)
