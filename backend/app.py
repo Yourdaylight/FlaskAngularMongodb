@@ -1,10 +1,11 @@
 import json
 import traceback
 import uuid
-from flask import Flask, request
+from flask import Flask, request, blueprints
 from flask_cors import CORS
 import config as db_config
 from utils import read_dataset
+from games import game
 
 # 设置数据库连接
 database = db_config.client[db_config.DATABASE_NAME]
@@ -17,13 +18,17 @@ app.config.from_object(db_config)
 app.config['JSON_AS_ASCII'] = False
 app.config["SECRET_KEY"] = '123456'
 
+blueprints_list = [game]
+for bp in blueprints_list:
+    app.register_blueprint(bp)
+
 
 def create_auth_token(user_identifier):
     # 生成认证 Token
-    return str(uuid.uuid3(user_identifier))
+    return str(uuid.uuid3(uuid.NAMESPACE_DNS, user_identifier))
 
 
-@app.route('/api/v1/games/login', methods=['POST'])
+@app.route('/api/wegame/login', methods=['POST'])
 def user_login():
     user_name = request.json.get('username')
     user_pass = request.json.get('password')
@@ -45,7 +50,7 @@ def user_login():
     return json.dumps(response)
 
 
-@app.route('/api/v1/games/register', methods=['POST'])
+@app.route('/api/wegame/register', methods=['POST'])
 def user_registration():
     try:
         user_name = request.json.get('username')
@@ -68,8 +73,7 @@ if __name__ == '__main__':
     try:
         if not db_config.get_db():
             read_dataset()
-
         # 启动 Flask 应用
-        app.run(host='127.0.0.1', port=5000, debug=True)
+        app.run(host='0.0.0.0', port=5000, debug=True)
     except Exception:
         traceback.print_exc()

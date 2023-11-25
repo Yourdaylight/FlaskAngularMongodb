@@ -10,7 +10,7 @@ user_collection = client[DATABASE_NAME][USER_COLLECTION]
 game_collection = client[DATABASE_NAME][COLLECTION]
 
 
-@game.route('/api/v1/game/getGames', methods=['POST', 'GET'])
+@game.route('/api/wegame/getGames', methods=['POST', 'GET'])
 def game_list():
     try:
         page = request.json.get("page", 1)
@@ -18,22 +18,21 @@ def game_list():
 
         # 获取查询参数
         original_price = request.json.get("Original Price")
-        title = request.json.get("Title")
+        name = request.json.get("Name")
         developer = request.json.get("Developer")
-        game_features = request.json.get("Game Features")
+        distributor = request.json.get("Distributor")
 
         # 构建查询条件
         query_conditions = {}
         # 不区分大小写的模糊查询
         if original_price:
             query_conditions["Original Price"] = {"$regex": original_price, "$options": "i"}
-        if title:
-            query_conditions["Title"] = {"$regex": title, "$options": "i"}
+        if name:
+            query_conditions["Title"] = {"$regex": name, "$options": "i"}
         if developer:
             query_conditions["Developer"] = {"$regex": developer, "$options": "i"}
-        # 匹配列表中所有元素
-        if game_features:
-            query_conditions["Game Features"] = {"$all": game_features}
+        if distributor:
+            query_conditions["Publisher"] = {"$regex": distributor, "$options": "i"}
 
         # 执行查询
         data = game_collection.find(query_conditions).skip((page - 1) * size).limit(size).sort("update_time", -1)
@@ -49,7 +48,7 @@ def game_list():
     return Response(content, mimetype='application/json')
 
 
-@game.route('/api/v1/game/addGame', methods=['POST', 'GET'])
+@game.route('/api/wegame/addGame', methods=['POST', 'GET'])
 def add_game():
     try:
         game_data = request.json
@@ -89,7 +88,7 @@ def add_game():
         return jsonify({"code": 500, "msg": str(e)}), 500
 
 
-@game.route('/api/v1/game/deleteGame', methods=['POST', 'GET'])
+@game.route('/api/wegame/deleteGame', methods=['POST', 'GET'])
 def delete_game():
     try:
         id = request.json.get("_id")
@@ -102,7 +101,7 @@ def delete_game():
     return JSONEncoder().encode(content)
 
 
-@game.route('/api/v1/game/updateGame', methods=['POST', 'GET'])
+@game.route('/api/wegame/updateGame', methods=['POST', 'GET'])
 def update_game():
     try:
         id = request.json.pop("_id")
