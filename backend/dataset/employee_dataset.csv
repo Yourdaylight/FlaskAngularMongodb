@@ -1,0 +1,1241 @@
+Age,Attrition,BusinessTravel,Department,DistanceFromHome,Education,EducationField,EmployeeName,EmployeeID,Gender,JobLevel,JobRole,MaritalStatus,MonthlyIncome,NumCompaniesWorked
+51,No,Travel_Rarely,Sales,6,2,Life Sciences,Anne Allen,1,Female,1,Healthcare Representative,Married,131160,1.0
+31,Yes,Travel_Frequently,Research & Development,10,1,Life Sciences,Benjamin Jacobs,2,Female,1,Research Scientist,Single,41890,0.0
+32,No,Travel_Frequently,Research & Development,17,4,Other,William Lewis,3,Male,4,Sales Executive,Married,193280,1.0
+38,No,Non-Travel,Research & Development,2,5,Life Sciences,Gordon Castillo,4,Male,3,Human Resources,Married,83210,3.0
+32,No,Travel_Rarely,Research & Development,10,1,Medical,Gabriel Frank,5,Male,1,Sales Executive,Single,23420,4.0
+46,No,Travel_Rarely,Research & Development,8,3,Life Sciences,Jessica Palmer,6,Female,4,Research Director,Married,40710,3.0
+28,Yes,Travel_Rarely,Research & Development,11,2,Medical,Brittany Chen,7,Male,2,Sales Executive,Single,58130,2.0
+29,No,Travel_Rarely,Research & Development,18,3,Life Sciences,Jessica Woods,8,Male,2,Sales Executive,Married,31430,2.0
+31,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Brian Espinoza,9,Male,3,Laboratory Technician,Married,20440,0.0
+25,No,Non-Travel,Research & Development,7,4,Medical,Joseph Sims,10,Female,4,Laboratory Technician,Divorced,134640,1.0
+45,No,Travel_Rarely,Research & Development,17,2,Medical,Deanna Becker DVM,11,Male,2,Laboratory Technician,Married,79910,0.0
+36,No,Travel_Rarely,Research & Development,28,1,Life Sciences,Amanda Diaz,12,Male,1,Laboratory Technician,Married,33770,0.0
+55,No,Travel_Rarely,Research & Development,14,4,Life Sciences,Janice Johnson,13,Female,1,Sales Executive,Single,55380,0.0
+47,Yes,Non-Travel,Research & Development,1,1,Medical,Gary Willis,14,Male,1,Research Scientist,Married,57620,1.0
+28,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Mark Adams,15,Male,1,Manufacturing Director,Married,25920,1.0
+37,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Janet Hayes,16,Male,2,Healthcare Representative,Married,53460,4.0
+21,No,Travel_Rarely,Research & Development,3,2,Life Sciences,Seth Sandoval,17,Male,1,Laboratory Technician,Single,42130,1.0
+37,No,Non-Travel,Research & Development,1,3,Medical,Stephanie Vincent,18,Male,2,Sales Executive,Divorced,41270,2.0
+35,No,Travel_Rarely,Sales,7,4,Life Sciences,Steven Hall,19,Male,1,Sales Representative,Divorced,24380,7.0
+38,No,Travel_Rarely,Research & Development,8,3,Life Sciences,Tina Pacheco,20,Female,1,Manager,Divorced,68700,1.0
+26,No,Travel_Frequently,Research & Development,1,4,Other,Christine Cabrera,21,Male,2,Laboratory Technician,Divorced,104470,1.0
+50,No,Travel_Rarely,Sales,8,4,Life Sciences,Christopher Hall,22,Male,1,Research Scientist,Divorced,96670,3.0
+53,No,Travel_Rarely,Research & Development,11,4,Life Sciences,Melissa Hughes,23,Female,2,Research Scientist,Married,21480,3.0
+42,No,Travel_Rarely,Research & Development,4,4,Life Sciences,Laura Huffman,24,Male,1,Manufacturing Director,Married,89260,1.0
+29,No,Travel_Frequently,Research & Development,16,4,Medical,Mark Rodriguez,25,Male,1,Laboratory Technician,Single,65130,1.0
+55,No,Travel_Rarely,Research & Development,1,4,Other,Joseph Watson,26,Female,1,Research Scientist,Married,67990,3.0
+26,No,Travel_Frequently,Research & Development,9,3,Life Sciences,Zachary Jones,27,Female,1,Manager,Married,162910,1.0
+37,No,Travel_Rarely,Sales,5,1,Marketing,Kimberly Richardson,28,Male,1,Research Scientist,Single,27050,1.0
+44,Yes,Travel_Frequently,Research & Development,1,2,Medical,Amanda Mays,29,Male,2,Research Scientist,Divorced,103330,3.0
+38,No,Travel_Rarely,Sales,2,3,Marketing,Jessica Moran,30,Female,1,Manager,Divorced,44480,9.0
+26,Yes,Travel_Rarely,Research & Development,4,3,Medical,Andrew Stewart,31,Male,3,Research Scientist,Divorced,68540,2.0
+28,No,Travel_Rarely,Research & Development,7,3,Other,Steven Johnson,32,Male,1,Human Resources,Single,96370,1.0
+49,No,Travel_Frequently,Research & Development,1,1,Medical,Kiara Marsh,33,Female,2,Research Scientist,Single,35910,9.0
+36,No,Travel_Rarely,Sales,5,3,Technical Degree,Scott Raymond,34,Male,3,Sales Executive,Single,54050,4.0
+31,No,Travel_Frequently,Research & Development,9,4,Medical,David Holmes,35,Male,1,Sales Executive,Divorced,46840,1.0
+26,Yes,Travel_Rarely,Research & Development,8,3,Medical,Dana Henderson,36,Male,2,Manager,Single,157870,1.0
+37,No,Travel_Frequently,Sales,9,1,Marketing,Alejandra Thomas,37,Male,1,Laboratory Technician,Married,15140,1.0
+42,No,Travel_Frequently,Sales,2,2,Marketing,Laurie Huffman,38,Male,3,Research Director,Married,29560,5.0
+18,Yes,Travel_Rarely,Research & Development,1,4,Life Sciences,Lisa Clark,39,Male,1,Sales Executive,Single,23350,1.0
+35,No,Travel_Rarely,Sales,20,2,Life Sciences,Richard Hernandez,40,Male,1,Laboratory Technician,Married,51540,0.0
+36,No,Travel_Frequently,Research & Development,8,3,Other,Daniel Wade,41,Female,3,Sales Executive,Married,69620,4.0
+51,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Heidi Harris,42,Male,2,Laboratory Technician,Divorced,56750,5.0
+41,No,Travel_Rarely,Research & Development,29,1,Life Sciences,Stacey Roberts,43,Male,1,Laboratory Technician,Single,23790,1.0
+18,No,Travel_Rarely,Sales,7,3,Life Sciences,Mitchell Lopez,44,Male,1,Research Scientist,Single,38120,1.0
+28,No,Travel_Rarely,Research & Development,9,3,Medical,Kelly Watson,45,Male,1,Sales Representative,Single,46480,0.0
+31,No,Travel_Rarely,Research & Development,8,1,Technical Degree,David Browning,46,Male,1,Manufacturing Director,Married,29360,4.0
+39,No,Travel_Rarely,Sales,5,4,Marketing,Barbara Lowery,47,Female,2,Human Resources,Divorced,21050,0.0
+36,No,Non-Travel,Research & Development,5,4,Life Sciences,Vanessa Wilson,48,Male,1,Sales Executive,Married,85780,7.0
+32,No,Travel_Rarely,Sales,2,3,Marketing,Heather Dunn,49,Male,2,Laboratory Technician,Married,27060,1.0
+38,No,Travel_Rarely,Research & Development,5,2,Life Sciences,Connie Wilson,50,Female,3,Research Scientist,Married,63840,3.0
+58,No,Non-Travel,Research & Development,2,3,Life Sciences,Sheila Ward,51,Male,2,Manufacturing Director,Divorced,39680,2.0
+31,No,Travel_Rarely,Research & Development,20,1,Technical Degree,Steven Hester,52,Female,3,Research Scientist,Married,99070,0.0
+31,No,Travel_Rarely,Sales,7,4,Marketing,Bryan Edwards,53,Male,2,Sales Executive,Married,132250,3.0
+45,No,Travel_Frequently,Research & Development,3,1,Medical,Larry Richardson,54,Female,1,Sales Executive,Divorced,35400,1.0
+31,No,Travel_Rarely,Sales,16,4,Marketing,Thomas Benson,55,Female,2,Research Scientist,Divorced,28040,0.0
+33,No,Travel_Frequently,Research & Development,9,3,Life Sciences,Angela Lee,56,Male,4,Research Director,Married,193920,6.0
+39,No,Travel_Rarely,Sales,1,4,Life Sciences,Denise Hayden,57,Male,1,Sales Executive,Married,196650,1.0
+43,No,Travel_Frequently,Research & Development,7,4,Medical,Mandy Hooper,58,Male,4,Research Scientist,Single,24390,0.0
+49,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Allen Simon,59,Male,3,Manufacturing Director,Single,73140,7.0
+52,Yes,Travel_Rarely,Research & Development,7,1,Life Sciences,Robert Garcia,60,Female,2,Research Scientist,Married,47740,2.0
+27,No,Travel_Rarely,Research & Development,15,4,Medical,Rachael Navarro,61,Male,3,Research Scientist,Single,39020,1.0
+32,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Steven Thomas,62,Male,3,Research Scientist,Married,26620,1.0
+27,No,Travel_Rarely,Research & Development,13,2,Medical,Lauren James,63,Female,4,Research Director,Single,28560,1.0
+31,No,Travel_Rarely,Sales,24,3,Life Sciences,Julie Johnson,64,Male,2,Healthcare Representative,Divorced,10810,4.0
+32,No,Travel_Rarely,Research & Development,7,3,Technical Degree,Michele Chapman,65,Male,2,Healthcare Representative,Single,24720,7.0
+28,Yes,Travel_Rarely,Research & Development,9,4,Medical,Michelle Joseph,66,Male,1,Sales Executive,Married,56730,5.0
+30,No,Travel_Rarely,Research & Development,13,3,Life Sciences,Randall Andrews,67,Female,4,Research Director,Married,41970,1.0
+31,No,Travel_Frequently,Research & Development,2,1,Life Sciences,Rachel Lynch,68,Female,1,Manager,Married,97130,1.0
+39,No,Travel_Frequently,Research & Development,19,4,Medical,Mary Hill,69,Female,1,Research Scientist,Married,20620,1.0
+39,Yes,Travel_Rarely,Research & Development,1,1,Medical,John Rangel,70,Female,1,Laboratory Technician,Married,42840,4.0
+33,No,Travel_Frequently,Sales,4,2,Life Sciences,Emily Lawson,71,Male,4,Research Scientist,Single,47880,3.0
+47,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Stephen Sanchez,72,Female,2,Healthcare Representative,Married,59060,4.0
+43,No,Travel_Frequently,Research & Development,14,3,Medical,Charles Boyle,73,Female,5,Research Director,Divorced,38860,1.0
+27,No,Non-Travel,Research & Development,2,3,Life Sciences,Felicia Baker,74,Male,1,Research Director,Married,168230,0.0
+54,No,Travel_Frequently,Research & Development,1,4,Life Sciences,Judith Becker,75,Male,2,Research Scientist,Single,29330,3.0
+43,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Oscar Malone,76,Female,2,Manager,Married,65000,8.0
+45,No,Travel_Rarely,Sales,3,1,Marketing,Jay Turner,77,Female,1,Sales Executive,Married,171740,9.0
+40,No,Travel_Rarely,Research & Development,2,4,Other,Angel Thompson,78,Male,4,Research Scientist,Married,50330,2.0
+29,Yes,Travel_Rarely,Research & Development,29,3,Medical,Veronica Sanford,79,Female,1,Research Scientist,Married,23070,1.0
+29,No,Travel_Rarely,Human Resources,8,3,Medical,John Acosta,80,Male,3,Sales Representative,Single,25870,0.0
+30,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Melissa Smith,81,Male,2,Research Scientist,Divorced,55070,1.0
+27,No,Travel_Rarely,Research & Development,11,2,Medical,John Reed,82,Male,1,Manager,Married,43930,1.0
+37,No,Travel_Rarely,Sales,1,4,Life Sciences,Donna Nichols,83,Male,2,Healthcare Representative,Divorced,133480,7.0
+38,No,Travel_Rarely,Research & Development,28,4,Medical,Marie Brown,84,Male,1,Laboratory Technician,Divorced,65830,0.0
+31,No,Travel_Rarely,Research & Development,6,3,Medical,Kelsey Hooper,85,Female,3,Manager,Single,81030,1.0
+29,No,Travel_Rarely,Research & Development,3,4,Life Sciences,Janet Cantrell,86,Male,3,Sales Executive,Divorced,39780,1.0
+35,No,Travel_Rarely,Sales,16,2,Technical Degree,Peter Mcdonald,87,Male,3,Manager,Single,25440,0.0
+23,No,Travel_Rarely,Research & Development,20,4,Life Sciences,Joseph Herring,88,Male,1,Manufacturing Director,Divorced,53990,1.0
+41,No,Travel_Rarely,Research & Development,9,2,Life Sciences,Kathleen Mcguire,89,Female,1,Laboratory Technician,Single,54870,6.0
+47,No,Travel_Frequently,Sales,1,3,Medical,Jeffery Stephens,90,Female,2,Laboratory Technician,Single,68340,3.0
+42,No,Travel_Rarely,Research & Development,3,4,Life Sciences,Justin Richardson,91,Male,1,Manager,Single,10910,2.0
+29,No,Non-Travel,Sales,22,4,Marketing,Christopher Choi,92,Male,2,Human Resources,Married,57360,1.0
+42,No,Travel_Rarely,Sales,7,4,Medical,Ashley Patel,93,Male,3,Research Scientist,Divorced,22260,0.0
+32,No,Travel_Rarely,Research & Development,2,3,Medical,Michelle Gray,94,Male,2,Research Scientist,Married,57470,1.0
+48,No,Travel_Rarely,Sales,13,4,Medical,Kyle Murphy,95,Male,4,Sales Executive,Married,98540,3.0
+37,No,Travel_Rarely,Research & Development,8,5,Technical Degree,Philip Brooks,96,Male,2,Manufacturing Director,Divorced,54670,4.0
+30,No,Non-Travel,Sales,25,4,Other,James Johnson,97,Male,1,Healthcare Representative,Married,53800,7.0
+26,No,Travel_Rarely,Sales,28,3,Medical,Angela Johnson,98,Female,5,Laboratory Technician,Married,51510,1.0
+42,No,Travel_Rarely,Sales,2,2,Medical,Christine Norman,99,Female,1,Laboratory Technician,Single,21330,3.0
+21,Yes,Travel_Frequently,Research & Development,9,3,Medical,Lindsey Fernandez,100,Female,4,Manufacturing Director,Single,178750,1.0
+36,No,Non-Travel,Human Resources,28,3,Human Resources,Travis Johnson,101,Male,2,Laboratory Technician,Single,24320,4.0
+36,No,Travel_Frequently,Research & Development,6,3,Life Sciences,Joel Ayala,102,Female,2,Research Scientist,Married,47710,4.0
+57,No,Travel_Rarely,Research & Development,21,4,Life Sciences,Valerie Vasquez,103,Male,5,Research Scientist,Married,191610,2.0
+40,No,Travel_Rarely,Research & Development,8,3,Other,Wendy Stone,104,Male,2,Sales Executive,Married,50870,3.0
+21,No,Non-Travel,Research & Development,1,5,Life Sciences,David Salazar,105,Female,2,Manager,Single,28630,1.0
+33,Yes,Travel_Rarely,Human Resources,28,2,Human Resources,William Webb,106,Female,5,Manager,Single,55610,1.0
+37,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Wendy Nguyen,107,Male,4,Research Scientist,Married,21440,6.0
+46,No,Non-Travel,Sales,2,4,Marketing,Daniel Travis,108,Female,2,Laboratory Technician,Married,30650,2.0
+41,Yes,Travel_Frequently,Research & Development,16,1,Medical,Adam Gilbert,109,Female,1,Research Scientist,Single,28100,1.0
+50,No,Travel_Rarely,Research & Development,9,3,Medical,Paul Lewis,110,Female,3,Laboratory Technician,Single,98880,6.0
+40,Yes,Travel_Rarely,Research & Development,8,3,Medical,Jessica Hunter,111,Female,1,Healthcare Representative,Married,86280,2.0
+31,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Jose Wilson,112,Male,4,Human Resources,Single,28670,0.0
+21,Yes,Travel_Rarely,Human Resources,10,2,Human Resources,Rebecca Tucker,113,Male,1,Laboratory Technician,Single,53730,1.0
+29,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Julian Ray,114,Female,2,Research Director,Single,66670,9.0
+35,No,Travel_Rarely,Research & Development,29,3,Life Sciences,David Williams,115,Female,3,Sales Executive,Single,50030,9.0
+27,No,Travel_Rarely,Sales,2,3,Life Sciences,Dennis Bell,116,Male,1,Sales Executive,Divorced,23670,
+28,No,Travel_Rarely,Research & Development,2,2,Medical,Kimberly Williams,117,Male,3,Manager,Single,28580,1.0
+49,No,Travel_Rarely,Sales,2,3,Technical Degree,Gerald Johnson,118,Male,2,Manufacturing Director,Single,52040,8.0
+51,No,Travel_Rarely,Research & Development,1,2,Life Sciences,Richard Johns,119,Male,1,Sales Executive,Married,41050,4.0
+36,No,Travel_Rarely,Sales,15,2,Life Sciences,Michael Gomez,120,Male,1,Sales Executive,Married,96790,4.0
+34,Yes,Non-Travel,Research & Development,7,3,Life Sciences,Allen Smith,121,Male,1,Sales Representative,Single,56170,8.0
+55,No,Travel_Rarely,Sales,26,3,Marketing,Trevor Bryant,122,Male,1,Laboratory Technician,Single,104480,2.0
+24,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Terry Payne,123,Female,5,Manager,Divorced,28970,1.0
+30,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Dr. Amy Payne,124,Female,2,Manager,Married,59680,1.0
+26,Yes,Travel_Frequently,Sales,14,3,Life Sciences,Barbara Pratt,125,Male,2,Manager,Single,75100,0.0
+22,No,Travel_Rarely,Research & Development,16,5,Other,Jessica Lee,126,Male,1,Research Scientist,Married,29910,1.0
+36,No,Travel_Rarely,Research & Development,1,3,Medical,Greg Medina,127,Female,5,Healthcare Representative,Married,196360,1.0
+30,Yes,Travel_Frequently,Sales,3,2,Marketing,Lindsay Williams,128,Male,3,Research Scientist,Single,11290,9.0
+37,No,Travel_Rarely,Research & Development,10,1,Technical Degree,Ashley Wood,129,Male,1,Sales Executive,Divorced,133410,1.0
+40,No,Travel_Rarely,Research & Development,6,2,Medical,Kevin Hood,130,Male,3,Research Scientist,Divorced,43320,7.0
+42,No,Travel_Rarely,Research & Development,2,3,Medical,John Washington,131,Female,4,Manager,Divorced,110310,3.0
+37,No,Travel_Rarely,Sales,9,1,Marketing,Christopher Rojas,132,Male,3,Sales Executive,Single,44400,2.0
+43,No,Travel_Rarely,Sales,10,2,Life Sciences,Melanie Barton,133,Female,1,Sales Executive,Divorced,46170,1.0
+40,No,Travel_Rarely,Sales,6,2,Life Sciences,Kristi Miller,134,Female,1,Laboratory Technician,Married,26470,6.0
+54,No,Travel_Rarely,Human Resources,9,3,Life Sciences,Stephen Harrison,135,Female,2,Manufacturing Director,Married,63230,4.0
+34,No,Non-Travel,Research & Development,28,3,Medical,Jeffrey Wheeler,136,Male,1,Laboratory Technician,Married,56770,9.0
+31,No,Travel_Rarely,Research & Development,10,4,Life Sciences,Morgan Walker DDS,137,Male,3,Sales Executive,Married,21870,1.0
+43,No,Travel_Frequently,Sales,14,3,Life Sciences,Leah Hale,138,Female,1,Manufacturing Director,Married,37480,7.0
+43,No,Travel_Rarely,Sales,27,4,Life Sciences,Andre Davis,139,Male,2,Sales Representative,Divorced,39770,4.0
+25,No,Travel_Rarely,Human Resources,7,2,Human Resources,Lisa Rodriguez,140,Male,1,Manufacturing Director,Single,86330,1.0
+37,No,Non-Travel,Research & Development,1,3,Medical,Thomas Chavez,141,Male,3,Laboratory Technician,Married,20080,3.0
+31,No,Travel_Rarely,Research & Development,24,1,Medical,Chelsey Williams,142,Male,3,Laboratory Technician,Married,44400,1.0
+39,No,Travel_Frequently,Research & Development,26,4,Technical Degree,Amy Sullivan,143,Female,1,Sales Executive,Divorced,30670,1.0
+56,No,Travel_Frequently,Research & Development,20,4,Life Sciences,Kim Brown,144,Female,3,Sales Executive,Married,53210,9.0
+30,No,Travel_Rarely,Sales,5,4,Medical,Jamie Maddox,145,Female,2,Manufacturing Director,Single,54100,0.0
+41,No,Travel_Rarely,Research & Development,7,3,Technical Degree,David Peterson,146,Female,3,Research Scientist,Married,27820,1.0
+28,No,Travel_Rarely,Research & Development,7,3,Medical,Lisa Yates,147,Male,3,Healthcare Representative,Divorced,119570,1.0
+25,Yes,Travel_Rarely,Research & Development,5,2,Life Sciences,Michael Hall,148,Female,3,Laboratory Technician,Married,26600,5.0
+52,No,Travel_Rarely,Research & Development,26,2,Life Sciences,Dean Smith,149,Female,2,Sales Representative,Married,33750,2.0
+45,No,Travel_Rarely,Research & Development,2,3,Medical,Amy Best,150,Female,1,Sales Executive,Married,50980,3.0
+52,No,Travel_Rarely,Research & Development,12,3,Medical,Matthew Hoffman MD,151,Male,2,Research Scientist,Married,48780,2.0
+42,No,Travel_Frequently,Sales,10,3,Marketing,Adrian Ball,152,Female,2,Healthcare Representative,Divorced,28370,2.0
+30,No,Travel_Rarely,Sales,25,3,Marketing,Robin Watson,153,Male,1,Sales Executive,Single,24060,2.0
+60,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Crystal Miller,154,Female,1,Manufacturing Director,Married,22690,5.0
+46,No,Travel_Rarely,Sales,19,4,Marketing,Jay Romero,155,Female,1,Sales Executive,Divorced,41080,2.0
+42,No,Travel_Frequently,Research & Development,18,4,Technical Degree,Kimberly Middleton,156,Male,4,Sales Executive,Married,132060,0.0
+24,Yes,Travel_Rarely,Research & Development,27,2,Medical,Gregory Lara,157,Male,1,Research Scientist,Single,104220,1.0
+34,Yes,Travel_Frequently,Research & Development,5,3,Medical,Brandon Rice,158,Male,2,Research Scientist,Divorced,137440,0.0
+38,No,Travel_Frequently,Sales,3,3,Marketing,Jim Perez,159,Female,2,Sales Executive,Married,49070,1.0
+40,No,Travel_Rarely,Sales,26,4,Marketing,Melissa Conley,160,Female,1,Sales Executive,Married,34820,0.0
+26,No,Travel_Rarely,Research & Development,3,2,Medical,Jason Miller,161,Female,4,Healthcare Representative,Divorced,24360,1.0
+30,No,Non-Travel,Research & Development,15,3,Medical,Shannon Curtis,162,Female,2,Sales Executive,Married,23800,4.0
+29,No,Travel_Rarely,Research & Development,8,3,Medical,John Mendoza,163,Female,3,Manufacturing Director,Married,194310,1.0
+29,Yes,Travel_Rarely,Research & Development,19,4,Life Sciences,William Fox,164,Male,3,Research Scientist,Married,17900,5.0
+19,Yes,Travel_Rarely,Research & Development,4,3,Medical,Tracy Mclaughlin,165,Male,1,Sales Executive,Single,76440,1.0
+30,No,Non-Travel,Research & Development,2,4,Life Sciences,Daniel Mcbride,166,Female,3,Research Scientist,Married,51310,0.0
+57,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Alexis Martinez,167,Male,4,Research Scientist,Divorced,63060,3.0
+50,No,Travel_Rarely,Sales,10,4,Life Sciences,Jeffrey Zamora,168,Female,3,Manager,Married,47870,0.0
+30,No,Non-Travel,Sales,10,2,Life Sciences,Cheryl Rojas,169,Male,3,Laboratory Technician,Single,188800,0.0
+60,No,Travel_Frequently,Research & Development,16,3,Life Sciences,Christopher Cordova,170,Female,4,Laboratory Technician,Married,23390,4.0
+47,No,Travel_Rarely,Research & Development,1,3,Technical Degree,Patricia Johnson DDS,171,Male,5,Manufacturing Director,Divorced,135700,5.0
+46,No,Travel_Rarely,Sales,4,1,Technical Degree,Sherry Myers,172,Male,1,Laboratory Technician,Married,67120,6.0
+35,No,Travel_Rarely,Research & Development,15,2,Medical,Dylan Curtis,173,Female,2,Laboratory Technician,Single,54060,0.0
+54,No,Travel_Rarely,Research & Development,2,4,Medical,Peggy Miller,174,Male,2,Human Resources,Single,89380,7.0
+34,No,Travel_Rarely,Sales,8,2,Life Sciences,David Kline,175,Male,1,Laboratory Technician,Divorced,24390,3.0
+46,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Tiffany Jordan,176,Male,1,Healthcare Representative,Married,88370,2.0
+31,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Ms. Natalie Ramirez,177,Male,2,Research Director,Divorced,53430,1.0
+33,Yes,Travel_Rarely,Research & Development,10,3,Life Sciences,Tina Griffin,178,Female,4,Research Director,Married,67280,7.0
+33,Yes,Travel_Rarely,Sales,5,4,Marketing,Lisa Cobb,179,Male,2,Research Director,Divorced,66520,7.0
+30,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Melissa Myers,180,Male,1,Sales Executive,Single,48500,0.0
+35,No,Travel_Rarely,Research & Development,12,2,Medical,Leon Lucas,181,Female,2,Sales Representative,Married,28090,4.0
+31,Yes,Travel_Frequently,Research & Development,22,2,Medical,Jeffery Rogers,182,Female,2,Sales Executive,Married,56890,3.0
+34,Yes,Travel_Frequently,Sales,17,1,Marketing,Rebecca Davis,183,Male,1,Research Director,Divorced,20010,9.0
+42,No,Travel_Frequently,Research & Development,2,4,Medical,Danielle Ford,184,Female,1,Research Scientist,Married,29770,4.0
+36,No,Non-Travel,Research & Development,3,4,Medical,Alexander Cox,185,Male,1,Research Scientist,Single,40250,1.0
+22,Yes,Travel_Frequently,Research & Development,7,3,Medical,Jessica Burke,186,Female,2,Laboratory Technician,Single,37850,5.0
+48,No,Travel_Rarely,Research & Development,6,3,Medical,David Rogers,187,Male,1,Laboratory Technician,Married,108540,2.0
+55,No,Travel_Rarely,Research & Development,1,3,Medical,Peter Carpenter,188,Female,1,Sales Executive,Single,120310,3.0
+41,No,Non-Travel,Research & Development,3,2,Life Sciences,Sherry Martin,189,Female,2,Research Scientist,Single,99360,7.0
+35,No,Travel_Rarely,Research & Development,22,3,Medical,Linda Reese,190,Female,1,Sales Representative,Married,29660,9.0
+40,No,Travel_Rarely,Research & Development,15,3,Life Sciences,Evelyn Gordon,191,Female,2,Laboratory Technician,Single,25710,7.0
+39,No,Travel_Frequently,Research & Development,12,1,Medical,Misty Hebert,192,Male,1,Research Scientist,Married,99910,1.0
+31,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Austin Davidson,193,Male,3,Research Director,Single,61420,4.0
+42,No,Travel_Rarely,Research & Development,5,3,Medical,Jason Parker,194,Male,3,Sales Executive,Married,53900,1.0
+45,No,Travel_Rarely,Research & Development,2,1,Medical,Shaun Curtis,195,Female,4,Sales Executive,Married,44040,0.0
+26,Yes,Travel_Frequently,Research & Development,2,1,Life Sciences,Rodney Miller,196,Female,2,Laboratory Technician,Divorced,59930,0.0
+29,No,Travel_Rarely,Research & Development,5,3,Medical,Adam Hicks,197,Male,1,Research Scientist,Divorced,51300,4.0
+33,No,Travel_Rarely,Research & Development,16,3,Medical,George Schneider,198,Female,1,Laboratory Technician,Divorced,20900,4.0
+31,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Christopher Smith,199,Female,1,Sales Executive,Divorced,29090,9.0
+18,Yes,Travel_Frequently,Research & Development,2,3,Technical Degree,William Johnson,200,Male,1,Sales Executive,Single,34680,1.0
+40,No,Non-Travel,Research & Development,1,4,Technical Degree,Maria Hernandez,201,Female,2,Laboratory Technician,Divorced,30680,3.0
+41,No,Non-Travel,Research & Development,23,3,Life Sciences,Dillon Ford MD,202,Male,2,Manufacturing Director,Single,26700,2.0
+26,No,Travel_Rarely,Research & Development,9,4,Medical,Jason Osborn Jr.,203,Male,3,Healthcare Representative,Divorced,26930,5.0
+35,No,Travel_Rarely,Research & Development,16,4,Medical,Mitchell Downs,204,Male,2,Human Resources,Single,95260,1.0
+34,No,Travel_Rarely,Research & Development,26,3,Medical,Jamie Wright,205,Male,1,Laboratory Technician,Single,52370,1.0
+26,Yes,Travel_Rarely,Sales,1,3,Marketing,Danny Sullivan,206,Female,2,Manufacturing Director,Single,24260,1.0
+37,No,Travel_Rarely,Research & Development,8,1,Life Sciences,Sharon Ware,207,Male,1,Sales Executive,Single,41930,4.0
+46,No,Travel_Frequently,Research & Development,4,1,Medical,David Berry,208,Male,5,Human Resources,Married,29110,5.0
+41,No,Travel_Rarely,Research & Development,24,1,Life Sciences,Stephanie Jenkins,209,Male,1,Research Director,Married,26610,7.0
+37,No,Non-Travel,Research & Development,7,2,Medical,Jeremy Stafford,210,Male,1,Sales Executive,Divorced,20280,1.0
+52,No,Travel_Rarely,Sales,2,1,Medical,Anthony Copeland,211,Male,1,Laboratory Technician,Divorced,99800,
+32,Yes,Non-Travel,Research & Development,7,2,Life Sciences,Jasmine Hubbard,212,Female,2,Research Director,Married,32980,8.0
+24,No,Travel_Frequently,Sales,22,3,Life Sciences,Nicole Wilson,213,Female,1,Healthcare Representative,Married,29350,0.0
+38,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Jennifer Shelton,214,Female,1,Research Scientist,Married,154270,3.0
+37,No,Travel_Rarely,Research & Development,1,4,Technical Degree,Jennifer Winters,215,Female,5,Research Scientist,Married,39440,6.0
+49,No,Travel_Rarely,Sales,21,1,Life Sciences,Adam Morgan,216,Male,1,Sales Executive,Divorced,40110,1.0
+24,No,Travel_Rarely,Sales,1,3,Marketing,Taylor Bowen,217,Female,1,Sales Executive,Married,34070,1.0
+26,No,Travel_Rarely,Research & Development,19,4,Technical Degree,Thomas Howard,218,Female,4,Sales Executive,Married,119940,1.0
+24,No,Travel_Rarely,Sales,7,3,Medical,Nicole Martin,219,Female,1,Laboratory Technician,Married,12320,1.0
+50,No,Travel_Frequently,Sales,2,2,Marketing,Michelle Harrell,220,Male,1,Sales Executive,Married,29600,1.0
+25,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Tonya Ware,221,Male,1,Research Scientist,Married,190940,1.0
+24,Yes,Travel_Frequently,Research & Development,2,3,Medical,Tammy Carter,222,Male,2,Research Scientist,Married,39190,1.0
+30,Yes,Travel_Frequently,Research & Development,9,3,Other,Melissa Black,223,Male,2,Healthcare Representative,Married,68250,1.0
+34,No,Travel_Rarely,Sales,6,2,Life Sciences,Sierra Moreno,224,Male,4,Research Director,Married,102480,1.0
+31,Yes,Travel_Rarely,Research & Development,9,1,Medical,Peggy Ross,225,Female,1,Sales Representative,Divorced,189470,2.0
+35,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Melissa Todd,226,Female,5,Sales Executive,Single,24960,4.0
+31,No,Travel_Rarely,Sales,1,3,Marketing,Cheryl Everett,227,Female,2,Sales Executive,Divorced,64650,4.0
+27,No,Travel_Rarely,Sales,22,4,Medical,Stephen White,228,Male,1,Sales Representative,Divorced,22060,0.0
+37,No,Travel_Rarely,Sales,9,4,Marketing,Marcus Mckinney,229,Female,2,Laboratory Technician,Married,20860,4.0
+20,No,Travel_Rarely,Research & Development,17,4,Medical,Kathryn Guzman,230,Female,1,Sales Representative,Single,22930,1.0
+42,No,Travel_Rarely,Research & Development,28,4,Life Sciences,Tiffany Brooks,231,Female,2,Manufacturing Director,Married,26450,1.0
+43,No,Travel_Rarely,Research & Development,10,5,Technical Degree,Nicole Smith,232,Female,2,Sales Executive,Divorced,26830,4.0
+38,No,Travel_Rarely,Human Resources,2,4,Medical,Mary Russell,233,Male,1,Human Resources,Single,20140,3.0
+43,No,Travel_Frequently,Sales,4,3,Medical,Tina Lawson,234,Female,2,Healthcare Representative,Divorced,34190,3.0
+48,No,Travel_Rarely,Research & Development,8,1,Medical,John Hicks,235,Male,2,Laboratory Technician,Married,53760,7.0
+44,No,Travel_Rarely,Sales,29,4,Marketing,Bobby Smith,236,Male,2,Sales Executive,Single,19510,4.0
+34,No,Travel_Rarely,Research & Development,13,4,Life Sciences,Annette Williams,237,Female,1,Laboratory Technician,Divorced,23410,1.0
+27,Yes,Travel_Rarely,Sales,27,3,Life Sciences,Annette Evans,238,Male,2,Research Scientist,Divorced,22930,0.0
+21,No,Travel_Rarely,Sales,16,2,Life Sciences,Sabrina Perez,239,Male,3,Sales Executive,Single,87260,1.0
+44,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Michael Stark,240,Male,1,Laboratory Technician,Married,40110,4.0
+22,No,Travel_Rarely,Research & Development,2,2,Medical,Norman Vaughan,241,Female,2,Laboratory Technician,Married,195450,0.0
+33,No,Travel_Rarely,Sales,13,4,Marketing,Michelle Harris,242,Female,2,Manufacturing Director,Divorced,45680,0.0
+32,No,Travel_Rarely,Research & Development,1,1,Life Sciences,Brittney Gonzalez,243,Female,1,Healthcare Representative,Married,30220,1.0
+30,No,Travel_Frequently,Research & Development,4,5,Technical Degree,Joseph Pittman,244,Male,3,Manager,Divorced,57720,1.0
+53,No,Travel_Rarely,Research & Development,24,3,Other,Douglas Webb,245,Female,3,Manager,Single,22690,7.0
+34,No,Travel_Rarely,Research & Development,1,5,Medical,Danielle Ayala,246,Male,1,Research Scientist,Married,53810,1.0
+45,Yes,Travel_Frequently,Research & Development,19,4,Life Sciences,Courtney Kennedy,247,Male,3,Research Director,Married,34410,2.0
+26,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Debra Garcia,248,Male,1,Manufacturing Director,Married,54540,1.0
+37,No,Travel_Rarely,Research & Development,4,3,Medical,Hailey Gonzalez,249,Male,1,Manager,Married,98840,1.0
+29,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Dakota Mendoza,250,Female,1,Healthcare Representative,Married,41570,1.0
+35,No,Travel_Rarely,Research & Development,10,5,Medical,Gregory Douglas,251,Female,4,Laboratory Technician,Single,134580,1.0
+33,No,Travel_Frequently,Research & Development,8,3,Technical Degree,Katie Bruce,252,Male,2,Laboratory Technician,Divorced,90690,3.0
+54,No,Travel_Rarely,Research & Development,5,2,Life Sciences,Richard Pearson,253,Female,2,Sales Executive,Married,40140,2.0
+36,No,Travel_Rarely,Research & Development,8,3,Life Sciences,Aaron Wilson,254,Male,2,Research Scientist,Divorced,59150,2.0
+27,No,Travel_Rarely,Sales,9,3,Marketing,Charles Beck,255,Male,5,Research Director,Single,59930,0.0
+20,Yes,Travel_Rarely,Research & Development,1,3,Life Sciences,Mr. Samuel Smith MD,256,Male,5,Sales Representative,Single,61620,1.0
+33,Yes,Travel_Frequently,Research & Development,15,4,Medical,David Norton,257,Female,1,Laboratory Technician,Single,24060,1.0
+35,No,Non-Travel,Research & Development,2,1,Medical,Adam Carson,258,Male,1,Research Scientist,Married,187400,1.0
+23,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Colleen Nunez,259,Male,1,Healthcare Representative,Married,76370,2.0
+25,No,Travel_Rarely,Research & Development,11,3,Medical,Denise Moss,260,Male,2,Manufacturing Director,Married,100960,0.0
+38,No,Travel_Rarely,Research & Development,16,3,Life Sciences,Kendra Smith,261,Male,5,Research Scientist,Single,147560,0.0
+29,No,Travel_Frequently,Sales,2,4,Life Sciences,Casey Martin,262,Male,4,Healthcare Representative,Divorced,64990,1.0
+48,No,Travel_Rarely,Research & Development,16,3,Technical Degree,Monique Holder,263,Male,1,Sales Executive,Married,97240,3.0
+27,No,Travel_Frequently,Sales,4,3,Technical Degree,Philip Mayer,264,Male,5,Laboratory Technician,Divorced,21940,1.0
+37,No,Travel_Rarely,Research & Development,16,3,Life Sciences,Elizabeth Collins,265,Male,3,Manager,Single,33880,3.0
+50,No,Travel_Rarely,Sales,5,3,Medical,Jason Shepherd,266,Male,1,Laboratory Technician,Married,54730,1.0
+34,No,Travel_Rarely,Research & Development,18,1,Medical,Jasmine Vazquez MD,267,Male,1,Healthcare Representative,Single,27030,1.0
+24,Yes,Travel_Rarely,Research & Development,17,2,Life Sciences,Michael James,268,Female,1,Healthcare Representative,Single,25010,9.0
+39,No,Travel_Rarely,Research & Development,12,5,Medical,Joyce Browning,269,Female,1,Sales Representative,Single,62200,1.0
+32,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Casey Smith,270,Male,5,Research Scientist,Single,30380,1.0
+50,Yes,Travel_Frequently,Research & Development,4,2,Medical,Cynthia Austin,271,Male,4,Sales Representative,Married,44240,3.0
+38,No,Travel_Rarely,Research & Development,9,4,Life Sciences,Amber Robinson,272,Male,1,Sales Executive,Single,43120,0.0
+27,No,Travel_Rarely,Research & Development,10,3,Medical,Jacqueline Henderson,273,Male,5,Research Scientist,Married,132450,1.0
+32,No,Travel_Rarely,Sales,1,3,Medical,Paul Jarvis,274,Male,2,Sales Executive,Single,136640,3.0
+47,No,Travel_Rarely,Research & Development,2,3,Medical,Anita Martinez,275,Female,5,Sales Executive,Single,50210,2.0
+40,No,Travel_Frequently,Research & Development,3,4,Medical,Rose Smith,276,Female,3,Human Resources,Married,51260,5.0
+53,No,Travel_Rarely,Research & Development,7,1,Life Sciences,Dalton Brown,277,Male,2,Laboratory Technician,Married,28590,3.0
+41,No,Travel_Rarely,Sales,6,3,Medical,Curtis Snyder,278,Male,1,Sales Executive,Divorced,102390,3.0
+60,No,Travel_Rarely,Research & Development,8,2,Life Sciences,Austin Tate,279,Female,5,Laboratory Technician,Single,53290,8.0
+27,No,Travel_Frequently,Research & Development,29,1,Life Sciences,James Hall,280,Male,2,Manufacturing Director,Divorced,43250,1.0
+41,No,Travel_Rarely,Research & Development,3,3,Medical,Margaret Ferrell,281,Male,1,Manufacturing Director,Married,72600,1.0
+50,No,Travel_Rarely,Sales,9,3,Life Sciences,Katherine Jordan MD,282,Male,2,Research Scientist,Married,23220,7.0
+28,Yes,Travel_Rarely,Sales,2,4,Life Sciences,Elizabeth Coleman,283,Male,3,Research Scientist,Single,20750,7.0
+36,No,Non-Travel,Research & Development,10,4,Technical Degree,Angela Figueroa,284,Female,2,Research Scientist,Married,41520,9.0
+38,No,Travel_Rarely,Research & Development,1,3,Medical,Ian Jefferson,285,Female,3,Manager,Single,96190,4.0
+44,No,Non-Travel,Research & Development,8,2,Life Sciences,Christopher Francis,286,Male,1,Research Scientist,Single,135030,2.0
+47,No,Travel_Frequently,Research & Development,27,3,Life Sciences,Jason Mendez,287,Male,1,Research Scientist,Divorced,54410,9.0
+30,No,Travel_Rarely,Research & Development,8,3,Life Sciences,Linda Obrien,288,Male,2,Sales Executive,Divorced,52090,7.0
+29,No,Travel_Rarely,Research & Development,1,2,Medical,Heidi Diaz,289,Female,1,Sales Executive,Single,106730,1.0
+42,Yes,Travel_Frequently,Research & Development,10,1,Life Sciences,James Johnson,290,Female,1,Sales Executive,Divorced,50100,6.0
+43,No,Travel_Frequently,Research & Development,26,1,Life Sciences,Sara Ross,291,Male,1,Laboratory Technician,Married,135490,3.0
+34,No,Travel_Rarely,Research & Development,2,5,Technical Degree,Donald Osborne,292,Male,2,Healthcare Representative,Single,49990,3.0
+23,No,Travel_Rarely,Sales,13,3,Marketing,Brittany Guerrero,293,Male,5,Sales Executive,Married,42210,1.0
+39,No,Travel_Rarely,Sales,2,4,Marketing,Jennifer French,294,Female,4,Healthcare Representative,Married,138720,9.0
+56,No,Travel_Rarely,Research & Development,2,4,Medical,Michael Alexander,295,Male,1,Manager,Married,20420,7.0
+40,No,Travel_Rarely,Sales,9,3,Marketing,Erica Adams,296,Male,2,Research Scientist,Single,20730,0.0
+27,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Thomas Stephens,297,Female,1,Laboratory Technician,Single,29560,8.0
+29,No,Travel_Rarely,Sales,20,3,Marketing,Donna Hunt,298,Female,2,Manager,Divorced,29260,1.0
+53,No,Travel_Rarely,Research & Development,9,3,Life Sciences,Sharon Hansen,299,Female,3,Laboratory Technician,Single,48090,2.0
+35,No,Non-Travel,Research & Development,5,1,Medical,Morgan Anderson,300,Male,1,Healthcare Representative,Divorced,51630,2.0
+32,No,Travel_Frequently,Sales,4,4,Life Sciences,Michael Collins,301,Male,2,Sales Executive,Married,188440,1.0
+38,No,Travel_Rarely,Sales,10,3,Medical,Joshua Ross,302,Male,4,Laboratory Technician,Married,181720,6.0
+34,No,Travel_Rarely,Research & Development,20,3,Medical,Amy Gill,303,Female,3,Laboratory Technician,Divorced,57440,3.0
+52,No,Travel_Rarely,Sales,21,5,Technical Degree,Danny Villegas,304,Male,3,Manager,Married,28890,1.0
+33,Yes,Travel_Rarely,Research & Development,1,2,Medical,Bruce Forbes,305,Male,3,Laboratory Technician,Single,28710,1.0
+25,No,Travel_Rarely,Research & Development,8,3,Life Sciences,Jasmine Graham,306,Male,2,Research Scientist,Single,74840,1.0
+45,No,Travel_Rarely,Sales,2,3,Life Sciences,Christina Martinez,307,Male,3,Healthcare Representative,Single,60740,0.0
+23,No,Travel_Rarely,Research & Development,23,1,Life Sciences,Anna Steele,308,Female,2,Research Scientist,Single,173280,1.0
+47,Yes,Travel_Frequently,Research & Development,4,3,Life Sciences,Stephanie Stanley,309,Male,1,Research Director,Single,27740,4.0
+34,No,Travel_Rarely,Research & Development,12,3,Technical Degree,Tina Wilson,310,Male,1,Research Scientist,Single,45050,1.0
+55,Yes,Travel_Rarely,Human Resources,7,3,Human Resources,Adam Lee,311,Male,4,Laboratory Technician,Married,74280,5.0
+36,No,Non-Travel,Research & Development,7,2,Life Sciences,Mary Burch,312,Male,5,Sales Executive,Single,116310,1.0
+52,No,Non-Travel,Research & Development,1,4,Life Sciences,Kimberly Morgan,313,Male,5,Sales Executive,Married,97380,0.0
+26,No,Travel_Frequently,Research & Development,2,2,Life Sciences,Eddie Bryant,314,Male,1,Manufacturing Director,Divorced,28350,3.0
+29,No,Travel_Rarely,Research & Development,10,2,Medical,Hannah Martin,315,Male,3,Manufacturing Director,Married,169590,4.0
+26,Yes,Travel_Rarely,Research & Development,15,2,Life Sciences,Dr. Tammy Mercer DVM,316,Male,2,Laboratory Technician,Single,26130,6.0
+34,No,Travel_Rarely,Research & Development,14,4,Technical Degree,Allen Murphy,317,Male,2,Manufacturing Director,Single,61460,2.0
+54,No,Travel_Rarely,Research & Development,18,4,Medical,Lee Jackson,318,Female,2,Laboratory Technician,Divorced,49630,9.0
+27,No,Travel_Frequently,Research & Development,13,2,Life Sciences,Christopher Nguyen,319,Female,4,Research Scientist,Married,195370,0.0
+37,No,Travel_Rarely,Sales,2,4,Technical Degree,Sara Adams,320,Male,2,Manufacturing Director,Divorced,61720,0.0
+38,No,Travel_Frequently,Sales,2,4,Life Sciences,Steven Wilson,321,Female,2,Research Scientist,Single,23680,6.0
+34,No,Travel_Rarely,Sales,2,3,Marketing,Phillip Jacobson,322,Male,1,Sales Representative,Single,103120,1.0
+35,No,Travel_Rarely,Research & Development,5,4,Medical,Michael Carpenter,323,Male,3,Manager,Married,16750,1.0
+30,No,Travel_Rarely,Research & Development,20,3,Medical,Kelly Reynolds,324,Male,1,Laboratory Technician,Married,25230,3.0
+40,No,Travel_Frequently,Research & Development,10,4,Medical,Benjamin Villanueva,325,Male,2,Manufacturing Director,Married,65670,1.0
+34,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Matthew Sexton,326,Male,3,Healthcare Representative,Married,47390,5.0
+42,No,Travel_Frequently,Research & Development,9,4,Medical,Hailey Aguilar,327,Male,1,Manufacturing Director,Divorced,92080,1.0
+23,Yes,Travel_Rarely,Sales,2,3,Medical,Sandra Thomas,328,Female,4,Manufacturing Director,Married,45590,1.0
+24,No,Non-Travel,Sales,1,5,Marketing,Dr. Nicole Young MD,329,Female,1,Manufacturing Director,Divorced,81890,1.0
+52,No,Travel_Rarely,Research & Development,29,3,Life Sciences,Dawn Love,330,Male,2,Manufacturing Director,Married,29420,8.0
+50,No,Travel_Rarely,Research & Development,8,4,Life Sciences,Bruce Schmidt,331,Male,2,Sales Executive,Married,49410,5.0
+29,Yes,Travel_Rarely,Sales,2,4,Marketing,Erin Thomas,332,Female,4,Research Scientist,Married,106500,1.0
+33,No,Travel_Rarely,Research & Development,3,4,Life Sciences,Karen Neal,333,Male,4,Manufacturing Director,Married,59020,0.0
+33,Yes,Travel_Rarely,Research & Development,23,5,Life Sciences,Cody Taylor,334,Male,1,Human Resources,Single,86390,5.0
+47,No,Travel_Rarely,Research & Development,6,4,Other,Melinda Yates,335,Male,2,Manager,Married,63470,1.0
+36,No,Travel_Rarely,Sales,6,3,Medical,Joseph Campbell,336,Female,2,Sales Executive,Married,42000,0.0
+29,No,Travel_Rarely,Research & Development,10,3,Other,Jeff Oneill,337,Male,1,Research Scientist,Married,34520,1.0
+58,Yes,Travel_Rarely,Research & Development,24,3,Other,Vincent Willis,338,Female,2,Research Scientist,Single,43170,7.0
+35,No,Travel_Rarely,Sales,10,4,Marketing,Alyssa Johnson,339,Female,1,Research Scientist,Single,26320,3.0
+42,No,Travel_Rarely,Sales,15,1,Marketing,Kevin Glenn,340,Male,2,Laboratory Technician,Married,46680,9.0
+28,Yes,Travel_Rarely,Research & Development,19,4,Medical,Zachary Johnson,341,Female,2,Sales Executive,Single,32040,6.0
+36,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Caitlin Farley,342,Male,2,Healthcare Representative,Married,27200,4.0
+32,No,Travel_Rarely,Research & Development,3,1,Medical,Christina Campbell,343,Male,2,Manufacturing Director,Married,171810,1.0
+40,No,Travel_Frequently,Sales,9,3,Marketing,Nicholas Jones,344,Male,3,Manufacturing Director,Single,22380,
+30,No,Travel_Rarely,Research & Development,7,3,Technical Degree,Maxwell Morgan,345,Male,2,Research Director,Single,14830,5.0
+45,No,Travel_Rarely,Research & Development,10,4,Life Sciences,Christopher Patterson,346,Male,1,Research Director,Single,56050,1.0
+42,No,Travel_Rarely,Research & Development,20,2,Medical,Derrick Carter,347,Male,2,Sales Representative,Married,72950,1.0
+38,No,Travel_Frequently,Sales,4,3,Medical,Sheri Clayton,348,Male,2,Research Scientist,Divorced,23060,2.0
+34,No,Travel_Frequently,Research & Development,7,4,Life Sciences,Ryan Fox,349,Male,3,Laboratory Technician,Single,23480,1.0
+49,Yes,Travel_Rarely,Sales,7,2,Life Sciences,Richard Smith,350,Female,2,Healthcare Representative,Married,89980,1.0
+55,Yes,Travel_Rarely,Human Resources,16,3,Technical Degree,Anna Smith,351,Male,4,Manufacturing Director,Single,43190,4.0
+43,No,Travel_Rarely,Research & Development,25,2,Medical,Mark Simpson,352,Male,2,Healthcare Representative,Married,61320,6.0
+27,No,Travel_Rarely,Sales,2,4,Medical,Charlene Shannon,353,Male,2,Manager,Divorced,33460,1.0
+35,No,Travel_Rarely,Research & Development,1,3,Medical,Amanda Eaton,354,Male,1,Research Director,Single,108550,3.0
+28,No,Travel_Rarely,Sales,1,2,Technical Degree,Michael Morgan,355,Female,1,Sales Executive,Married,22310,1.0
+34,No,Travel_Rarely,Sales,2,5,Life Sciences,Glen Vaughan,356,Male,4,Research Scientist,Married,23230,0.0
+26,Yes,Travel_Frequently,Research & Development,22,4,Other,Jessica Knight,357,Female,1,Sales Executive,Married,20240,1.0
+27,No,Non-Travel,Sales,1,3,Technical Degree,Keith Harris,358,Female,1,Sales Executive,Married,27130,1.0
+51,No,Travel_Rarely,Sales,16,3,Medical,Douglas Lopez,359,Male,3,Research Scientist,Married,94390,2.0
+44,No,Travel_Rarely,Sales,24,5,Medical,Allison Martin,360,Female,1,Sales Executive,Single,25660,9.0
+25,No,Travel_Rarely,Research & Development,17,3,Medical,Jillian Jenkins,361,Male,1,Laboratory Technician,Single,199260,7.0
+33,No,Travel_Rarely,Research & Development,8,4,Life Sciences,Alex Perkins,362,Male,3,Laboratory Technician,Divorced,24510,1.0
+35,No,Travel_Rarely,Sales,6,4,Medical,James Martinez,363,Female,2,Manager,Single,94190,1.0
+36,No,Travel_Rarely,Sales,10,4,Marketing,Jon Williams,364,Male,3,Manager,Married,86860,1.0
+32,No,Travel_Rarely,Research & Development,3,4,Medical,Christine Perez,365,Female,4,Sales Executive,Divorced,30380,2.0
+30,No,Travel_Frequently,Research & Development,4,5,Medical,Collin Wilson,366,Male,5,Sales Representative,Divorced,30580,9.0
+53,No,Travel_Rarely,Sales,6,3,Marketing,Eric Thompson,367,Male,4,Sales Executive,Married,23250,7.0
+45,No,Travel_Rarely,Research & Development,1,5,Technical Degree,Ricky Smith,368,Male,2,Healthcare Representative,Divorced,20880,4.0
+32,No,Travel_Rarely,Sales,10,3,Marketing,Kevin Bray,369,Female,1,Human Resources,Married,30720,5.0
+52,No,Travel_Frequently,Research & Development,1,1,Life Sciences,Mariah Williams,370,Male,2,Laboratory Technician,Married,50060,3.0
+37,No,Travel_Rarely,Sales,24,2,Life Sciences,Samantha Reed,371,Female,4,Laboratory Technician,Divorced,42570,4.0
+28,No,Travel_Rarely,Research & Development,21,4,Life Sciences,Joseph Wilson,372,Female,1,Healthcare Representative,Divorced,25000,1.0
+22,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Yvonne Hernandez,373,Male,1,Sales Representative,Married,11020,6.0
+44,No,Travel_Rarely,Research & Development,22,3,Medical,April Brown,374,Female,1,Laboratory Technician,Married,104530,2.0
+42,No,Travel_Frequently,Sales,13,4,Life Sciences,Patricia Rice,375,Female,2,Laboratory Technician,Single,22880,5.0
+36,No,Travel_Rarely,Research & Development,14,3,Other,Gina Oliver,376,Male,2,Research Scientist,Married,39290,0.0
+25,No,Travel_Rarely,Sales,11,3,Life Sciences,Charles Jackson,377,Female,1,Laboratory Technician,Married,23110,1.0
+35,No,Travel_Rarely,Research & Development,9,2,Life Sciences,Sheila Jones,378,Female,1,Healthcare Representative,Married,31400,1.0
+35,Yes,Travel_Frequently,Sales,8,2,Marketing,Matthew Olson,379,Female,1,Laboratory Technician,Divorced,36900,1.0
+32,No,Non-Travel,Research & Development,21,3,Life Sciences,Dr. Jordan Lozano DDS,380,Male,1,Sales Executive,Divorced,44500,0.0
+25,No,Travel_Rarely,Sales,5,3,Marketing,Jeffrey Gregory,381,Female,4,Research Scientist,Married,27560,1.0
+49,No,Travel_Rarely,Sales,9,3,Technical Degree,Adam Sparks,382,Female,2,Sales Representative,Married,190330,2.0
+24,No,Non-Travel,Research & Development,2,5,Technical Degree,John Davis,383,Male,2,Healthcare Representative,Married,187220,0.0
+32,No,Travel_Frequently,Research & Development,12,5,Medical,Mitchell Huff,384,Male,1,Research Scientist,Married,95470,1.0
+38,No,Travel_Rarely,Sales,22,2,Medical,Hannah Rogers,385,Male,1,Sales Executive,Married,137340,0.0
+42,No,Travel_Rarely,Research & Development,18,1,Technical Degree,Samantha Garcia,386,Female,2,Research Scientist,Married,199990,2.0
+31,No,Travel_Rarely,Research & Development,16,3,Life Sciences,Joseph Gardner,387,Female,3,Sales Executive,Married,22790,3.0
+29,Yes,Travel_Rarely,Sales,3,3,Marketing,Dale Rivera,388,Male,3,Laboratory Technician,Divorced,59160,6.0
+53,No,Travel_Rarely,Research & Development,9,3,Life Sciences,Stephen Taylor,389,Male,1,Sales Representative,Married,20890,5.0
+35,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Lee Schneider,390,Male,3,Healthcare Representative,Married,167920,3.0
+37,No,Travel_Frequently,Research & Development,13,4,Life Sciences,Gary Coleman,391,Female,3,Human Resources,Married,35640,5.0
+53,No,Travel_Rarely,Research & Development,1,1,Medical,Diana Smith,392,Male,1,Sales Executive,Single,44250,6.0
+43,No,Travel_Frequently,Research & Development,1,3,Medical,Patricia Cook,393,Male,1,Laboratory Technician,Married,52650,4.0
+47,No,Travel_Rarely,Sales,15,4,Marketing,Eric Stewart,394,Female,3,Research Director,Married,65530,0.0
+37,No,Non-Travel,Research & Development,1,5,Medical,Amanda Reed,395,Female,2,Research Scientist,Single,62610,1.0
+50,No,Non-Travel,Research & Development,17,3,Medical,Eugene Jackson,396,Female,1,Laboratory Technician,Divorced,42980,1.0
+39,No,Travel_Rarely,Research & Development,1,3,Other,Breanna Soto DVM,397,Female,3,Human Resources,Married,68040,8.0
+33,No,Travel_Rarely,Sales,7,3,Life Sciences,Emma May,398,Male,2,Manufacturing Director,Divorced,38150,3.0
+32,Yes,Travel_Rarely,Research & Development,9,1,Medical,Valerie Jimenez,399,Female,1,Laboratory Technician,Single,27410,1.0
+29,No,Travel_Rarely,Research & Development,5,4,Life Sciences,Brian Cooley,400,Female,4,Healthcare Representative,Divorced,66730,6.0
+44,No,Travel_Rarely,Research & Development,26,2,Life Sciences,Lisa Williams,401,Male,2,Manufacturing Director,Married,76390,1.0
+28,No,Travel_Rarely,Sales,24,5,Life Sciences,Anna Matthews,402,Female,1,Research Scientist,Single,23280,1.0
+58,Yes,Travel_Frequently,Sales,9,2,Technical Degree,Jeremiah Baker,403,Male,1,Sales Executive,Divorced,21530,9.0
+43,No,Travel_Rarely,Sales,7,4,Marketing,James Oneill,404,Male,2,Sales Executive,Divorced,48760,4.0
+20,Yes,Travel_Rarely,Research & Development,11,3,Medical,Heather Vasquez,405,Male,2,Sales Executive,Single,93960,1.0
+21,Yes,Travel_Rarely,Research & Development,1,3,Medical,Anna Hayes,406,Male,2,Sales Executive,Single,104000,1.0
+36,No,Travel_Rarely,Research & Development,26,4,Medical,Sandra Combs,407,Male,1,Laboratory Technician,Married,84740,0.0
+47,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Amy Williams,408,Male,2,Manufacturing Director,Single,99810,1.0
+22,Yes,Travel_Rarely,Research & Development,15,4,Life Sciences,Joseph Thompson,409,Female,1,Laboratory Technician,Married,124900,0.0
+41,Yes,Travel_Rarely,Research & Development,23,3,Life Sciences,Danny Tran,410,Female,2,Sales Executive,Divorced,26570,4.0
+28,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Thomas Moore,411,Female,3,Manager,Divorced,135910,5.0
+39,Yes,Travel_Rarely,Research & Development,10,4,Life Sciences,Christopher Massey,412,Female,4,Human Resources,Married,66960,7.0
+27,No,Travel_Rarely,Research & Development,1,3,Medical,Blake Paul,413,Male,1,Research Scientist,Single,20580,1.0
+34,No,Travel_Rarely,Research & Development,12,2,Technical Degree,Kathryn Roberts,414,Male,2,Human Resources,Divorced,88650,1.0
+42,No,Travel_Rarely,Sales,11,1,Technical Degree,Maria Pratt,415,Male,2,Human Resources,Single,59400,7.0
+33,No,Travel_Rarely,Sales,2,3,Marketing,Valerie Berry,416,Female,1,Sales Executive,Single,59140,3.0
+58,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Kenneth Roy,417,Male,1,Research Scientist,Divorced,26220,2.0
+31,No,Travel_Rarely,Sales,1,3,Life Sciences,Pamela Bowman,418,Female,1,Sales Representative,Married,121850,3.0
+35,No,Travel_Rarely,Research & Development,2,1,Life Sciences,Cassandra Moore,419,Male,3,Healthcare Representative,Married,106090,1.0
+49,No,Travel_Rarely,Research & Development,25,2,Life Sciences,Aaron Singh,420,Female,2,Sales Executive,Married,43450,4.0
+48,No,Travel_Rarely,Research & Development,1,4,Medical,Kevin Landry,421,Male,1,Research Scientist,Married,21770,4.0
+31,No,Non-Travel,Research & Development,1,2,Technical Degree,Austin Ray,422,Female,2,Sales Executive,Married,27930,1.0
+36,No,Travel_Rarely,Human Resources,2,4,Technical Degree,Grant Tran,423,Male,1,Sales Executive,Single,79180,2.0
+38,No,Travel_Rarely,Sales,6,3,Other,Ernest Singh,424,Male,2,Sales Executive,Married,87890,1.0
+32,No,Non-Travel,Sales,18,3,Marketing,Kaylee Norris,425,Male,1,Laboratory Technician,Married,23890,6.0
+25,Yes,Travel_Rarely,Research & Development,1,2,Life Sciences,Jenny Osborn,426,Male,1,Sales Executive,Married,32120,1.0
+40,No,Travel_Rarely,Research & Development,1,4,Medical,Ashley Wong,427,Male,2,Research Scientist,Divorced,192320,2.0
+26,No,Travel_Frequently,Sales,11,3,Marketing,Jesse Brady,428,Male,2,Healthcare Representative,Single,22670,1.0
+41,No,Travel_Rarely,Research & Development,1,4,Medical,Joseph Daniels,429,Male,1,Research Scientist,Single,195170,2.0
+36,No,Travel_Rarely,Research & Development,9,3,Life Sciences,Maureen Frazier,430,Female,2,Healthcare Representative,Single,24360,4.0
+19,Yes,Travel_Rarely,Research & Development,15,3,Life Sciences,Samuel Kennedy,431,Male,2,Research Scientist,Single,160640,1.0
+20,Yes,Travel_Rarely,Research & Development,29,3,Life Sciences,Johnny Pierce,432,Female,3,Laboratory Technician,Single,27070,1.0
+31,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Jodi King,433,Male,4,Research Director,Married,190680,0.0
+40,No,Travel_Frequently,Sales,1,3,Marketing,Joshua Martin,434,Male,1,Research Scientist,Divorced,39310,8.0
+32,No,Travel_Rarely,Research & Development,24,3,Life Sciences,Gregory Moss,435,Male,4,Laboratory Technician,Married,37300,1.0
+36,Yes,Travel_Rarely,Research & Development,10,3,Medical,Ronald Cantu,436,Male,3,Sales Executive,Married,22320,1.0
+33,No,Travel_Rarely,Research & Development,1,4,Medical,Teresa Taylor,437,Female,4,Manufacturing Director,Single,44650,0.0
+37,Yes,Travel_Rarely,Sales,10,4,Marketing,Mrs. Kayla Rasmussen,438,Female,3,Human Resources,Married,30720,5.0
+45,No,Non-Travel,Research & Development,8,1,Life Sciences,Tara Garcia,439,Male,2,Sales Executive,Married,33190,1.0
+29,No,Travel_Frequently,Research & Development,29,1,Life Sciences,Andrea Schmidt,440,Male,1,Sales Representative,Married,192020,1.0
+35,No,Travel_Rarely,Human Resources,1,3,Human Resources,Adrian Fuller,441,Male,3,Laboratory Technician,Married,136750,1.0
+52,No,Travel_Rarely,Research & Development,5,4,Other,Brent Fields,442,Male,1,Laboratory Technician,Married,29110,2.0
+58,Yes,Travel_Rarely,Sales,9,2,Medical,Kari Mcbride,443,Female,4,Sales Executive,Single,59570,4.0
+53,No,Travel_Rarely,Research & Development,9,3,Technical Degree,Jessica Bowman,444,Male,1,Manager,Divorced,39200,6.0
+30,No,Travel_Rarely,Sales,3,4,Marketing,Heidi Lane,445,Male,1,Sales Executive,Divorced,64340,5.0
+38,No,Non-Travel,Sales,4,3,Life Sciences,Michelle Ewing DVM,446,Male,2,Research Director,Single,100480,1.0
+35,No,Travel_Rarely,Sales,1,2,Life Sciences,Michael Anthony,447,Female,2,Healthcare Representative,Divorced,109380,6.0
+39,No,Travel_Rarely,Sales,1,1,Marketing,Scott Solis,448,Male,2,Research Scientist,Single,23400,0.0
+40,Yes,Non-Travel,Research & Development,2,4,Life Sciences,Pamela Mendez,449,Male,1,Human Resources,Single,65450,4.0
+47,No,Travel_Frequently,Research & Development,7,4,Life Sciences,Paige Scott,450,Male,3,Sales Executive,Divorced,69310,1.0
+36,No,Non-Travel,Sales,28,1,Life Sciences,Sean Scott,451,Male,2,Research Scientist,Divorced,48980,4.0
+31,Yes,Non-Travel,Research & Development,28,4,Medical,Jessica Mendoza,452,Male,2,Research Scientist,Single,25930,0.0
+33,No,Non-Travel,Sales,15,3,Other,Jeffrey Quinn,453,Male,4,Research Director,Single,194360,1.0
+29,Yes,Travel_Rarely,Human Resources,3,5,Life Sciences,Kristen Vance,454,Male,1,Sales Executive,Single,27230,6.0
+33,No,Travel_Rarely,Research & Development,2,2,Technical Degree,Wendy Mullins,455,Male,2,Laboratory Technician,Single,34790,3.0
+45,No,Travel_Rarely,Research & Development,26,1,Medical,Kimberly Johnson,456,Female,3,Healthcare Representative,Divorced,27940,3.0
+50,No,Travel_Rarely,Sales,10,1,Life Sciences,John Johnson,457,Female,1,Manufacturing Director,Divorced,52490,9.0
+33,No,Travel_Frequently,Sales,1,3,Marketing,Justin Dean,458,Male,2,Human Resources,Married,21760,1.0
+41,No,Travel_Frequently,Sales,11,3,Other,Anthony Ford,459,Male,1,Laboratory Technician,Divorced,168720,2.0
+27,No,Travel_Rarely,Research & Development,20,4,Other,Deanna Rogers,460,Male,2,Manufacturing Director,Married,34850,9.0
+45,No,Non-Travel,Sales,2,3,Medical,Jacob Mills,461,Female,1,Sales Executive,Married,66440,1.0
+47,No,Travel_Rarely,Sales,18,4,Medical,Angela Wagner,462,Female,2,Research Scientist,Single,55820,1.0
+30,Yes,Travel_Rarely,Sales,2,3,Life Sciences,Charles Proctor,463,Male,2,Healthcare Representative,Married,40000,4.0
+50,No,Travel_Rarely,Research & Development,1,3,Technical Degree,Chad Washington,464,Female,2,Sales Executive,Married,134960,3.0
+38,No,Travel_Frequently,Research & Development,13,3,Technical Degree,Randall Cobb,465,Male,1,Manufacturing Director,Married,32100,0.0
+46,No,Travel_Rarely,Research & Development,28,3,Medical,Brandon Watson,466,Female,3,Human Resources,Divorced,190450,6.0
+24,No,Travel_Rarely,Sales,28,3,Life Sciences,William Santana,467,Female,1,Healthcare Representative,Divorced,118490,1.0
+35,Yes,Travel_Rarely,Sales,24,3,Medical,James Vincent,468,Male,3,Healthcare Representative,Divorced,20700,1.0
+31,No,Travel_Frequently,Research & Development,5,2,Technical Degree,Shelby Peters,469,Male,2,Sales Executive,Married,65020,1.0
+18,No,Non-Travel,Sales,5,4,Other,Joseph Stewart,470,Male,2,Manager,Single,32300,1.0
+54,No,Travel_Rarely,Sales,23,3,Medical,Michelle House,471,Female,1,Laboratory Technician,Married,136030,8.0
+35,No,Travel_Rarely,Research & Development,6,4,Medical,Jessica Molina,472,Female,1,Manufacturing Director,Divorced,119960,1.0
+30,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Susan Gallagher,473,Female,5,Healthcare Representative,Married,56050,0.0
+20,Yes,Travel_Rarely,Research & Development,2,2,Life Sciences,James Stone,474,Female,2,Research Scientist,Single,63970,1.0
+30,Yes,Travel_Frequently,Research & Development,8,4,Medical,Andrea Yang,475,Male,1,Sales Executive,Single,191440,0.0
+26,No,Travel_Rarely,Sales,1,3,Marketing,Kristen Ross,476,Female,2,Research Scientist,Married,175840,1.0
+22,No,Travel_Rarely,Research & Development,8,3,Other,Anthony Garcia,477,Male,2,Sales Representative,Married,49070,
+48,No,Travel_Rarely,Human Resources,2,4,Medical,Paul Mitchell,478,Male,2,Sales Executive,Single,45540,2.0
+48,No,Travel_Rarely,Sales,3,3,Medical,Robert Brown DVM,479,Male,1,Research Director,Single,54150,7.0
+41,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Diana Cuevas,480,Male,2,Research Scientist,Single,47410,6.0
+39,No,Travel_Rarely,Sales,2,3,Life Sciences,Andrew Martinez,481,Male,3,Human Resources,Married,21150,1.0
+27,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Stephen Norman,482,Male,2,Human Resources,Married,31610,0.0
+35,No,Travel_Rarely,Sales,24,3,Medical,Kathleen Brown,483,Male,5,Sales Executive,Divorced,57450,1.0
+42,No,Travel_Rarely,Research & Development,23,4,Other,Lindsey Moore,484,Male,1,Research Scientist,Married,23730,6.0
+50,No,Travel_Rarely,Sales,27,3,Medical,Garrett Griffin,485,Male,2,Sales Executive,Married,33100,4.0
+59,No,Travel_Rarely,Research & Development,16,4,Medical,Gina Hawkins,486,Female,5,Laboratory Technician,Single,186650,3.0
+37,Yes,Travel_Rarely,Sales,15,3,Marketing,Elizabeth Baldwin,487,Male,2,Laboratory Technician,Married,44850,5.0
+55,No,Travel_Frequently,Research & Development,26,2,Life Sciences,Margaret Coffey,488,Female,2,Sales Executive,Married,27890,3.0
+41,No,Non-Travel,Research & Development,19,1,Life Sciences,Samuel Kennedy,489,Male,2,Research Scientist,Divorced,58280,1.0
+38,No,Travel_Rarely,Research & Development,24,2,Other,Jessica Williams,490,Female,1,Laboratory Technician,Single,23260,8.0
+26,Yes,Non-Travel,Research & Development,21,1,Life Sciences,Angelica Silva,491,Female,1,Manufacturing Director,Single,135250,8.0
+52,Yes,Travel_Rarely,Research & Development,5,4,Medical,William Stewart,492,Female,4,Human Resources,Married,14200,1.0
+44,No,Travel_Rarely,Research & Development,16,3,Life Sciences,Benjamin Cohen,493,Female,1,Healthcare Representative,Married,80200,3.0
+50,No,Non-Travel,Human Resources,2,2,Life Sciences,Sara Logan,494,Male,1,Laboratory Technician,Married,36880,0.0
+36,Yes,Travel_Rarely,Sales,2,4,Technical Degree,Jamie Lopez DVM,495,Male,4,Sales Executive,Single,54820,1.0
+39,No,Travel_Frequently,Sales,11,3,Marketing,Sarah Johnson,496,Male,1,Sales Executive,Single,160150,1.0
+33,No,Non-Travel,Sales,9,2,Technical Degree,Haley Williams,497,Male,5,Sales Representative,Single,12000,0.0
+45,No,Travel_Rarely,Research & Development,7,2,Other,Matthew Flores,498,Male,1,Human Resources,Married,56610,3.0
+32,No,Non-Travel,Research & Development,15,3,Medical,Eric Taylor,499,Male,2,Manager,Single,69290,9.0
+34,No,Travel_Rarely,Sales,6,4,Marketing,Sherry Stephens,500,Male,2,Research Director,Divorced,96130,0.0
+59,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Julie Jones,501,Male,2,Research Scientist,Married,56740,3.0
+45,No,Travel_Rarely,Research & Development,16,1,Medical,Jason Smith,502,Male,2,Sales Executive,Single,54840,1.0
+53,No,Travel_Frequently,Sales,8,2,Medical,Brian Thomas,503,Male,2,Research Scientist,Married,120610,2.0
+36,Yes,Travel_Rarely,Research & Development,7,2,Life Sciences,Sara Marshall,504,Female,1,Research Scientist,Divorced,56600,7.0
+26,Yes,Travel_Frequently,Sales,2,3,Life Sciences,Jacqueline Rogers,505,Male,2,Research Scientist,Married,48210,6.0
+34,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Melanie Gutierrez,506,Male,1,Sales Representative,Married,64100,1.0
+28,No,Travel_Rarely,Research & Development,10,3,Other,Steve Weaver,507,Male,2,Sales Representative,Married,52100,1.0
+38,No,Travel_Frequently,Sales,9,4,Medical,Joshua Robinson,508,Male,2,Research Scientist,Married,26950,3.0
+50,No,Travel_Rarely,Research & Development,5,4,Life Sciences,Zachary Washington,509,Male,1,Sales Executive,Married,118780,2.0
+37,No,Travel_Rarely,Research & Development,1,3,Life Sciences,John Sims MD,510,Male,1,Laboratory Technician,Single,170680,3.0
+40,No,Travel_Rarely,Human Resources,2,3,Medical,Alexander Wise,511,Male,5,Sales Executive,Married,24550,1.0
+26,No,Travel_Frequently,Research & Development,3,3,Medical,Russell Cummings,512,Male,2,Laboratory Technician,Divorced,139640,1.0
+46,No,Travel_Rarely,Research & Development,2,1,Medical,Samantha Riley,513,Female,3,Research Scientist,Divorced,49410,9.0
+54,No,Travel_Rarely,Research & Development,5,3,Medical,Richard Boyd,514,Female,2,Manufacturing Director,Married,24780,6.0
+56,No,Travel_Frequently,Research & Development,1,2,Life Sciences,Timothy Walker,515,Female,2,Manufacturing Director,Married,52280,2.0
+36,No,Travel_Rarely,Research & Development,4,2,Life Sciences,Donna West,516,Female,2,Human Resources,Single,44780,0.0
+55,No,Non-Travel,Research & Development,2,3,Medical,Sandra Erickson DDS,517,Female,2,Manager,Single,75470,7.0
+43,No,Travel_Rarely,Sales,25,2,Life Sciences,Leslie Gay,518,Male,3,Research Scientist,Divorced,50550,5.0
+20,Yes,Travel_Frequently,Sales,8,3,Marketing,Mitchell Stone,519,Male,3,Sales Executive,Single,34640,1.0
+21,Yes,Travel_Rarely,Research & Development,1,4,Life Sciences,Amanda Vega,520,Male,1,Manager,Single,57750,1.0
+46,No,Travel_Rarely,Sales,12,3,Marketing,Theodore Cooper,521,Female,3,Healthcare Representative,Divorced,89430,8.0
+51,Yes,Travel_Rarely,Sales,23,3,Medical,Hector Peterson,522,Female,2,Research Scientist,Married,192720,9.0
+28,Yes,Non-Travel,Research & Development,19,4,Life Sciences,Jennifer Gonzales,523,Female,4,Laboratory Technician,Single,52380,1.0
+26,No,Travel_Rarely,Research & Development,5,4,Medical,Benjamin Johnson,524,Female,2,Sales Executive,Married,46820,1.0
+30,No,Travel_Rarely,Research & Development,8,3,Medical,Jessica Johnson,525,Female,1,Sales Executive,Married,183000,0.0
+41,No,Travel_Rarely,Sales,1,4,Life Sciences,Janet Ward,526,Female,1,Research Director,Married,52570,1.0
+38,No,Travel_Rarely,Research & Development,5,3,Technical Degree,Jeffrey Ingram,527,Male,1,Sales Executive,Married,63490,0.0
+40,No,Travel_Rarely,Sales,1,4,Marketing,Terry Shaw,528,Male,1,Sales Executive,Married,48690,4.0
+27,No,Non-Travel,Sales,11,3,Technical Degree,Neil Solis,529,Female,2,Laboratory Technician,Married,99850,1.0
+55,No,Travel_Frequently,Research & Development,23,5,Life Sciences,Matthew Garcia,530,Male,3,Laboratory Technician,Married,36970,3.0
+28,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Suzanne Roberts,531,Male,2,Healthcare Representative,Single,74570,3.0
+44,Yes,Travel_Rarely,Research & Development,18,4,Life Sciences,Sharon Mcdonald,532,Female,2,Sales Executive,Married,21190,9.0
+33,No,Travel_Rarely,Sales,23,4,Marketing,Jenna Johnson,533,Female,4,Sales Executive,Divorced,39830,4.0
+35,Yes,Travel_Rarely,Sales,7,4,Life Sciences,Andrew Brooks,534,Male,3,Sales Representative,Single,61180,0.0
+33,Yes,Travel_Frequently,Research & Development,1,2,Life Sciences,Cheryl Frederick,535,Female,1,Sales Executive,Single,62140,1.0
+28,No,Travel_Rarely,Human Resources,1,1,Human Resources,Joshua Schultz,536,Male,2,Research Scientist,Divorced,63470,1.0
+34,No,Travel_Frequently,Sales,29,4,Marketing,Carmen Jenkins,537,Male,1,Research Scientist,Single,115100,0.0
+37,No,Travel_Rarely,Research & Development,7,4,Life Sciences,Anthony Gilbert,538,Male,4,Sales Executive,Divorced,71430,2.0
+25,Yes,Travel_Rarely,Human Resources,25,4,Human Resources,Crystal Wilcox,539,Female,2,Research Scientist,Married,82680,1.0
+26,Yes,Travel_Rarely,Sales,8,2,Marketing,David Price,540,Male,2,Sales Executive,Divorced,80950,1.0
+33,Yes,Travel_Rarely,Research & Development,8,2,Life Sciences,Nicole Miller,541,Male,4,Manufacturing Director,Single,29040,4.0
+42,No,Travel_Rarely,Research & Development,11,1,Life Sciences,Brandon Wilson,542,Male,4,Research Scientist,Married,60320,0.0
+28,Yes,Travel_Frequently,Research & Development,7,3,Life Sciences,Keith Barber,543,Male,2,Manager,Divorced,29760,1.0
+50,Yes,Travel_Frequently,Research & Development,1,4,Medical,Chelsea Miller,544,Male,2,Research Scientist,Single,159920,3.0
+33,No,Travel_Frequently,Sales,9,3,Medical,Mary Lee,545,Female,2,Research Scientist,Married,46490,0.0
+34,No,Non-Travel,Sales,1,1,Marketing,Amy George,546,Female,2,Research Director,Married,26960,3.0
+48,No,Non-Travel,Sales,2,1,Life Sciences,Pamela Edwards,547,Male,2,Sales Executive,Single,23700,2.0
+45,No,Non-Travel,Research & Development,1,3,Medical,Jennifer Perkins,548,Female,2,Human Resources,Married,125040,1.0
+52,No,Travel_Rarely,Sales,1,3,Life Sciences,Michelle Murphy,549,Male,1,Sales Executive,Single,59740,7.0
+38,No,Travel_Rarely,Research & Development,6,2,Medical,Joseph Reyes,550,Male,1,Research Scientist,Divorced,47360,0.0
+29,No,Travel_Rarely,Research & Development,8,3,Medical,Andrew Jackson,551,Female,4,Research Scientist,Divorced,52960,4.0
+28,No,Travel_Rarely,Human Resources,1,3,Human Resources,Katie Cervantes,552,Female,4,Laboratory Technician,Divorced,67810,0.0
+46,No,Travel_Rarely,Research & Development,6,4,Medical,Ms. Christine Christensen,553,Male,3,Sales Executive,Married,21740,3.0
+38,No,Travel_Rarely,Research & Development,7,4,Medical,Steven Richardson,554,Male,1,Sales Executive,Single,66530,7.0
+43,No,Travel_Frequently,Research & Development,5,3,Medical,Rebecca Kent,555,Female,2,Laboratory Technician,Married,96990,8.0
+39,Yes,Travel_Frequently,Sales,1,3,Marketing,Michelle Perkins,556,Male,2,Healthcare Representative,Divorced,67550,7.0
+40,No,Travel_Rarely,Research & Development,1,1,Life Sciences,Robin Delgado,557,Male,1,Healthcare Representative,Single,22130,1.0
+21,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Frederick Jackson,558,Female,1,Research Scientist,Single,26100,1.0
+39,No,Non-Travel,Research & Development,6,3,Life Sciences,Stephen Martinez,559,Male,1,Laboratory Technician,Single,28510,9.0
+36,No,Non-Travel,Research & Development,1,3,Medical,Timothy Chapman,560,Male,3,Sales Representative,Single,34520,2.0
+31,No,Travel_Frequently,Research & Development,7,3,Life Sciences,Adrian Sweeney,561,Male,1,Sales Executive,Married,52580,0.0
+28,No,Travel_Rarely,Sales,2,4,Marketing,Julia Kline,562,Male,1,Sales Executive,Married,93550,0.0
+35,No,Travel_Frequently,Research & Development,9,2,Other,Jennifer Molina,563,Female,1,Manufacturing Director,Divorced,104960,1.0
+49,No,Travel_Rarely,Sales,2,2,Medical,Cole Taylor,564,Female,1,Sales Executive,Married,63800,6.0
+34,No,Travel_Frequently,Sales,9,1,Technical Degree,Nicholas Hoover,565,Male,2,Sales Executive,Single,26570,2.0
+29,No,Travel_Frequently,Research & Development,1,4,Medical,Yesenia Rojas,566,Male,3,Research Scientist,Divorced,27160,0.0
+42,No,Travel_Rarely,Sales,21,2,Life Sciences,Allison Washington,567,Female,1,Healthcare Representative,Single,22010,4.0
+29,No,Travel_Rarely,Sales,4,2,Other,Nathan Wilson,568,Female,2,Healthcare Representative,Married,65400,1.0
+38,No,Travel_Rarely,Research & Development,1,3,Medical,Erin Roberts,569,Female,1,Human Resources,Married,38160,1.0
+28,No,Travel_Frequently,Sales,6,4,Life Sciences,Shawn Patel,570,Male,1,Manager,Divorced,52530,1.0
+18,Yes,Non-Travel,Research & Development,2,4,Medical,Oscar Green,571,Male,3,Laboratory Technician,Single,109650,1.0
+33,Yes,Travel_Rarely,Research & Development,3,2,Life Sciences,Taylor Hamilton,572,Male,1,Sales Executive,Single,49360,0.0
+41,No,Travel_Rarely,Research & Development,4,2,Medical,Yolanda Simmons,573,Male,2,Research Scientist,Married,25430,3.0
+31,Yes,Travel_Frequently,Sales,10,3,Technical Degree,Todd Martin,574,Female,1,Research Director,Married,53040,1.0
+37,No,Travel_Rarely,Research & Development,23,3,Life Sciences,Nicole White,575,Male,3,Manufacturing Director,Divorced,166590,7.0
+27,No,Travel_Rarely,Research & Development,6,2,Medical,Pamela Cook,576,Female,1,Healthcare Representative,Married,42600,1.0
+34,No,Travel_Rarely,Sales,1,1,Marketing,Mrs. Christina Graham PhD,577,Female,2,Laboratory Technician,Married,24760,1.0
+35,No,Travel_Rarely,Research & Development,6,3,Life Sciences,Courtney Price,578,Female,3,Laboratory Technician,Single,31020,1.0
+29,Yes,Travel_Rarely,Research & Development,6,3,Life Sciences,Henry White,579,Male,1,Sales Executive,Married,22440,1.0
+40,No,Travel_Frequently,Research & Development,2,4,Medical,Stephanie Turner,580,Male,4,Human Resources,Single,75960,9.0
+42,Yes,Travel_Frequently,Sales,2,4,Life Sciences,Roger Mclaughlin,581,Male,1,Laboratory Technician,Single,22850,0.0
+42,No,Travel_Rarely,Research & Development,1,2,Life Sciences,Amber Anderson,582,Male,4,Laboratory Technician,Single,30340,7.0
+35,No,Travel_Rarely,Research & Development,5,3,Medical,Grace Walker,583,Male,1,Healthcare Representative,Married,57150,6.0
+24,No,Travel_Rarely,Sales,7,4,Life Sciences,Crystal Reed,584,Female,1,Laboratory Technician,Single,25760,8.0
+28,Yes,Travel_Rarely,Research & Development,15,4,Life Sciences,Lisa Keller,585,Male,2,Sales Executive,Married,41970,1.0
+26,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Nicholas Ross,586,Male,2,Sales Representative,Married,143360,1.0
+30,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Jose Jackson,587,Female,1,Manufacturing Director,Married,34480,1.0
+40,No,Travel_Frequently,Research & Development,26,4,Life Sciences,Jennifer Fuller,588,Male,2,Research Scientist,Married,194060,3.0
+35,No,Travel_Rarely,Research & Development,18,5,Medical,Craig Kelley,589,Female,2,Research Scientist,Divorced,65380,2.0
+34,No,Travel_Frequently,Research & Development,6,2,Life Sciences,Ashley Vargas,590,Male,1,Research Director,Single,43060,0.0
+35,No,Travel_Frequently,Research & Development,3,3,Medical,Joe Choi,591,Female,2,Laboratory Technician,Married,22580,1.0
+43,Yes,Travel_Rarely,Sales,5,3,Marketing,Duane Liu,592,Female,3,Research Scientist,Single,45220,8.0
+32,No,Non-Travel,Research & Development,11,2,Other,Zachary Mckinney,593,Female,2,Research Scientist,Divorced,44870,1.0
+56,No,Travel_Rarely,Research & Development,3,2,Other,Paige Larson,594,Male,2,Healthcare Representative,Divorced,44490,4.0
+29,No,Travel_Rarely,Research & Development,26,1,Life Sciences,Daniel Hart,595,Male,1,Laboratory Technician,Married,22180,1.0
+19,No,Travel_Rarely,Research & Development,23,4,Life Sciences,Christopher Moon,596,Male,2,Laboratory Technician,Single,191970,1.0
+45,No,Travel_Rarely,Research & Development,22,3,Life Sciences,Patricia Bennett,597,Female,2,Sales Representative,Married,132120,4.0
+37,No,Travel_Rarely,Research & Development,14,4,Life Sciences,Hannah Hogan,598,Male,3,Research Scientist,Married,65770,1.0
+20,No,Travel_Rarely,Research & Development,6,3,Medical,Jeff Sanders,599,Male,5,Research Director,Single,83920,1.0
+44,Yes,Travel_Rarely,Human Resources,6,2,Human Resources,Jorge Hansen,600,Male,3,Sales Executive,Single,45580,1.0
+53,No,Travel_Rarely,Research & Development,6,4,Life Sciences,Melissa Phillips,601,Male,1,Research Director,Divorced,40310,3.0
+29,No,Travel_Rarely,Research & Development,23,3,Medical,Melanie Donovan,602,Male,1,Sales Executive,Married,79690,0.0
+22,Yes,Travel_Frequently,Research & Development,22,4,Medical,Bradley Smith,603,Male,1,Sales Representative,Married,26540,0.0
+46,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Morgan Munoz,604,Male,2,Research Scientist,Married,165550,8.0
+44,No,Non-Travel,Research & Development,20,3,Life Sciences,Jonathan Brown,605,Male,1,Sales Representative,Single,45560,2.0
+33,No,Travel_Rarely,Research & Development,28,4,Life Sciences,Tina Lopez,606,Female,1,Manager,Married,60910,1.0
+41,Yes,Non-Travel,Research & Development,12,3,Life Sciences,Amy Patel DDS,607,Male,2,Sales Representative,Divorced,195660,6.0
+30,No,Travel_Rarely,Sales,20,3,Marketing,Lauren Aguirre,608,Male,3,Sales Executive,Divorced,48100,8.0
+40,No,Travel_Frequently,Sales,9,3,Medical,Anna Miller,609,Male,1,Manufacturing Director,Married,45230,5.0
+50,No,Travel_Frequently,Research & Development,25,4,Life Sciences,Richard Lewis,610,Female,2,Healthcare Representative,Married,32020,2.0
+28,No,Travel_Rarely,Research & Development,6,3,Technical Degree,Joseph Santiago,611,Male,2,Research Scientist,Married,23510,1.0
+46,No,Travel_Rarely,Research & Development,8,4,Other,John Taylor,612,Male,3,Manager,Married,17020,5.0
+35,No,Travel_Rarely,Sales,4,4,Marketing,Heather Lopez,613,Male,1,Laboratory Technician,Married,180410,3.0
+24,Yes,Travel_Rarely,Human Resources,28,4,Human Resources,Donald Macias,614,Male,3,Manufacturing Director,Married,28860,1.0
+33,No,Travel_Frequently,Research & Development,9,2,Medical,Gary Rivera,615,Female,1,Sales Executive,Married,20970,1.0
+36,No,Travel_Rarely,Research & Development,9,2,Medical,Ricardo Brown,616,Male,2,Sales Executive,Divorced,119350,1.0
+30,No,Travel_Rarely,Sales,29,3,Marketing,Manuel Wong,617,Male,1,Sales Executive,Divorced,25460,1.0
+44,No,Travel_Rarely,Research & Development,3,4,Medical,Lisa Johnson,618,Male,2,Research Scientist,Single,25640,1.0
+20,No,Travel_Rarely,Research & Development,18,4,Medical,Natalie Brown,619,Male,1,Human Resources,Single,84120,1.0
+46,No,Travel_Rarely,Sales,9,1,Medical,Sherri Mendoza,620,Female,1,Sales Executive,Divorced,141180,2.0
+42,No,Non-Travel,Research & Development,5,4,Medical,Katherine Carey,621,Male,5,Sales Executive,Married,170460,7.0
+60,No,Travel_Rarely,Sales,2,2,Life Sciences,Tyler Walker,622,Male,2,Sales Executive,Divorced,25640,0.0
+32,No,Travel_Frequently,Sales,10,3,Life Sciences,Cynthia Williams,623,Female,1,Sales Executive,Married,102660,1.0
+32,No,Travel_Frequently,Research & Development,9,3,Life Sciences,Dennis Oneal,624,Female,2,Research Scientist,Single,50700,4.0
+36,No,Travel_Rarely,Sales,3,2,Marketing,Aaron Price,625,Male,4,Healthcare Representative,Divorced,178610,2.0
+33,No,Travel_Rarely,Sales,26,2,Marketing,Justin Hall,626,Male,1,Research Scientist,Married,42300,0.0
+40,No,Travel_Rarely,Research & Development,1,3,Medical,Kathy Sherman,627,Female,2,Research Scientist,Divorced,37800,7.0
+25,No,Travel_Rarely,Research & Development,6,2,Medical,Jason Kim,628,Female,1,Laboratory Technician,Single,27680,0.0
+30,No,Travel_Rarely,Sales,9,3,Marketing,Christy Velazquez,629,Female,1,Research Scientist,Married,90710,0.0
+42,No,Travel_Frequently,Human Resources,8,2,Medical,Edward Lane,630,Male,1,Sales Executive,Married,106480,3.0
+35,No,Non-Travel,Research & Development,1,1,Life Sciences,George Watson,631,Male,2,Sales Executive,Married,136100,4.0
+27,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Jose Hayden,632,Male,3,Manufacturing Director,Married,34080,1.0
+54,No,Travel_Frequently,Research & Development,9,2,Medical,Heather Stephens,633,Male,2,Sales Representative,Divorced,29830,7.0
+44,No,Travel_Rarely,Human Resources,4,4,Life Sciences,Amanda Tapia,634,Male,5,Laboratory Technician,Married,76320,1.0
+19,Yes,Non-Travel,Sales,2,2,Other,Samantha Francis,635,Male,3,Healthcare Representative,Single,98240,1.0
+29,No,Travel_Rarely,Research & Development,19,4,Life Sciences,Daisy Hayes,636,Male,1,Manufacturing Director,Divorced,99500,1.0
+54,No,Travel_Rarely,Research & Development,9,4,Life Sciences,Jon Nelson,637,Male,2,Sales Executive,Married,20930,3.0
+31,No,Travel_Rarely,Research & Development,21,3,Life Sciences,Tim Rodriguez,638,Male,2,Laboratory Technician,Married,99800,1.0
+31,No,Travel_Rarely,Sales,24,1,Marketing,Thomas Edwards,639,Female,1,Sales Executive,Single,38940,1.0
+59,No,Travel_Rarely,Research & Development,3,4,Technical Degree,Sarah Aguilar,640,Male,1,Research Scientist,Single,40510,5.0
+43,No,Travel_Rarely,Research & Development,11,2,Life Sciences,Zachary Martinez,641,Male,3,Laboratory Technician,Married,168350,3.0
+49,No,Travel_Rarely,Sales,14,4,Life Sciences,Madison Hickman,642,Male,2,Research Scientist,Married,62300,2.0
+36,No,Travel_Frequently,Sales,5,2,Marketing,Heidi Williams,643,Female,1,Laboratory Technician,Married,47170,1.0
+48,No,Travel_Rarely,Research & Development,1,4,Life Sciences,James Sloan,644,Female,2,Laboratory Technician,Single,132370,5.0
+27,No,Travel_Rarely,Research & Development,6,4,Life Sciences,Dean Greer,645,Male,2,Laboratory Technician,Divorced,37550,1.0
+29,No,Travel_Rarely,Sales,17,4,Medical,Andrew Williams,646,Male,1,Laboratory Technician,Divorced,65820,1.0
+48,No,Travel_Rarely,Sales,1,1,Marketing,Erika Fowler,647,Male,2,Manufacturing Director,Single,74060,6.0
+29,No,Travel_Rarely,Research & Development,3,3,Technical Degree,Andrew Logan,648,Female,2,Healthcare Representative,Divorced,48050,
+34,No,Travel_Rarely,Sales,9,4,Medical,Amy Mcclure,649,Female,2,Laboratory Technician,Married,27410,0.0
+44,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Christina Jones,650,Female,1,Laboratory Technician,Married,42620,7.0
+33,No,Travel_Rarely,Research & Development,8,2,Life Sciences,Erica Kline,651,Female,2,Research Scientist,Divorced,161840,0.0
+19,No,Travel_Rarely,Sales,2,4,Marketing,Ashley Blake,652,Male,3,Laboratory Technician,Single,115570,1.0
+23,No,Travel_Rarely,Sales,2,3,Medical,Michelle Fields,653,Male,3,Laboratory Technician,Married,18780,1.0
+25,Yes,Travel_Frequently,Research & Development,1,1,Life Sciences,Anna Davidson,654,Male,1,Manufacturing Director,Single,109320,1.0
+26,No,Travel_Rarely,Human Resources,9,3,Life Sciences,Yolanda Holloway,655,Male,2,Research Scientist,Single,68110,1.0
+45,Yes,Travel_Rarely,Human Resources,12,3,Human Resources,Loretta Carney,656,Male,2,Laboratory Technician,Single,43060,2.0
+55,No,Non-Travel,Research & Development,27,3,Life Sciences,Maria Sims,657,Female,2,Manager,Divorced,48590,1.0
+21,Yes,Travel_Frequently,Research & Development,20,2,Medical,Mrs. Margaret Griffin,658,Female,4,Research Scientist,Single,53370,1.0
+46,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Stephen Shepherd,659,Male,1,Manufacturing Director,Married,23400,2.0
+34,No,Travel_Rarely,Sales,13,4,Medical,Catherine Anderson,660,Male,3,Sales Representative,Single,74910,0.0
+51,No,Travel_Frequently,Research & Development,14,3,Life Sciences,Mrs. Bethany Lopez,661,Male,2,Research Director,Divorced,105270,4.0
+59,No,Travel_Rarely,Research & Development,4,2,Life Sciences,Robert Barber,662,Male,2,Research Scientist,Single,165950,6.0
+34,No,Travel_Frequently,Sales,14,4,Medical,Nancy James,663,Female,3,Research Scientist,Divorced,88340,4.0
+28,No,Travel_Frequently,Research & Development,2,3,Other,Stephen Jefferson,664,Female,1,Manager,Single,55770,0.0
+44,No,Travel_Rarely,Research & Development,3,4,Life Sciences,Julie Sanchez,665,Male,2,Research Scientist,Divorced,47070,1.0
+34,No,Travel_Frequently,Sales,1,3,Life Sciences,William Pearson,666,Male,2,Sales Executive,Married,24000,4.0
+35,No,Travel_Rarely,Research & Development,9,3,Life Sciences,Jamie Cherry,667,Male,4,Healthcare Representative,Married,98240,0.0
+42,No,Travel_Rarely,Research & Development,23,4,Life Sciences,Natasha Ramirez,668,Female,1,Manager,Married,64470,6.0
+43,No,Travel_Rarely,Research & Development,7,2,Medical,Kristin Mccarty,669,Female,1,Laboratory Technician,Single,195020,3.0
+36,No,Travel_Rarely,Research & Development,2,4,Medical,Amy Johnston,670,Male,1,Healthcare Representative,Single,27250,9.0
+44,Yes,Travel_Rarely,Research & Development,21,4,Life Sciences,John Owens,671,Female,2,Laboratory Technician,Married,62720,1.0
+28,No,Travel_Frequently,Research & Development,2,3,Life Sciences,Louis Chen,672,Female,2,Sales Representative,Married,21270,1.0
+51,No,Travel_Frequently,Sales,21,4,Medical,Amber Berry,673,Male,2,Research Scientist,Single,182000,0.0
+30,No,Non-Travel,Research & Development,2,4,Other,April Strickland,674,Male,1,Research Scientist,Single,20960,7.0
+29,Yes,Travel_Rarely,Research & Development,29,4,Technical Degree,Jessica Harvey,675,Female,1,Sales Representative,Divorced,28860,3.0
+28,No,Travel_Rarely,Sales,1,4,Life Sciences,Michael Moore,676,Female,2,Sales Representative,Single,20330,2.0
+25,No,Travel_Rarely,Research & Development,18,2,Life Sciences,Karen Jones,677,Male,1,Research Scientist,Single,36220,1.0
+32,No,Travel_Rarely,Research & Development,10,4,Other,Thomas Vasquez,678,Female,1,Sales Executive,Married,42330,1.0
+45,No,Travel_Frequently,Research & Development,19,3,Medical,Anthony Lang,679,Male,3,Laboratory Technician,Single,36810,3.0
+39,No,Travel_Rarely,Sales,29,1,Marketing,Mary Pena,680,Female,1,Laboratory Technician,Divorced,54600,6.0
+58,No,Travel_Rarely,Research & Development,27,3,Other,Mark Silva,681,Male,2,Laboratory Technician,Divorced,21870,1.0
+32,Yes,Travel_Rarely,Research & Development,5,3,Technical Degree,Kelli Fischer,682,Female,1,Sales Executive,Married,96020,1.0
+39,Yes,Travel_Rarely,Research & Development,18,2,Life Sciences,Kelsey Bryant,683,Male,2,Laboratory Technician,Single,28360,0.0
+30,No,Travel_Rarely,Sales,9,1,Marketing,Jenny Knight,684,Male,4,Research Director,Married,40890,0.0
+36,No,Travel_Rarely,Sales,1,3,Marketing,Amy Navarro,685,Male,2,Sales Executive,Married,166270,3.0
+46,No,Travel_Rarely,Sales,4,3,Medical,Linda Brennan,686,Male,1,Research Scientist,Single,26190,6.0
+28,No,Non-Travel,Research & Development,1,3,Medical,Mary Myers,687,Male,5,Sales Executive,Married,56790,0.0
+50,No,Travel_Rarely,Research & Development,20,2,Medical,Amanda Rodriguez,688,Female,5,Laboratory Technician,Married,154020,4.0
+40,Yes,Travel_Rarely,Sales,8,1,Other,Nancy Medina,689,Male,1,Laboratory Technician,Single,59850,2.0
+52,Yes,Travel_Rarely,Research & Development,3,2,Technical Degree,Sarah Anderson,690,Male,3,Laboratory Technician,Single,25790,9.0
+30,No,Travel_Rarely,Research & Development,6,4,Medical,Carla Sexton,691,Female,1,Sales Executive,Married,30410,1.0
+39,No,Travel_Rarely,Research & Development,26,1,Medical,Mrs. Karen Casey,692,Male,2,Healthcare Representative,Single,34470,0.0
+31,No,Non-Travel,Research & Development,1,2,Medical,Kelli Miller,693,Male,1,Sales Executive,Divorced,195130,1.0
+41,No,Non-Travel,Sales,6,3,Life Sciences,Anna Mcdonald MD,694,Female,1,Research Director,Single,27730,1.0
+31,Yes,Travel_Frequently,Research & Development,3,1,Life Sciences,Mary Jimenez,695,Male,1,Sales Executive,Single,71040,1.0
+44,Yes,Travel_Rarely,Sales,5,3,Life Sciences,Melanie West,696,Male,1,Laboratory Technician,Married,63220,4.0
+42,No,Non-Travel,Research & Development,4,3,Life Sciences,Luke Scott,697,Male,2,Laboratory Technician,Married,20830,0.0
+55,No,Travel_Rarely,Sales,11,3,Technical Degree,Lisa Carr,698,Male,2,Manufacturing Director,Married,83810,4.0
+56,No,Travel_Rarely,Sales,3,2,Medical,Michael Joseph,699,Female,3,Manufacturing Director,Single,26910,6.0
+40,No,Non-Travel,Research & Development,1,1,Life Sciences,Susan Green,700,Male,1,Laboratory Technician,Divorced,42860,9.0
+34,No,Travel_Rarely,Research & Development,3,2,Technical Degree,Brandi Huber,701,Male,2,Research Director,Divorced,26590,0.0
+40,No,Travel_Rarely,Sales,4,3,Medical,Chelsea Miller,702,Male,2,Sales Executive,Single,94340,1.0
+41,No,Travel_Frequently,Sales,1,4,Other,Michelle Chen,703,Female,2,Healthcare Representative,Divorced,55610,0.0
+35,No,Travel_Frequently,Sales,1,2,Technical Degree,Cindy Wagner,704,Male,2,Manager,Single,66460,1.0
+51,No,Travel_Rarely,Sales,18,2,Life Sciences,James Powell,705,Male,4,Manufacturing Director,Divorced,77250,1.0
+38,No,Travel_Rarely,Sales,2,4,Life Sciences,Ryan Richardson,706,Female,1,Research Scientist,Divorced,107250,3.0
+34,No,Travel_Rarely,Sales,4,3,Life Sciences,Brooke Olson,707,Male,2,Research Scientist,Single,88470,1.0
+25,No,Travel_Rarely,Research & Development,6,2,Medical,Dylan Willis,708,Female,4,Research Scientist,Married,20450,3.0
+58,Yes,Travel_Rarely,Sales,1,4,Technical Degree,Sarah Ward,709,Male,2,Sales Executive,Married,10090,7.0
+40,No,Travel_Rarely,Research & Development,14,4,Medical,Mary Hunt,710,Female,1,Research Scientist,Married,33480,3.0
+36,No,Travel_Frequently,Sales,16,2,Life Sciences,Kimberly Cox,711,Male,1,Research Scientist,Married,12810,2.0
+48,No,Travel_Rarely,Research & Development,2,1,Life Sciences,Curtis Ross,712,Male,2,Research Scientist,Single,28190,1.0
+27,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Kathleen Stewart,713,Female,2,Laboratory Technician,Married,48510,8.0
+51,No,Travel_Rarely,Research & Development,4,1,Medical,Lisa Diaz,714,Female,3,Manufacturing Director,Single,40280,3.0
+18,No,Non-Travel,Research & Development,1,4,Medical,Jessica Deleon,715,Male,2,Sales Executive,Single,27200,1.0
+35,No,Travel_Rarely,Research & Development,1,4,Other,Tina Harris,716,Female,2,Research Director,Married,81200,0.0
+27,No,Travel_Frequently,Research & Development,26,4,Medical,Kaylee Strickland,717,Female,1,Research Director,Single,46470,3.0
+55,Yes,Travel_Rarely,Research & Development,19,3,Technical Degree,Kevin Hart,718,Male,1,Human Resources,Single,46800,6.0
+56,No,Travel_Rarely,Research & Development,24,4,Life Sciences,Paul Mccoy,719,Male,2,Laboratory Technician,Married,32210,4.0
+34,No,Non-Travel,Sales,1,2,Life Sciences,Eric Fitzpatrick,720,Male,2,Research Scientist,Divorced,86210,1.0
+40,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Kimberly Wilson,721,Male,2,Sales Executive,Divorced,45770,5.0
+34,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Mario Henry,722,Male,1,Research Scientist,Married,45530,4.0
+31,Yes,Travel_Frequently,Research & Development,2,2,Medical,Angela Gonzalez,723,Female,2,Manufacturing Director,Single,53960,7.0
+35,Yes,Travel_Frequently,Research & Development,1,2,Medical,Elizabeth Lee,724,Male,1,Manufacturing Director,Married,67960,0.0
+38,No,Travel_Frequently,Research & Development,7,3,Medical,Leon Manning,725,Female,2,Sales Representative,Divorced,76250,1.0
+34,No,Travel_Rarely,Research & Development,10,4,Other,James Black,726,Female,2,Laboratory Technician,Single,74120,1.0
+28,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Patrick Watkins,727,Female,2,Healthcare Representative,Married,111590,1.0
+31,Yes,Travel_Rarely,Research & Development,15,2,Life Sciences,Jennifer Jackson,728,Male,2,Sales Executive,Married,49600,1.0
+39,No,Travel_Rarely,Research & Development,17,4,Technical Degree,Annette Smith,729,Female,2,Healthcare Representative,Married,104750,3.0
+51,No,Travel_Frequently,Research & Development,20,3,Medical,Sara Guerra,730,Male,2,Sales Executive,Married,148140,2.0
+41,No,Travel_Frequently,Research & Development,1,3,Life Sciences,Dr. Louis Gilbert,731,Male,4,Sales Executive,Divorced,191410,3.0
+37,No,Travel_Rarely,Research & Development,2,2,Medical,Jacob Turner,732,Female,1,Healthcare Representative,Married,54050,7.0
+33,No,Travel_Frequently,Research & Development,2,3,Medical,Ray Marshall,733,Female,1,Sales Executive,Married,87930,6.0
+32,No,Travel_Rarely,Research & Development,1,4,Medical,Amanda Robinson,734,Male,5,Research Director,Married,191890,0.0
+39,No,Non-Travel,Research & Development,29,2,Life Sciences,Kristopher Byrd,735,Male,2,Sales Executive,Married,38750,3.0
+25,No,Travel_Rarely,Research & Development,7,4,Life Sciences,Jennifer Trevino,736,Male,1,Sales Executive,Married,22160,2.0
+52,No,Travel_Frequently,Research & Development,2,1,Life Sciences,Timothy Smith,737,Male,2,Sales Executive,Married,117130,2.0
+43,No,Travel_Rarely,Research & Development,2,2,Medical,Ashley Johnson,738,Male,1,Laboratory Technician,Single,78610,1.0
+27,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Jennifer Gonzales,739,Male,1,Human Resources,Married,37080,1.0
+27,Yes,Travel_Rarely,Research & Development,2,5,Life Sciences,Samuel Roach,740,Female,1,Research Scientist,Single,137700,1.0
+26,No,Travel_Rarely,Research & Development,2,2,Other,Christopher Murphy,741,Male,3,Laboratory Technician,Single,53040,0.0
+42,No,Travel_Rarely,Sales,23,3,Marketing,Elizabeth Bailey,742,Female,3,Research Scientist,Married,26420,0.0
+52,No,Travel_Rarely,Research & Development,5,2,Life Sciences,Isaac Lindsey DDS,743,Female,1,Healthcare Representative,Married,27590,9.0
+37,No,Travel_Rarely,Research & Development,20,5,Life Sciences,Nicholas Kelly,744,Male,2,Manager,Single,68040,4.0
+35,No,Travel_Frequently,Research & Development,6,4,Medical,Kevin Jones,745,Female,2,Research Director,Single,61420,2.0
+25,No,Travel_Rarely,Research & Development,1,4,Medical,Richard Henderson,746,Male,2,Sales Executive,Married,25000,4.0
+26,No,Travel_Rarely,Research & Development,29,4,Life Sciences,Natalie Olson,747,Male,1,Research Scientist,Single,63890,0.0
+29,No,Travel_Rarely,Sales,9,3,Life Sciences,Renee Gonzalez,748,Male,1,Laboratory Technician,Single,111030,1.0
+49,Yes,Travel_Frequently,Sales,6,5,Medical,Sean Davis,749,Female,2,Healthcare Representative,Single,23420,3.0
+29,Yes,Travel_Frequently,Sales,3,2,Marketing,Ashley Davis,750,Female,2,Laboratory Technician,Single,68110,0.0
+54,No,Travel_Rarely,Sales,1,3,Medical,James Neal,751,Female,2,Manager,Single,22970,6.0
+58,No,Travel_Rarely,Sales,22,3,Life Sciences,Susan Smith,752,Female,2,Laboratory Technician,Married,24500,3.0
+55,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Jacqueline Gill,753,Female,3,Research Scientist,Divorced,50930,2.0
+36,No,Travel_Rarely,Research & Development,1,3,Medical,Kyle Fitzgerald,754,Male,2,Sales Executive,Single,53090,3.0
+31,Yes,Travel_Frequently,Sales,4,3,Life Sciences,Shelley Goodwin,755,Male,2,Manager,Single,30570,1.0
+30,No,Travel_Rarely,Sales,3,3,Life Sciences,Michael Schmidt,756,Male,3,Sales Executive,Divorced,51210,7.0
+31,No,Travel_Rarely,Research & Development,1,3,Medical,Deanna Mccarty,757,Male,1,Laboratory Technician,Single,168560,3.0
+34,No,Travel_Frequently,Sales,2,1,Marketing,Colleen Haynes,758,Female,5,Manager,Divorced,26860,5.0
+31,Yes,Travel_Rarely,Sales,20,3,Technical Degree,Anthony Phillips,759,Male,1,Research Scientist,Single,61800,1.0
+27,No,Travel_Rarely,Human Resources,11,4,Medical,Valerie Lee,760,Male,4,Sales Executive,Married,66320,0.0
+36,No,Travel_Rarely,Sales,1,3,Marketing,Maria Pham,761,Male,2,Research Scientist,Single,35050,1.0
+36,No,Travel_Rarely,Research & Development,24,3,Other,John Franklin,762,Female,3,Research Director,Married,63970,4.0
+47,No,Travel_Rarely,Research & Development,23,4,Life Sciences,Tristan Morrow MD,763,Female,2,Sales Executive,Married,62740,7.0
+25,Yes,Travel_Rarely,Sales,16,4,Life Sciences,Samuel Young,764,Male,2,Research Scientist,Married,198590,3.0
+37,No,Non-Travel,Sales,8,4,Medical,April Martin,765,Male,1,Healthcare Representative,Single,75870,0.0
+56,No,Travel_Rarely,Research & Development,10,4,Other,Marc Baker,766,Male,2,Sales Representative,Married,42580,2.0
+47,No,Travel_Rarely,Research & Development,3,2,Medical,Donald Miller,767,Male,2,Laboratory Technician,Married,43640,3.0
+24,No,Travel_Rarely,Research & Development,5,1,Other,Paul Hernandez,768,Male,1,Manufacturing Director,Married,43350,1.0
+32,No,Travel_Rarely,Sales,4,3,Marketing,Janet Wilson,769,Male,1,Research Scientist,Married,53260,4.0
+34,No,Travel_Rarely,Research & Development,9,2,Medical,Andrew Olsen,770,Male,1,Sales Executive,Married,32800,5.0
+41,No,Travel_Rarely,Research & Development,26,3,Medical,Kelly Gonzalez,771,Female,3,Sales Executive,Married,54850,2.0
+40,No,Non-Travel,Sales,3,2,Life Sciences,Leslie Farrell,772,Male,1,Sales Executive,Divorced,43420,3.0
+31,No,Travel_Rarely,Research & Development,16,3,Medical,James Blankenship,773,Male,2,Human Resources,Divorced,27820,1.0
+46,Yes,Travel_Rarely,Research & Development,18,1,Medical,Abigail Reed,774,Male,1,Manufacturing Director,Divorced,59800,4.0
+39,Yes,Non-Travel,Research & Development,2,4,Medical,Brandi Little,775,Male,2,Manufacturing Director,Single,43810,2.0
+31,Yes,Travel_Frequently,Sales,2,3,Medical,Michael Harrell,776,Male,2,Sales Executive,Single,25720,1.0
+45,No,Travel_Rarely,Sales,10,2,Marketing,Amy Reed,777,Male,1,Sales Executive,Divorced,38330,2.0
+31,No,Travel_Rarely,Research & Development,16,4,Life Sciences,Andrew Garcia,778,Male,3,Human Resources,Single,42440,9.0
+31,Yes,Travel_Frequently,Research & Development,7,4,Life Sciences,Melissa Sandoval,779,Male,1,Laboratory Technician,Married,65000,6.0
+45,No,Travel_Rarely,Research & Development,1,2,Life Sciences,Joel Miller,780,Female,1,Research Scientist,Married,184300,4.0
+48,No,Travel_Rarely,Research & Development,24,3,Technical Degree,Tyrone Ochoa,781,Male,2,Research Scientist,Divorced,16010,4.0
+34,Yes,Travel_Rarely,Research & Development,7,4,Medical,Tara Jordan,782,Male,2,Research Scientist,Married,26940,1.0
+40,No,Non-Travel,Research & Development,25,4,Other,Debbie Long,783,Female,1,Sales Executive,Divorced,31490,2.0
+28,No,Travel_Rarely,Research & Development,1,2,Technical Degree,Brandy Mullen,784,Female,1,Research Scientist,Single,176390,0.0
+44,No,Non-Travel,Research & Development,5,3,Life Sciences,John Martinez,785,Male,1,Laboratory Technician,Single,23190,3.0
+53,No,Travel_Rarely,Research & Development,2,4,Technical Degree,Jillian Williams,786,Male,2,Manager,Single,116910,4.0
+49,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Jacob Carpenter,787,Male,3,Laboratory Technician,Married,53240,2.0
+40,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Ashley Baker,788,Male,3,Laboratory Technician,Divorced,167520,2.0
+44,No,Travel_Rarely,Research & Development,5,1,Other,Ricky Whitehead,789,Male,3,Research Scientist,Single,52280,1.0
+33,No,Travel_Frequently,Human Resources,10,3,Medical,Courtney Romero,790,Female,2,Sales Executive,Married,27000,0.0
+34,No,Travel_Rarely,Research & Development,10,4,Life Sciences,Jordan Perez,791,Female,1,Sales Representative,Single,192460,3.0
+30,No,Travel_Rarely,Sales,1,2,Technical Degree,Kristine Moreno,792,Male,1,Laboratory Technician,Married,25060,8.0
+42,No,Travel_Frequently,Research & Development,8,4,Medical,Kim Garrison,793,Female,1,Sales Executive,Single,60620,1.0
+44,No,Travel_Frequently,Research & Development,5,3,Life Sciences,Dawn Manning,794,Female,5,Manufacturing Director,Married,43820,7.0
+30,No,Non-Travel,Research & Development,8,3,Life Sciences,David Nguyen,795,Male,1,Manufacturing Director,Divorced,21430,1.0
+57,No,Travel_Rarely,Sales,2,1,Life Sciences,Katie Hill,796,Male,3,Research Scientist,Married,61620,0.0
+49,No,Travel_Rarely,Research & Development,7,3,Technical Degree,William Hickman,797,Female,2,Sales Executive,Divorced,50940,3.0
+34,No,Travel_Frequently,Research & Development,2,4,Medical,Robert Atkinson,798,Female,2,Sales Representative,Divorced,68770,7.0
+28,Yes,Travel_Frequently,Research & Development,2,3,Medical,Jorge Wright,799,Male,1,Research Scientist,Married,22740,3.0
+29,Yes,Travel_Frequently,Research & Development,28,3,Medical,Makayla Contreras,800,Female,5,Research Scientist,Single,44340,
+34,Yes,Travel_Rarely,Research & Development,7,1,Medical,Heather Munoz,801,Male,1,Research Scientist,Single,62880,0.0
+35,No,Travel_Rarely,Sales,7,4,Other,Lisa Gonzalez,802,Female,4,Healthcare Representative,Married,25530,1.0
+24,Yes,Travel_Frequently,Sales,3,3,Life Sciences,Caleb Campbell,803,Male,2,Research Scientist,Single,76540,2.0
+24,No,Non-Travel,Research & Development,10,3,Life Sciences,Paul Williams,804,Female,2,Manager,Married,51600,1.0
+44,No,Travel_Frequently,Research & Development,5,2,Medical,David Galloway,805,Female,2,Research Scientist,Single,171590,5.0
+29,No,Travel_Rarely,Sales,10,2,Life Sciences,Allison Dixon MD,806,Female,1,Sales Executive,Divorced,128080,1.0
+30,No,Travel_Rarely,Research & Development,1,2,Life Sciences,Anthony Gaines,807,Male,3,Sales Executive,Divorced,102210,0.0
+55,No,Travel_Rarely,Sales,20,3,Marketing,Karen Vincent MD,808,Male,2,Research Scientist,Married,47790,0.0
+33,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Paul Chavez,809,Male,2,Research Scientist,Married,37370,8.0
+47,No,Travel_Rarely,Research & Development,8,4,Medical,Rodney Tyler,810,Female,2,Sales Representative,Married,23660,3.0
+28,Yes,Travel_Frequently,Sales,1,3,Marketing,Nicholas Martinez,811,Male,2,Laboratory Technician,Single,17060,7.0
+28,No,Travel_Rarely,Sales,8,4,Marketing,Aaron Pineda,812,Male,1,Laboratory Technician,Divorced,163070,1.0
+28,No,Travel_Frequently,Research & Development,9,3,Life Sciences,Tara Chen MD,813,Female,2,Sales Executive,Single,59330,0.0
+49,No,Travel_Rarely,Research & Development,5,4,Life Sciences,Benjamin Conrad,814,Female,1,Research Scientist,Married,34240,4.0
+29,No,Travel_Frequently,Research & Development,8,1,Medical,Patricia Sims,815,Male,1,Research Scientist,Married,40370,0.0
+28,No,Travel_Rarely,Research & Development,5,1,Technical Degree,Cheryl Conrad,816,Male,2,Laboratory Technician,Married,25590,1.0
+33,No,Travel_Rarely,Research & Development,15,4,Life Sciences,Mr. Anthony Macdonald,817,Female,1,Sales Executive,Single,62010,2.0
+32,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Melanie Travis,818,Female,3,Laboratory Technician,Single,44030,2.0
+54,No,Travel_Frequently,Sales,10,3,Life Sciences,Debra Russell,819,Female,4,Research Scientist,Divorced,37610,3.0
+29,Yes,Travel_Rarely,Research & Development,5,3,Life Sciences,Jacob Klein,820,Female,2,Research Scientist,Single,109340,6.0
+44,No,Travel_Rarely,Sales,26,1,Marketing,Alexander Chavez,821,Male,1,Sales Representative,Married,107610,3.0
+39,No,Travel_Rarely,Sales,6,1,Technical Degree,Teresa Williams,822,Female,2,Laboratory Technician,Single,51750,4.0
+46,No,Travel_Rarely,Research & Development,4,2,Life Sciences,Erin Yates,823,Male,3,Manufacturing Director,Married,138260,8.0
+35,No,Travel_Rarely,Research & Development,23,4,Life Sciences,Michelle Brooks,824,Male,2,Research Scientist,Single,63340,1.0
+23,No,Travel_Rarely,Research & Development,2,4,Medical,Luis Copeland,825,Female,2,Manager,Single,49360,0.0
+40,Yes,Travel_Rarely,Research & Development,2,3,Medical,Evelyn Charles,826,Male,2,Research Director,Single,47750,3.0
+34,No,Travel_Rarely,Human Resources,2,3,Human Resources,Sean Ford,827,Male,2,Manufacturing Director,Married,28180,1.0
+31,Yes,Travel_Frequently,Research & Development,29,3,Life Sciences,Donald Williams,828,Female,2,Healthcare Representative,Single,25150,1.0
+50,No,Travel_Frequently,Research & Development,6,3,Medical,Mark Williams,829,Male,1,Manager,Single,23420,1.0
+34,No,Travel_Rarely,Sales,25,5,Marketing,David Bell,830,Female,1,Research Scientist,Married,41940,0.0
+42,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Nancy Stark,831,Female,1,Manufacturing Director,Married,106850,4.0
+37,No,Travel_Rarely,Research & Development,2,2,Medical,Angela Mathis,832,Male,1,Research Scientist,Married,20220,1.0
+29,No,Travel_Rarely,Research & Development,1,3,Medical,Vanessa Bryant,833,Female,1,Manager,Married,23140,3.0
+33,No,Travel_Rarely,Research & Development,1,1,Life Sciences,Luke Crawford,834,Male,1,Research Scientist,Single,42560,1.0
+45,No,Travel_Rarely,Sales,3,3,Life Sciences,David Wang,835,Male,3,Laboratory Technician,Married,35800,4.0
+42,No,Travel_Frequently,Human Resources,1,4,Technical Degree,Chad Good,836,Male,2,Manufacturing Director,Married,31620,2.0
+40,No,Travel_Rarely,Sales,10,1,Life Sciences,Dana Parrish,837,Female,1,Manufacturing Director,Married,65240,0.0
+33,No,Travel_Rarely,Research & Development,9,3,Medical,James Berry,838,Female,2,Manufacturing Director,Married,28990,1.0
+40,No,Travel_Rarely,Sales,5,5,Life Sciences,Rebecca Miller,839,Male,1,Manufacturing Director,Single,52310,1.0
+24,No,Travel_Rarely,Sales,10,2,Marketing,Michael Berger,840,Male,1,Manufacturing Director,Divorced,23560,0.0
+40,No,Non-Travel,Research & Development,7,3,Medical,Manuel Cantrell,841,Male,1,Research Scientist,Divorced,28000,3.0
+45,No,Travel_Rarely,Research & Development,4,3,Medical,Janice Keller,842,Female,3,Laboratory Technician,Divorced,118360,1.0
+35,No,Travel_Rarely,Research & Development,10,1,Life Sciences,Nathan Dickerson,843,Male,1,Healthcare Representative,Married,109030,0.0
+32,No,Travel_Rarely,Research & Development,22,4,Medical,Chad Kelly,844,Male,1,Sales Executive,Married,29730,3.0
+36,No,Travel_Rarely,Sales,9,3,Marketing,Christy Mitchell,845,Female,4,Research Scientist,Single,142750,3.0
+48,No,Travel_Rarely,Research & Development,12,4,Medical,Michelle Jenkins,846,Male,1,Laboratory Technician,Divorced,55620,8.0
+29,No,Travel_Rarely,Research & Development,23,4,Life Sciences,Julia White,847,Female,2,Healthcare Representative,Married,45370,6.0
+33,No,Travel_Rarely,Research & Development,9,1,Medical,James Clark,848,Male,1,Healthcare Representative,Married,76420,2.0
+30,Yes,Travel_Rarely,Research & Development,1,3,Other,Kathy Jones,849,Male,3,Sales Executive,Married,179240,1.0
+38,No,Travel_Frequently,Sales,9,3,Marketing,Candice Fowler,850,Male,1,Manufacturing Director,Married,52040,3.0
+35,No,Travel_Rarely,Sales,7,2,Life Sciences,Charlene Dominguez,851,Male,1,Sales Executive,Single,22770,1.0
+30,No,Travel_Rarely,Research & Development,14,3,Technical Degree,Donna Roberts,852,Male,5,Research Director,Married,27950,3.0
+35,Yes,Travel_Rarely,Research & Development,2,3,Medical,Brandon Smith,853,Female,1,Research Scientist,Divorced,25320,1.0
+53,Yes,Travel_Rarely,Research & Development,19,3,Life Sciences,George Myers,854,Male,2,Manager,Married,25590,0.0
+38,Yes,Travel_Rarely,Research & Development,2,3,Medical,Holly Williams,855,Female,3,Sales Executive,Married,49080,4.0
+32,No,Non-Travel,Research & Development,10,4,Life Sciences,Tony Krueger,856,Female,5,Research Scientist,Married,23800,4.0
+48,No,Travel_Rarely,Research & Development,2,5,Life Sciences,Stacey Fowler,857,Male,1,Sales Executive,Married,47650,8.0
+34,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Dana Miller,858,Male,2,Sales Executive,Single,20440,1.0
+55,No,Travel_Rarely,Research & Development,11,1,Medical,Alex Stephens,859,Female,1,Laboratory Technician,Married,26930,1.0
+34,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Kelsey Willis,860,Male,2,Research Scientist,Married,65860,9.0
+26,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Jane Parker,861,Male,1,Research Director,Married,32940,1.0
+38,No,Travel_Rarely,Sales,14,2,Marketing,Richard Hall,862,Female,1,Sales Executive,Married,41710,0.0
+38,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Brenda Chen,863,Female,1,Manufacturing Director,Single,27780,2.0
+36,No,Travel_Rarely,Human Resources,1,3,Human Resources,Robert Douglas,864,Male,1,Research Scientist,Single,23770,6.0
+29,No,Travel_Rarely,Research & Development,10,3,Life Sciences,Emma Wolf,865,Male,1,Sales Representative,Single,24040,1.0
+35,No,Travel_Rarely,Sales,12,2,Life Sciences,Allen White,866,Female,2,Sales Executive,Single,23180,3.0
+39,No,Travel_Rarely,Sales,2,2,Medical,Mary Hughes,867,Female,1,Sales Executive,Married,20080,2.0
+29,No,Travel_Frequently,Research & Development,5,1,Medical,Lori Schultz,868,Female,1,Research Scientist,Divorced,62440,1.0
+50,No,Travel_Rarely,Research & Development,4,2,Medical,Joshua Russell,869,Female,1,Laboratory Technician,Married,27990,4.0
+23,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Diamond Ayala,870,Female,3,Manager,Married,105520,2.0
+36,No,Travel_Frequently,Sales,21,3,Life Sciences,Christopher Miller,871,Male,2,Human Resources,Married,23290,3.0
+42,No,Travel_Rarely,Research & Development,8,2,Life Sciences,Desiree Porter,872,Female,5,Manager,Single,40140,8.0
+35,No,Travel_Rarely,Sales,4,3,Medical,Renee Bates,873,Female,2,Laboratory Technician,Married,74030,1.0
+34,No,Travel_Frequently,Research & Development,25,1,Life Sciences,Kyle Johnson,874,Female,1,Manager,Married,22590,1.0
+40,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Jennifer Davies,875,Male,2,Laboratory Technician,Married,69320,1.0
+43,No,Travel_Rarely,Research & Development,1,1,Other,Jenna Vaughn,876,Male,1,Manager,Divorced,46780,5.0
+35,No,Travel_Rarely,Sales,6,3,Marketing,Kristy Carpenter,877,Female,3,Sales Representative,Married,135820,1.0
+46,No,Travel_Rarely,Research & Development,12,4,Technical Degree,Amy Acosta,878,Male,1,Laboratory Technician,Single,23320,1.0
+28,Yes,Travel_Rarely,Human Resources,1,3,Medical,Heather Strickland,879,Female,2,Laboratory Technician,Married,24130,1.0
+22,No,Non-Travel,Sales,17,2,Marketing,Melvin Moore,880,Male,3,Sales Executive,Married,97050,1.0
+50,No,Travel_Frequently,Research & Development,3,3,Other,Eric Bennett,881,Male,2,Research Scientist,Married,42940,2.0
+32,No,Travel_Rarely,Research & Development,3,2,Life Sciences,Brendan Fox,882,Male,3,Research Scientist,Married,47210,3.0
+44,No,Travel_Rarely,Research & Development,10,3,Technical Degree,Brooke Johnson,883,Male,3,Manager,Divorced,25190,0.0
+30,No,Travel_Rarely,Research & Development,4,3,Medical,Scott Parker,884,Female,1,Research Director,Married,21210,1.0
+45,No,Travel_Rarely,Sales,29,2,Technical Degree,Cristina Garcia,885,Female,2,Research Scientist,Single,29730,1.0
+45,No,Non-Travel,Sales,2,4,Life Sciences,Carol Woods,886,Male,2,Manufacturing Director,Married,58550,1.0
+31,No,Travel_Frequently,Research & Development,7,3,Medical,Diane Burns,887,Male,2,Research Scientist,Single,36170,7.0
+36,No,Travel_Rarely,Research & Development,18,1,Medical,Christopher Garcia,888,Male,2,Manufacturing Director,Married,67250,9.0
+34,No,Travel_Frequently,Sales,28,4,Marketing,Jesse Ibarra,889,Male,5,Manufacturing Director,Divorced,103250,1.0
+49,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Dan Valencia,890,Male,3,Healthcare Representative,Married,69490,1.0
+39,No,Travel_Rarely,Research & Development,6,2,Life Sciences,Andrew Norman,891,Male,3,Research Scientist,Married,106090,2.0
+27,No,Travel_Rarely,Research & Development,2,1,Life Sciences,Tyler Yoder,892,Male,4,Research Scientist,Divorced,44470,1.0
+35,No,Travel_Rarely,Research & Development,2,3,Medical,Alan Love,893,Female,2,Sales Executive,Married,21570,1.0
+28,No,Travel_Rarely,Research & Development,23,3,Life Sciences,Nicholas Murray,894,Male,3,Manufacturing Director,Divorced,46010,0.0
+21,No,Travel_Rarely,Research & Development,3,1,Life Sciences,Dr. Mark Taylor,895,Female,1,Laboratory Technician,Single,170990,1.0
+18,Yes,Travel_Frequently,Research & Development,3,5,Medical,Billy Baker,896,Male,1,Research Director,Single,24790,1.0
+47,No,Travel_Rarely,Research & Development,25,4,Medical,Thomas Gamble,897,Male,2,Research Scientist,Married,148520,3.0
+39,No,Travel_Rarely,Sales,2,4,Life Sciences,Matthew Miller,898,Male,1,Laboratory Technician,Divorced,72640,0.0
+40,No,Travel_Rarely,Research & Development,22,1,Life Sciences,Lawrence Smith,899,Male,1,Laboratory Technician,Married,56660,1.0
+35,No,Non-Travel,Research & Development,29,3,Medical,Robert Avila,900,Female,2,Sales Executive,Married,78230,1.0
+37,No,Travel_Rarely,Research & Development,29,4,Technical Degree,Kerri Moore,901,Male,1,Laboratory Technician,Married,78800,3.0
+39,No,Travel_Frequently,Research & Development,2,3,Technical Degree,Nicholas Norton,902,Female,2,Manager,Single,131940,0.0
+45,No,Travel_Rarely,Research & Development,28,3,Life Sciences,Todd Cook,903,Female,2,Laboratory Technician,Divorced,50670,1.0
+38,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Lisa Walls,904,Female,3,Sales Executive,Married,50790,3.0
+35,Yes,Travel_Rarely,Research & Development,2,3,Life Sciences,Brenda Farmer,905,Male,3,Healthcare Representative,Married,23210,9.0
+37,No,Travel_Rarely,Research & Development,22,3,Life Sciences,Matthew Pratt,906,Female,2,Healthcare Representative,Married,174440,1.0
+40,No,Travel_Rarely,Research & Development,8,3,Technical Degree,Adam Baxter,907,Female,2,Healthcare Representative,Single,24040,6.0
+44,No,Travel_Frequently,Sales,2,2,Marketing,Julie Ballard,908,Male,1,Laboratory Technician,Married,34520,4.0
+48,No,Travel_Frequently,Sales,10,4,Marketing,Lori Evans,909,Female,3,Manager,Married,22700,2.0
+35,Yes,Travel_Rarely,Research & Development,9,3,Life Sciences,Rhonda Clark,910,Male,2,Manager,Divorced,173990,6.0
+24,No,Travel_Frequently,Research & Development,15,3,Life Sciences,Janice Fitzgerald,911,Male,2,Research Scientist,Single,54880,1.0
+27,No,Travel_Rarely,Sales,10,4,Life Sciences,Lance Warner,912,Male,3,Sales Executive,Married,194190,7.0
+27,No,Travel_Frequently,Research & Development,7,3,Life Sciences,Jason Marks,913,Male,1,Research Scientist,Single,28110,2.0
+40,Yes,Travel_Rarely,Sales,16,4,Marketing,Margaret Dawson,914,Male,1,Research Director,Single,36330,3.0
+29,No,Travel_Rarely,Research & Development,20,1,Medical,Maria Brewer,915,Female,2,Manager,Single,41630,9.0
+36,No,Travel_Rarely,Research & Development,23,3,Life Sciences,Sean Peterson,916,Female,3,Sales Executive,Married,21320,4.0
+25,No,Travel_Frequently,Sales,5,1,Marketing,Tammie Barber,917,Male,4,Manufacturing Director,Divorced,139730,1.0
+39,No,Travel_Rarely,Sales,10,3,Marketing,Wanda Sanchez,918,Female,2,Research Director,Married,26840,4.0
+49,No,Travel_Rarely,Sales,4,2,Life Sciences,John Daugherty,919,Male,2,Research Director,Married,108450,3.0
+50,No,Travel_Rarely,Research & Development,2,2,Medical,Carrie Horton,920,Male,3,Sales Executive,Divorced,43770,5.0
+20,No,Travel_Rarely,Research & Development,18,4,Medical,Kylie Newton,921,Female,2,Sales Executive,Single,37430,1.0
+34,No,Travel_Rarely,Research & Development,10,3,Medical,Kelly Wagner,922,Male,3,Laboratory Technician,Divorced,41480,1.0
+36,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Courtney Quinn,923,Female,2,Healthcare Representative,Single,10510,2.0
+49,No,Travel_Rarely,Human Resources,6,2,Life Sciences,Meghan Osborne,924,Female,2,Research Scientist,Married,107390,2.0
+36,No,Non-Travel,Research & Development,8,4,Life Sciences,Sally Swanson,925,Male,4,Laboratory Technician,Married,103880,0.0
+36,No,Travel_Rarely,Research & Development,2,2,Medical,Michael Roberts,926,Female,2,Healthcare Representative,Divorced,114160,6.0
+54,No,Travel_Rarely,Sales,24,3,Marketing,Sandra Clark,927,Male,1,Laboratory Technician,Married,26000,3.0
+43,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Jessica Walker,928,Female,1,Research Scientist,Married,24220,1.0
+35,Yes,Travel_Frequently,Research & Development,17,4,Medical,David Johnson,929,Male,1,Research Director,Single,54720,3.0
+38,No,Travel_Frequently,Research & Development,19,2,Life Sciences,Donald Woodward,930,Male,2,Research Scientist,Married,24510,7.0
+29,No,Travel_Rarely,Research & Development,1,2,Medical,Aaron Dean,931,Male,2,Sales Representative,Divorced,42400,1.0
+33,No,Travel_Rarely,Research & Development,7,3,Medical,Amanda Obrien,932,Male,5,Sales Executive,Divorced,109990,1.0
+32,No,Travel_Rarely,Research & Development,5,4,Technical Degree,Brett Martin,933,Male,5,Research Scientist,Divorced,50030,
+31,No,Travel_Rarely,Research & Development,28,4,Technical Degree,Tyler Farrell,934,Female,2,Sales Executive,Married,127420,1.0
+49,No,Travel_Rarely,Research & Development,2,4,Medical,David Skinner,935,Male,1,Laboratory Technician,Divorced,42270,4.0
+38,No,Travel_Frequently,Sales,29,2,Medical,John Jones,936,Female,1,Sales Executive,Single,39170,1.0
+47,No,Travel_Rarely,Research & Development,1,4,Medical,Christine Hicks MD,937,Male,3,Laboratory Technician,Divorced,183030,6.0
+49,No,Travel_Rarely,Research & Development,21,3,Medical,James King,938,Male,2,Manufacturing Director,Single,23800,4.0
+41,No,Travel_Rarely,Research & Development,24,4,Life Sciences,Brett Mack,939,Female,4,Manager,Single,137260,3.0
+20,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Billy Ford,940,Male,1,Sales Representative,Single,47770,1.0
+33,No,Non-Travel,Research & Development,18,2,Medical,Kimberly Hill,941,Female,2,Healthcare Representative,Divorced,63850,1.0
+36,No,Travel_Rarely,Research & Development,2,2,Technical Degree,Colleen Fernandez,942,Male,3,Sales Executive,Married,199730,6.0
+44,No,Travel_Rarely,Research & Development,9,3,Technical Degree,Kristin Hood,943,Female,3,Healthcare Representative,Divorced,68610,4.0
+23,Yes,Travel_Rarely,Human Resources,6,3,Life Sciences,James Townsend,944,Female,3,Laboratory Technician,Single,49690,1.0
+38,No,Travel_Rarely,Research & Development,11,2,Life Sciences,Christopher Miller,945,Male,1,Sales Executive,Married,198450,7.0
+53,No,Travel_Rarely,Research & Development,24,3,Life Sciences,Amber Wallace,946,Male,4,Research Director,Married,133200,3.0
+48,Yes,Travel_Frequently,Sales,10,2,Marketing,Kelly Montgomery,947,Male,1,Healthcare Representative,Married,63470,2.0
+32,Yes,Travel_Rarely,Sales,1,3,Life Sciences,Gavin Ochoa,948,Male,2,Research Scientist,Single,27430,1.0
+26,No,Non-Travel,Research & Development,18,2,Medical,Jacqueline Hanna,949,Male,1,Human Resources,Single,108800,1.0
+55,No,Travel_Rarely,Research & Development,23,1,Life Sciences,April Powers,950,Male,5,Laboratory Technician,Divorced,23420,5.0
+34,No,Travel_Rarely,Sales,28,3,Life Sciences,Charles Bates,951,Female,2,Research Scientist,Married,176500,1.0
+60,No,Travel_Rarely,Sales,17,4,Medical,David Cortez,952,Male,1,Manager,Divorced,40250,3.0
+33,No,Travel_Rarely,Sales,3,3,Life Sciences,Kerri Lopez,953,Male,3,Manager,Married,97250,1.0
+37,No,Travel_Frequently,Research & Development,13,3,Life Sciences,Mrs. Chelsea Cook,954,Male,1,Laboratory Technician,Divorced,119040,1.0
+34,No,Travel_Rarely,Research & Development,7,2,Life Sciences,Kevin Gibson,955,Male,1,Healthcare Representative,Married,21770,1.0
+23,Yes,Travel_Rarely,Research & Development,12,2,Medical,Crystal Cook,956,Male,2,Research Scientist,Divorced,75250,1.0
+44,No,Travel_Rarely,Human Resources,1,3,Life Sciences,Tanya Adkins,957,Male,1,Research Scientist,Married,48340,1.0
+35,No,Travel_Frequently,Research & Development,13,3,Life Sciences,Jacob Brown,958,Male,3,Sales Executive,Single,20420,0.0
+43,No,Travel_Rarely,Research & Development,25,4,Life Sciences,Jonathan Garcia,959,Male,2,Sales Executive,Married,22200,1.0
+24,No,Travel_Rarely,Research & Development,6,3,Life Sciences,April Meyer,960,Male,3,Sales Executive,Married,10520,1.0
+41,No,Travel_Rarely,Sales,6,4,Marketing,Colleen Richardson,961,Male,1,Research Scientist,Single,28210,1.0
+29,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Melissa Friedman,962,Male,2,Research Scientist,Married,192370,9.0
+36,No,Travel_Rarely,Human Resources,1,4,Life Sciences,Aaron Osborne,963,Female,3,Research Scientist,Single,41070,3.0
+45,No,Non-Travel,Sales,2,3,Life Sciences,Amanda Fields,964,Female,2,Manufacturing Director,Married,83960,3.0
+24,Yes,Travel_Rarely,Sales,6,2,Medical,Andrea Johnson,965,Female,2,Manager,Married,20070,1.0
+47,Yes,Travel_Frequently,Research & Development,1,3,Medical,Michael Lee,966,Female,2,Sales Executive,Married,196270,7.0
+26,No,Travel_Rarely,Research & Development,9,1,Medical,Edward Martinez,967,Male,1,Sales Executive,Married,106860,1.0
+45,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Brianna Patton,968,Male,1,Research Director,Single,29420,1.0
+32,No,Travel_Frequently,Sales,1,1,Marketing,Erin Williamson,969,Male,2,Laboratory Technician,Married,88580,6.0
+31,No,Travel_Rarely,Research & Development,14,2,Life Sciences,Tracy Burnett,970,Male,1,Sales Executive,Married,167560,1.0
+41,No,Non-Travel,Sales,2,2,Medical,Alec Trevino,971,Male,2,Research Scientist,Married,107980,6.0
+40,No,Travel_Rarely,Research & Development,22,2,Technical Degree,Jennifer Young,972,Male,1,Healthcare Representative,Married,23230,2.0
+24,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Frederick Dean,973,Female,1,Research Scientist,Divorced,14160,1.0
+46,No,Travel_Rarely,Research & Development,6,3,Medical,Maria Ortiz,974,Male,4,Sales Executive,Single,46150,6.0
+35,No,Travel_Rarely,Sales,8,4,Life Sciences,Monique Vaughn,975,Male,1,Laboratory Technician,Married,24610,2.0
+30,No,Travel_Rarely,Sales,9,4,Marketing,Lance Cox,976,Male,1,Laboratory Technician,Married,87220,1.0
+47,No,Non-Travel,Research & Development,3,2,Life Sciences,Brian Johnson,977,Female,2,Sales Executive,Married,39550,7.0
+46,No,Travel_Rarely,Research & Development,1,4,Technical Degree,Taylor Garcia,978,Female,3,Sales Executive,Divorced,99570,4.0
+36,Yes,Travel_Rarely,Research & Development,1,3,Medical,Brittany Allen,979,Male,2,Manufacturing Director,Divorced,33760,5.0
+32,Yes,Travel_Rarely,Research & Development,26,3,Medical,Aaron Rodriguez,980,Female,2,Research Director,Single,88230,6.0
+23,No,Travel_Rarely,Sales,6,4,Life Sciences,James Davis,981,Male,3,Manufacturing Director,Single,103220,1.0
+31,No,Travel_Frequently,Sales,3,3,Marketing,Daniel Levine,982,Male,2,Sales Executive,Single,46210,2.0
+39,No,Non-Travel,Research & Development,3,3,Life Sciences,Aaron Walsh,983,Female,2,Manufacturing Director,Married,109760,1.0
+32,No,Travel_Rarely,Research & Development,6,3,Technical Degree,Latasha Kelly,984,Male,1,Research Scientist,Married,36600,3.0
+40,No,Travel_Rarely,Sales,6,3,Life Sciences,Jon Kaufman,985,Male,3,Manufacturing Director,Single,104820,1.0
+45,No,Travel_Rarely,Research & Development,19,4,Medical,Ashley Baker,986,Male,1,Sales Representative,Married,71190,4.0
+30,No,Travel_Frequently,Sales,9,3,Life Sciences,Samantha Murphy,987,Male,1,Research Director,Single,95820,0.0
+24,No,Travel_Frequently,Sales,3,4,Marketing,Nathan Smith,988,Male,1,Sales Executive,Married,45080,0.0
+30,Yes,Travel_Frequently,Research & Development,10,3,Life Sciences,Autumn Davila,989,Female,1,Human Resources,Divorced,22070,6.0
+31,No,Travel_Rarely,Research & Development,3,2,Life Sciences,Diamond Rodriguez,990,Male,3,Laboratory Technician,Married,77560,1.0
+27,No,Travel_Rarely,Sales,3,3,Life Sciences,Maureen Aguilar,991,Male,1,Manager,Single,66940,1.0
+29,Yes,Travel_Rarely,Sales,4,3,Marketing,Gabrielle Phillips,992,Male,5,Research Scientist,Single,36910,1.0
+29,No,Travel_Frequently,Research & Development,8,4,Life Sciences,Robin Frye,993,Female,1,Sales Executive,Single,23770,8.0
+30,No,Travel_Rarely,Sales,7,3,Life Sciences,Kimberly Hudson,994,Male,3,Sales Executive,Divorced,23130,2.0
+34,No,Travel_Rarely,Research & Development,1,2,Medical,Mark Hart,995,Female,2,Healthcare Representative,Married,176650,0.0
+33,No,Non-Travel,Research & Development,2,4,Medical,Jason Williams,996,Male,1,Sales Representative,Single,25960,8.0
+49,No,Travel_Rarely,Sales,3,4,Marketing,Gloria Russell,997,Male,1,Sales Executive,Single,47280,3.0
+33,Yes,Travel_Rarely,Research & Development,10,3,Life Sciences,Christopher Rodriguez,998,Male,1,Sales Executive,Single,43020,2.0
+38,No,Travel_Frequently,Research & Development,28,3,Medical,Donna Holt,999,Male,1,Healthcare Representative,Married,29790,4.0
+31,Yes,Travel_Rarely,Human Resources,9,4,Human Resources,Rachael Ballard,1000,Male,2,Laboratory Technician,Married,168850,2.0
+29,No,Travel_Rarely,Research & Development,3,4,Other,Jordan Payne,1001,Female,2,Sales Representative,Divorced,55930,1.0
+30,No,Travel_Rarely,Research & Development,2,1,Medical,Kim Gibson,1002,Male,1,Sales Representative,Married,104450,3.0
+32,No,Non-Travel,Research & Development,10,4,Life Sciences,Charles Bean,1003,Female,1,Laboratory Technician,Single,87400,2.0
+38,No,Travel_Rarely,Research & Development,8,2,Technical Degree,Samuel Estes,1004,Female,1,Manufacturing Director,Married,25140,3.0
+43,Yes,Travel_Frequently,Research & Development,1,4,Other,John Anderson,1005,Male,3,Sales Executive,Married,76550,9.0
+42,No,Travel_Rarely,Human Resources,1,3,Other,Theresa Lee,1006,Female,1,Healthcare Representative,Divorced,174650,8.0
+55,No,Travel_Rarely,Research & Development,3,2,Life Sciences,Timothy Smith,1007,Female,1,Sales Executive,Married,73510,8.0
+33,No,Non-Travel,Research & Development,14,3,Other,Rebecca Meyer,1008,Male,1,Research Scientist,Divorced,108200,5.0
+41,No,Travel_Rarely,Research & Development,5,3,Medical,Daniel Mercer,1009,Male,1,Sales Representative,Divorced,121690,1.0
+34,No,Non-Travel,Research & Development,7,4,Medical,Kristin Gibson,1010,Female,1,Research Scientist,Divorced,196260,1.0
+53,No,Non-Travel,Research & Development,10,4,Medical,William Hunt,1011,Male,2,Healthcare Representative,Married,20700,4.0
+43,No,Travel_Rarely,Sales,16,2,Marketing,Kevin Smith,1012,Female,1,Laboratory Technician,Single,67820,0.0
+34,No,Travel_Rarely,Sales,10,2,Life Sciences,Lindsey Potter MD,1013,Female,5,Sales Executive,Single,77790,5.0
+21,Yes,Travel_Rarely,Sales,1,2,Marketing,Stephanie Washington,1014,Male,5,Healthcare Representative,Single,27910,1.0
+38,No,Travel_Rarely,Research & Development,8,2,Life Sciences,Michael Small,1015,Female,2,Sales Executive,Married,32010,1.0
+22,Yes,Travel_Rarely,Research & Development,1,3,Other,Keith Hernandez,1016,Male,4,Research Scientist,Married,49680,1.0
+31,No,Travel_Rarely,Research & Development,8,5,Life Sciences,Glenn Martin,1017,Male,5,Sales Executive,Married,131200,1.0
+51,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Mitchell Miller,1018,Female,1,Manager,Married,40330,2.0
+37,No,Travel_Rarely,Research & Development,24,1,Life Sciences,Michael Lane,1019,Male,2,Sales Executive,Married,32910,1.0
+46,No,Travel_Rarely,Sales,3,4,Marketing,Corey Henderson,1020,Female,1,Sales Representative,Divorced,42720,7.0
+36,No,Travel_Rarely,Research & Development,27,3,Technical Degree,Ashley Reynolds,1021,Female,4,Research Scientist,Married,50560,7.0
+44,Yes,Travel_Frequently,Sales,10,4,Life Sciences,Lauren Cox,1022,Male,1,Research Scientist,Divorced,28440,1.0
+37,No,Travel_Rarely,Research & Development,19,2,Technical Degree,Claudia Williamson,1023,Male,2,Sales Executive,Divorced,27030,2.0
+35,Yes,Travel_Rarely,Research & Development,15,4,Life Sciences,Kyle Williams,1024,Male,2,Research Scientist,Single,19040,1.0
+33,No,Travel_Rarely,Research & Development,8,5,Medical,Anne Anderson,1025,Male,2,Laboratory Technician,Married,82240,6.0
+28,No,Travel_Rarely,Sales,9,3,Medical,Jonathan Horton,1026,Female,2,Sales Executive,Married,47660,1.0
+39,No,Travel_Rarely,Sales,3,4,Marketing,Luis Ewing,1027,Female,2,Laboratory Technician,Single,26100,7.0
+46,No,Non-Travel,Research & Development,9,2,Life Sciences,John Juarez,1028,Male,2,Manufacturing Director,Single,57310,8.0
+40,No,Travel_Rarely,Research & Development,2,2,Medical,Rebecca Miller,1029,Male,1,Research Director,Married,25390,4.0
+42,No,Travel_Rarely,Research & Development,7,4,Other,Carrie Gordon,1030,Female,2,Laboratory Technician,Married,57140,5.0
+35,No,Non-Travel,Sales,10,1,Life Sciences,Curtis Baker,1031,Female,2,Research Director,Divorced,43230,2.0
+38,No,Non-Travel,Sales,6,4,Marketing,James Hicks,1032,Male,3,Sales Executive,Divorced,73360,5.0
+34,Yes,Travel_Frequently,Research & Development,2,1,Life Sciences,Michael Harris,1033,Male,1,Manufacturing Director,Married,134990,4.0
+37,Yes,Travel_Rarely,Research & Development,24,3,Life Sciences,Max Green,1034,Male,1,Laboratory Technician,Single,137580,1.0
+39,No,Travel_Frequently,Research & Development,2,1,Medical,Douglas Mcdaniel,1035,Male,2,Healthcare Representative,Divorced,51550,2.0
+43,No,Non-Travel,Human Resources,8,5,Medical,Vanessa White,1036,Female,3,Sales Executive,Single,22580,4.0
+41,No,Travel_Rarely,Research & Development,3,3,Life Sciences,Tracy Stevenson,1037,Male,3,Research Scientist,Single,35970,3.0
+41,No,Travel_Rarely,Research & Development,1,1,Technical Degree,Victoria Ortiz,1038,Male,3,Laboratory Technician,Divorced,25150,0.0
+30,No,Travel_Rarely,Sales,26,3,Marketing,Stacey Smith,1039,Female,2,Manager,Single,44200,9.0
+26,Yes,Travel_Rarely,Human Resources,2,1,Technical Degree,Troy Owens,1040,Female,3,Sales Executive,Married,65780,0.0
+46,Yes,Travel_Rarely,Research & Development,10,3,Medical,Mark Mcdonald,1041,Male,1,Sales Executive,Married,44220,4.0
+40,No,Travel_Rarely,Sales,27,2,Medical,Rebecca Hall,1042,Female,3,Sales Executive,Divorced,102740,4.0
+34,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Kimberly Ramos,1043,Male,2,Laboratory Technician,Married,53430,1.0
+58,No,Non-Travel,Research & Development,2,4,Medical,David Ball,1044,Male,1,Laboratory Technician,Divorced,23760,4.0
+35,No,Travel_Rarely,Research & Development,8,1,Technical Degree,Marcus Clarke,1045,Female,3,Manufacturing Director,Married,53460,0.0
+47,No,Travel_Rarely,Research & Development,19,5,Medical,Alicia Perry,1046,Female,2,Research Scientist,Divorced,28270,8.0
+40,No,Travel_Rarely,Research & Development,1,4,Life Sciences,Victoria Cantrell,1047,Male,2,Manager,Divorced,199430,2.0
+54,No,Travel_Rarely,Sales,27,4,Medical,Kayla Harris,1048,Male,1,Research Scientist,Married,31310,4.0
+31,No,Travel_Frequently,Sales,8,4,Other,Ronald Zhang,1049,Female,3,Manufacturing Director,Married,25520,2.0
+28,No,Travel_Rarely,Sales,1,2,Life Sciences,Juan Johnson,1050,Male,3,Manager,Married,44770,1.0
+38,No,Travel_Rarely,Research & Development,19,3,Medical,Jennifer Cochran,1051,Female,2,Manufacturing Director,Married,64740,2.0
+26,No,Travel_Rarely,Sales,8,3,Marketing,Margaret Holt,1052,Female,1,Healthcare Representative,Single,30330,1.0
+58,No,Travel_Frequently,Research & Development,10,4,Technical Degree,Mark Jones,1053,Female,1,Sales Representative,Married,29360,2.0
+18,No,Non-Travel,Research & Development,2,3,Life Sciences,Linda Burke,1054,Male,3,Sales Representative,Single,186060,1.0
+31,Yes,Travel_Rarely,Research & Development,2,3,Life Sciences,Robert Harris,1055,Male,3,Laboratory Technician,Married,21680,0.0
+29,Yes,Travel_Rarely,Research & Development,8,2,Medical,Sonia Harris,1056,Male,1,Manager,Divorced,28530,4.0
+45,No,Non-Travel,Sales,1,4,Technical Degree,William Gentry,1057,Male,1,Research Scientist,Married,170480,4.0
+36,No,Travel_Rarely,Sales,2,3,Technical Degree,John White,1058,Female,5,Laboratory Technician,Married,22900,4.0
+43,No,Travel_Frequently,Sales,8,3,Medical,Jose Ingram,1059,Male,1,Research Director,Married,36000,1.0
+27,No,Travel_Frequently,Sales,8,4,Life Sciences,Kyle Pearson,1060,Male,5,Research Scientist,Single,21070,0.0
+29,No,Travel_Frequently,Research & Development,6,2,Medical,Calvin Sanchez,1061,Male,1,Human Resources,Married,41150,1.0
+32,No,Travel_Frequently,Sales,9,4,Life Sciences,Ryan Barajas,1062,Male,4,Sales Executive,Single,43270,8.0
+42,No,Non-Travel,Research & Development,11,3,Medical,Crystal Jacobs,1063,Male,1,Manager,Married,178560,3.0
+47,No,Travel_Rarely,Sales,2,2,Life Sciences,Aimee Grant,1064,Female,5,Manager,Single,31960,4.0
+46,No,Travel_Rarely,Human Resources,1,3,Life Sciences,Tyler Anderson,1065,Female,1,Laboratory Technician,Divorced,190810,3.0
+28,No,Non-Travel,Research & Development,7,3,Life Sciences,Shelly Cantrell,1066,Male,1,Sales Executive,Divorced,89660,1.0
+29,No,Travel_Rarely,Research & Development,16,3,Medical,Lisa Rasmussen,1067,Female,1,Manufacturing Director,Divorced,22100,8.0
+42,No,Travel_Rarely,Sales,2,4,Medical,Mitchell Smith,1068,Female,2,Research Director,Single,45390,4.0
+32,Yes,Travel_Rarely,Research & Development,1,1,Medical,Heather Farmer,1069,Male,2,Laboratory Technician,Single,27410,7.0
+46,No,Travel_Rarely,Research & Development,23,1,Life Sciences,Cynthia Burton,1070,Male,2,Laboratory Technician,Divorced,34910,2.0
+27,No,Travel_Rarely,Sales,2,3,Life Sciences,Jennifer Spears,1071,Female,5,Research Scientist,Married,45410,1.0
+29,No,Travel_Rarely,Research & Development,1,2,Medical,Heather Butler,1072,Male,3,Sales Executive,Married,26780,1.0
+43,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Melinda Hester,1073,Male,1,Manufacturing Director,Married,73790,7.0
+48,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Jonathan Walters,1074,Female,2,Manager,Married,62720,4.0
+29,Yes,Travel_Frequently,Research & Development,13,2,Life Sciences,Rodney Suarez,1075,Female,1,Laboratory Technician,Single,52200,1.0
+46,Yes,Travel_Rarely,Research & Development,4,4,Medical,Catherine Vasquez,1076,Female,2,Sales Representative,Married,27430,5.0
+27,No,Travel_Frequently,Research & Development,16,4,Medical,Chris Harris MD,1077,Male,3,Healthcare Representative,Married,49980,0.0
+39,No,Travel_Rarely,Research & Development,2,3,Technical Degree,Amy Gutierrez,1078,Male,3,Healthcare Representative,Divorced,102520,8.0
+55,No,Travel_Rarely,Research & Development,2,3,Life Sciences,Cody Potter,1079,Female,1,Human Resources,Married,27810,8.0
+28,No,Travel_Rarely,Research & Development,29,2,Life Sciences,Nancy Hall,1080,Male,2,Laboratory Technician,Married,68520,1.0
+30,Yes,Travel_Rarely,Sales,12,4,Life Sciences,Tracy Welch,1081,Female,2,Sales Executive,Single,49500,1.0
+22,Yes,Travel_Rarely,Research & Development,16,2,Life Sciences,Clifford Flores,1082,Female,2,Laboratory Technician,Single,35790,1.0
+36,No,Travel_Rarely,Research & Development,11,3,Life Sciences,Monica Brown,1083,Male,1,Sales Executive,Married,131910,1.0
+31,No,Travel_Rarely,Research & Development,2,4,Life Sciences,Michelle Anderson,1084,Female,5,Manager,Divorced,103770,1.0
+34,No,Travel_Rarely,Sales,14,2,Technical Degree,Evan Stewart,1085,Female,1,Sales Executive,Married,22350,2.0
+29,No,Travel_Rarely,Research & Development,5,5,Life Sciences,Erin Jackson,1086,Female,1,Sales Executive,Single,105020,3.0
+37,No,Travel_Rarely,Research & Development,7,2,Medical,Andrew Nichols,1087,Male,1,Manufacturing Director,Married,20110,5.0
+35,No,Travel_Rarely,Sales,2,1,Technical Degree,Diana Arias,1088,Male,2,Laboratory Technician,Married,18590,0.0
+45,No,Travel_Rarely,Research & Development,3,3,Medical,Debbie Sullivan,1089,Female,2,Sales Executive,Married,37600,0.0
+36,No,Travel_Frequently,Research & Development,5,3,Medical,Laura Robinson,1090,Female,4,Manufacturing Director,Single,177790,1.0
+40,No,Travel_Rarely,Research & Development,3,3,Other,Teresa Hughes DDS,1091,Male,1,Sales Executive,Divorced,68330,2.0
+26,No,Travel_Rarely,Research & Development,26,2,Life Sciences,Benjamin Moore,1092,Male,2,Human Resources,Married,68120,1.0
+27,No,Travel_Rarely,Research & Development,4,3,Technical Degree,Mary Jenkins,1093,Male,2,Manufacturing Director,Single,51710,0.0
+48,No,Travel_Frequently,Research & Development,2,3,Life Sciences,Karen Pierce,1094,Male,2,Research Director,Divorced,197400,3.0
+44,No,Travel_Rarely,Sales,1,2,Medical,Michael Curtis,1095,Male,4,Manager,Married,187110,2.0
+34,Yes,Non-Travel,Research & Development,27,2,Life Sciences,Cheryl Ramirez,1096,Female,1,Sales Representative,Married,36920,1.0
+56,Yes,Travel_Rarely,Human Resources,1,2,Medical,Monique Stone,1097,Female,5,Sales Executive,Single,25590,1.0
+36,No,Travel_Rarely,Research & Development,13,3,Technical Degree,Marie Walsh,1098,Female,3,Healthcare Representative,Married,25170,2.0
+41,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Danielle Mckinney,1099,Female,1,Sales Executive,Married,66230,5.0
+42,No,Travel_Rarely,Research & Development,7,3,Technical Degree,Christopher Rodriguez,1100,Female,2,Sales Executive,Married,182650,9.0
+31,No,Travel_Rarely,Sales,9,4,Life Sciences,Brad Wilson,1101,Female,1,Sales Executive,Divorced,161240,2.0
+34,No,Travel_Rarely,Research & Development,8,1,Life Sciences,Sharon Jenkins,1102,Female,3,Laboratory Technician,Married,25850,3.0
+31,No,Travel_Rarely,Sales,25,2,Life Sciences,Holly Rodriguez,1103,Female,3,Manufacturing Director,Divorced,182130,8.0
+26,No,Travel_Frequently,Sales,16,2,Life Sciences,Marie Jackson,1104,Male,2,Healthcare Representative,Married,83800,
+45,No,Travel_Frequently,Research & Development,8,4,Life Sciences,Todd Smith,1105,Female,2,Manager,Single,29940,4.0
+33,No,Travel_Rarely,Sales,1,3,Life Sciences,Debra Kennedy,1106,Female,5,Sales Executive,Single,12230,1.0
+28,No,Travel_Frequently,Sales,8,3,Life Sciences,Joseph Bishop,1107,Male,4,Research Scientist,Married,11180,1.0
+29,Yes,Travel_Frequently,Human Resources,2,4,Human Resources,Mason Coleman,1108,Male,2,Sales Executive,Single,28750,1.0
+39,No,Non-Travel,Research & Development,8,5,Medical,Victoria Medina DDS,1109,Female,2,Sales Representative,Married,188240,6.0
+27,No,Travel_Rarely,Sales,3,2,Technical Degree,Raymond Walsh,1110,Male,2,Healthcare Representative,Married,135770,1.0
+34,No,Travel_Frequently,Research & Development,9,4,Life Sciences,Aaron Rubio,1111,Female,2,Manufacturing Director,Married,26250,1.0
+28,Yes,Travel_Rarely,Research & Development,25,3,Technical Degree,Tammy Smith,1112,Male,1,Research Director,Single,187890,3.0
+47,No,Non-Travel,Research & Development,1,4,Medical,Stephanie Moon,1113,Male,1,Research Scientist,Married,45380,8.0
+56,No,Travel_Rarely,Research & Development,4,3,Technical Degree,Carlos Myers,1114,Female,2,Sales Executive,Married,198470,4.0
+39,No,Travel_Rarely,Research & Development,1,3,Other,Matthew Johnson MD,1115,Female,1,Laboratory Technician,Married,105120,1.0
+38,No,Travel_Frequently,Research & Development,4,2,Medical,Joseph Green,1116,Female,1,Manager,Divorced,44440,1.0
+58,No,Travel_Rarely,Sales,5,3,Marketing,John Scott,1117,Male,5,Sales Representative,Married,21540,4.0
+32,Yes,Travel_Frequently,Research & Development,9,3,Life Sciences,Melanie Obrien,1118,Male,2,Laboratory Technician,Single,191900,3.0
+38,No,Travel_Rarely,Research & Development,3,4,Life Sciences,Jody Brooks,1119,Female,1,Sales Representative,Divorced,44900,2.0
+49,No,Travel_Frequently,Sales,11,4,Life Sciences,Christopher Wolfe,1120,Male,2,Research Scientist,Married,35060,3.0
+42,No,Travel_Rarely,Sales,1,3,Life Sciences,Chelsea Kennedy,1121,Female,1,Sales Executive,Divorced,23720,3.0
+27,Yes,Travel_Frequently,Sales,8,1,Life Sciences,Makayla Martin,1122,Male,4,Laboratory Technician,Married,102310,1.0
+35,No,Travel_Rarely,Research & Development,25,1,Medical,Gregory Neal,1123,Male,1,Sales Executive,Married,54100,0.0
+28,No,Non-Travel,Research & Development,21,1,Medical,Bethany Hubbard,1124,Male,3,Research Scientist,Single,79780,1.0
+31,No,Non-Travel,Sales,23,1,Medical,Tanner Boyd,1125,Male,1,Sales Executive,Divorced,38670,1.0
+36,No,Non-Travel,Research & Development,1,3,Life Sciences,Jason Silva,1126,Male,2,Research Scientist,Married,28380,1.0
+34,No,Travel_Rarely,Sales,2,3,Marketing,Michael Long,1127,Male,4,Healthcare Representative,Single,46950,1.0
+34,No,Travel_Rarely,Research & Development,19,3,Technical Degree,Rhonda Williams,1128,Female,1,Research Director,Divorced,33390,1.0
+26,No,Travel_Rarely,Research & Development,2,2,Life Sciences,Steven Scott,1129,Male,2,Research Scientist,Single,20800,0.0
+29,No,Travel_Rarely,Research & Development,2,4,Other,Martha Gould,1130,Male,2,Laboratory Technician,Married,20960,0.0
+32,No,Non-Travel,Research & Development,3,1,Life Sciences,Monica Miller,1131,Male,3,Manager,Divorced,62090,5.0
+31,No,Travel_Frequently,Research & Development,25,5,Technical Degree,Kristin Jones DVM,1132,Female,2,Human Resources,Married,180610,1.0
+28,Yes,Travel_Rarely,Sales,7,5,Life Sciences,Devin Smith,1133,Female,2,Sales Representative,Divorced,171230,5.0
+38,No,Travel_Rarely,Research & Development,9,2,Technical Degree,Nicholas Pierce,1134,Male,3,Sales Representative,Single,23720,4.0
+35,No,Travel_Rarely,Research & Development,5,3,Life Sciences,Greg Griffin,1135,Male,2,Sales Representative,Married,48830,1.0
+27,No,Travel_Rarely,Sales,2,3,Life Sciences,John Frank,1136,Female,1,Manager,Single,39040,1.0
+32,No,Travel_Rarely,Research & Development,8,1,Medical,Monica Mata,1137,Female,2,Research Scientist,Single,46270,8.0
+31,Yes,Travel_Frequently,Research & Development,2,1,Other,Justin Lester,1138,Male,3,Sales Executive,Married,70940,1.0
+53,Yes,Travel_Rarely,Research & Development,18,3,Medical,Karen Johnson,1139,Male,1,Research Scientist,Single,34230,6.0
+54,No,Travel_Rarely,Research & Development,14,3,Other,Linda Robinson,1140,Male,3,Research Scientist,Married,66740,3.0
+33,No,Travel_Frequently,Research & Development,2,4,Medical,Heather Garrett MD,1141,Female,4,Sales Executive,Divorced,168800,1.0
+43,No,Travel_Rarely,Research & Development,3,3,Medical,Kari Clark,1142,Male,1,Research Scientist,Married,90940,1.0
+38,No,Travel_Frequently,Research & Development,2,5,Medical,William Thompson,1143,Female,4,Sales Executive,Married,84460,0.0
+55,No,Travel_Rarely,Sales,9,3,Marketing,Heather Parker,1144,Male,2,Laboratory Technician,Married,119160,4.0
+31,No,Travel_Rarely,Sales,6,3,Other,Tiffany Mason,1145,Male,1,Manufacturing Director,Divorced,45340,1.0
+39,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Lynn Nichols,1146,Male,2,Sales Executive,Single,98520,0.0
+42,No,Non-Travel,Research & Development,10,4,Life Sciences,Kathleen Chavez,1147,Female,2,Research Scientist,Single,61510,1.0
+31,No,Non-Travel,Research & Development,14,2,Life Sciences,Tina Jones,1148,Male,2,Healthcare Representative,Married,23020,4.0
+54,No,Travel_Rarely,Research & Development,1,3,Medical,David White,1149,Female,2,Human Resources,Single,23620,6.0
+24,No,Travel_Rarely,Research & Development,5,4,Other,Brian Anderson,1150,Male,1,Manufacturing Director,Single,178610,1.0
+23,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Gregory Sanchez,1151,Male,2,Research Scientist,Single,191870,1.0
+40,No,Travel_Frequently,Research & Development,21,3,Medical,Keith Lewis,1152,Female,3,Research Scientist,Married,197170,1.0
+40,No,Travel_Rarely,Research & Development,8,1,Medical,Richard Walker,1153,Female,5,Research Scientist,Married,35440,3.0
+25,No,Travel_Rarely,Sales,20,5,Medical,Donna Thompson,1154,Female,2,Laboratory Technician,Married,85000,4.0
+30,No,Travel_Rarely,Human Resources,20,4,Life Sciences,Anne Smith,1155,Male,2,Research Scientist,Married,46610,1.0
+25,No,Travel_Rarely,Research & Development,7,2,Medical,Johnny Brown,1156,Male,5,Sales Executive,Divorced,41030,6.0
+47,No,Travel_Rarely,Research & Development,1,4,Life Sciences,John Smith,1157,Male,2,Sales Executive,Single,42490,2.0
+33,No,Non-Travel,Research & Development,1,3,Life Sciences,Nancy Gonzalez,1158,Male,2,Research Scientist,Divorced,140260,1.0
+38,No,Travel_Rarely,Research & Development,19,3,Life Sciences,Matthew Daniels,1159,Female,2,Sales Executive,Married,68930,0.0
+31,No,Travel_Rarely,Research & Development,10,4,Medical,Aaron Mcgrath,1160,Female,3,Sales Executive,Married,61250,0.0
+38,No,Travel_Frequently,Research & Development,1,4,Other,Joshua Williams,1161,Male,2,Research Scientist,Married,36690,2.0
+42,No,Travel_Rarely,Research & Development,6,3,Medical,Kevin Nelson,1162,Male,2,Laboratory Technician,Divorced,100080,6.0
+41,No,Travel_Rarely,Sales,2,2,Medical,Anthony Lee,1163,Male,1,Healthcare Representative,Married,23870,3.0
+47,No,Non-Travel,Research & Development,21,2,Medical,Andrea Johnson,1164,Male,1,Sales Executive,Married,46390,0.0
+35,No,Travel_Rarely,Research & Development,4,3,Life Sciences,Alicia Harrison,1165,Male,2,Healthcare Representative,Married,78980,7.0
+22,No,Travel_Rarely,Human Resources,12,1,Human Resources,Xavier Woods,1166,Male,2,Sales Executive,Single,25340,0.0
+35,No,Travel_Rarely,Research & Development,9,3,Medical,Virginia Fisher,1167,Female,2,Sales Executive,Single,131420,1.0
+33,No,Travel_Rarely,Sales,3,4,Medical,Lawrence Martinez,1168,Male,3,Healthcare Representative,Married,16110,0.0
+32,No,Travel_Rarely,Research & Development,3,2,Technical Degree,Joshua Knox,1169,Male,3,Manufacturing Director,Single,53630,1.0
+40,No,Travel_Rarely,Research & Development,1,4,Medical,Bill Wilson,1170,Male,2,Research Director,Married,50710,8.0
+32,No,Travel_Rarely,Research & Development,1,2,Medical,Katherine Myers,1171,Male,3,Sales Executive,Married,136950,0.0
+39,No,Travel_Rarely,Research & Development,4,4,Life Sciences,Bryan Johnson,1172,Male,1,Sales Executive,Single,134020,7.0
+38,No,Travel_Rarely,Sales,20,4,Medical,Darryl Schneider,1173,Female,2,Research Director,Married,20290,3.0
+32,No,Travel_Rarely,Research & Development,18,3,Life Sciences,Michaela Guerrero,1174,Male,2,Manager,Married,63770,1.0
+37,No,Travel_Rarely,Research & Development,1,3,Life Sciences,Jennifer Wong,1175,Female,4,Sales Executive,Married,54290,1.0
+25,No,Travel_Rarely,Research & Development,2,4,Medical,Matthew Cole,1176,Female,2,Manufacturing Director,Divorced,27850,0.0
+52,No,Non-Travel,Research & Development,2,4,Other,Bryan Hudson,1177,Male,1,Manager,Divorced,46140,2.0
+44,No,Travel_Rarely,Research & Development,8,1,Life Sciences,Shawn Gill,1178,Female,1,Sales Representative,Single,26100,6.0
+21,No,Travel_Rarely,Sales,10,5,Medical,Mary Ward,1179,Male,3,Research Scientist,Single,66870,1.0
+39,No,Non-Travel,Research & Development,3,4,Life Sciences,Joseph Neal,1180,Female,2,Research Director,Single,47240,2.0
+23,Yes,Travel_Frequently,Research & Development,2,4,Life Sciences,Leah Lowe,1181,Female,2,Manufacturing Director,Married,61790,1.0
+36,No,Travel_Rarely,Research & Development,24,3,Life Sciences,Jerry Cole,1182,Female,2,Laboratory Technician,Married,61200,0.0
+36,No,Travel_Frequently,Research & Development,16,1,Medical,Rita Stevens,1183,Male,2,Sales Executive,Divorced,105960,7.0
+56,No,Non-Travel,Research & Development,8,1,Life Sciences,Cassie Henson,1184,Male,1,Sales Executive,Divorced,54670,1.0
+29,Yes,Travel_Rarely,Research & Development,9,4,Medical,Logan Vasquez,1185,Male,2,Sales Representative,Married,29960,9.0
+42,No,Travel_Rarely,Research & Development,17,1,Life Sciences,Victoria Kelly,1186,Male,3,Research Scientist,Married,99980,5.0
+56,Yes,Travel_Rarely,Sales,10,4,Other,Stacey Phillips,1187,Male,2,Sales Executive,Married,40780,8.0
+41,No,Travel_Rarely,Research & Development,13,4,Life Sciences,Amanda Gonzalez,1188,Female,1,Healthcare Representative,Married,109200,0.0
+34,No,Travel_Rarely,Sales,1,3,Medical,Michael Gibson,1189,Female,1,Laboratory Technician,Married,62320,1.0
+36,No,Non-Travel,Sales,1,1,Medical,Ashley Mason,1190,Female,1,Human Resources,Divorced,132470,1.0
+41,No,Travel_Rarely,Research & Development,1,5,Medical,Allison Richardson,1191,Male,1,Healthcare Representative,Divorced,40810,2.0
+32,No,Travel_Rarely,Sales,9,4,Life Sciences,Nathan Miller,1192,Female,2,Research Scientist,Single,57690,1.0
+35,No,Travel_Rarely,Research & Development,16,3,Medical,Olivia Page,1193,Female,2,Healthcare Representative,Single,23940,1.0
+38,No,Travel_Rarely,Research & Development,23,3,Medical,Eric Mcknight,1194,Male,3,Sales Representative,Married,39040,1.0
+50,Yes,Travel_Frequently,Sales,4,2,Life Sciences,Patricia Lambert,1195,Female,2,Laboratory Technician,Divorced,167990,7.0
+36,No,Travel_Rarely,Research & Development,22,4,Life Sciences,Deanna Beck,1196,Male,1,Healthcare Representative,Married,29500,4.0
+45,No,Travel_Rarely,Sales,24,3,Life Sciences,Benjamin Turner,1197,Male,1,Laboratory Technician,Single,36290,8.0
+40,No,Travel_Rarely,Sales,10,4,Life Sciences,Donna Miller,1198,Male,1,Research Scientist,Single,93620,2.0
+35,No,Travel_Frequently,Sales,7,2,Life Sciences,Justin Howard,1199,Male,2,Manufacturing Director,Married,32290,1.0
+40,No,Travel_Rarely,Research & Development,17,4,Life Sciences,Matthew King,1200,Male,1,Manager,Married,35780,2.0
+35,No,Travel_Rarely,Human Resources,14,1,Life Sciences,Mr. Christopher Brown,1201,Male,2,Research Scientist,Married,79880,1.0
+29,No,Travel_Rarely,Research & Development,1,3,Medical,Virginia Morales,1202,Male,3,Sales Executive,Married,42840,4.0
+29,No,Travel_Rarely,Research & Development,5,3,Medical,Jeremy Romero,1203,Male,2,Sales Representative,Single,75530,1.0
+50,Yes,Travel_Rarely,Research & Development,17,3,Medical,Maurice Garza,1204,Male,1,Research Scientist,Divorced,173280,4.0
+39,No,Travel_Rarely,Sales,25,3,Medical,Anita Bauer,1205,Male,2,Sales Executive,Married,197010,0.0
+31,No,Non-Travel,Research & Development,8,4,Life Sciences,Dr. Clayton Foster,1206,Female,4,Sales Executive,Single,147320,0.0
+26,No,Travel_Rarely,Research & Development,11,4,Medical,Michael Vargas,1207,Male,2,Manager,Single,92780,0.0
+36,No,Travel_Frequently,Research & Development,5,1,Technical Degree,Kenneth Lopez,1208,Male,1,Sales Executive,Married,13590,4.0
+39,No,Travel_Rarely,Research & Development,2,1,Medical,Regina Tucker,1209,Female,1,Research Scientist,Married,47790,4.0
+27,No,Travel_Rarely,Research & Development,8,2,Medical,Jenna Cervantes,1210,Male,1,Laboratory Technician,Married,164220,1.0
+49,No,Travel_Frequently,Research & Development,6,1,Medical,Mrs. Nicole White,1211,Male,3,Healthcare Representative,Married,29960,2.0
+34,No,Travel_Rarely,Sales,4,3,Medical,Kayla Curry,1212,Female,1,Sales Executive,Married,12610,2.0
+41,Yes,Travel_Rarely,Research & Development,7,2,Life Sciences,Robert Becker,1213,Female,1,Research Scientist,Single,20990,8.0
+49,No,Travel_Frequently,Sales,1,4,Life Sciences,Brian Dennis,1214,Female,2,Manufacturing Director,Married,58100,1.0
+37,Yes,Travel_Rarely,Research & Development,2,3,Life Sciences,Dr. Rebecca Mcdaniel,1215,Male,1,Sales Executive,Single,56470,6.0
+33,No,Travel_Frequently,Research & Development,10,2,Medical,Rachel Oliver,1216,Male,2,Research Scientist,Married,34200,1.0
+27,No,Travel_Rarely,Sales,5,4,Medical,Jessica Martinez,1217,Female,4,Manufacturing Director,Married,44000,9.0
+32,No,Travel_Frequently,Research & Development,9,2,Medical,Dennis Allen,1218,Female,2,Research Scientist,Single,35000,0.0
+59,No,Travel_Rarely,Sales,2,2,Marketing,Scott Cordova,1219,Female,5,Sales Representative,Married,20660,4.0
+30,No,Travel_Rarely,Research & Development,11,4,Medical,Nicholas Kennedy,1220,Male,2,Laboratory Technician,Divorced,171690,1.0
+38,No,Travel_Frequently,Sales,18,4,Life Sciences,Lisa Olson,1221,Male,2,Healthcare Representative,Single,41620,0.0
+36,No,Travel_Rarely,Research & Development,7,3,Life Sciences,Jessica Lane,1222,Male,1,Sales Executive,Married,92040,6.0
+35,No,Travel_Rarely,Human Resources,3,4,Human Resources,Yvonne Lowery,1223,Male,2,Manager,Married,32940,0.0
+29,No,Travel_Rarely,Sales,29,4,Life Sciences,Amanda Edwards,1224,Male,2,Laboratory Technician,Single,21270,0.0
+31,No,Travel_Rarely,Research & Development,2,2,Medical,Michael Thompson,1225,Male,2,Laboratory Technician,Divorced,39750,1.0
+34,No,Travel_Rarely,Research & Development,28,3,Technical Degree,Christopher Howard,1226,Male,1,Laboratory Technician,Divorced,107930,0.0
+28,Yes,Travel_Rarely,Research & Development,1,4,Life Sciences,Richard Morris,1227,Male,5,Research Director,Single,100960,5.0
+29,No,Travel_Rarely,Research & Development,16,2,Life Sciences,Max Gordon,1228,Female,4,Laboratory Technician,Divorced,36460,1.0
+32,No,Travel_Rarely,Human Resources,22,3,Human Resources,Thomas Mckay,1229,Female,2,Research Director,Divorced,74460,0.0
+22,No,Non-Travel,Research & Development,8,3,Life Sciences,Joanna Mason,1230,Female,3,Sales Executive,Divorced,108510,1.0
+53,No,Travel_Rarely,Research & Development,11,3,Medical,Mr. Erik Stewart,1231,Male,2,Manager,Married,21090,2.0
+38,No,Travel_Rarely,Research & Development,29,3,Life Sciences,Robert Griffin,1232,Female,1,Manufacturing Director,Single,37220,5.0
+24,No,Non-Travel,Research & Development,1,5,Life Sciences,David Bailey,1233,Male,3,Research Scientist,Divorced,93800,0.0
+36,Yes,Travel_Rarely,Research & Development,1,3,Life Sciences,Jacqueline Robinson,1234,Male,1,Research Director,Single,54860,7.0
+34,No,Travel_Rarely,Sales,24,3,Marketing,James Martinez,1235,Male,4,Research Scientist,Single,27420,0.0
+21,No,Travel_Rarely,Sales,2,3,Life Sciences,Shane Wall,1236,Male,2,Manufacturing Director,Single,137570,1.0
+34,Yes,Travel_Rarely,Sales,15,2,Marketing,James Burns,1237,Female,2,Research Scientist,Single,84630,2.0
+53,No,Travel_Rarely,Sales,2,1,Life Sciences,Julie Morgan,1238,Male,5,Human Resources,Divorced,31620,4.0
+32,Yes,Travel_Frequently,Research & Development,10,3,Medical,Carmen Wolfe,1239,Female,2,Manufacturing Director,Single,165980,1.0
+42,No,Travel_Rarely,Research & Development,10,3,Technical Degree,Michael Crosby,1240,Male,2,Laboratory Technician,Married,66510,0.0

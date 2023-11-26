@@ -3,77 +3,67 @@ import traceback
 import uuid
 from flask import Flask, request
 from flask_cors import CORS
+from views import employee
 import defines
 
-from games import game
-
-# 设置数据库连接
+# Set up database connection
 database = defines.client[defines.DATABASE_NAME]
-users_collection = database["user"]
+employees_collection = database["employee"]
 
-# 创建 Flask 应用
+# Create Flask application
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 app.config.from_object(defines)
 app.config['JSON_AS_ASCII'] = False
-app.config["SECRET_KEY"] = '123456'
-
-blueprints_list = [game]
-for bp in blueprints_list:
-    app.register_blueprint(bp)
+app.config["SECRET_KEY"] = 'fewfewfefverwgfreqgergr'
+app.register_blueprint(employee)
 
 
-def create_auth_token(user_identifier):
-    # 生成认证 Token
-    return str(uuid.uuid3(uuid.NAMESPACE_DNS, user_identifier))
+@app.route('/api/employee/login', methods=['POST'])
+def employee_login():
+    data = request.get_json(force=True)
+    employee_id = data.get('employee_id')
+    employee_password = data.get('password')
 
-
-@app.route('/api/wegame/login', methods=['POST'])
-def user_login():
-    user_name = request.json.get('username')
-    user_pass = request.json.get('password')
+    # Simplified error handling
     try:
-        found_user = users_collection.find_one({"username": user_name, "password": user_pass})
-        if found_user:
-            response = {
-                "code": 200,
-                "message": "Login successful.",
-                "data": {
-                    "token": create_auth_token(found_user.get("username"))
-                }
-            }
+        employee = employees_collection.find_one({"employee_id": employee_id, "password": employee_password})
+        if employee:
+            token = str(uuid.uuid4())
+            response = {"code": 200, "message": "Login successful.", "data": {"token": token}}
         else:
-            response = {"code": 500, "message": "Invalid credentials"}
-    except Exception as error:
-        print(error)
-        response = {"code": 500, "message": str(error)}
-    return json.dumps(response)
+            response = {"code": 401, "message": "Invalid credentials"}
+    except Exception as e:
+        response = {"code": 500, "message": f"Error: {str(e)}"}
+
+    return json.dumps(response), response['code']
 
 
-@app.route('/api/wegame/register', methods=['POST'])
-def user_registration():
+@app.route('/api/employee/register', methods=['POST'])
+def employee_registration():
+    employee_data = request.json
+    if not employee_data:
+        return json.dumps({"code": 400, "message": "No data provided"}), 400
+
+    employee_id = employee_data.get('employee_id')
+    employee_password = employee_data.get('password')
+
+    if employees_collection.find_one({"employee_id": employee_id}):
+        return json.dumps({"code": 409, "message": "Employee ID already exists"}), 409
+
     try:
-        user_name = request.json.get('username')
-        user_pass = request.json.get('password')
-        existing_user = users_collection.find_one({"username": user_name})
-        if not existing_user:
-            new_user = {"username": user_name, "password": user_pass}
-            users_collection.insert_one(new_user)
-            response = {"code": 200, "message": "Registration successful."}
-        else:
-            response = {"code": 500, "message": "Username already exists."}
-    except Exception as error:
-        print(error)
-        response = {"code": 500, "message": str(error)}
-    return json.dumps(response)
+        employees_collection.insert_one({"employee_id": employee_id, "password": employee_password})
+        return json.dumps({"code": 200, "message": "Registration successful"}), 200
+    except Exception:
+        traceback.print_exc()
+        return json.dumps({"code": 500, "message": "Registration failed"}), 500
 
 
 if __name__ == '__main__':
-    # 初始化数据库
     try:
         if not defines.get_db():
             defines.read_dataset()
-        # 启动 Flask 应用
         app.run(host='0.0.0.0', port=5000, debug=True)
-    except Exception:
+    except Exception as e:
+        print(f"Error starting the application: {e}")
         traceback.print_exc()

@@ -5,10 +5,10 @@ db_host = "101.35.53.113"
 db_port = 27017
 password = "LZHlzh.rootOOT123"
 client = pymongo.MongoClient(db_host, db_port, username="admin", password=password)
-DATABASE_NAME = "wegame"
-COLLECTION = "wegame"
+DATABASE_NAME = "employee"
+COLLECTION = "employee"
 USER_COLLECTION = "user"
-DATASET_PATH = "dataset/games2.csv"
+DATASET_PATH = "dataset/employee_dataset.csv"
 
 
 def read_dataset():
@@ -31,3 +31,7 @@ def get_db():
         return is_exist != 0
     except Exception as e:
         raise e
+
+
+if __name__ == '__main__':
+    pass
