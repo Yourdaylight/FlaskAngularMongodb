@@ -1,20 +1,20 @@
 import json
 import traceback
 import uuid
-from flask import Flask, request, blueprints
+from flask import Flask, request
 from flask_cors import CORS
-import config as db_config
-from utils import read_dataset
+import defines
+
 from games import game
 
 # 设置数据库连接
-database = db_config.client[db_config.DATABASE_NAME]
+database = defines.client[defines.DATABASE_NAME]
 users_collection = database["user"]
 
 # 创建 Flask 应用
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-app.config.from_object(db_config)
+app.config.from_object(defines)
 app.config['JSON_AS_ASCII'] = False
 app.config["SECRET_KEY"] = '123456'
 
@@ -71,8 +71,8 @@ def user_registration():
 if __name__ == '__main__':
     # 初始化数据库
     try:
-        if not db_config.get_db():
-            read_dataset()
+        if not defines.get_db():
+            defines.read_dataset()
         # 启动 Flask 应用
         app.run(host='0.0.0.0', port=5000, debug=True)
     except Exception:

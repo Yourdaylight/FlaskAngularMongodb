@@ -1,4 +1,6 @@
+import pandas
 import pymongo
+
 db_host = "101.35.53.113"
 db_port = 27017
 password = "LZHlzh.rootOOT123"
@@ -9,8 +11,16 @@ USER_COLLECTION = "user"
 DATASET_PATH = "dataset/games2.csv"
 
 
-def get_user_collection():
-    return client[DATABASE_NAME]["user"]
+def read_dataset():
+    data = pandas.read_csv(DATASET_PATH, encoding='gbk')
+    data = data.fillna("")
+    data = data.to_dict(orient="records")
+    database = client[DATABASE_NAME]
+    list_data = []
+    for item in data:
+        list_data.append(item)
+    database[COLLECTION].insert_many(list_data)
+    return data
 
 
 def get_db():
