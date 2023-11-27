@@ -24,44 +24,32 @@ export class MovieDetailsComponent implements OnInit {
   editField: any = [
     {
       label: 'Title',
-      value: 'title',
+      value: 'Title',
     },
     {
-      label: 'Type',
-      value: 'type',
+      label: 'Original Price',
+      value: 'Original Price',
     },
     {
-      label: 'Director',
-      value: 'director',
+      label: 'Discounted Price',
+      value: 'Discounted Price',
     },
     {
-      label: 'Cast',
-      value: 'cast',
+      label: 'Developer',
+      value: 'Developer',
     },
     {
-      label: 'Country',
-      value: 'country',
+      label: 'Publisher',
+      value: 'Publisher',
     },
     {
-      label: 'Release year',
-      value: 'release_year',
+      label: 'Release Date',
+      value: 'Release Date',
     },
     {
-      label: 'Duration',
-      value: 'duration',
-    },
-    {
-      label: 'Listed in',
-      value: 'listed_in',
-    },
-    {
-      label: 'Description',
-      value: 'description',
-    },
-    {
-      label: 'Image Url',
-      value: 'pic_url',
-    },
+      label: 'Game Description',
+      value: 'Game Description',
+    }
   ];
   isVisible: boolean = false;
 
@@ -77,30 +65,26 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.movieInfo = JSON.parse(localStorage.getItem('movieInfo') as any);
     this.editForm = this.fb.group({
-      title: [null, [Validators.required]],
-      type: [null, [Validators.required]],
-      director: [null, [Validators.required]],
-      cast: [null, [Validators.required]],
-      country: [null, [Validators.required]],
-      release_year: [null, [Validators.required]],
-      duration: [null, [Validators.required]],
-      listed_in: [null, [Validators.required]],
-      description: [null, [Validators.required]],
-      pic_url: [null, [Validators.required]],
+      Title: [null, [Validators.required]],
+      'Original Price': [null, [Validators.required]],
+      'Discounted Price': [null, [Validators.required]],
+      Developer: [null, [Validators.required]],
+      Publisher: [null, [Validators.required]],
+      'Release Date': [null, [Validators.required]],
+      'Game Description': [null, [Validators.required]],
     });
     this.getCommentList();
   }
 
   getCommentList(): void {
     this.apiService
-      .post('getComments', {
-        username: localStorage.getItem('username'),
-        movie_id: this.movieInfo._id,
+      .post('/getReviews', {
+        gameId: this.movieInfo._id,
       })
       .subscribe(
         (res: any) => {
           const { code, data } = res;
-          if (code == 0) {
+          if (code == 200) {
             this.commentList = data;
             this.submitting = false;
           }
@@ -117,10 +101,10 @@ export class MovieDetailsComponent implements OnInit {
 
     let params = {
       username: localStorage.getItem('username'),
-      comment: this.commentValue,
+      review: this.commentValue,
       _id: this.movieInfo._id,
     };
-    this.apiService.post('addComment', params).subscribe(
+    this.apiService.post('/addReview', params).subscribe(
       (res: any) => {
         this.commentValue = '';
         this.getCommentList();
@@ -132,9 +116,10 @@ export class MovieDetailsComponent implements OnInit {
   removeComment(comment: any): void {
     this.submitting = true;
     let params = {
-      comment_id: comment.comment_id,
+      review_id: comment.review_id,
+      gameId: this.movieInfo._id,
     };
-    this.apiService.post('deleteComment', params).subscribe(
+    this.apiService.post('/deleteReview', params).subscribe(
       (res: any) => {
         this.commentValue = '';
         this.getCommentList();
@@ -146,9 +131,9 @@ export class MovieDetailsComponent implements OnInit {
   onCollect() {
     let params = {
       username: localStorage.getItem('username'),
-      _id: this.movieInfo._id,
+      gameId: this.movieInfo._id,
     };
-    this.apiService.post('addFavorite', params).subscribe(
+    this.apiService.post('/games/collectGame', params).subscribe(
       (res: any) => {
         this.$message.success('collected!');
         this.router.navigate(['/layout/favorite'], {});
@@ -158,7 +143,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.apiService.post('deleteMovie', { _id: this.movieInfo._id }).subscribe(
+    this.apiService.post('/game/deleteGame', { _id: this.movieInfo._id }).subscribe(
       (res: any) => {
         this.$message.success(`delete ${this.movieInfo.title} success!`);
         this.router.navigate(['/layout/list'], {});
@@ -173,7 +158,7 @@ export class MovieDetailsComponent implements OnInit {
   submitForm(): void {
     if (this.editForm.valid) {
       let params = { ...this.editForm.value, _id: this.movieInfo._id };
-      this.apiService.post('updateMovie', params).subscribe(
+      this.apiService.post('/game/updateGame', params).subscribe(
         (res: any) => {
           this.isVisible = false;
           this.$message.success(`edit success!`);

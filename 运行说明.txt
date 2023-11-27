@@ -1,0 +1,4 @@
+运行说明
+打开项目，命令行cd front进入到前端文件目录,第一次运行时需要执行npm install
+执行完成后再执行npm start启动前端项目
+启动后端直接运行backend下的app.py即可，确保本地mongodb已启动

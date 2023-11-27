@@ -7,12 +7,12 @@
 >
   < Back
 </button>
-<h1 class="song-title">- {{ movieInfo.title }} -</h1>
+<h1 class="song-title">- {{ movieInfo.Title }} -</h1>
 <div class="song-info">
-  <img style="width: 200px; height: 200px" [src]="movieInfo.pic_url" />
+  <img style="width: 200px; height: 200px" src="https://img2.baidu.com/it/u=2253673318,3372600971&fm=253&fmt=auto&app=138&f=JPEG?w=528&h=500" />
   <div class="song-info-basic">
     <div class="title">
-      {{ movieInfo.title
+      {{ movieInfo.Title
       }}<span
         nz-icon
         nzType="heart"
@@ -37,11 +37,13 @@
         ></span
       ></span>
     </div>
-    <div>director: {{ movieInfo.director }}</div>
-    <div>duration: {{ movieInfo.duration }}</div>
-    <div>country: {{ movieInfo.country }}</div>
-    <div>release year: {{ movieInfo.release_year }}</div>
-    <div>description: {{ movieInfo.description }}</div>
+    <div>Original Price: <span  style="text-decoration: line-through;
+  text-decoration-color: red;color: red">{{ movieInfo['Original Price'] }}</span></div>
+    <div>Discounted Price: <span style="color: green" >{{ movieInfo['Discounted Price'] }}</span></div>
+    <div>Developer: {{ movieInfo.Developer }}</div>
+    <div>Publisher: {{ movieInfo.Publisher }}</div>
+    <div>Release Date: {{ movieInfo['Release Date'] }}</div>
+    <div>Game Description: {{ movieInfo['Game Description'] }}</div>
   </div>
 </div>
 <h2 style="margin-top: 20px; border-bottom: 1px solid #eee">Comments</h2>
@@ -58,7 +60,7 @@
         [nzSrc]="item.avatar"
       ></nz-avatar>
       <nz-comment-content>
-        <p>{{ item.comment }}</p>
+        <p>{{ item.review }}</p>
         <i
           nz-icon
           nzType="delete"

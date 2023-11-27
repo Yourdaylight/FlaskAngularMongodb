@@ -1,4 +1,4 @@
-$baseColor: rgb(210 11 23);
+$baseColor: #d98410;
 :host ::ng-deep .login .login-form {
   max-width: 100%;
 }
@@ -8,7 +8,7 @@ $baseColor: rgb(210 11 23);
 .login {
   width: 100%;
   height: 100%;
-  background: url("../../../assets/images/netflix.png") no-repeat fixed center;
+  background: url("https://g8r2p8u00eb9tghqgkbq1lfbogl7f84o4k8ltm2h5q4jnv8i7aufukm3.saxyit.com:20992/steam/clusters/sale_autumn2019_assets/54b5034d397baccb93181cc6/home_header_bg_day_english.gif?BSLuBan=eyJob3N0IjoibWVkaWEuc3QuZGwuZWNjZG54LmNvbSIsImRuc19ob3N0IjoienRnZGwudi50cnBjZG4ubmV0IiwidHMiOjE3MDEwOTUzMTgsImJzcmVxaWQiOiIwZTQxODZiMjAyOTUyMmQ3MzdhYWRkZTdjZmQzNDhjYiIsImNhY2hlX2tleSI6Ilwvc3RlYW1cL2NsdXN0ZXJzXC9zYWxlX2F1dHVtbjIwMTlfYXNzZXRzXC81NGI1MDM0ZDM5N2JhY2NiOTMxODFjYzZcL2hvbWVfaGVhZGVyX2JnX2RheV9lbmdsaXNoLmdpZiIsImhvc3QzMDIiOiJmb2czMDItc3QuYnM1OGkuYmFpc2hhbmNkbnguY29tIiwia2V5IjoiNDE1MjY1YWVjMzY2ZGE2NjYzYmEyY2IyMTNjNDk1NGUiLCJmb2czMDIiOiJvbiJ9") no-repeat fixed center;
   background-size: cover;
   /* 可以设置不同的进入和离开动画 */
   /* 设置持续时间和动画函数 */

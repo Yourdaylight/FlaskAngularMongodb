@@ -3,9 +3,9 @@
     <tr>
       <th></th>
       <th>Title</th>
-      <th>Duration</th>
-      <th>Country</th>
-      <th>Description</th>
+      <th>Release Date</th>
+      <th>Publisher</th>
+      <th>Game Description</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -15,13 +15,13 @@
       <td>
         <img
           style="width: 50px; height: 50px; margin-right: 20px"
-          [src]="data.pic_url"
+          src="https://img2.baidu.com/it/u=2253673318,3372600971&fm=253&fmt=auto&app=138&f=JPEG?w=528&h=500"
         />
-        {{ data.title }}
+        {{ data.Title }}
       </td>
-      <td>{{ data.duration }}</td>
-      <td>{{ data.country }}</td>
-      <td>{{ data.description }}</td>
+      <td>{{ data['Release Date'] }}</td>
+      <td>{{ data.Publisher }}</td>
+      <td>{{ data['Game Description'] }}</td>
       <td>
         <span
           nz-icon

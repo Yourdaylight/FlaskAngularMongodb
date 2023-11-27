@@ -26,44 +26,32 @@ export class ListComponent implements OnInit {
   addField: any = [
     {
       label: 'Title',
-      value: 'title',
+      value: 'Title',
     },
     {
-      label: 'Type',
-      value: 'type',
+      label: 'Original Price',
+      value: 'Original Price',
     },
     {
-      label: 'Director',
-      value: 'director',
+      label: 'Discounted Price',
+      value: 'Discounted Price',
     },
     {
-      label: 'Cast',
-      value: 'cast',
+      label: 'Developer',
+      value: 'Developer',
     },
     {
-      label: 'Country',
-      value: 'country',
+      label: 'Publisher',
+      value: 'Publisher',
     },
     {
-      label: 'Release year',
-      value: 'release_year',
+      label: 'Release Date',
+      value: 'Release Date',
     },
     {
-      label: 'Duration',
-      value: 'duration',
-    },
-    {
-      label: 'Listed in',
-      value: 'listed_in',
-    },
-    {
-      label: 'Description',
-      value: 'description',
-    },
-    {
-      label: 'Image Url',
-      value: 'pic_url',
-    },
+      label: 'Game Description',
+      value: 'Game Description',
+    }
   ];
   page: number = 1;
   size: number = 18;
@@ -72,19 +60,11 @@ export class ListComponent implements OnInit {
   searchField: any = [
     {
       label: 'Title',
-      value: 'title',
+      value: 'Title',
     },
     {
-      label: 'Director',
-      value: 'director',
-    },
-    {
-      label: 'Country',
-      value: 'country',
-    },
-    {
-      label: 'Type',
-      value: 'type',
+      label: 'Developer',
+      value: 'Developer',
     },
   ];
   typeOption: any = [
@@ -113,16 +93,13 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.addForm = this.fb.group({
-      title: [null],
-      type: [null],
-      director: [null],
-      cast: [null],
-      country: [null],
-      release_year: [null],
-      duration: [null],
-      listed_in: [null],
-      description: [null],
-      pic_url: [null],
+      Title: [null, [Validators.required]],
+      'Original Price': [null, [Validators.required]],
+      'Discounted Price': [null, [Validators.required]],
+      Developer: [null, [Validators.required]],
+      Publisher: [null, [Validators.required]],
+      'Release Date': [null, [Validators.required]],
+      'Game Description': [null, [Validators.required]],
     });
     this.searchForm = this.fb.group({
       title: [null],
@@ -136,7 +113,7 @@ export class ListComponent implements OnInit {
   submitForm(): void {
     if (this.addForm.valid) {
       let params = { ...this.addForm.value };
-      this.apiService.post('addMovie', params).subscribe(
+      this.apiService.post('/game/addGame', params).subscribe(
         (res: any) => {
           this.isVisible = false;
           this.getMovieList();
@@ -180,11 +157,11 @@ export class ListComponent implements OnInit {
       type: this.searchForm.value.type ==null ? 'all' : this.searchForm.value.type,
     };
 
-    this.apiService.post('getMovies', params).subscribe(
+    this.apiService.post('/game/getGames', params).subscribe(
       (res: any) => {
         this.loading = false;
         const { code, data, total } = res;
-        if (code == 0) {
+        if (code == 200) {
           this.loading = false;
           this.movieList = data;
           this.movieList.forEach((item: any, index: number) => {
