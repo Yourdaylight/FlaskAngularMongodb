@@ -37,16 +37,16 @@ def user_login():
         if found_user:
             response = {
                 "code": 200,
-                "message": "Login successful.",
+                "msg": "Login successful.",
                 "data": {
                     "token": create_auth_token(found_user.get("username"))
                 }
             }
         else:
-            response = {"code": 500, "message": "Invalid credentials"}
+            response = {"code": 500, "msg": "Invalid credentials"}
     except Exception as error:
         print(error)
-        response = {"code": 500, "message": str(error)}
+        response = {"code": 500, "msg": str(error)}
     return json.dumps(response)
 
 
@@ -59,12 +59,12 @@ def user_registration():
         if not existing_user:
             new_user = {"username": user_name, "password": user_pass}
             users_collection.insert_one(new_user)
-            response = {"code": 200, "message": "Registration successful."}
+            response = {"code": 200, "msg": "Registration successful."}
         else:
-            response = {"code": 500, "message": "Username already exists."}
+            response = {"code": 500, "msg": "Username already exists."}
     except Exception as error:
         print(error)
-        response = {"code": 500, "message": str(error)}
+        response = {"code": 500, "msg": str(error)}
     return json.dumps(response)
 
 

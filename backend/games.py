@@ -46,13 +46,13 @@ def new_game():
         necessary_fields = "Name"
         # name为必填项
         if not game_data.get(necessary_fields):
-            return jsonify({"code": 500, "msg": f"Field: [{necessary_fields}] is required"}), 400
+            return jsonify({"code": 500, "msg": f"Field: [{necessary_fields}] is required"}), 500
         existing_game = game_collection.find_one({necessary_fields: game_data[necessary_fields]})
         if existing_game:
             return jsonify({
                 "code": 500,
                 "msg": f"A game with the same title [{game_data[necessary_fields]}] already exists"}
-            ), 400
+            ), 500
 
         # 尝试将所有字段转换为float，如果无法转换则保持原始类型
         for key, value in game_data.items():
