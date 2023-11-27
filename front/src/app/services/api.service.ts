@@ -7,7 +7,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   providedIn: 'root',
 })
 export class ApiService {
-  _baseUrl = 'http://127.0.0.1:5000/';
+  _baseUrl = 'http://127.0.0.1:5000/api/v1';
   constructor(
     private httpClient: HttpClient,
     private dialogService: NzMessageService
@@ -16,7 +16,7 @@ export class ApiService {
     return this.httpClient.get(this._baseUrl + url, params);
   }
   post(url: string, params: any) {
-    if (url == 'login' || url == 'register') {
+    if (url.indexOf('login') !== -1 || url.indexOf('register') !== -1) {
       return this.httpClient.post(this._baseUrl + url, params);
     }
     return this.httpClient.post(this._baseUrl + url, params, {

@@ -3,6 +3,9 @@ $baseColor: rgb(210 11 23);
   padding: 0 40px;
   font-size: 20px;
 }
+.ant-layout {
+  height: 100%;
+}
 ::ng-deep
   .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
   .ant-menu-item-selected {
@@ -12,6 +15,7 @@ $baseColor: rgb(210 11 23);
   width: 100%;
 }
 :host {
+  height: 100%;
   display: flex;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

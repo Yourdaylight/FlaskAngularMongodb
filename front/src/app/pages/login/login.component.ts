@@ -27,11 +27,11 @@ export class LoginComponent implements OnInit {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
       let loginModel = Object.assign(this.validateForm.value, {});
-      let url = type == 'login' ? 'login' : 'register';
+      let url = type == 'login' ? '/games/login' : '/games/register';
       console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
         const { code, msg, data } = res;
-        if (code === 0) {
+        if (code === 200) {
           if (type == 'login') {
             this.$message.success('Login Success!');
             localStorage.setItem('username', loginModel.username);
