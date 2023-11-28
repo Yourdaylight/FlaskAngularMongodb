@@ -1,0 +1,550 @@
+{
+	"id": "faf549a5-54fc-4a26-bd4d-42d9b369dabb",
+	"name": "FlaskAngularMongoDB_game_202312",
+	"timestamp": "2023-11-28T08:25:44.675Z",
+	"collection_id": "13268592-f3fde014-995b-46da-939a-4fcf92085cf1",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 38,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-11-28T08:25:43.620Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b834a654-11d2-4dd9-9269-9aee12027a9b",
+			"name": "login",
+			"url": "http://127.0.0.1:5000/api/v1/games/login",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body has msg": true,
+				"Response must be valid and have a body": true,
+				"Body has token": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body has msg": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body has token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body has msg": true,
+					"Response must be valid and have a body": true,
+					"Body has token": true
+				}
+			]
+		},
+		{
+			"id": "40ff8bb0-5f22-4ad0-9dee-9063e54d94df",
+			"name": "register",
+			"url": "http://127.0.0.1:5000/api/v1/games/register",
+			"time": 41,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "bde3eb7a-f40f-4b19-b05c-fbfe064bd8d6",
+			"name": "addGame",
+			"url": "http://127.0.0.1:5000/api/v1/game/addGame",
+			"time": 42,
+			"responseCode": {
+				"code": 400,
+				"name": "BAD REQUEST"
+			},
+			"tests": {
+				"Response Content-Type is json": true,
+				"Response body has code and msg": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Response Content-Type is json": true,
+					"Response body has code and msg": true
+				}
+			]
+		},
+		{
+			"id": "5383c444-8086-4845-b0a7-f2611bc50fd3",
+			"name": "getGames",
+			"url": "http://127.0.0.1:5000/api/v1/game/getGames",
+			"time": 78,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response Content-Type is json": true,
+				"Response code should be 200": true,
+				"Response should have a total field": true,
+				"Data should be an array": true,
+				"Each item in data should have necessary properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should have a total field": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data should be an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each item in data should have necessary properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				78
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response Content-Type is json": true,
+					"Response code should be 200": true,
+					"Response should have a total field": true,
+					"Data should be an array": true,
+					"Each item in data should have necessary properties": true
+				}
+			]
+		},
+		{
+			"id": "e62f8a70-686a-441d-bc4a-cf44aabd4059",
+			"name": "deleteGame",
+			"url": "http://127.0.0.1:5000/api/v1/game/deleteGame",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response body has code and msg": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Response body has code and msg": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "bda9421e-1a1a-40c6-b142-7ca2f043dd19",
+			"name": "updateGame",
+			"url": "http://127.0.0.1:5000/api/v1/game/updateGame",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response body has code and msg": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Response body has code and msg": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "57f9a610-1c1c-4e59-8437-94d31b379fb2",
+			"name": "addReview",
+			"url": "http://127.0.0.1:5000/api/v1/addReview",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response Content-Type is json": true,
+				"Response body has code and msg": true,
+				"check update_time": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check update_time": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Response Content-Type is json": true,
+					"Response body has code and msg": true,
+					"check update_time": true
+				}
+			]
+		},
+		{
+			"id": "02c38124-112c-4010-bc77-b7f2397047a3",
+			"name": "deleteReview",
+			"url": "http://127.0.0.1:5000/api/v1/deleteReview",
+			"time": 39,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response Content-Type is json": true,
+				"Response body has code and msg": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				39
+			],
+			"allTests": [
+				{
+					"Response Content-Type is json": true,
+					"Response body has code and msg": true
+				}
+			]
+		},
+		{
+			"id": "7da82563-50ff-42fc-94d2-920b78b1ce45",
+			"name": "getReviews",
+			"url": "http://127.0.0.1:5000/api/v1/getReviews",
+			"time": 44,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response Content-Type is json": true,
+				"Response code should be 200": true,
+				"Response should have a msg field": true,
+				"Data should be an array": true,
+				"Each item in data should have necessary properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should have a msg field": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data should be an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each item in data should have necessary properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				44
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response Content-Type is json": true,
+					"Response code should be 200": true,
+					"Response should have a msg field": true,
+					"Data should be an array": true,
+					"Each item in data should have necessary properties": true
+				}
+			]
+		},
+		{
+			"id": "8bf38b01-f809-4945-845f-b0af97ad9db8",
+			"name": "collectGame",
+			"url": "http://127.0.0.1:5000/api/v1/games/collectGame",
+			"time": 43,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response Content-Type is json": true,
+				"Response body has code and msg": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"Response Content-Type is json": true,
+					"Response body has code and msg": true
+				}
+			]
+		},
+		{
+			"id": "82d334e1-6533-4d27-ac5c-4a6c2e7fd951",
+			"name": "getCollectList",
+			"url": "http://127.0.0.1:5000/api/v1/game/getCollectList",
+			"time": 77,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response Content-Type is json": true,
+				"Response code should be 200": true,
+				"Response should have a msg field": true,
+				"Data should be an array": true,
+				"Each item in data should have necessary properties": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response should have a msg field": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Data should be an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Each item in data should have necessary properties": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response Content-Type is json": true,
+					"Response code should be 200": true,
+					"Response should have a msg field": true,
+					"Data should be an array": true,
+					"Each item in data should have necessary properties": true
+				}
+			]
+		},
+		{
+			"id": "5a284321-6d44-4e1e-a917-57d49cc204e2",
+			"name": "cacelCollectGame",
+			"url": "http://127.0.0.1:5000/api/v1/games/cancelCollectGame",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response Content-Type is json": true,
+				"Response body has code and msg": true
+			},
+			"testPassFailCounts": {
+				"Response Content-Type is json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body has code and msg": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Response Content-Type is json": true,
+					"Response body has code and msg": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 527,
+	"collection": {
+		"requests": [
+			{
+				"id": "b834a654-11d2-4dd9-9269-9aee12027a9b",
+				"method": "POST"
+			},
+			{
+				"id": "40ff8bb0-5f22-4ad0-9dee-9063e54d94df",
+				"method": "POST"
+			},
+			{
+				"id": "bde3eb7a-f40f-4b19-b05c-fbfe064bd8d6",
+				"method": "POST"
+			},
+			{
+				"id": "5383c444-8086-4845-b0a7-f2611bc50fd3",
+				"method": "POST"
+			},
+			{
+				"id": "e62f8a70-686a-441d-bc4a-cf44aabd4059",
+				"method": "POST"
+			},
+			{
+				"id": "bda9421e-1a1a-40c6-b142-7ca2f043dd19",
+				"method": "POST"
+			},
+			{
+				"id": "57f9a610-1c1c-4e59-8437-94d31b379fb2",
+				"method": "POST"
+			},
+			{
+				"id": "02c38124-112c-4010-bc77-b7f2397047a3",
+				"method": "POST"
+			},
+			{
+				"id": "7da82563-50ff-42fc-94d2-920b78b1ce45",
+				"method": "POST"
+			},
+			{
+				"id": "8bf38b01-f809-4945-845f-b0af97ad9db8",
+				"method": "POST"
+			},
+			{
+				"id": "82d334e1-6533-4d27-ac5c-4a6c2e7fd951",
+				"method": "POST"
+			},
+			{
+				"id": "5a284321-6d44-4e1e-a917-57d49cc204e2",
+				"method": "POST"
+			}
+		]
+	}
+}
