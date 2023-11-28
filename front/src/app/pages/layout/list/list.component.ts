@@ -4,26 +4,20 @@ import { NavigateService } from 'src/app/services/navigate.service';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
-
+// Main component for listing items
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  movieList: any = [];
-  loading: boolean = true;
-  isVisible: boolean = false;
-  addForm!: FormGroup;
-  addField: any = [
+  itemList: any = []; // Stores the list of items (games, TV shows, etc.)
+  isLoading: boolean = true; // Indicates if data is being loaded
+  isModalVisible: boolean = false; // Controls visibility of modal
+  createForm!: FormGroup; // Form for adding new items
+  createFormFields: any = [
     {
       label: 'Title',
       value: 'Title',
@@ -51,13 +45,13 @@ export class ListComponent implements OnInit {
     {
       label: 'Game Description',
       value: 'Game Description',
-    }
+    },
   ];
-  page: number = 1;
-  size: number = 18;
-  total: number = 10;
-  searchForm!: FormGroup;
-  searchField: any = [
+  currentPage: number = 1; // Current page number for pagination
+  pageSize: number = 18; // Number of items per page
+  totalItems: number = 10; // Total number of items available
+  searchQueryForm!: FormGroup; // Form for searching items
+  searchQueryFields: any = [
     {
       label: 'Title',
       value: 'Title',
@@ -67,10 +61,10 @@ export class ListComponent implements OnInit {
       value: 'Developer',
     },
   ];
-  typeOption: any = [
+  categoryOptions: any = [
     {
-      label: 'Movie',
-      value: 'Movie',
+      label: 'Game',
+      value: 'Game',
     },
     {
       label: 'TV Show',
@@ -82,17 +76,27 @@ export class ListComponent implements OnInit {
     },
   ];
 
+  // Constructor with necessary service injections
   constructor(
     private apiService: ApiService,
-    private $message: NzMessageService,
+    private messageService: NzMessageService,
     private navigateService: NavigateService,
     public router: Router,
     private modalService: NzModalService,
-    private fb: FormBuilder
+    private formBuilder: FormBuilder
   ) {}
 
+  // OnInit lifecycle hook to initialize forms and fetch initial data
   ngOnInit() {
-    this.addForm = this.fb.group({
+    this.initializeCreateForm();
+    this.initializeSearchForm();
+    this.getGameList();
+  }
+
+  // Initialize the form for creating new items
+  initializeCreateForm() {
+    this.createForm = this.formBuilder.group({
+      // Form controls with validators
       Title: [null, [Validators.required]],
       'Original Price': [null, [Validators.required]],
       'Discounted Price': [null, [Validators.required]],
@@ -101,28 +105,36 @@ export class ListComponent implements OnInit {
       'Release Date': [null, [Validators.required]],
       'Game Description': [null, [Validators.required]],
     });
-    this.searchForm = this.fb.group({
+  }
+
+  // Initialize the search form
+  initializeSearchForm() {
+    this.searchQueryForm = this.formBuilder.group({
+      // Form controls for search
       title: [null],
       director: [null],
       country: [null],
-      type: ["all", [Validators.required]],
+      type: ['all', [Validators.required]],
     });
-    this.getMovieList();
   }
 
+  // Submit the create form
   submitForm(): void {
-    if (this.addForm.valid) {
-      let params = { ...this.addForm.value };
+    if (this.createForm.valid) {
+      let params = { ...this.createForm.value };
       this.apiService.post('/game/addGame', params).subscribe(
         (res: any) => {
-          this.isVisible = false;
-          this.getMovieList();
-          this.$message.success(`add success!`);
+          this.isModalVisible = false;
+          this.getGameList();
+          this.messageService.success(`add success!`);
         },
-        () => {}
+        () => {
+          // Error handling
+        }
       );
     } else {
-      Object.values(this.addForm.controls).forEach((control: any) => {
+      // Handling form validation
+      Object.values(this.createForm.controls).forEach((control) => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({ onlySelf: true });
@@ -131,60 +143,65 @@ export class ListComponent implements OnInit {
     }
   }
 
+  // Trigger search
   onSearch() {
-    this.page = 1;
-    this.size = 18;
-    this.getMovieList();
+    this.currentPage = 1;
+    this.pageSize = 18;
+    this.getGameList();
   }
+
+  // Navigate to the detail page of an item
   toDetail(data: any) {
-    localStorage.setItem('movieInfo', JSON.stringify(data));
-    this.router.navigate(['/layout/movie-details']);
+    localStorage.setItem('gameInfo', JSON.stringify(data));
+    this.router.navigate(['/layout/game-details']);
   }
 
-  getMovieList() {
+  // Fetch the list of items
+  getGameList() {
     let search = '';
-    console.log(this.searchForm.value);
-    if (this.searchForm.value)
-      Object.entries(this.searchForm.value).forEach(([key, val]: any) => {
-
-        if (val && key!="type") search = search + val;
+    if (this.searchQueryForm.value)
+      Object.entries(this.searchQueryForm.value).forEach(([key, val]: any) => {
+        if (val && key != 'type') search = search + val;
       });
-    console.log(search);
+
     let params = {
-      page: this.page,
-      size: this.size,
+      page: this.currentPage,
+      size: this.pageSize,
       search: search ? search : '',
-      type: this.searchForm.value.type ==null ? 'all' : this.searchForm.value.type,
+      type: this.searchQueryForm.value.type || 'all',
     };
 
     this.apiService.post('/game/getGames', params).subscribe(
       (res: any) => {
-        this.loading = false;
+        this.isLoading = false;
         const { code, data, total } = res;
         if (code == 200) {
-          this.loading = false;
-          this.movieList = data;
-          this.movieList.forEach((item: any, index: number) => {
+          this.isLoading = false;
+          this.itemList = data;
+          this.itemList.forEach((item: any, index: number) => {
             item.idx = index;
           });
-          this.total = total;
-          console.log('this.movieList', this.movieList);
+          this.totalItems = total;
         } else {
-          this.movieList = [];
+          this.itemList = [];
         }
       },
       () => {
-        this.loading = false;
+        this.isLoading = false;
+        // Error handling
       }
     );
   }
+
+  // Handle page change in pagination
   pageChange(val: number) {
-    this.page = val;
-    console.log(val);
-    this.getMovieList();
+    this.currentPage = val;
+    this.getGameList();
   }
+
+  // Handle page size change in pagination
   pageSizeChange(val: number) {
-    this.size = val;
-    this.getMovieList();
+    this.pageSize = val;
+    this.getGameList();
   }
 }

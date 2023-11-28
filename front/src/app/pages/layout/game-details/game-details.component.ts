@@ -4,20 +4,14 @@ import { ApiService } from 'src/app/services/api.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NavigateService } from 'src/app/services/navigate.service';
 import { Router } from '@angular/router';
-import { NzModalService } from 'ng-zorro-antd/modal';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.scss'],
+  selector: 'app-game-details',
+  templateUrl: './game-details.component.html',
+  styleUrls: ['./game-details.component.scss'],
 })
-export class MovieDetailsComponent implements OnInit {
-  movieInfo: any = {};
+export class GameDetailsComponent implements OnInit {
+  gameInfo: any = {};
   commentList: any = [];
   fps: any = '';
   editForm!: FormGroup;
@@ -49,7 +43,7 @@ export class MovieDetailsComponent implements OnInit {
     {
       label: 'Game Description',
       value: 'Game Description',
-    }
+    },
   ];
   isVisible: boolean = false;
 
@@ -63,7 +57,7 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.movieInfo = JSON.parse(localStorage.getItem('movieInfo') as any);
+    this.gameInfo = JSON.parse(localStorage.getItem('gameInfo') as any);
     this.editForm = this.fb.group({
       Title: [null, [Validators.required]],
       'Original Price': [null, [Validators.required]],
@@ -79,7 +73,7 @@ export class MovieDetailsComponent implements OnInit {
   getCommentList(): void {
     this.apiService
       .post('/getReviews', {
-        gameId: this.movieInfo._id,
+        gameId: this.gameInfo._id,
       })
       .subscribe(
         (res: any) => {
@@ -102,7 +96,7 @@ export class MovieDetailsComponent implements OnInit {
     let params = {
       username: localStorage.getItem('username'),
       review: this.commentValue,
-      _id: this.movieInfo._id,
+      _id: this.gameInfo._id,
     };
     this.apiService.post('/addReview', params).subscribe(
       (res: any) => {
@@ -117,7 +111,7 @@ export class MovieDetailsComponent implements OnInit {
     this.submitting = true;
     let params = {
       review_id: comment.review_id,
-      gameId: this.movieInfo._id,
+      gameId: this.gameInfo._id,
     };
     this.apiService.post('/deleteReview', params).subscribe(
       (res: any) => {
@@ -131,7 +125,7 @@ export class MovieDetailsComponent implements OnInit {
   onCollect() {
     let params = {
       username: localStorage.getItem('username'),
-      gameId: this.movieInfo._id,
+      gameId: this.gameInfo._id,
     };
     this.apiService.post('/games/collectGame', params).subscribe(
       (res: any) => {
@@ -143,21 +137,23 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.apiService.post('/game/deleteGame', { _id: this.movieInfo._id }).subscribe(
-      (res: any) => {
-        this.$message.success(`delete ${this.movieInfo.title} success!`);
-        this.router.navigate(['/layout/list'], {});
-      },
-      () => {}
-    );
+    this.apiService
+      .post('/game/deleteGame', { _id: this.gameInfo._id })
+      .subscribe(
+        (res: any) => {
+          this.$message.success(`delete ${this.gameInfo.title} success!`);
+          this.router.navigate(['/layout/list'], {});
+        },
+        () => {}
+      );
   }
   onEdit() {
     this.isVisible = true;
-    this.editForm.patchValue(this.movieInfo);
+    this.editForm.patchValue(this.gameInfo);
   }
   submitForm(): void {
     if (this.editForm.valid) {
-      let params = { ...this.editForm.value, _id: this.movieInfo._id };
+      let params = { ...this.editForm.value, _id: this.gameInfo._id };
       this.apiService.post('/game/updateGame', params).subscribe(
         (res: any) => {
           this.isVisible = false;

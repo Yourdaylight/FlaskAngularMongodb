@@ -1,19 +1,21 @@
+<!-- Form for searching items -->
 <form
   nz-form
   nzLayout="inline"
-  [formGroup]="searchForm"
-  (ngSubmit)="getMovieList()"
+  [formGroup]="searchQueryForm"
+  (ngSubmit)="getGameList()"
 >
   <div nz-row>
     <div
       nz-col
       nzSpan="8"
-      *ngFor="let field of searchField"
+      *ngFor="let field of searchQueryFields"
       style="margin: 20px 0"
     >
       <nz-form-item>
         <nz-form-label>{{ field.label }}</nz-form-label>
         <nz-form-control [nzErrorTip]="'Please input ' + field.label!">
+          <!-- Select input for type field -->
           <nz-select
             *ngIf="field.value == 'type'"
             [ngModel]="field.value"
@@ -21,11 +23,12 @@
             [formControlName]="field.value"
           >
             <nz-option
-              *ngFor="let item of typeOption"
+              *ngFor="let item of categoryOptions"
               [nzValue]="item.value"
               [nzLabel]="item.label"
             ></nz-option>
           </nz-select>
+          <!-- Text input for other fields -->
           <input
             *ngIf="field.value != 'type'"
             nz-input
@@ -37,10 +40,11 @@
     </div>
     <div nz-col nzSpan="8" style="margin-top: 20px">
       <button nz-button nzType="primary">Search</button>
+      <!-- Button to open the modal for adding a new game -->
       <button
         nz-button
         nzType="default"
-        (click)="isVisible = true"
+        (click)="isModalVisible = true"
         style="margin-left: 15px"
       >
         <i nz-icon nzType="plus" nzTheme="outline"></i>Add Game
@@ -49,16 +53,20 @@
   </div>
 </form>
 
+<!-- Display of items with a loading spinner -->
 <div style="padding: 5px 30px">
-  <nz-spin [nzSpinning]="loading">
-    <div nz-row [nzGutter]="30">
+  <nz-spin [nzSpinning]="isLoading">
+    <!-- Updated variable for loading state -->
+    <div nz-row [nzGutter]="50">
+      <!-- Loop to display each game item -->
       <div
         nz-col
         [nzSpan]="4"
-        *ngFor="let data of movieList"
+        *ngFor="let data of itemList"
         class="card-shadow"
-        style="margin-bottom: 20px; position: relative"
+        style="margin-bottom: 40px; position: relative; padding: 20px 10px"
       >
+        <!-- Image and details of each game -->
         <img
           style="
             width: 100%;
@@ -70,8 +78,14 @@
           (click)="toDetail(data)"
         />
         <span
-          style="position: absolute; right: 24px; top: 120px; color: red;font-weight: bold"
-          >{{ data['Discounted Price'] }}</span
+          style="
+            position: absolute;
+            left: 35px;
+            top: 135px;
+            color: red;
+            font-weight: bold;
+          "
+          >{{ data["Discounted Price"] }}</span
         >
         <div
           style="
@@ -97,53 +111,19 @@
             white-space: normal;
           "
         >
-          {{ data['Game Description'] }}
+          {{ data["Game Description"] }}
         </div>
       </div>
     </div>
   </nz-spin>
+  <!-- Pagination control -->
   <nz-pagination
-    [nzPageIndex]="page"
-    [nzTotal]="total"
+    [nzPageIndex]="currentPage"
+    [nzTotal]="totalItems"
     nzShowSizeChanger
-    [nzPageSize]="size"
+    [nzPageSize]="pageSize"
     (nzPageIndexChange)="pageChange($event)"
     (nzPageSizeChange)="pageSizeChange($event)"
     style="text-align: right"
   ></nz-pagination>
 </div>
-
-<nz-modal
-  [(nzVisible)]="isVisible"
-  nzTitle="Add Movie"
-  nzOkText="Ok"
-  nzCancelText="Cancel"
-  (nzOnOk)="submitForm()"
-  (nzOnCancel)="isVisible = false"
->
-  <ng-container *nzModalContent>
-    <form nz-form [formGroup]="addForm">
-      <div nz-row [nzGutter]="24">
-        <div nz-col [nzSpan]="24" *ngFor="let field of addField">
-          <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name"
-              >{{ field.label }}
-            </nz-form-label>
-            <nz-form-control
-              [nzSm]="14"
-              [nzXs]="24"
-              [nzErrorTip]="'Please input ' + field.label!"
-            >
-              <input
-                nz-input
-                [formControlName]="field.value"
-                id="name"
-                [placeholder]="field.label"
-              />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div>
-    </form>
-  </ng-container>
-</nz-modal>
