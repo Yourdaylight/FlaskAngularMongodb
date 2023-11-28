@@ -1,0 +1,736 @@
+{
+	"info": {
+		"_postman_id": "f3fde014-995b-46da-939a-4fcf92085cf1",
+		"name": "FlaskAngularMongoDB_game_202312",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15234337",
+		"_collection_link": "https://gold-spaceship-203375.postman.co/workspace/Team-Workspace~e1e4e7e7-fbf3-4eed-8155-25c636d86894/collection/13268592-f3fde014-995b-46da-939a-4fcf92085cf1?action=share&source=collection_link&creator=15234337"
+	},
+	"item": [
+		{
+			"name": "game_202312",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body has msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('msg');\r",
+									"});\r",
+									"pm.test('Response must be valid and have a body', function () {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});\r",
+									"pm.test('Body has token', function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.have.property('token');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"lzh\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/games/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"games",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.code).to.be.oneOf([200, 500]);\r",
+									"    pm.expect(jsonData).to.have.property('msg');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"lzh\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/games/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"games",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addGame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Title\": \"MY TEST GAME 2\",\r\n    \"Original Price\": \"$29.99\",\r\n    \"Discounted Price\": \"$29.99\",\r\n    \"Release Date\": \"3 Aug, 2023\",\r\n    \"Link\": \"https://store.steampowered.com/app/1086940/Baldurs_Gate_3/\",\r\n    \"Game Description\": \"Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.\",\r\n    \"Recent Reviews Summary\": \"Overwhelmingly Positive\",\r\n    \"All Reviews Summary\": \"Very Positive\",\r\n    \"Recent Reviews Number\": \"- 96% of the 128,900 user reviews in the last 30 days are positive.\",\r\n    \"All Reviews Number\": \"- 94% of the 188,617 user reviews for this game are positive.\",\r\n    \"Developer\": \"Larian Studios\",\r\n    \"Publisher\": \"Larian Studios\",\r\n    \"Supported Languages\": [\"English\", \"French\", \"German\", \"Spanish - Spain\", \"Polish\", \"Russian\", \"Simplified Chinese\", \"Turkish\", \"Portuguese - Brazil\", \"Italian\", \"Spanish - Latin America\", \"Traditional Chinese\", \"Ukrainian\"],\r\n    \"Popular Tags\": [\"RPG\", \"Choices Matter\", \"Character Customization\", \"Story Rich\", \"Adventure\", \"Online Co-Op\", \"CRPG\", \"Multiplayer\", \"Fantasy\", \"Turn-Based Combat\", \"Dungeons & Dragons\", \"Co-op Campaign\", \"Strategy\", \"Singleplayer\", \"Romance\", \"Class-Based\", \"Dark Fantasy\", \"Combat\", \"Controller\", \"Stealth\"],\r\n    \"Game Features\": [\"Single-player\", \"Online Co-op\", \"LAN Co-op\", \"Steam Achievements\", \"Full controller support\", \"Steam Cloud\"],\r\n    \"Minimum Requirements\": \"Requires a 64-bit processor and operating system. OS: Windows 10 64-bit. Processor: Intel I5 4690 / AMD FX 8350. Memory: 8 GB RAM. Graphics: Nvidia GTX 970 / RX 480 (4GB+ of VRAM). DirectX: Version 11. Storage: 150 GB available space.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/game/addGame",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"game",
+								"addGame"
+							]
+						},
+						"description": "添加游戏选项，根据Titele进行添加重复校验。当前示例的所有字段的key都必须传，用户没有输入时需要给默认空值"
+					},
+					"response": []
+				},
+				{
+					"name": "getGames",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response code should be 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should have a total field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('total');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Data should be an array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Each item in data should have necessary properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.data.forEach(function (item) {\r",
+									"        pm.expect(item).to.have.property('_id');\r",
+									"        pm.expect(item).to.have.property('Title');\r",
+									"        pm.expect(item).to.have.property('Original Price');\r",
+									"        pm.expect(item).to.have.property('Discounted Price');\r",
+									"        pm.expect(item).to.have.property('Release Date');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"size\": 10,\r\n    \"Title\": \"Rust\",  // 可选，根据需要更改\r\n    \"Original Price\": \"\",  // 可选，根据需要更改\r\n    \"Developer\": \"\",  // 可选，根据需要更改\r\n    \"Game Features\": []  // 可选，根据需要更改\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/game/getGames",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"game",
+								"getGames"
+							]
+						},
+						"description": "查询支持根据Original Price, Title, Developer, Game Features这几个字段查询 。Game Features传的是js数组，其余均是字符串"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6391c1f4a83713458b00c349\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/game/deleteGame",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"game",
+								"deleteGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateGame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"\",\r\n    \"Title\": \"(Modified) MY TEST GAME\",\r\n    \"Original Price\": \"$29.99\",\r\n    \"Discounted Price\": \"$29.98\",\r\n    \"Release Date\": \"3 Aug, 2023\",\r\n    \"Link\": \"https://store.steampowered.com/app/1086940/Baldurs_Gate_3/\",\r\n    \"Game Description\": \"Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.\",\r\n    \"Recent Reviews Summary\": \"Overwhelmingly Positive\",\r\n    \"All Reviews Summary\": \"Very Positive\",\r\n    \"Recent Reviews Number\": \"- 96% of the 128,900 user reviews in the last 30 days are positive.\",\r\n    \"All Reviews Number\": \"- 94% of the 188,617 user reviews for this game are positive.\",\r\n    \"Developer\": \"Larian Studios\",\r\n    \"Publisher\": \"Larian Studios\",\r\n    \"Supported Languages\": [\"English\", \"French\", \"German\", \"Spanish - Spain\", \"Polish\", \"Russian\", \"Simplified Chinese\", \"Turkish\", \"Portuguese - Brazil\", \"Italian\", \"Spanish - Latin America\", \"Traditional Chinese\", \"Ukrainian\"],\r\n    \"Popular Tags\": [\"RPG\", \"Choices Matter\", \"Character Customization\", \"Story Rich\", \"Adventure\", \"Online Co-Op\", \"CRPG\", \"Multiplayer\", \"Fantasy\", \"Turn-Based Combat\", \"Dungeons & Dragons\", \"Co-op Campaign\", \"Strategy\", \"Singleplayer\", \"Romance\", \"Class-Based\", \"Dark Fantasy\", \"Combat\", \"Controller\", \"Stealth\"],\r\n    \"Game Features\": [\"Single-player\", \"Online Co-op\", \"LAN Co-op\", \"Steam Achievements\", \"Full controller support\", \"Steam Cloud\"],\r\n    \"Minimum Requirements\": \"Requires a 64-bit processor and operating system. OS: Windows 10 64-bit. Processor: Intel I5 4690 / AMD FX 8350. Memory: 8 GB RAM. Graphics: Nvidia GTX 970 / RX 480 (4GB+ of VRAM). DirectX: Version 11. Storage: 150 GB available space.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/game/updateGame",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"game",
+								"updateGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});\r",
+									"pm.test(\"check update_time\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.have.property('update_time');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"lzh\",\r\n    \"_id\":\"655acf60a83dcb3825d85c30\",//从Games列表获取的\r\n    \"review\":\"Balalalalalalfewfe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/addReview",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"addReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gameId\":\"655acf60a83dcb3825d85c30\",\r\n    \"review_id\":\"28902846-8756-11ee-9bfd-802bf9d9f3ea\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/deleteReview",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response code should be 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should have a msg field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('msg');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Data should be an array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Each item in data should have necessary properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.data.forEach(function (item) {\r",
+									"        pm.expect(item).to.have.property('review');\r",
+									"        pm.expect(item).to.have.property('timestamp');\r",
+									"        pm.expect(item).to.have.property('update_time');\r",
+									"        pm.expect(item).to.have.property('username');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gameId\":\"655acf60a83dcb3825d85c30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/getReviews",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getReviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "collectGame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gameId\":\"655acf60a83dcb3825d85c30\",\r\n    \"username\":\"lzh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/games/collectGame",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"games",
+								"collectGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCollectList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response code should be 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response should have a msg field\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('msg');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Data should be an array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Each item in data should have necessary properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    jsonData.data.forEach(function (item) {\r",
+									"        pm.expect(item).to.have.property('_id');\r",
+									"        pm.expect(item).to.have.property('Title');\r",
+									"        pm.expect(item).to.have.property('Original Price');\r",
+									"        pm.expect(item).to.have.property('Discounted Price');\r",
+									"        pm.expect(item).to.have.property('Release Date');\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"lzh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/game/getCollectList",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"game",
+								"getCollectList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cacelCollectGame",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response Content-Type is json\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body has code and msg\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"code\");\r",
+									"    pm.expect(jsonData).to.have.property(\"msg\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"gameId\":\"655acf60a83dcb3825d85c30\",\r\n    \"username\":\"lzh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/games/cancelCollectGame",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"games",
+								"cancelCollectGame"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
