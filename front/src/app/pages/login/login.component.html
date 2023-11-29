@@ -51,8 +51,10 @@
           >
             Log in
           </button>
-          Don't have an account?
-          <a (click)="changeLogin()" class="base-color">Quick regist!</a>
+          <!-- Don't have an account? -->
+          <a (click)="changeLogin()" class="base-color"
+            >Go To Register ->🐖🚗</a
+          >
         </form>
         <form
           *ngIf="curStatus == 'Register'"
@@ -63,9 +65,6 @@
           (ngSubmit)="submitForm('register')"
         >
           <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="username" nzRequired>
-              <span>Username</span>
-            </nz-form-label>
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
@@ -79,14 +78,12 @@
               />
             </nz-form-control>
           </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
-              >Password</nz-form-label
-            >
+          <nz-form-item style="width: 100%">
             <nz-form-control
               [nzSm]="14"
               [nzXs]="24"
               nzErrorTip="Please input your password!"
+              style="width: 100%"
             >
               <input
                 nz-input

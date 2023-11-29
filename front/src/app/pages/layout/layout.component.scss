@@ -1,12 +1,9 @@
-$baseColor: rgb(210 11 23);
 ::ng-deep .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
   padding: 0 40px;
   font-size: 20px;
 }
-::ng-deep
-  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal)
-  .ant-menu-item-selected {
-  background-color: $baseColor;
+::ng-deep .ant-menu.ant-menu-dark {
+  background-color: #000;
 }
 .layout {
   width: 100%;
@@ -38,10 +35,6 @@ $baseColor: rgb(210 11 23);
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s, padding 0s;
-}
-
-.trigger:hover {
-  color: $baseColor;
 }
 
 .sidebar-logo h1 {
@@ -116,7 +109,7 @@ nz-footer {
 
 .sign {
   margin-left: 20px;
-  color: $baseColor;
+  // color: $baseColor;
   cursor: pointer;
 }
 .sign:hover {
@@ -126,5 +119,4 @@ nz-footer {
 .inner-content {
   background: #fff;
   padding: 24px;
-  // min-height: 280px;
 }

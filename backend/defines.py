@@ -26,7 +26,7 @@ def read_dataset():
 def get_db():
     try:
         _collection = client[DATABASE_NAME]
-        is_exist = _collection[COLLECTION].count()
+        is_exist = _collection[COLLECTION].count_documents({})
         print(f"{COLLECTION} is exist: {is_exist}")
         return is_exist != 0
     except Exception as e:

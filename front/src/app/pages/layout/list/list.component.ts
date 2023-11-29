@@ -66,13 +66,13 @@ export class ListComponent implements OnInit {
     },
   ];
   page: number = 1;
-  size: number = 18;
+  size: number = 10;
   total: number = 10;
   searchForm!: FormGroup;
   searchField: any = [
     {
       label: 'Title',
-      value: 'title',
+      value: 'Title',
     },
     {
       label: 'Director',
@@ -128,7 +128,7 @@ export class ListComponent implements OnInit {
       title: [null],
       director: [null],
       country: [null],
-      type: ["all", [Validators.required]],
+      type: ['all', [Validators.required]],
     });
     this.getMovieList();
   }
@@ -164,31 +164,46 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/layout/movie-details']);
   }
 
+  getReviewTotalAndPositive(str: string) {
+    const strArray = str.split(' ');
+    const total =
+      strArray.filter((item: string) => item?.indexOf(',') !== -1)[0] || '0';
+    const positive =
+      strArray.filter((item: string) => item?.indexOf('%') !== -1)[0] || '0';
+    return [total, positive];
+  }
+
   getMovieList() {
     let search = '';
     console.log(this.searchForm.value);
     if (this.searchForm.value)
       Object.entries(this.searchForm.value).forEach(([key, val]: any) => {
-
-        if (val && key!="type") search = search + val;
+        if (val && key != 'type') search = search + val;
       });
     console.log(search);
     let params = {
       page: this.page,
       size: this.size,
       search: search ? search : '',
-      type: this.searchForm.value.type ==null ? 'all' : this.searchForm.value.type,
+      type:
+        this.searchForm.value.type == null ? 'all' : this.searchForm.value.type,
     };
 
-    this.apiService.post('getMovies', params).subscribe(
+    this.apiService.post('game_list', params).subscribe(
       (res: any) => {
         this.loading = false;
         const { code, data, total } = res;
-        if (code == 0) {
+        if (code == 200) {
           this.loading = false;
           this.movieList = data;
           this.movieList.forEach((item: any, index: number) => {
             item.idx = index;
+            item.reviewTotal = this.getReviewTotalAndPositive(
+              item['All Reviews Number']
+            )[0];
+            item.reviewPositive = this.getReviewTotalAndPositive(
+              item['All Reviews Number']
+            )[1];
           });
           this.total = total;
           console.log('this.movieList', this.movieList);

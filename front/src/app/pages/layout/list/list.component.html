@@ -49,55 +49,62 @@
   </div>
 </form>
 
-<div style="padding: 5px 30px">
-  <nz-spin [nzSpinning]="loading">
-    <div nz-row [nzGutter]="30">
-      <div
-        nz-col
-        [nzSpan]="4"
-        *ngFor="let data of movieList"
-        class="card-shadow"
-        style="margin-bottom: 20px; position: relative"
-      >
-        <img
-          style="
-            width: 100%;
-            height: 150px;
-            cursor: pointer;
-            border-radius: 8px;
-          "
-          [src]="data.pic_url"
-          (click)="toDetail(data)"
-        />
-        <span
-          style="position: absolute; right: 24px; top: 120px; color: #eee"
-          >{{ data.duration }}</span
-        >
-        <div
-          style="
-            font-weight: bold;
-            font-size: 16px;
-            margin: 2px 0;
-            overflow: hidden;
-            height: 25px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          "
-        >
-          {{ data.title }}
-        </div>
-        <div
-          style="
-            overflow: hidden;
-            height: 25px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          "
-        >
-          {{ data.description }}
-        </div>
-      </div>
-    </div>
+<div style="padding: 5px 10%">
+  <nz-spin [nzSpinning]="loading" style="margin: 20px auto">
+    <nz-list nzItemLayout="vertical">
+      <nz-list-item *ngFor="let item of movieList">
+        <nz-list-item-meta>
+          <nz-list-item-meta-title>
+            <a
+              href="{{ item.href }}"
+              style="
+                color: #373737;
+                font-weight: bolder;
+                font-size: 18px;
+                margin-right: 15px;
+                text-decoration: underline;
+              "
+              >{{ item.Name }}</a
+            >
+            <!-- <span
+              *ngIf="item['Discounted Price'] !== 'Free'"
+              style="text-decoration: line-through; margin-right: 10px"
+              >{{ item["Original Price"] }}</span
+            >
+            <span style="color: orangered; font-size: 18px">{{
+              item["Discounted Price"]
+            }}</span> -->
+            <span>{{ item.Developer }}</span>
+          </nz-list-item-meta-title>
+          <nz-list-item-meta-description>
+            {{ item["Release Date"] }} &nbsp;
+            <span style="color: #333">By</span> &nbsp; {{ item["Distributer"] }}
+          </nz-list-item-meta-description>
+        </nz-list-item-meta>
+        {{ item["Summary"] }}
+        <ul nz-list-item-actions>
+          <nz-list-item-action>
+            <span nz-icon nzType="comment" style="margin-right: 8px"></span>
+            {{ item["# of Critic Reviews"] }}
+          </nz-list-item-action>
+          <nz-list-item-action>
+            <span nz-icon nzType="smile" style="margin-right: 8px"></span>
+            🙂{{ item["Critic Positive"] }}
+          </nz-list-item-action>
+          <nz-list-item-action>
+            <span nz-icon nzType="meh" style="margin-right: 8px"></span>
+            🫥{{ item["Critic Negative"] }}
+          </nz-list-item-action>
+        </ul>
+        <nz-list-item-extra>
+          <img
+            width="180"
+            alt="logo"
+            src="../../../../assets/images/game.png"
+          />
+        </nz-list-item-extra>
+      </nz-list-item>
+    </nz-list>
   </nz-spin>
   <nz-pagination
     [nzPageIndex]="page"
