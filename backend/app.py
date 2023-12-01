@@ -7,6 +7,7 @@ from views.user import user
 from views.games import game
 from views.reviews import review
 from utils import read_dataset
+from utils import init_admin
 
 
 if __name__ == '__main__':
@@ -14,6 +15,7 @@ if __name__ == '__main__':
     try:
         if not db.get_db():
             read_dataset()
+        init_admin()
         time.sleep(1)
         app = Flask(__name__)
         CORS(app, supports_credentials=True)
@@ -23,7 +25,7 @@ if __name__ == '__main__':
         app.register_blueprint(game, url_prefix="/")
         app.register_blueprint(review, url_prefix="/")
         app.config["SECRET_KEY"] = 'game dataset'
-        app.run(debug=True)
+        # app.run(debug=True)
         app.run(host='127.0.0.1', port=5000, debug=True)
     except Exception:
         traceback.print_exc()

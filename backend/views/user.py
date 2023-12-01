@@ -22,7 +22,7 @@ def login():
             content = {"code": 200, "msg": "SUCCESS",
                        "data": {"token": token}}
         else:
-            content = {"code": 500, "msg": "用户数据错误"}
+            content = {"code": 500, "msg": "username or password is wrong!"}
     except Exception as e:
         import traceback
         traceback.print_exc()

@@ -75,6 +75,7 @@ export class ListComponent implements OnInit {
       value: 'all',
     },
   ];
+  isAdmin: boolean = false; // Indicates if the user is an admin
 
   // Constructor with necessary service injections
   constructor(
@@ -88,6 +89,7 @@ export class ListComponent implements OnInit {
 
   // OnInit lifecycle hook to initialize forms and fetch initial data
   ngOnInit() {
+    this.isAdmin = localStorage.getItem('username') == 'admin';
     this.initializeCreateForm();
     this.initializeSearchForm();
     this.getGameList();
@@ -111,10 +113,8 @@ export class ListComponent implements OnInit {
   initializeSearchForm() {
     this.searchQueryForm = this.formBuilder.group({
       // Form controls for search
-      title: [null],
-      director: [null],
-      country: [null],
-      type: ['all', [Validators.required]],
+      Title: [null],
+      Developer: [null],
     });
   }
 
@@ -158,17 +158,10 @@ export class ListComponent implements OnInit {
 
   // Fetch the list of items
   getGameList() {
-    let search = '';
-    if (this.searchQueryForm.value)
-      Object.entries(this.searchQueryForm.value).forEach(([key, val]: any) => {
-        if (val && key != 'type') search = search + val;
-      });
-
     let params = {
       page: this.currentPage,
       size: this.pageSize,
-      search: search ? search : '',
-      type: this.searchQueryForm.value.type || 'all',
+      ...this.searchQueryForm.value,
     };
 
     this.apiService.post('/game/getGames', params).subscribe(

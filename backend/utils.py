@@ -5,7 +5,7 @@ import base64
 import random
 import pandas
 import time
-from config import client, DATASET_PATH, DATABASE_NAME, COLLECTION
+from config import client, DATASET_PATH, DATABASE_NAME, COLLECTION, USER_COLLECTION
 
 
 class JSONEncoder(json.JSONEncoder):
@@ -42,6 +42,13 @@ def read_dataset():
     database[COLLECTION].insert_many(list_data)
     return data
 
+def init_admin():
+    database = client[DATABASE_NAME]
+    dbUser = database[USER_COLLECTION]
+    admin = dbUser.find_one({"username": "admin", "password": "123456"})
+    if not admin:
+        admin = {"username": "admin", "password": "123456"}
+        dbUser.insert_one(admin)
 
 if __name__ == '__main__':
     print(read_dataset()[0])

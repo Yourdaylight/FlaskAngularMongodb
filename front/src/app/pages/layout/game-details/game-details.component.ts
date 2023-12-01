@@ -46,6 +46,7 @@ export class GameDetailsComponent implements OnInit {
     },
   ];
   isVisible: boolean = false;
+  isAdmin: boolean = false; // Indicates if the user is an admin
 
   constructor(
     private route: ActivatedRoute,
@@ -57,6 +58,7 @@ export class GameDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isAdmin = localStorage.getItem('username') == 'admin';
     this.gameInfo = JSON.parse(localStorage.getItem('gameInfo') as any);
     this.editForm = this.fb.group({
       Title: [null, [Validators.required]],

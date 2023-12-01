@@ -25,6 +25,7 @@
       ></span>
       <span style="float: right">
         <span
+          *ngIf="isAdmin"
           nz-icon
           nzType="delete"
           nzTheme="outline"
@@ -32,6 +33,7 @@
           [style]="{ marginRight: '10px', cursor: 'pointer' }"
         ></span>
         <span
+          *ngIf="isAdmin"
           nz-icon
           nzType="edit"
           nzTheme="outline"
@@ -77,6 +79,7 @@
       <nz-comment-content>
         <p>{{ item.review }}</p>
         <i
+          *ngIf="isAdmin"
           nz-icon
           nzType="delete"
           nzTheme="outline"
