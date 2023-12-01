@@ -30,24 +30,24 @@ export class LoginComponent implements OnInit {
       let url = type == 'login' ? 'login' : 'register';
       console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
-        const { code, msg, data } = res;
-        if (code === 0) {
+        const { code, message, data } = res;
+        console.log(code, message, data);
+        if (code === 200) {
           if (type == 'login') {
             this.$message.success('Login Success!');
             localStorage.setItem('username', loginModel.username);
             localStorage.setItem('token', data?.token);
-            localStorage.setItem('role', data?.role);
             setTimeout(() => {
               this.navigateService.navigate('layout');
-            }, 200);
+            }, 100);
           } else {
             this.$message.success('Regist success！');
             setTimeout(() => {
               this.curStatus = 'Login';
-            }, 200);
+            }, 100);
           }
         } else {
-          this.$message.error(msg);
+          this.$message.error(message);
         }
       });
     } else {

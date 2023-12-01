@@ -1,14 +1,15 @@
 import json
+import defines
 import traceback
 import uuid
 from flask import Flask, request
 from flask_cors import CORS
 from views import employee
-import defines
+
 
 # Set up database connection
 database = defines.client[defines.DATABASE_NAME]
-employees_collection = database["employee"]
+employees_collection = database[defines.EMPLOYEE_COLLECTION]
 
 # Create Flask application
 app = Flask(__name__)

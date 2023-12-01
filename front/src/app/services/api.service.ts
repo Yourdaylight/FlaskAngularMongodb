@@ -7,7 +7,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   providedIn: 'root',
 })
 export class ApiService {
-  _baseUrl = 'http://127.0.0.1:5000/';
+  _baseUrl = 'http://127.0.0.1:5000/api/employee/';
   constructor(
     private httpClient: HttpClient,
     private dialogService: NzMessageService

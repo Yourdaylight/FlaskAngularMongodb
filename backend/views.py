@@ -2,12 +2,12 @@ import time, json, bson
 import datetime
 import traceback
 from bson import ObjectId
-from defines import client, DATABASE_NAME, COLLECTION, USER_COLLECTION
+from defines import client, DATABASE_NAME, DATA_COLLECTION,EMPLOYEE_COLLECTION
 from flask import Blueprint, request, jsonify, Response
 
 employee = Blueprint('employee', __name__)
-user_collection = client[DATABASE_NAME][USER_COLLECTION]
-employee_collection = client[DATABASE_NAME][COLLECTION]
+employee_collection = client[DATABASE_NAME][EMPLOYEE_COLLECTION]
+data_collection = client[DATABASE_NAME][DATA_COLLECTION]
 
 
 class JSONEncoder(json.JSONEncoder):
@@ -38,9 +38,9 @@ def employee_list():
                 filters[field] = params[field]
 
         # Query the employee collection
-        employees_query = employee_collection.find(filters)
+        employees_query = data_collection.find(filters)
         employees = list(employees_query.skip((page - 1) * size).limit(size).sort("update_time", -1))
-        total_employees = employee_collection.count_documents(filters)
+        total_employees = data_collection.count_documents(filters)
 
         content.update({"code": 200, "total": total_employees, "data": employees, "msg": "SUCCESS"})
     except Exception as e:
@@ -54,7 +54,7 @@ def new_employee():
     try:
         employee_data = request.json
         # 检查EmployeeName是否存在，存在则在EmployeeName后面加上时间戳
-        if employee_collection.find_one({"EmployeeName": employee_data["EmployeeName"]}):
+        if data_collection.find_one({"EmployeeName": employee_data["EmployeeName"]}):
             employee_data["EmployeeName"] = employee_data["EmployeeName"] + "_" + str(int(time.time()))
 
         int_fields = ["Age", "DistanceFromHome", "Education", "JobLevel", "MonthlyIncome", "NumCompaniesWorked"]
@@ -66,14 +66,14 @@ def new_employee():
                     return jsonify({"code": 500, "msg": f"Field: [{field}] must be an integer"}), 400
 
         # 获取数据库中employeeId最大值
-        max_employee_id = employee_collection.find_one(sort=[("EmployeeID", -1)])["EmployeeID"]
+        max_employee_id = data_collection.find_one(sort=[("EmployeeID", -1)])["EmployeeID"]
         employee_data["EmployeeID"] = max_employee_id + 1
         # 添加时间戳
         employee_data["date_added"] = datetime.datetime.now().strftime("%Y-%m-%d")
         employee_data["update_time"] = time.time()
 
         # 插入数据
-        employee_collection.insert_one(employee_data)
+        data_collection.insert_one(employee_data)
         res = {
             "code": 200,
             "msg": "SUCCESS",
@@ -94,7 +94,7 @@ def del_employee():
             raise ValueError("Employee ID is not provided")
 
         # 使用或运算符，如果_id存在则使用_id，否则使用EmployeeID
-        deletion_result = employee_collection.delete_one(
+        deletion_result = data_collection.delete_one(
             {
                 "$or": [
                     {"EmployeeID": employee_id},
@@ -118,7 +118,7 @@ def update_employee():
         if not employee_id:
             raise ValueError("Missing employee ID")
 
-        employee_collection.update_one(
+        data_collection.update_one(
             {"EmployeeID": employee_id},
             {"$set": update_data}
         )
