@@ -1,7 +1,7 @@
 <div style="padding: 10px 10%">
   <div class="song-info">
     <img
-      style="width: 60%; height: 400px"
+      style="width: 60%; height: 450px"
       src="../../../../assets/images/game.png"
     />
     <div class="song-info-basic">
@@ -26,57 +26,47 @@
             nz-button
             nzType="default"
             nzSize="small"
-            style="float: left"
+            style="float: right"
             routerLink="/layout/list"
           >
             < Back
           </button>
         </span>
       </div>
-      <!-- <div>director: {{ movieInfo.director }}</div>
-    <div>duration: {{ movieInfo.duration }}</div>
-    <div>country: {{ movieInfo.country }}</div>
-    <div>release year: {{ movieInfo.release_year }}</div>
-    <div>description: {{ movieInfo.description }}</div> -->
+      <div>Developer: {{ movieInfo.Developer }}</div>
+      <!-- <div>duration: {{ movieInfo.duration }}</div> -->
+      <!-- <div>country: {{ movieInfo.country }}</div> -->
+      <div>Release Date: {{ movieInfo["Release Date"] }}</div>
+      <!-- <div>description: {{ movieInfo.description }}</div> -->
     </div>
   </div>
   <h2 style="margin-top: 20px; border-bottom: 1px solid #eee">Details</h2>
-  <nz-list
-    [nzDataSource]="commentList"
-    [nzRenderItem]="item"
-    [nzItemLayout]="'horizontal'"
-  >
-    <ng-template #item let-item>
-      <nz-comment [nzAuthor]="item.username" [nzDatetime]="item.update_time">
-        <nz-avatar
-          nz-comment-avatar
-          nzIcon="user"
-          [nzSrc]="item.avatar"
-        ></nz-avatar>
-        <nz-comment-content>
-          <p>{{ item.comment }}</p>
-          <i
-            nz-icon
-            nzType="delete"
-            nzTheme="outline"
-            (click)="removeComment(item)"
-            style="cursor: pointer"
-          ></i>
-        </nz-comment-content>
-      </nz-comment>
-    </ng-template>
-  </nz-list>
-  <h2 style="margin-top: 20px; border-bottom: 1px solid #eee">All Platforms</h2>
-  <nz-card nzTitle="Cart Title">
-    <div nz-card-grid *ngFor="let item of movieInfo['Also On'].split(',')">
+  <nz-descriptions nzTitle="">
+    <nz-descriptions-item nzTitle="Distributer">{{
+      movieInfo.Distributer
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Developer">{{
+      movieInfo.Developer
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Release Date">{{
+      movieInfo["Release Date"]
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Genres">{{
+      movieInfo.Genres
+    }}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Awards">{{
+      movieInfo.Awards
+    }}</nz-descriptions-item>
+  </nz-descriptions>
+  <h2 style="margin-top: 40px; border-bottom: 1px solid #eee">All Platforms</h2>
+  <nz-card nzTitle="Also on">
+    <div
+      nz-card-grid
+      *ngFor="let item of movieInfo['Also On'].split(',')"
+      style="font-weight: bold"
+    >
       {{ item }}
     </div>
-    <div nz-card-grid>Content</div>
-    <div nz-card-grid>Content</div>
-    <div nz-card-grid>Content</div>
-    <div nz-card-grid>Content</div>
-    <div nz-card-grid>Content</div>
-    <div nz-card-grid>Content</div>
   </nz-card>
   <nz-modal
     [(nzVisible)]="isVisible"
