@@ -23,44 +23,36 @@ export class MovieDetailsComponent implements OnInit {
   editForm!: FormGroup;
   editField: any = [
     {
-      label: 'Title',
-      value: 'title',
+      label: 'Name',
+      value: 'Name',
     },
     {
-      label: 'Type',
-      value: 'type',
+      label: 'Distributor',
+      value: 'Distributor',
     },
     {
-      label: 'Director',
-      value: 'director',
+      label: 'Developer',
+      value: 'Developer',
     },
     {
-      label: 'Cast',
-      value: 'cast',
+      label: 'Release Date',
+      value: 'Release Date',
     },
     {
-      label: 'Country',
-      value: 'country',
+      label: 'Summary',
+      value: 'Summary',
     },
     {
-      label: 'Release year',
-      value: 'release_year',
+      label: '# of Critic Reviews',
+      value: '# of Critic Reviews',
     },
     {
-      label: 'Duration',
-      value: 'duration',
+      label: 'Critic Positive',
+      value: 'Critic Positive',
     },
     {
-      label: 'Listed in',
-      value: 'listed_in',
-    },
-    {
-      label: 'Description',
-      value: 'description',
-    },
-    {
-      label: 'Image Url',
-      value: 'pic_url',
+      label: 'Critic Negative',
+      value: 'Critic Negative',
     },
   ];
   isVisible: boolean = false;
@@ -77,16 +69,14 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.movieInfo = JSON.parse(localStorage.getItem('movieInfo') as any);
     this.editForm = this.fb.group({
-      title: [null, [Validators.required]],
-      type: [null, [Validators.required]],
-      director: [null, [Validators.required]],
-      cast: [null, [Validators.required]],
-      country: [null, [Validators.required]],
-      release_year: [null, [Validators.required]],
-      duration: [null, [Validators.required]],
-      listed_in: [null, [Validators.required]],
-      description: [null, [Validators.required]],
-      pic_url: [null, [Validators.required]],
+      Name: [null, [Validators.required]],
+      Distributor: [null, [Validators.required]],
+      Developer: [null, [Validators.required]],
+      'Release Date': [null, [Validators.required]],
+      Summary: [null, [Validators.required]],
+      '# of Critic Reviews': [null, [Validators.required]],
+      'Critic Positive': [null, [Validators.required]],
+      'Critic Negative': [null, [Validators.required]],
     });
     this.getCommentList();
   }
@@ -158,9 +148,9 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.apiService.post('deleteMovie', { _id: this.movieInfo._id }).subscribe(
+    this.apiService.post('del_game', { _id: this.movieInfo._id }).subscribe(
       (res: any) => {
-        this.$message.success(`delete ${this.movieInfo.title} success!`);
+        this.$message.success(`Delete ${this.movieInfo.Name} Success!`);
         this.router.navigate(['/layout/list'], {});
       },
       () => {}
@@ -173,7 +163,7 @@ export class MovieDetailsComponent implements OnInit {
   submitForm(): void {
     if (this.editForm.valid) {
       let params = { ...this.editForm.value, _id: this.movieInfo._id };
-      this.apiService.post('updateMovie', params).subscribe(
+      this.apiService.post('update_game', params).subscribe(
         (res: any) => {
           this.isVisible = false;
           this.$message.success(`edit success!`);

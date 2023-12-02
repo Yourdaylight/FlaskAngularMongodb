@@ -3,14 +3,10 @@
   nzLayout="inline"
   [formGroup]="searchForm"
   (ngSubmit)="getMovieList()"
+  style="padding: 20px 10%"
 >
-  <div nz-row>
-    <div
-      nz-col
-      nzSpan="8"
-      *ngFor="let field of searchField"
-      style="margin-top: 20px"
-    >
+  <div nz-row style="width: 100%">
+    <div nz-col nzSpan="6" *ngFor="let field of searchField">
       <nz-form-item>
         <nz-form-label>{{ field.label }}</nz-form-label>
         <nz-form-control [nzErrorTip]="'Please input ' + field.label!">
@@ -35,7 +31,7 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <div nz-col nzSpan="8" style="margin-top: 20px">
+    <div nz-col nzSpan="6">
       <button nz-button nzType="primary">Submit</button>
       <button
         nz-button
@@ -43,7 +39,7 @@
         (click)="isVisible = true"
         style="margin-left: 15px"
       >
-        <i nz-icon nzType="plus" nzTheme="outline"></i>Add Movie
+        <i nz-icon nzType="plus" nzTheme="outline"></i>Add
       </button>
     </div>
   </div>
@@ -56,7 +52,6 @@
         <nz-list-item-meta>
           <nz-list-item-meta-title>
             <a
-              href="{{ item.href }}"
               style="
                 color: #373737;
                 font-weight: bolder;
@@ -64,6 +59,7 @@
                 margin-right: 15px;
                 text-decoration: underline;
               "
+              (click)="toDetail(item)"
               >{{ item.Name }}</a
             >
             <!-- <span
@@ -81,19 +77,21 @@
             <span style="color: #333">By</span> &nbsp; {{ item["Distributer"] }}
           </nz-list-item-meta-description>
         </nz-list-item-meta>
-        {{ item["Summary"] }}
+        <div class="text-overflow" [title]="item.Summary">
+          {{ item["Summary"] }}
+        </div>
         <ul nz-list-item-actions>
           <nz-list-item-action>
-            <span nz-icon nzType="comment" style="margin-right: 8px"></span>
+            <span style="margin-right: 8px">💬</span>
             {{ item["# of Critic Reviews"] }}
           </nz-list-item-action>
           <nz-list-item-action>
-            <span nz-icon nzType="smile" style="margin-right: 8px"></span>
-            🙂{{ item["Critic Positive"] }}
+            <span style="margin-right: 8px">🙂</span>
+            {{ item["Critic Positive"] }}
           </nz-list-item-action>
           <nz-list-item-action>
-            <span nz-icon nzType="meh" style="margin-right: 8px"></span>
-            🫥{{ item["Critic Negative"] }}
+            <span style="margin-right: 8px">😐</span>
+            {{ item["Critic Negative"] }}
           </nz-list-item-action>
         </ul>
         <nz-list-item-extra>

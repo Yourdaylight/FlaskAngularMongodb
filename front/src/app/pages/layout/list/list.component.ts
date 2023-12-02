@@ -25,44 +25,36 @@ export class ListComponent implements OnInit {
   addForm!: FormGroup;
   addField: any = [
     {
-      label: 'Title',
-      value: 'title',
+      label: 'Name',
+      value: 'Name',
     },
     {
-      label: 'Type',
-      value: 'type',
+      label: 'Distributor',
+      value: 'Distributor',
     },
     {
-      label: 'Director',
-      value: 'director',
+      label: 'Developer',
+      value: 'Developer',
     },
     {
-      label: 'Cast',
-      value: 'cast',
+      label: 'Release Date',
+      value: 'Release Date',
     },
     {
-      label: 'Country',
-      value: 'country',
+      label: 'Summary',
+      value: 'Summary',
     },
     {
-      label: 'Release year',
-      value: 'release_year',
+      label: '# of Critic Reviews',
+      value: '# of Critic Reviews',
     },
     {
-      label: 'Duration',
-      value: 'duration',
+      label: 'Critic Positive',
+      value: 'Critic Positive',
     },
     {
-      label: 'Listed in',
-      value: 'listed_in',
-    },
-    {
-      label: 'Description',
-      value: 'description',
-    },
-    {
-      label: 'Image Url',
-      value: 'pic_url',
+      label: 'Critic Negative',
+      value: 'Critic Negative',
     },
   ];
   page: number = 1;
@@ -71,20 +63,16 @@ export class ListComponent implements OnInit {
   searchForm!: FormGroup;
   searchField: any = [
     {
-      label: 'Title',
-      value: 'Title',
+      label: 'Name',
+      value: 'Name',
     },
     {
-      label: 'Director',
-      value: 'director',
+      label: 'Distributor',
+      value: 'Distributor',
     },
     {
-      label: 'Country',
-      value: 'country',
-    },
-    {
-      label: 'Type',
-      value: 'type',
+      label: 'Developer',
+      value: 'Developer',
     },
   ];
   typeOption: any = [
@@ -113,22 +101,19 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.addForm = this.fb.group({
-      title: [null],
-      type: [null],
-      director: [null],
-      cast: [null],
-      country: [null],
-      release_year: [null],
-      duration: [null],
-      listed_in: [null],
-      description: [null],
-      pic_url: [null],
+      Name: [null, [Validators.required]],
+      Distributor: [null, [Validators.required]],
+      Developer: [null, [Validators.required]],
+      'Release Date': [null, [Validators.required]],
+      Summary: [null, [Validators.required]],
+      '# of Critic Reviews': [null, [Validators.required]],
+      'Critic Positive': [null, [Validators.required]],
+      'Critic Negative': [null, [Validators.required]],
     });
     this.searchForm = this.fb.group({
-      title: [null],
-      director: [null],
-      country: [null],
-      type: ['all', [Validators.required]],
+      Name: [null],
+      Distributor: [null],
+      Developer: [null],
     });
     this.getMovieList();
   }
@@ -136,7 +121,7 @@ export class ListComponent implements OnInit {
   submitForm(): void {
     if (this.addForm.valid) {
       let params = { ...this.addForm.value };
-      this.apiService.post('addMovie', params).subscribe(
+      this.apiService.post('new_game', params).subscribe(
         (res: any) => {
           this.isVisible = false;
           this.getMovieList();
@@ -174,21 +159,11 @@ export class ListComponent implements OnInit {
   }
 
   getMovieList() {
-    let search = '';
-    console.log(this.searchForm.value);
-    if (this.searchForm.value)
-      Object.entries(this.searchForm.value).forEach(([key, val]: any) => {
-        if (val && key != 'type') search = search + val;
-      });
-    console.log(search);
     let params = {
       page: this.page,
       size: this.size,
-      search: search ? search : '',
-      type:
-        this.searchForm.value.type == null ? 'all' : this.searchForm.value.type,
+      ...this.searchForm.value,
     };
-
     this.apiService.post('game_list', params).subscribe(
       (res: any) => {
         this.loading = false;

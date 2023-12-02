@@ -1,5 +1,6 @@
 :host ::ng-deep .login .login-form {
   max-width: 100%;
+  margin-top: 60px;
 }
 .login {
   width: 100%;
@@ -20,10 +21,15 @@
     opacity: 0;
   }
   .login-title {
-    margin: 10px 0 20px 0;
-    text-align: center;
+    // margin: 10px 0 20px 0;
+    // text-align: center;
     font-weight: bold;
     font-size: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
   }
   .login-container {
     padding-top: calc(50% - 200px);
@@ -57,16 +63,28 @@
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   }
   .contenter {
-    width: 400px;
+    width: 600px;
     height: 340px;
     position: absolute;
     top: calc(50% - 200px);
-    right: calc(50% - 200px);
+    right: calc(50% - 300px);
     z-index: 999;
     // background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    padding: 20px 30px 20px;
+    // padding: 20px 30px 20px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    display: flex;
+    > div {
+      width: 40%;
+      height: 100%;
+      padding: 20px 30px 20px;
+      &:last-child {
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
   }
   .title {
     font-size: 26px;
