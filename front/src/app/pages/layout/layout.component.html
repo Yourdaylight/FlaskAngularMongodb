@@ -1,13 +1,10 @@
 <div class="layout">
   <nz-layout class="app-layout">
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-      <div class="logo">Movie App</div>
+      <div class="logo">Employee Data Management System</div>
       <ul nz-menu nzTheme="dark" nzMode="inline">
         <li nz-menu-item nzMatchRouter>
-          <a routerLink="/layout/list">Movies/TV shows</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/layout/favorite">Favorite</a>
+          <a routerLink="/layout/list">Employees manage</a>
         </li>
       </ul>
     </nz-sider>
@@ -24,7 +21,7 @@
           <router-outlet></router-outlet>
         </div>
       </nz-content>
-      <!-- <nz-footer>Movie App ©2022 Implement By me</nz-footer> -->
+       <nz-footer>Employee Data Management System ©2023 Implement By Myself</nz-footer>
     </nz-layout>
   </nz-layout>
 </div>
