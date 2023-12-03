@@ -20,7 +20,7 @@
 
 <!-- 员工信息显示区域 -->
 <div style="padding: 5px 30px">
-  <button nz-button nzType="primary" (click)="showAddEmployeeModal()">Add Employee</button>
+  <button nz-button nzType="primary" (click)="showAddEmployeeModal()">Add/Update a Employee</button>
   <nz-spin [nzSpinning]="loading">
     <nz-table #employeeTable [nzData]="employeeList" [nzPageSize]="10">
       <thead>
@@ -46,6 +46,7 @@
       <tr *ngFor="let employee of employeeTable.data">
         <td>
           <!-- 删除按钮 -->
+          <button nz-button  (click)="showEditEmployeeModal(employee)">E d i t ✏</button>
           <button nz-button nzDanger (click)="deleteEmployee(employee.EmployeeID)">Delete❌</button>
         </td>
         <td>{{ employee.EmployeeName }}</td>
@@ -68,7 +69,17 @@
       </tr>
       </tbody>
     </nz-table>
+      <nz-pagination
+    [nzPageIndex]="page"
+    [nzTotal]="total"
+    nzShowSizeChanger
+    [nzPageSize]="size"
+    (nzPageIndexChange)="pageChange($event)"
+    (nzPageSizeChange)="pageSizeChange($event)"
+    style="text-align: right"
+  ></nz-pagination>
   </nz-spin>
+
 </div>
 
 
@@ -84,7 +95,7 @@
         <div nz-col [nzSpan]="24">
           <nz-form-item>
             <nz-form-label [nzFor]="'EmployeeName'">Employee Name</nz-form-label>
-            <nz-form-control>
+            <nz-form-control nzErrorTip="Please enter employee name" [nzValidateStatus]="addForm.controls['EmployeeName']">
               <input nz-input formControlName="EmployeeName"/>
             </nz-form-control>
           </nz-form-item>
@@ -101,16 +112,18 @@
 
           <nz-form-item>
             <nz-form-label [nzFor]="'Age'">Age</nz-form-label>
-            <nz-form-control>
+            <nz-form-control nzErrorTip="Please enter a valid age" [nzValidateStatus]="addForm.controls['Age']">
               <input nz-input formControlName="Age"/>
             </nz-form-control>
           </nz-form-item>
+
           <nz-form-item>
             <nz-form-label [nzFor]="'Department'">Department</nz-form-label>
             <nz-form-control>
               <input nz-input formControlName="Department"/>
             </nz-form-control>
           </nz-form-item>
+
           <nz-form-item>
             <nz-form-label [nzFor]="'DistanceFromHome'">Distance From Home</nz-form-label>
             <nz-form-control>
@@ -151,7 +164,7 @@
             </nz-form-control>
           </nz-form-item>
 
-       <nz-form-item>
+          <nz-form-item>
             <nz-form-label [nzFor]="'MonthlyIncome'">Monthly Income</nz-form-label>
             <nz-form-control>
               <input nz-input formControlName="MonthlyIncome"/>

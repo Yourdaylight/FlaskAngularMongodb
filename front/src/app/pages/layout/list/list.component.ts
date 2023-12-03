@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   addForm!: FormGroup;
   searchForm!: FormGroup;
   page: number = 1;
-  size: number = 18;
+  size: number = 10;
   total: number = 0;
   educationMapping: { [key: string]: string } = {
     '1': 'High School',
@@ -50,6 +50,8 @@ export class ListComponent implements OnInit {
     {'label': 'Married', 'value': 'Married'},
     {'label': 'Divorced', 'value': 'Divorced'},
   ];
+  isEditMode: boolean = false;
+  editingEmployee: any = null;
 
   constructor(
     private fb: FormBuilder,
@@ -85,6 +87,7 @@ export class ListComponent implements OnInit {
       JobRole: [null, Validators.required],
       MaritalStatus: [this.maritialOptions[0].value, Validators.required],
       MonthlyIncome: [null, Validators.required],
+      EmployeeID: [null],
     });
 
     this.searchForm = this.fb.group({
@@ -96,7 +99,32 @@ export class ListComponent implements OnInit {
   }
 
   showAddEmployeeModal(): void {
-    this.isVisible = true; // 设置模态框可见
+    this.isEditMode = false;
+    this.editingEmployee = null;
+    this.addForm.reset({
+      Attrition: this.attritionOptions[0].value,
+      Education: this.educationOptions[0].value,
+      Gender: this.genderOptions[0].value,
+      JobLevel: this.jobLevelOptions[0].value,
+      MaritalStatus: this.maritialOptions[0].value,
+    });
+    this.isVisible = true;
+  }
+
+  // 打开模态窗口以编辑现有员工
+  showEditEmployeeModal(employee: any): void {
+    this.isEditMode = true;
+    this.editingEmployee = employee;
+    this.addForm.patchValue(employee);
+    // 修复下拉框无法正确显示的问题
+    this.addForm.patchValue({
+      Attrition: employee.Attrition,
+      Education: this.educationOptions.find(option => option.label === employee.Education)?.value || this.educationOptions[0].value,
+      Gender: this.genderOptions.find(option => option.label === employee.Gender)?.value || this.genderOptions[0].value,
+      JobLevel: this.genderOptions.find(option => option.label === employee.Joblevel)?.value || this.jobLevelOptions[0].value,
+      MaritalStatus: employee.MaritalStatus,
+    });
+    this.isVisible = true;
   }
 
   deleteEmployee(employeeId: number): void {
@@ -143,20 +171,28 @@ export class ListComponent implements OnInit {
   submitForm(): void {
     if (this.addForm.valid) {
       const params = this.addForm.value;
-      this.apiService.post('add', params).subscribe(
-        (res: any) => {
-          if (res.code === 200) {
-            this.isVisible = false;
-            this.messageService.success('Employee added successfully');
-            this.getEmployeeList(); // 重新获取员工列表
-          } else {
-            this.messageService.error('Failed to add employee');
+      //编辑操作
+      if (this.isEditMode) {
+        console.log(params)
+      }
+      //新增操作
+      else {
+        this.apiService.post('add', params).subscribe(
+          (res: any) => {
+            if (res.code === 200) {
+              this.isVisible = false;
+              this.messageService.success('Employee added successfully');
+              this.getEmployeeList(); // 重新获取员工列表
+            } else {
+              this.messageService.error('Failed to add employee');
+            }
+          },
+          error => {
+            this.messageService.error('Error: ' + error.message);
           }
-        },
-        error => {
-          this.messageService.error('Error: ' + error.message);
-        }
-      );
+        );
+      }
+
     } else {
       Object.values(this.addForm.controls).forEach(control => {
         if (control.invalid) {
@@ -166,16 +202,18 @@ export class ListComponent implements OnInit {
       });
     }
   }
+
   closeAddEmployeeModal(): void {
     this.isVisible = false;
   }
-  // pageChange(val: number) {
-  //   this.page = val;
-  //   console.log(val);
-  //   this.getMovieList();
-  // }
-  // pageSizeChange(val: number) {
-  //   this.size = val;
-  //   this.getMovieList();
-  // }
+
+  pageChange(val: number) {
+    this.page = val;
+    console.log(val);
+    this.getEmployeeList()
+  }
+  pageSizeChange(val: number) {
+    this.size = val;
+    this.getEmployeeList()
+  }
 }

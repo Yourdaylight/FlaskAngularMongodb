@@ -9,8 +9,9 @@ db.createUser({
 '''
 db_host = "192.168.1.6"
 db_port = 27017
+username = "admin"
 password = "LZHlzh.rootOOT"
-client = pymongo.MongoClient(db_host, db_port, username="admin", password=password)
+client = pymongo.MongoClient(db_host, db_port, username=username, password=password)
 DATABASE_NAME = "employee"
 DATA_COLLECTION = "data"
 EMPLOYEE_COLLECTION = "employee"
