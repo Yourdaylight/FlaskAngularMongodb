@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../../shared/shared.module';
-import { ListComponent } from './list.component';
-// import { FormatTimePipe } from '../../../pipe/formatTime.pipe';
+import { ListComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -19,4 +18,4 @@ import { ListComponent } from './list.component';
   declarations: [ListComponent],
   exports: [ListComponent],
 })
-export class ListModule {}
+export class HomeModule {}

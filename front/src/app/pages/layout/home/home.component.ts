@@ -5,13 +5,14 @@ import {ApiService} from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class ListComponent implements OnInit {
   employeeList: any[] = [];
   loading: boolean = true;
   isVisible: boolean = false;
+  totalRecords: number = 0;
   addForm!: FormGroup;
   searchForm!: FormGroup;
   page: number = 1;
@@ -92,8 +93,9 @@ export class ListComponent implements OnInit {
 
     this.searchForm = this.fb.group({
       EmployeeName: [null],
-      Department: [null],
-      // 根据需要添加更多搜索条件字段...
+      Education: [null],
+      JobLevel: [null],
+      Gender: [null],
     });
     this.getEmployeeList();
   }
@@ -150,6 +152,9 @@ export class ListComponent implements OnInit {
       page: this.page,
       size: this.size,
       EmployeeName: this.searchForm.value.EmployeeName || '',
+      Education: this.searchForm.value.Education || '',
+      Gender:  this.searchForm.value.Gender || '',
+      JobLevel: this.searchForm.value.JobLevel || '',
     };
     this.apiService.post('list', params).subscribe(
       (res: any) => {
@@ -167,6 +172,11 @@ export class ListComponent implements OnInit {
       }
     );
   }
+resetSearchForm(): void {
+  this.searchForm.reset();
+  this.getEmployeeList();
+
+}
 
   submitForm(): void {
     if (this.addForm.valid) {

@@ -2,7 +2,7 @@
 <form nz-form [formGroup]="searchForm" (ngSubmit)="getEmployeeList()">
   <div nz-row>
     <!-- 示例：根据员工姓名搜索 -->
-    <div nz-col nzSpan="8">
+    <div nz-col nzSpan="6">
       <nz-form-item>
         <nz-form-label [nzFor]="'EmployeeName'">Employee Name</nz-form-label>
         <nz-form-control>
@@ -10,17 +10,55 @@
         </nz-form-control>
       </nz-form-item>
     </div>
-    <!-- 添加更多搜索条件的输入字段 -->
-    <!-- ... -->
+    <!-- 教育水平下拉框 -->
+    <div nz-col nzSpan="5">
+      <nz-form-item>
+        <nz-form-label [nzFor]="'Education'">Education</nz-form-label>
+        <nz-form-control>
+          <nz-select formControlName="Education">
+            <nz-option *ngFor="let option of educationOptions" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <!--    职务下拉-->
+    <div nz-col nzSpan="5">
+      <nz-form-item>
+        <nz-form-label [nzFor]="'JobLevel'">Job Level</nz-form-label>
+        <nz-form-control>
+          <nz-select formControlName="JobLevel">
+            <nz-option *ngFor="let option of jobLevelOptions" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <!--性别-->
+    <div nz-col nzSpan="2">
+      <nz-form-item>
+        <nz-form-label [nzFor]="'Gender'">Gender</nz-form-label>
+        <nz-form-control>
+          <nz-select formControlName="Gender">
+            <nz-option *ngFor="let option of genderOptions" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+
     <div nz-col nzSpan="8">
       <button nz-button nzType="primary">Search</button>
+      <button nz-button nzType="default" (click)="resetSearchForm()">Clear Search</button>
     </div>
+
   </div>
 </form>
+
 
 <!-- 员工信息显示区域 -->
 <div style="padding: 5px 30px">
   <button nz-button nzType="primary" (click)="showAddEmployeeModal()">Add/Update a Employee</button>
+  <span>Total Records: {{ total }}</span>
   <nz-spin [nzSpinning]="loading">
     <nz-table #employeeTable [nzData]="employeeList" [nzPageSize]="10">
       <thead>
@@ -46,7 +84,7 @@
       <tr *ngFor="let employee of employeeTable.data">
         <td>
           <!-- 删除按钮 -->
-          <button nz-button  (click)="showEditEmployeeModal(employee)">E d i t ✏</button>
+          <button nz-button (click)="showEditEmployeeModal(employee)">E d i t ✏</button>
           <button nz-button nzDanger (click)="deleteEmployee(employee.EmployeeID)">Delete❌</button>
         </td>
         <td>{{ employee.EmployeeName }}</td>
@@ -69,15 +107,15 @@
       </tr>
       </tbody>
     </nz-table>
-      <nz-pagination
-    [nzPageIndex]="page"
-    [nzTotal]="total"
-    nzShowSizeChanger
-    [nzPageSize]="size"
-    (nzPageIndexChange)="pageChange($event)"
-    (nzPageSizeChange)="pageSizeChange($event)"
-    style="text-align: right"
-  ></nz-pagination>
+    <nz-pagination
+      [nzPageIndex]="page"
+      [nzTotal]="total"
+      nzShowSizeChanger
+      [nzPageSize]="size"
+      (nzPageIndexChange)="pageChange($event)"
+      (nzPageSizeChange)="pageSizeChange($event)"
+      style="text-align: right"
+    ></nz-pagination>
   </nz-spin>
 
 </div>

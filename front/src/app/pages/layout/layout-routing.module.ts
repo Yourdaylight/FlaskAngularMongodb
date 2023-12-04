@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
-        path: 'list',
+        path: 'home',
         loadChildren: () =>
-          import('./list/list.module').then((m) => m.ListModule),
+          import('./home/home.module').then((m) => m.HomeModule),
       }
     ],
   },

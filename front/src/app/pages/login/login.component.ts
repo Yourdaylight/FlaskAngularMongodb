@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
       console.log('submit', this.validateForm.value);
       let loginModel = Object.assign(this.validateForm.value, {});
       let url = type == 'login' ? 'login' : 'register';
-      console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
         const { code, message, data } = res;
         console.log(code, message, data);

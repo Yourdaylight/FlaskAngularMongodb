@@ -27,24 +27,26 @@ def employee_list():
 
         # Construct query filters
         fuzzy_search_fields = "EmployeeName"
-        exact_match_fields = ["Department", "JobLevel", "MaritalStatus", "Age"]
+        exact_match_fields = ["Education", "JobLevel", "Gender"]
 
         filters = {}
         if "EmployeeName" in params:
-            filters[fuzzy_search_fields] = {"$regex": params[fuzzy_search_fields], "$options": "i"}
+            if params.get("EmployeeName"):
+                filters[fuzzy_search_fields] = {"$regex": params[fuzzy_search_fields], "$options": "i"}
 
         for field in exact_match_fields:
             if field in params:
-                filters[field] = params[field]
+                if params.get(field):
+                    filters[field] = int(params[field])
 
         # Query the employee collection
         employees_query = data_collection.find(filters)
         employees = list(employees_query.skip((page - 1) * size).limit(size).sort("update_time", -1))
         total_employees = data_collection.count_documents(filters)
 
-        content.update({"code": 200, "total": total_employees, "data": employees, "msg": "SUCCESS"})
+        content.update({"code": 200, "total": total_employees, "data": employees, "message": "SUCCESS"})
     except Exception as e:
-        content = {"code": 500, "msg": f"Error: {e}"}
+        content = {"code": 500, "message": f"Error: {e}"}
 
     return Response(JSONEncoder().encode(content), mimetype='application/json')
 
@@ -63,7 +65,7 @@ def new_employee():
                 try:
                     employee_data[field] = int(employee_data[field])
                 except ValueError:
-                    return jsonify({"code": 500, "msg": f"Field: [{field}] must be an integer"}), 400
+                    return jsonify({"code": 500, "message": f"Field: [{field}] must be an integer"}), 400
 
         # 获取数据库中employeeId最大值
         max_employee_id = data_collection.find_one(sort=[("EmployeeID", -1)])["EmployeeID"]
@@ -76,13 +78,13 @@ def new_employee():
         data_collection.insert_one(employee_data)
         res = {
             "code": 200,
-            "msg": "SUCCESS",
+            "message": "SUCCESS",
             "employee_id": employee_data["EmployeeID"],
         }
         return jsonify(res)
     except Exception as e:
         traceback.print_exc()
-        return jsonify({"code": 500, "msg": str(e)})
+        return jsonify({"code": 500, "message": str(e)})
 
 
 @employee.route('/api/employee/delete', methods=['POST', 'GET'])
@@ -104,9 +106,9 @@ def del_employee():
         )
         if deletion_result.deleted_count == 0:
             raise ValueError("No employee found with the provided ID")
-        return jsonify({"code": 200, "msg": "Employee successfully deleted"})
+        return jsonify({"code": 200, "message": "Employee successfully deleted"})
     except Exception as e:
-        return jsonify({"code": 500, "msg": f"Error occurred: {e}"}), 500
+        return jsonify({"code": 500, "message": f"Error occurred: {e}"}), 500
 
 
 @employee.route('/api/employee/update', methods=['POST', 'GET'])
@@ -122,6 +124,6 @@ def update_employee():
             {"EmployeeID": employee_id},
             {"$set": update_data}
         )
-        return jsonify({"code": 200, "msg": "Employee information updated successfully"})
+        return jsonify({"code": 200, "message": "Employee information updated successfully"})
     except Exception as e:
-        return jsonify({"code": 500, "msg": f"Update failed: {e}"}), 500
+        return jsonify({"code": 500, "message": f"Update failed: {e}"}), 500

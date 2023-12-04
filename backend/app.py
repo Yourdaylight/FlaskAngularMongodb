@@ -2,7 +2,7 @@ import json
 import defines
 import traceback
 import uuid
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from views import employee
 
@@ -37,7 +37,7 @@ def employee_login():
     except Exception as e:
         response = {"code": 500, "message": f"Error: {str(e)}"}
 
-    return json.dumps(response), response['code']
+    return jsonify(response)
 
 
 @app.route('/api/employee/register', methods=['POST'])
@@ -50,14 +50,14 @@ def employee_registration():
     employee_password = employee_data.get('password')
 
     if employees_collection.find_one({"employee_id": employee_id}):
-        return json.dumps({"code": 409, "message": "Employee ID already exists"}), 409
+        return jsonify({"code": 400, "message": "Employee already exists."})
 
     try:
         employees_collection.insert_one({"employee_id": employee_id, "password": employee_password})
-        return json.dumps({"code": 200, "message": "Registration successful"}), 200
+        return jsonify({"code": 200, "message": "Registration successful."})
     except Exception:
         traceback.print_exc()
-        return json.dumps({"code": 500, "message": "Registration failed"}), 500
+        return jsonify({"code": 500, "message": "Internal server error"})
 
 
 if __name__ == '__main__':
