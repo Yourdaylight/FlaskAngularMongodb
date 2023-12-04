@@ -1,10 +1,11 @@
 import pandas
 import pymongo
 
-db_host = "101.35.53.113"
+db_host = "127.0.0.1"
 db_port = 27017
-password = "LZHlzh.rootOOT123"
-client = pymongo.MongoClient(db_host, db_port, username="admin", password=password)
+password = "123456"
+username = "root"
+client = pymongo.MongoClient(db_host, db_port, username=username, password=password)
 DATABASE_NAME = "wegame"
 COLLECTION = "wegame"
 USER_COLLECTION = "user"
