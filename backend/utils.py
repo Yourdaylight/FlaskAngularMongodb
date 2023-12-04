@@ -1,5 +1,6 @@
 import pandas
 import pymongo
+import json
 '''
 db.createUser({
     user: "admin",
@@ -39,6 +40,19 @@ def get_db():
     except Exception as e:
         raise e
 
+def export_dataset():
+    db = client[DATABASE_NAME]
+    collection_names = db.list_collection_names()
+
+    # 遍历集合并导出数据
+    for collection_name in collection_names:
+        collection = db[collection_name]
+        documents = collection.find({})
+
+        # 将文档转换为JSON并写入文件
+        with open(f'../res/{collection_name}.json', 'w') as file:
+            json.dump(list(documents), file, default=str)  # 使用 default=str 来处理无法直接序列化的数据类型
+
 
 if __name__ == '__main__':
-    pass
+    export_dataset()
