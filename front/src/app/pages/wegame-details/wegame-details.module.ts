@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../../../shared/shared.module';
-import { MovieDetailsComponent } from './movie-details.component';
+import { SharedModule } from '../../shared/shared.module';
+import { MovieDetailsComponent } from './wegame-details.component';
 // import {FormatTimePipe} from "../../../pipe/formatTime.pipe";
 
 @NgModule({

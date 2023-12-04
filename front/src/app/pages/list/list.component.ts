@@ -4,14 +4,7 @@ import { NavigateService } from 'src/app/services/navigate.service';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-
-import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-list',
@@ -19,7 +12,7 @@ import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  movieList: any = [];
+  wegameList: any = [];
   loading: boolean = true;
   isVisible: boolean = false;
   addForm!: FormGroup;
@@ -77,8 +70,8 @@ export class ListComponent implements OnInit {
   ];
   typeOption: any = [
     {
-      label: 'Movie',
-      value: 'Movie',
+      label: 'Wegame',
+      value: 'Wegame',
     },
     {
       label: 'TV Show',
@@ -115,7 +108,7 @@ export class ListComponent implements OnInit {
       Distributor: [null],
       Developer: [null],
     });
-    this.getMovieList();
+    this.getWegameList();
   }
 
   submitForm(): void {
@@ -124,7 +117,7 @@ export class ListComponent implements OnInit {
       this.apiService.post('new_game', params).subscribe(
         (res: any) => {
           this.isVisible = false;
-          this.getMovieList();
+          this.getWegameList();
           this.$message.success(`add success!`);
         },
         () => {}
@@ -142,14 +135,15 @@ export class ListComponent implements OnInit {
   onSearch() {
     this.page = 1;
     this.size = 18;
-    this.getMovieList();
+    this.getWegameList();
   }
   toDetail(data: any) {
-    localStorage.setItem('movieInfo', JSON.stringify(data));
-    this.router.navigate(['/layout/movie-details']);
+    localStorage.setItem('wegameInfo', JSON.stringify(data));
+    this.router.navigate(['/layout/wegame-details']);
   }
 
   getReviewTotalAndPositive(str: string) {
+    if (!str) return ['0', '0'];
     const strArray = str.split(' ');
     const total =
       strArray.filter((item: string) => item?.indexOf(',') !== -1)[0] || '0';
@@ -158,7 +152,7 @@ export class ListComponent implements OnInit {
     return [total, positive];
   }
 
-  getMovieList() {
+  getWegameList() {
     let params = {
       page: this.page,
       size: this.size,
@@ -170,8 +164,8 @@ export class ListComponent implements OnInit {
         const { code, data, total } = res;
         if (code == 200) {
           this.loading = false;
-          this.movieList = data;
-          this.movieList.forEach((item: any, index: number) => {
+          this.wegameList = data;
+          this.wegameList.forEach((item: any, index: number) => {
             item.idx = index;
             item.reviewTotal = this.getReviewTotalAndPositive(
               item['All Reviews Number']
@@ -181,9 +175,9 @@ export class ListComponent implements OnInit {
             )[1];
           });
           this.total = total;
-          console.log('this.movieList', this.movieList);
+          console.log('this.wegameList', this.wegameList);
         } else {
-          this.movieList = [];
+          this.wegameList = [];
         }
       },
       () => {
@@ -194,10 +188,10 @@ export class ListComponent implements OnInit {
   pageChange(val: number) {
     this.page = val;
     console.log(val);
-    this.getMovieList();
+    this.getWegameList();
   }
   pageSizeChange(val: number) {
     this.size = val;
-    this.getMovieList();
+    this.getWegameList();
   }
 }

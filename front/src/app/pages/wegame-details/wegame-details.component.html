@@ -7,59 +7,66 @@
     <div class="song-info-basic">
       <div class="title">
         {{ movieInfo.Name }}
-        <span style="float: right">
-          <span
-            nz-icon
-            nzType="delete"
-            nzTheme="outline"
-            (click)="onDelete()"
-            [style]="{ marginRight: '10px', cursor: 'pointer' }"
-          ></span>
-          <span
-            nz-icon
-            nzType="edit"
-            nzTheme="outline"
-            (click)="onEdit()"
-            [style]="{ marginRight: '10px', cursor: 'pointer' }"
-          ></span>
-          <button
-            nz-button
-            nzType="default"
-            nzSize="small"
-            style="float: right"
-            routerLink="/layout/list"
-          >
-            < Back
-          </button>
-        </span>
       </div>
-      <div>Developer: {{ movieInfo.Developer }}</div>
-      <!-- <div>duration: {{ movieInfo.duration }}</div> -->
-      <!-- <div>country: {{ movieInfo.country }}</div> -->
-      <div>Release Date: {{ movieInfo["Release Date"] }}</div>
-      <!-- <div>description: {{ movieInfo.description }}</div> -->
+      <h2 style="margin-top: 20px; border-bottom: 1px solid #999"></h2>
+      <div class="detail-item-title">Developer:</div>
+      <div>{{ movieInfo.Developer }}</div>
+      <div class="detail-item-title">Release Date:</div>
+      <div>{{ movieInfo["Release Date"] }}</div>
+      <div class="detail-item-title">Metascore:</div>
+      <div>{{ movieInfo.Metascore || 0 }}</div>
+      <h2
+        style="
+          margin-top: 20px;
+          border-bottom: 1px dashed var(--ant-primary-color);
+        "
+      ></h2>
+      <button
+        nz-button
+        class="login-form-button login-form-margin"
+        [nzType]="'primary'"
+        (click)="onEdit()"
+      >
+        Edit Game Detail
+      </button>
+      <button
+        nz-button
+        nzType="default"
+        style="margin: 20px 0 20px 10px"
+        (click)="onDelete()"
+      >
+        Delete game
+      </button>
+      <button
+        nz-button
+        nzType="dashed"
+        style="width: 100%"
+        routerLink="/layout/list"
+      >
+        < Back To
+      </button>
     </div>
   </div>
   <h2 style="margin-top: 20px; border-bottom: 1px solid #eee">Details</h2>
   <nz-descriptions nzTitle="">
     <nz-descriptions-item nzTitle="Distributer">{{
-      movieInfo.Distributer
+      movieInfo.Distributer || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Developer">{{
-      movieInfo.Developer
+      movieInfo.Developer || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Release Date">{{
-      movieInfo["Release Date"]
+      movieInfo["Release Date"] || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Genres">{{
-      movieInfo.Genres
+      movieInfo.Genres || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Awards">{{
-      movieInfo.Awards
+      movieInfo.Awards || "--"
     }}</nz-descriptions-item>
   </nz-descriptions>
   <h2 style="margin-top: 40px; border-bottom: 1px solid #eee">All Platforms</h2>
-  <nz-card nzTitle="Also on">
+  <nz-card nzTitle="Also on" *ngIf="movieInfo['Also On']; else elseBlock">
     <div
       nz-card-grid
       *ngFor="let item of movieInfo['Also On'].split(',')"
@@ -68,9 +75,12 @@
       {{ item }}
     </div>
   </nz-card>
+  <ng-template #elseBlock>
+    <nz-empty nzNotFoundImage="simple"></nz-empty>
+  </ng-template>
   <nz-modal
     [(nzVisible)]="isVisible"
-    nzTitle="Edit Movie"
+    nzTitle="Edit Wegame"
     nzOkText="Ok"
     nzCancelText="Cancel"
     (nzOnOk)="submitForm()"
