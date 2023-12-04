@@ -3,117 +3,113 @@
     <div
       class="header"
       style="
-        text-align: right;
-        padding-right: 40px;
-        color: rgba(255, 255, 255, 0.9);
+        text-align: left;
+        padding-left: 50px;
+        color: #4a291f;
+        font-weight: bold;
       "
     >
-      Netflix Movies and TV Shows
+      The Best Games 🎮
     </div>
     <div class="login-container">
       <div class="contenter">
-        <div class="login-title">{{ curStatus }}</div>
-        <form
-          *ngIf="curStatus == 'Login'"
-          nz-form
-          [formGroup]="validateForm"
-          class="login-form"
-          (ngSubmit)="submitForm('login')"
-        >
-          <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your username!">
-              <nz-input-group nzPrefixIcon="user">
+        <div>
+          <div class="login-title">{{ curStatus }}🕹️</div>
+        </div>
+        <div>
+          <form
+            *ngIf="curStatus == 'Login'"
+            nz-form
+            [formGroup]="validateForm"
+            class="login-form"
+            (ngSubmit)="submitForm('login')"
+          >
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your username!">
+                <nz-input-group nzPrefixIcon="user">
+                  <input
+                    type="text"
+                    nz-input
+                    formControlName="username"
+                    placeholder="Username"
+                  />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-input-group nzPrefixIcon="lock">
+                  <input
+                    type="password"
+                    nz-input
+                    formControlName="password"
+                    placeholder="Password"
+                  />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <button
+              nz-button
+              class="login-form-button login-form-margin"
+              [nzType]="'primary'"
+            >
+              Log in
+            </button>
+            <!-- Don't have an account? -->
+            <a (click)="changeLogin()" class="base-color"
+              >Go To Register ->🐖🚗</a
+            >
+          </form>
+          <form
+            *ngIf="curStatus == 'Register'"
+            nz-form
+            nzLayout="horizontal"
+            [formGroup]="validateForm"
+            class="login-form"
+            (ngSubmit)="submitForm('register')"
+          >
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your username!">
                 <input
-                  type="text"
                   nz-input
+                  id="username"
                   formControlName="username"
                   placeholder="Username"
                 />
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-control nzErrorTip="Please input your Password!">
-              <nz-input-group nzPrefixIcon="lock">
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item style="width: 100%">
+              <nz-form-control
+                nzErrorTip="Please input your password!"
+                style="width: 100%"
+              >
                 <input
-                  type="password"
                   nz-input
+                  type="password"
+                  id="password"
                   formControlName="password"
                   placeholder="Password"
                 />
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-          <button
-            nz-button
-            class="login-form-button login-form-margin"
-            [nzType]="'primary'"
-          >
-            Log in
-          </button>
-          Don't have an account?
-          <a (click)="changeLogin()" class="base-color">Quick regist!</a>
-        </form>
-        <form
-          *ngIf="curStatus == 'Register'"
-          nz-form
-          nzLayout="horizontal"
-          [formGroup]="validateForm"
-          class="login-form"
-          (ngSubmit)="submitForm('register')"
-        >
-          <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="username" nzRequired>
-              <span>Username</span>
-            </nz-form-label>
-            <nz-form-control
-              [nzSm]="14"
-              [nzXs]="24"
-              nzErrorTip="Please input your username!"
+              </nz-form-control>
+            </nz-form-item>
+            <button
+              nz-button
+              class="login-form-button login-form-margin"
+              [nzType]="'primary'"
             >
-              <input
-                nz-input
-                id="username"
-                formControlName="username"
-                placeholder="Username"
-              />
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item>
-            <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired
-              >Password</nz-form-label
+              Register
+            </button>
+            <button
+              nz-button
+              [nzType]="'default'"
+              style="width: 100%"
+              class="base-color"
+              (click)="changeLogin()"
             >
-            <nz-form-control
-              [nzSm]="14"
-              [nzXs]="24"
-              nzErrorTip="Please input your password!"
-            >
-              <input
-                nz-input
-                type="password"
-                id="password"
-                formControlName="password"
-                placeholder="Password"
-              />
-            </nz-form-control>
-          </nz-form-item>
-          <button
-            nz-button
-            class="login-form-button login-form-margin"
-            [nzType]="'primary'"
-          >
-            Register
-          </button>
-          <button
-            nz-button
-            [nzType]="'default'"
-            style="width: 100%"
-            class="base-color"
-            (click)="changeLogin()"
-          >
-            Back to Login
-          </button>
-        </form>
+              Back to Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

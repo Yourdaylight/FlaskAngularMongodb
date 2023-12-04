@@ -1,17 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { NzMessageService } from 'ng-zorro-antd/message';
-
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  _baseUrl = 'http://127.0.0.1:5000/';
-  constructor(
-    private httpClient: HttpClient,
-    private dialogService: NzMessageService
-  ) {}
+  _baseUrl = 'http://127.0.0.1:5000/api/wegame/';
+
+  constructor(private httpClient: HttpClient) {}
+
   get(url: string, params: any) {
     return this.httpClient.get(this._baseUrl + url, params);
   }

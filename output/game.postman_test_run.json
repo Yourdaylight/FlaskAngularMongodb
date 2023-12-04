@@ -1,0 +1,238 @@
+{
+	"id": "f1171c1f-f5ab-4982-8f6b-9f669f7fcfb3",
+	"name": "FlaskAngularMongoDB_game2_2_202312",
+	"timestamp": "2023-12-04T06:42:36.723Z",
+	"collection_id": "13268592-ebc9e49b-f100-4279-8113-4427115c10f4",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 11,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-12-04T06:42:35.464Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "79b26a80-c7de-42fa-9a3b-8bcf85b35d2e",
+			"name": "login",
+			"url": "http://127.0.0.1:5000/api/wegame/login",
+			"time": 43,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response must be valid and have a body": true,
+				"Body has token": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body has token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response must be valid and have a body": true,
+					"Body has token": true
+				}
+			]
+		},
+		{
+			"id": "efa03c50-bb29-4b24-b572-5e3e24345b00",
+			"name": "register",
+			"url": "http://127.0.0.1:5000/api/wegame/register",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "40140a01-2ec4-45b6-b3f2-efd95ea4a3ea",
+			"name": "new_game",
+			"url": "http://127.0.0.1:5000/api/wegame/new_game",
+			"time": 40,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "4d54ba54-d56b-4ee9-b628-222739b64884",
+			"name": "game_list",
+			"url": "http://127.0.0.1:5000/api/wegame/game_list",
+			"time": 77,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response must be valid and have a body": true,
+				"Response is an array of games": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array of games": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response must be valid and have a body": true,
+					"Response is an array of games": true
+				}
+			]
+		},
+		{
+			"id": "14268a86-117c-4f96-a6a1-be344bfcacb7",
+			"name": "del_game",
+			"url": "http://127.0.0.1:5000/api/wegame/del_game",
+			"time": 305,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				305
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "5eef0835-a855-4d31-85c0-aa8ddb9a3666",
+			"name": "update_game",
+			"url": "http://127.0.0.1:5000/api/wegame/update_game",
+			"time": 40,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response must be valid and have a body": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 545,
+	"collection": {
+		"requests": [
+			{
+				"id": "79b26a80-c7de-42fa-9a3b-8bcf85b35d2e",
+				"method": "POST"
+			},
+			{
+				"id": "efa03c50-bb29-4b24-b572-5e3e24345b00",
+				"method": "POST"
+			},
+			{
+				"id": "40140a01-2ec4-45b6-b3f2-efd95ea4a3ea",
+				"method": "POST"
+			},
+			{
+				"id": "4d54ba54-d56b-4ee9-b628-222739b64884",
+				"method": "POST"
+			},
+			{
+				"id": "14268a86-117c-4f96-a6a1-be344bfcacb7",
+				"method": "POST"
+			},
+			{
+				"id": "5eef0835-a855-4d31-85c0-aa8ddb9a3666",
+				"method": "POST"
+			}
+		]
+	}
+}

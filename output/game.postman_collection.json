@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "ebc9e49b-f100-4279-8113-4427115c10f4",
+		"name": "FlaskAngularMongoDB_game2_2_202312",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15234337",
+		"_collection_link": "https://gold-spaceship-203375.postman.co/workspace/Team-Workspace~e1e4e7e7-fbf3-4eed-8155-25c636d86894/collection/13268592-ebc9e49b-f100-4279-8113-4427115c10f4?action=share&source=collection_link&creator=15234337"
+	},
+	"item": [
+		{
+			"name": "game_2_202312",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test('Response must be valid and have a body', function () {",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.withBody;",
+									"    pm.response.to.be.json;",
+									"});",
+									"pm.test('Body has token', function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.have.property('token');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"admin_test\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.be.oneOf([200, 500]);",
+									"    pm.expect(jsonData).to.have.property('msg');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"admin_test\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new_game",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.be.oneOf([200, 500]);",
+									"    pm.expect(jsonData).to.have.property('msg');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {\r\n            \"Name\": \"test_lzh2\",\r\n            \"Link\": \"https://www.metacritic.com/game/pc/portal-2\",\r\n            \"Distributer\": \"Valve Software\",\r\n            \"Developer\": \"Valve Software\",\r\n            \"Release Date\": \"18-Apr-11\",\r\n            \"Also On\": \"PlayStation 3, Xbox 360\",\r\n            \"Summary\": \"Valve is working on a full-length sequel to its award-winning, mind-bending puzzle action game for the Xbox 360 and PC.\",\r\n            \"Metascore\": 95.0,\r\n            \"Meta Status\": \"universal acclaim\",\r\n            \"# of Critic Reviews\": 52.0,\r\n            \"Critic Positive\": 51.0,\r\n            \"Critic Mixed\": 1.0,\r\n            \"Critic Negative\": 0.0,\r\n            \"Userscore\": \"9.1\",\r\n            \"Userscore Status\": \"universal acclaim\",\r\n            \"# of User Reviews\": 9003.0,\r\n            \"User Positive\": 2007.0,\r\n            \"User Mixed\": 113.0,\r\n            \"User Negative\": 32.0,\r\n            \"Genres\": \"Action, Shooter, Shooter, First-Person, Sci-Fi, Sci-Fi, Arcade\",\r\n            \"# Of Players\": \"\",\r\n            \"Rating\": \"E10+\",\r\n            \"Awards\": \"#1 Best PC Game of 2011\\r\\n#2 Most Discussed PC Game of 2011\\r\\n#6 Most Shared PC Game of 2011\"\r\n        }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/new_game",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"new_game"
+							]
+						},
+						"description": "添加游戏选项，根据Titele进行添加重复校验。当前示例的所有字段的key都必须传，用户没有输入时需要给默认空值"
+					},
+					"response": []
+				},
+				{
+					"name": "game_list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test('Response must be valid and have a body', function () {",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.withBody;",
+									"    pm.response.to.be.json;",
+									"});",
+									"pm.test('Response is an array of games', function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"size\": 10,\r\n    \"Name\": \"test_lzh\",  // 可选，根据需要更改\r\n    \"Distributor\": \"\",  // 可选，根据需要更改\r\n    \"Developer\": \"\" // 可选，根据需要更改\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/game_list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"game_list"
+							]
+						},
+						"description": "查询支持根据Original Price, Title, Developer, Game Features这几个字段查询 。Game Features传的是js数组，其余均是字符串"
+					},
+					"response": []
+				},
+				{
+					"name": "del_game",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.be.oneOf([200, 500]);",
+									"    pm.expect(jsonData).to.have.property('msg');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"6562fd4ae9ab52c33ef012a3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/del_game",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"del_game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_game",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test('Response must be valid and have a body', function () {",
+									"    pm.response.to.be.ok;",
+									"    pm.response.to.be.withBody;",
+									"    pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"_id\": \"6562faf2594307daafb30702\",\r\n            \"Name\": \"test_lzh\",\r\n            \"Link\": \"https://www.metacritic.com\",\r\n            \"Distributer\": \"hello\",\r\n            \"Developer\": \"Valve Software\",\r\n            \"Release Date\": \"18-Apr-11\",\r\n            \"Also On\": \"PlayStation 3, Xbox 360\",\r\n            \"Summary\": \"Valve is working on a full-length sequel to its award-winning, mind-bending puzzle action game for the Xbox 360 and PC.\",\r\n            \"Metascore\": 95.0,\r\n            \"Meta Status\": \"universal acclaim\",\r\n            \"# of Critic Reviews\": 52.0,\r\n            \"Critic Positive\": 51.0,\r\n            \"Critic Mixed\": 1.0,\r\n            \"Critic Negative\": 0.0,\r\n            \"Userscore\": 9.1,\r\n            \"Userscore Status\": \"universal acclaim\",\r\n            \"# of User Reviews\": 9003.0,\r\n            \"User Positive\": 2007.0,\r\n            \"User Mixed\": 113.0,\r\n            \"User Negative\": 32.0,\r\n            \"Genres\": \"Action, Shooter, Shooter, First-Person, Sci-Fi, Sci-Fi, Arcade\",\r\n            \"# Of Players\": \"\",\r\n            \"Rating\": \"E10+\",\r\n            \"Awards\": \"#1 Best PC Game of 2011\\r\\n#2 Most Discussed PC Game of 2011\\r\\n#6 Most Shared PC Game of 2011\",\r\n            \"date_added\": \"2023-11-26\",\r\n            \"update_time\": 1700985586.6171165\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/wegame/update_game",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"wegame",
+								"update_game"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

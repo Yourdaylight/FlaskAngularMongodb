@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       console.log(url);
       this.apiService.post(url, loginModel).subscribe((res: any) => {
         const { code, msg, data } = res;
-        if (code === 0) {
+        if (code === 200) {
           if (type == 'login') {
             this.$message.success('Login Success!');
             localStorage.setItem('username', loginModel.username);

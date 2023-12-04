@@ -10,7 +10,12 @@
   text-align: left;
 }
 .song-info-basic {
+  padding: 40px 0;
   margin-left: 20px;
+  .detail-item-title {
+    color: #666;
+    font-weight: bold;
+  }
 }
 .song-info-basic > div {
   line-height: 26px;
@@ -26,6 +31,6 @@
     font-weight: bold;
     font-size: 24px;
   }
-  font-size: 14px;
-  color: #99a9bf;
+  font-size: 16px;
+  color: #333;
 }

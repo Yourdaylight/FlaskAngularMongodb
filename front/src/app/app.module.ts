@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { zh_CN } from 'ng-zorro-antd/i18n';
+import { NZ_I18N, zh_CN, en_US } from 'ng-zorro-antd/i18n';
+import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -17,6 +17,12 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 registerLocaleData(zh);
+
+const ngZorroConfig: NzConfig = {
+  theme: {
+    primaryColor: '#cfb338',
+  },
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +39,8 @@ registerLocaleData(zh);
     NzBreadCrumbModule,
   ],
   providers: [
-    { provide: NZ_I18N, useValue: zh_CN },
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: NZ_CONFIG, useValue: ngZorroConfig },
     NzMessageService,
     HttpClient,
   ],
