@@ -8,11 +8,10 @@ db.createUser({
     roles: ["root"]
 })
 '''
-db_host = "192.168.1.6"
+db_host = "127.0.0.1"
 db_port = 27017
 username = "admin"
-password = "LZHlzh.rootOOT"
-client = pymongo.MongoClient(db_host, db_port, username=username, password=password)
+client = pymongo.MongoClient(db_host, db_port)
 DATABASE_NAME = "employee"
 DATA_COLLECTION = "data"
 EMPLOYEE_COLLECTION = "employee"
@@ -34,7 +33,7 @@ def read_dataset():
 def get_db():
     try:
         _DATA_COLLECTION = client[DATABASE_NAME]
-        is_exist = _DATA_COLLECTION[DATA_COLLECTION].count()
+        is_exist = _DATA_COLLECTION[DATA_COLLECTION].count_documents({})
         print(f"{DATA_COLLECTION} is exist: {is_exist}")
         return is_exist != 0
     except Exception as e:

@@ -1,5 +1,5 @@
 import json
-import defines
+import utils
 import traceback
 import uuid
 from flask import Flask, request, jsonify
@@ -8,13 +8,13 @@ from views import employee
 
 
 # Set up database connection
-database = defines.client[defines.DATABASE_NAME]
-employees_collection = database[defines.EMPLOYEE_COLLECTION]
+database = utils.client[utils.DATABASE_NAME]
+employees_collection = database[utils.EMPLOYEE_COLLECTION]
 
 # Create Flask application
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-app.config.from_object(defines)
+app.config.from_object(utils)
 app.config['JSON_AS_ASCII'] = False
 app.config["SECRET_KEY"] = 'fewfewfefverwgfreqgergr'
 app.register_blueprint(employee)
@@ -62,8 +62,8 @@ def employee_registration():
 
 if __name__ == '__main__':
     try:
-        if not defines.get_db():
-            defines.read_dataset()
+        if not utils.get_db():
+            utils.read_dataset()
         app.run(host='0.0.0.0', port=5000, debug=True)
     except Exception as e:
         print(f"Error starting the application: {e}")

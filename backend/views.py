@@ -2,7 +2,7 @@ import time, json, bson
 import datetime
 import traceback
 from bson import ObjectId
-from defines import client, DATABASE_NAME, DATA_COLLECTION,EMPLOYEE_COLLECTION
+from utils import client, DATABASE_NAME, DATA_COLLECTION,EMPLOYEE_COLLECTION
 from flask import Blueprint, request, jsonify, Response
 
 employee = Blueprint('employee', __name__)
