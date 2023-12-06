@@ -22,8 +22,8 @@ export class ListComponent implements OnInit {
       value: 'Name',
     },
     {
-      label: 'Distributor',
-      value: 'Distributor',
+      label: 'Distributer',
+      value: 'Distributer',
     },
     {
       label: 'Developer',
@@ -60,8 +60,8 @@ export class ListComponent implements OnInit {
       value: 'Name',
     },
     {
-      label: 'Distributor',
-      value: 'Distributor',
+      label: 'Distributer',
+      value: 'Distributer',
     },
     {
       label: 'Developer',
@@ -95,7 +95,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.fb.group({
       Name: [null, [Validators.required]],
-      Distributor: [null, [Validators.required]],
+      Distributer: [null, [Validators.required]],
       Developer: [null, [Validators.required]],
       'Release Date': [null, [Validators.required]],
       Summary: [null, [Validators.required]],
@@ -105,7 +105,7 @@ export class ListComponent implements OnInit {
     });
     this.searchForm = this.fb.group({
       Name: [null],
-      Distributor: [null],
+      Distributer: [null],
       Developer: [null],
     });
     this.getWegameList();

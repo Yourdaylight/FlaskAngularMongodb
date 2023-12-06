@@ -26,7 +26,7 @@ def game_list():
 
         # 查询参数构造
         filters = {k: {"$regex": v, "$options": "i"} for k, v in params.items()
-                   if k in ["Original Price", "Name", "Developer", "Distributor"] and v}
+                   if k in ["Name", "Developer", "Distributer"] and v}
 
         games_query = game_collection.find(filters)
         games = list(games_query.skip((page - 1) * size).limit(size).sort("update_time", -1))
