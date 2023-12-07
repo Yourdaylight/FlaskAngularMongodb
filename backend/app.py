@@ -1,4 +1,5 @@
 import json
+import time
 import utils
 import traceback
 import uuid
@@ -46,14 +47,19 @@ def employee_registration():
     if not employee_data:
         return json.dumps({"code": 400, "message": "No data provided"}), 400
 
-    employee_id = employee_data.get('employee_id')
+    username = employee_data.get('username')
     employee_password = employee_data.get('password')
-
-    if employees_collection.find_one({"employee_id": employee_id}):
+    # 根据username生成employee_id
+    employee_id = username + "_" + str(int(time.time()))
+    if employees_collection.find_one({"username": username}):
         return jsonify({"code": 400, "message": "Employee already exists."})
 
     try:
-        employees_collection.insert_one({"employee_id": employee_id, "password": employee_password})
+        employees_collection.insert_one({
+            "employee_id": employee_id,
+            "password": employee_password,
+            "username": username
+        })
         return jsonify({"code": 200, "message": "Registration successful."})
     except Exception:
         traceback.print_exc()
