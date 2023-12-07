@@ -17,7 +17,7 @@ const routes: Routes = [
         path: 'wegame-details',
         loadChildren: () =>
           import('../wegame-details/wegame-details.module').then(
-            (m) => m.MovieDetailsModule
+            (m) => m.wegameDetailsModule
           ),
       },
     ],

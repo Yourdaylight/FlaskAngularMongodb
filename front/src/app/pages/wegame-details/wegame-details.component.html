@@ -6,15 +6,15 @@
     />
     <div class="song-info-basic">
       <div class="title">
-        {{ movieInfo.Name }}
+        {{ wegameInfo.Name }}
       </div>
       <h2 style="margin-top: 20px; border-bottom: 1px solid #999"></h2>
       <div class="detail-item-title">Developer:</div>
-      <div>{{ movieInfo.Developer }}</div>
+      <div>{{ wegameInfo.Developer }}</div>
       <div class="detail-item-title">Release Date:</div>
-      <div>{{ movieInfo["Release Date"] }}</div>
+      <div>{{ wegameInfo["Release Date"] }}</div>
       <div class="detail-item-title">Metascore:</div>
-      <div>{{ movieInfo.Metascore || 0 }}</div>
+      <div>{{ wegameInfo.Metascore || 0 }}</div>
       <h2
         style="
           margin-top: 20px;
@@ -50,26 +50,26 @@
   <h2 style="margin-top: 20px; border-bottom: 1px solid #eee">Details</h2>
   <nz-descriptions nzTitle="">
     <nz-descriptions-item nzTitle="Distributer">{{
-      movieInfo.Distributer || "--"
+      wegameInfo.Distributer || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Developer">{{
-      movieInfo.Developer || "--"
+      wegameInfo.Developer || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Release Date">{{
-      movieInfo["Release Date"] || "--"
+      wegameInfo["Release Date"] || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Genres">{{
-      movieInfo.Genres || "--"
+      wegameInfo.Genres || "--"
     }}</nz-descriptions-item>
     <nz-descriptions-item nzTitle="Awards">{{
-      movieInfo.Awards || "--"
+      wegameInfo.Awards || "--"
     }}</nz-descriptions-item>
   </nz-descriptions>
   <h2 style="margin-top: 40px; border-bottom: 1px solid #eee">All Platforms</h2>
-  <nz-card nzTitle="Also on" *ngIf="movieInfo['Also On']; else elseBlock">
+  <nz-card nzTitle="Also on" *ngIf="wegameInfo['Also On']; else elseBlock">
     <div
       nz-card-grid
-      *ngFor="let item of movieInfo['Also On'].split(',')"
+      *ngFor="let item of wegameInfo['Also On'].split(',')"
       style="font-weight: bold"
     >
       {{ item }}

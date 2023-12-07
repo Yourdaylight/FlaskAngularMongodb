@@ -8,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './wegame-details.component.html',
   styleUrls: ['./wegame-details.component.scss'],
 })
-export class MovieDetailsComponent implements OnInit {
-  movieInfo: any = {};
+export class wegameDetailsComponent implements OnInit {
+  wegameInfo: any = {};
   fps: any = '';
   editForm!: FormGroup;
   editField: any = [
@@ -56,7 +56,7 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.movieInfo = JSON.parse(localStorage.getItem('movieInfo') as any);
+    this.wegameInfo = JSON.parse(localStorage.getItem('wegameInfo') as any);
     this.editForm = this.fb.group({
       Name: [null, [Validators.required]],
       Distributor: [null, [Validators.required]],
@@ -70,9 +70,9 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.apiService.post('del_game', { _id: this.movieInfo._id }).subscribe(
+    this.apiService.post('del_game', { _id: this.wegameInfo._id }).subscribe(
       (res: any) => {
-        this.$message.success(`Delete ${this.movieInfo.Name} Success!`);
+        this.$message.success(`Delete ${this.wegameInfo.Name} Success!`);
         this.router.navigate(['/layout/list'], {});
       },
       () => {}
@@ -80,11 +80,11 @@ export class MovieDetailsComponent implements OnInit {
   }
   onEdit() {
     this.isVisible = true;
-    this.editForm.patchValue(this.movieInfo);
+    this.editForm.patchValue(this.wegameInfo);
   }
   submitForm(): void {
     if (this.editForm.valid) {
-      let params = { ...this.editForm.value, _id: this.movieInfo._id };
+      let params = { ...this.editForm.value, _id: this.wegameInfo._id };
       this.apiService.post('update_game', params).subscribe(
         (res: any) => {
           this.isVisible = false;
