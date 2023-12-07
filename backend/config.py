@@ -1,8 +1,10 @@
 import pymongo
-db_host = "101.35.53.113"
-db_port = 27017
-password = "LZHlzh.rootOOT123"
-client = pymongo.MongoClient(db_host, db_port, username="admin", password=password)
+
+# Azure Cosmos DB connection string
+cosmos_db_uri = "mongodb://games:oQ5bO7YMfpu99oZMpKs0fjjypybyIMwBHJh7TmK8FYj1J41StnByDp1vxZ0huSXxlYbNLiRtNdvZACDb9cByMQ==@games.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@games@"
+
+# Create a MongoClient
+client = pymongo.MongoClient(cosmos_db_uri)
 DATABASE_NAME = "games"
 COLLECTION = "games"
 USER_COLLECTION = "user"
