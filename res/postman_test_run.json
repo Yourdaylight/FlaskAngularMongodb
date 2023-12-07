@@ -1,0 +1,226 @@
+{
+	"id": "ec75f7e8-5165-46c2-bdae-25805aabac2a",
+	"name": "Employee_202312",
+	"timestamp": "2023-12-04T12:41:50.221Z",
+	"collection_id": "13268592-e15b8465-21d2-4517-b695-ed91ae351cc4",
+	"folder_id": "13268592-7b586a70-ba88-4e38-8748-7c5f5c2e6844",
+	"environment_id": "13268592-ff7a932d-972c-4629-a1cd-34c547bb6b74",
+	"totalPass": 9,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-12-04T12:41:49.171Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "25121b8b-9136-4058-98d7-b21e892d75b1",
+			"name": "login",
+			"url": "http://127.0.0.1:5000/api/employee/login",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status should be 200 OK": true,
+				"Response body should contain a token property": true
+			},
+			"testPassFailCounts": {
+				"Response status should be 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response body should contain a token property": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Response status should be 200 OK": true,
+					"Response body should contain a token property": true
+				}
+			]
+		},
+		{
+			"id": "9db7e4e7-c7e7-4ff4-b33d-795c53cfedaa",
+			"name": "register",
+			"url": "http://127.0.0.1:5000/api/employee/register",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "8d423b5e-6985-49a2-88af-a1c70e439629",
+			"name": "add",
+			"url": "http://127.0.0.1:5000/api/employee/add",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "c67c3227-05db-43ed-8de1-7771e62fd6e1",
+			"name": "list",
+			"url": "http://127.0.0.1:5000/api/employee/list",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Verify that the response status code is 200": true,
+				"Ensure the response is valid and not empty": true,
+				"Check if the response contains an array of games": true
+			},
+			"testPassFailCounts": {
+				"Verify that the response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Ensure the response is valid and not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if the response contains an array of games": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"Verify that the response status code is 200": true,
+					"Ensure the response is valid and not empty": true,
+					"Check if the response contains an array of games": true
+				}
+			]
+		},
+		{
+			"id": "1c933beb-9e62-4a3d-bb7d-8e71c95f60fe",
+			"name": "delete",
+			"url": "http://127.0.0.1:5000/api/employee/delete",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		},
+		{
+			"id": "6a824e56-e48e-4820-8c1f-95248ab4ed42",
+			"name": "update",
+			"url": "http://127.0.0.1:5000/api/employee/update",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check status code and message": true
+			},
+			"testPassFailCounts": {
+				"Check status code and message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Check status code and message": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 79,
+	"collection": {
+		"requests": [
+			{
+				"id": "25121b8b-9136-4058-98d7-b21e892d75b1",
+				"method": "POST"
+			},
+			{
+				"id": "9db7e4e7-c7e7-4ff4-b33d-795c53cfedaa",
+				"method": "POST"
+			},
+			{
+				"id": "8d423b5e-6985-49a2-88af-a1c70e439629",
+				"method": "POST"
+			},
+			{
+				"id": "c67c3227-05db-43ed-8de1-7771e62fd6e1",
+				"method": "POST"
+			},
+			{
+				"id": "1c933beb-9e62-4a3d-bb7d-8e71c95f60fe",
+				"method": "POST"
+			},
+			{
+				"id": "6a824e56-e48e-4820-8c1f-95248ab4ed42",
+				"method": "POST"
+			}
+		]
+	}
+}

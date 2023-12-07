@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "e15b8465-21d2-4517-b695-ed91ae351cc4",
+		"name": "Employee_202312",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13268592",
+		"_collection_link": "https://gold-spaceship-203375.postman.co/workspace/Team-Workspace~e1e4e7e7-fbf3-4eed-8155-25c636d86894/collection/13268592-e15b8465-21d2-4517-b695-ed91ae351cc4?action=share&source=collection_link&creator=13268592"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// 检查响应状态码是否为 200\r",
+									"pm.test('Response status should be 200 OK', function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"// 检查响应体中是否含有 token 字段\r",
+									"pm.test('Response body should contain a token property', function () {\r",
+									"    var responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.have.nested.property('data.token');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"admin\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {\r",
+									"    var res= pm.response.json();\r",
+									"    pm.expect(res.code).to.be.oneOf([200, 400,500]);\r",
+									"    pm.expect(res).to.have.property('message');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"admin\",\r\n\"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {\r",
+									"    var res = pm.response.json();\r",
+									"    pm.expect(res.code).to.be.oneOf([200, 400 ,500]);\r",
+									"    pm.expect(res).to.have.property('message');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {            \r\n           \"EmployeeName\": \"tester\",\r\n            \"Age\": 18,\r\n            \"Attrition\": \"No\",\r\n            \"BusinessTravel\": \"Travel_Rarely\",\r\n            \"Department\": \"Research & Development\",\r\n            \"DistanceFromHome\": 1,\r\n            \"Education\": 3,\r\n            \"EducationField\": \"Life Sciences\",\r\n            \"Gender\": \"Male\",\r\n            \"JobLevel\": 3,\r\n            \"JobRole\": \"Laboratory Technician\",\r\n            \"MaritalStatus\": \"Married\",\r\n            \"MonthlyIncome\": 20440,\r\n            \"NumCompaniesWorked\": 0.0\r\n        }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// 验证响应码是否正确\r",
+									"pm.test('Verify that the response status code is 200', function () {\r",
+									"    pm.expect(pm.response.status).to.eql('OK');\r",
+									"});\r",
+									"\r",
+									"// 确认响应有效且包含内容\r",
+									"pm.test('Ensure the response is valid and not empty', function () {\r",
+									"    pm.expect(pm.response).to.be.ok;\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"// 检查返回的数据是否为员工列表\r",
+									"pm.test('Check if the response contains an array of games', function () {\r",
+									"    var responseData = pm.response.json();\r",
+									"    pm.expect(responseData.data).to.be.an('array');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"size\": 10,\r\n    \"EmployeeName\": \"\",  // 可选，根据需要更改\r\n    \"Distributor\": \"\",  // 可选，根据需要更改\r\n    \"Developer\": \"\" // 可选，根据需要更改\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {\r",
+									"    var res= pm.response.json();\r",
+									"    pm.expect(res.code).to.be.oneOf([200, 400,500]);\r",
+									"    pm.expect(res).to.have.property('message');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"EmployeeID\":1241,\r\n    \"_id\":\"656361ac4fb0c9061e0ae5cc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/delete",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code and message\", function () {\r",
+									"    var res= pm.response.json();\r",
+									"    pm.expect(res.code).to.be.oneOf([200, 400,500]);\r",
+									"    pm.expect(res).to.have.property('message');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {            \r\n           \"EmployeeID\":1241,\r\n           \"EmployeeName\": \"tester_admin\",\r\n            \"Age\": 18,\r\n            \"Attrition\": \"No\",\r\n            \"BusinessTravel\": \"Travel_Rarely\",\r\n            \"Department\": \"Research & Development\",\r\n            \"DistanceFromHome\": 1,\r\n            \"Education\": 3,\r\n            \"EducationField\": \"Life Sciences\",\r\n            \"Gender\": \"Male\",\r\n            \"JobLevel\": 3,\r\n            \"JobRole\": \"Laboratory Technician\",\r\n            \"MaritalStatus\": \"Married\",\r\n            \"MonthlyIncome\": 20440,\r\n            \"NumCompaniesWorked\": 0.0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/employee/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"employee",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
